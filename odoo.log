@@ -1,0 +1,526 @@
+2025-05-28 06:58:01,218 26404 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.request:INFO" 
+2025-05-28 06:58:01,218 26404 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.response:INFO" 
+2025-05-28 06:58:01,218 26404 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-05-28 06:58:01,218 26404 DEBUG ? odoo.netsvc: logger level set: "odoo:DEBUG" 
+2025-05-28 06:58:01,219 26404 DEBUG ? odoo.netsvc: logger level set: "odoo.sql_db:INFO" 
+2025-05-28 06:58:01,219 26404 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-05-28 06:58:01,219 26404 INFO ? odoo: Odoo version 17.0+e-20231119 
+2025-05-28 06:58:01,219 26404 INFO ? odoo: Using configuration file at C:\Users\hp\OneDrive\Documents\odoo-final-project\odoo.cfg 
+2025-05-28 06:58:01,219 26404 INFO ? odoo: addons paths: ['C:\\Users\\hp\\OneDrive\\Documents\\odoo-final-project\\src\\odoo\\odoo\\addons', 'c:\\users\\hp\\appdata\\local\\odoo\\addons\\17.0', 'c:\\users\\hp\\onedrive\\documents\\odoo-final-project\\local', 'c:\\users\\hp\\onedrive\\documents\\odoo-final-project\\src\\odoo\\addons', 'c:\\users\\hp\\onedrive\\documents\\odoo-final-project\\src\\odoo\\odoo\\addons'] 
+2025-05-28 06:58:01,219 26404 INFO ? odoo: database: odoo@localhost:5432 
+2025-05-28 06:58:01,706 26404 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe 
+2025-05-28 06:58:02,153 26404 WARNING ? odoo.service.server: 'watchdog' module not installed. Code autoreload feature is disabled 
+2025-05-28 06:58:02,154 26404 DEBUG ? odoo.service.server: Setting signal handlers 
+2025-05-28 06:58:02,159 26404 INFO ? odoo.service.server: HTTP service (werkzeug) running on My-ZBook.lan:8069 
+2025-05-28 06:58:02,201 26404 DEBUG ? odoo.modules.registry: Multiprocess load registry signaling: [Registry: 3] [Cache default: 7] [Cache assets: 1] [Cache templates: 6] [Cache routing: 1] 
+2025-05-28 06:58:02,207 26404 INFO thanh123 odoo.modules.loading: loading 1 modules... 
+2025-05-28 06:58:02,207 26404 DEBUG thanh123 odoo.modules.loading: Loading module base (1/1) 
+2025-05-28 06:58:02,212 26404 DEBUG thanh123 odoo.modules.loading: Module base loaded in 0.00s, 0 queries 
+2025-05-28 06:58:02,212 26404 INFO thanh123 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-05-28 06:58:02,225 26404 INFO thanh123 odoo.modules.loading: updating modules list 
+2025-05-28 06:58:02,228 26404 INFO thanh123 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-05-28 06:58:03,127 26404 DEBUG ? odoo.http: HTTP sessions stored in: c:\users\hp\appdata\local\odoo\sessions 
+2025-05-28 06:58:07,279 26404 WARNING thanh123 odoo.modules.module: Missing `license` key in manifest for 'garment_production', defaulting to LGPL-3 
+2025-05-28 06:58:13,462 26404 DEBUG thanh123 odoo.modules.module: module production_management: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:13,462 26404 WARNING thanh123 odoo.modules.graph: module production_management: not installable, skipped 
+2025-05-28 06:58:13,463 26404 INFO thanh123 odoo.modules.graph: module garment_sample: Unmet dependencies: garment_base 
+2025-05-28 06:58:13,463 26404 DEBUG thanh123 odoo.modules.loading: Updating graph with 18 more modules 
+2025-05-28 06:58:13,464 26404 INFO thanh123 odoo.modules.loading: loading 17 modules... 
+2025-05-28 06:58:13,464 26404 DEBUG thanh123 odoo.modules.loading: Loading module web (2/17) 
+2025-05-28 06:58:13,465 26404 DEBUG thanh123 odoo.modules.loading: Module web loaded in 0.00s, 0 queries 
+2025-05-28 06:58:13,465 26404 DEBUG thanh123 odoo.modules.loading: Loading module auth_totp (3/17) 
+2025-05-28 06:58:13,507 26404 DEBUG thanh123 odoo.modules.loading: Module auth_totp loaded in 0.04s, 0 queries 
+2025-05-28 06:58:13,507 26404 DEBUG thanh123 odoo.modules.loading: Loading module base_import (4/17) 
+2025-05-28 06:58:13,520 26404 DEBUG thanh123 odoo.modules.loading: Module base_import loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,520 26404 DEBUG thanh123 odoo.modules.loading: Loading module base_import_module (5/17) 
+2025-05-28 06:58:13,534 26404 DEBUG thanh123 odoo.modules.loading: Module base_import_module loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,534 26404 DEBUG thanh123 odoo.modules.loading: Loading module base_setup (6/17) 
+2025-05-28 06:58:13,545 26404 DEBUG thanh123 odoo.modules.loading: Module base_setup loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,545 26404 DEBUG thanh123 odoo.modules.loading: Loading module bus (7/17) 
+2025-05-28 06:58:13,571 26404 DEBUG thanh123 odoo.modules.loading: Module bus loaded in 0.03s, 0 queries 
+2025-05-28 06:58:13,571 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_cohort (8/17) 
+2025-05-28 06:58:13,586 26404 DEBUG thanh123 odoo.modules.loading: Module web_cohort loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,586 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_gantt (9/17) 
+2025-05-28 06:58:13,594 26404 DEBUG thanh123 odoo.modules.loading: Module web_gantt loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,594 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_grid (10/17) 
+2025-05-28 06:58:13,607 26404 DEBUG thanh123 odoo.modules.loading: Module web_grid loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,607 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_tour (11/17) 
+2025-05-28 06:58:13,614 26404 DEBUG thanh123 odoo.modules.loading: Module web_tour loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,614 26404 DEBUG thanh123 odoo.modules.loading: Loading module iap (12/17) 
+2025-05-28 06:58:13,625 26404 DEBUG thanh123 odoo.modules.loading: Module iap loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,625 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_editor (13/17) 
+2025-05-28 06:58:13,696 26404 DEBUG thanh123 odoo.modules.loading: Module web_editor loaded in 0.07s, 0 queries 
+2025-05-28 06:58:13,696 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_enterprise (14/17) 
+2025-05-28 06:58:13,704 26404 DEBUG thanh123 odoo.modules.loading: Module web_enterprise loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,704 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_map (15/17) 
+2025-05-28 06:58:13,718 26404 DEBUG thanh123 odoo.modules.loading: Module web_map loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,718 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_mobile (16/17) 
+2025-05-28 06:58:13,724 26404 DEBUG thanh123 odoo.modules.loading: Module web_mobile loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,724 26404 DEBUG thanh123 odoo.modules.loading: Loading module web_unsplash (17/17) 
+2025-05-28 06:58:13,735 26404 DEBUG thanh123 odoo.modules.loading: Module web_unsplash loaded in 0.01s, 0 queries 
+2025-05-28 06:58:13,735 26404 INFO thanh123 odoo.modules.loading: 17 modules loaded in 0.27s, 0 queries (+0 extra) 
+2025-05-28 06:58:13,810 26404 ERROR thanh123 odoo.modules.loading: Some modules are not loaded, some dependencies or manifest may be missing: ['garment_sample', 'production_management'] 
+2025-05-28 06:58:13,834 26404 DEBUG thanh123 odoo.modules.registry: Invalidating templates model caches from write C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_view.py:520 
+2025-05-28 06:58:13,838 26404 DEBUG thanh123 odoo.modules.registry: Invalidating templates model caches from write C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_view.py:520 
+2025-05-28 06:58:14,031 26404 INFO thanh123 odoo.modules.loading: Modules loaded. 
+2025-05-28 06:58:14,034 26404 INFO thanh123 odoo.modules.registry: Registry loaded in 11.880s 
+2025-05-28 06:58:14,037 26404 DEBUG thanh123 odoo.service.server: cron0 started! 
+2025-05-28 06:58:14,037 26404 DEBUG thanh123 odoo.service.server: cron1 started! 
+2025-05-28 06:58:14,159 26404 DEBUG ? odoo.modules.registry: Multiprocess load registry signaling: [Registry: 9] [Cache default: 2] [Cache assets: 1] [Cache templates: 1] [Cache routing: 1] 
+2025-05-28 06:58:14,164 26404 INFO thanhdz odoo.modules.loading: loading 1 modules... 
+2025-05-28 06:58:14,164 26404 DEBUG thanhdz odoo.modules.loading: Loading module base (1/1) 
+2025-05-28 06:58:14,167 26404 DEBUG thanhdz odoo.modules.loading: Module base loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,167 26404 INFO thanhdz odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-05-28 06:58:14,169 26404 DEBUG thanhdz odoo.modules.loading: Updating graph with 18 more modules 
+2025-05-28 06:58:14,169 26404 INFO thanhdz odoo.modules.loading: loading 19 modules... 
+2025-05-28 06:58:14,169 26404 DEBUG thanhdz odoo.modules.loading: Loading module web (2/19) 
+2025-05-28 06:58:14,170 26404 DEBUG thanhdz odoo.modules.loading: Module web loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,170 26404 DEBUG thanhdz odoo.modules.loading: Loading module auth_totp (3/19) 
+2025-05-28 06:58:14,170 26404 DEBUG thanhdz odoo.modules.loading: Module auth_totp loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,170 26404 DEBUG thanhdz odoo.modules.loading: Loading module base_import (4/19) 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Module base_import loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Loading module base_import_module (5/19) 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Module base_import_module loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Loading module base_setup (6/19) 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Module base_setup loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Loading module bus (7/19) 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Module bus loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,171 26404 DEBUG thanhdz odoo.modules.loading: Loading module garment_base (8/19) 
+2025-05-28 06:58:14,178 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.model_dynamic_templates is not overriding the create method in batch 
+2025-05-28 06:58:14,179 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.model_dynamic_templates is not overriding the create method in batch 
+2025-05-28 06:58:14,179 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.model_dynamic_templates is not overriding the create method in batch 
+2025-05-28 06:58:14,180 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.model_dynamic_templates is not overriding the create method in batch 
+2025-05-28 06:58:14,180 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.model_dynamic_templates is not overriding the create method in batch 
+2025-05-28 06:58:14,180 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.model_dynamic_templates is not overriding the create method in batch 
+2025-05-28 06:58:14,184 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.model_sample is not overriding the create method in batch 
+2025-05-28 06:58:14,189 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.production_order is not overriding the create method in batch 
+2025-05-28 06:58:14,200 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.production_process is not overriding the create method in batch 
+2025-05-28 06:58:14,202 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.production_cost is not overriding the create method in batch 
+2025-05-28 06:58:14,204 26404 WARNING thanhdz odoo.api.create: The model odoo.addons.garment_base.models.production_material is not overriding the create method in batch 
+2025-05-28 06:58:14,217 26404 DEBUG thanhdz odoo.modules.loading: Module garment_base loaded in 0.05s, 0 queries 
+2025-05-28 06:58:14,217 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_cohort (9/19) 
+2025-05-28 06:58:14,219 26404 DEBUG thanhdz odoo.modules.loading: Module web_cohort loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,219 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_gantt (10/19) 
+2025-05-28 06:58:14,220 26404 DEBUG thanhdz odoo.modules.loading: Module web_gantt loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,220 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_grid (11/19) 
+2025-05-28 06:58:14,222 26404 DEBUG thanhdz odoo.modules.loading: Module web_grid loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,222 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_tour (12/19) 
+2025-05-28 06:58:14,222 26404 DEBUG thanhdz odoo.modules.loading: Module web_tour loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,222 26404 DEBUG thanhdz odoo.modules.loading: Loading module garment_production (13/19) 
+2025-05-28 06:58:14,225 26404 DEBUG thanhdz odoo.modules.loading: Module garment_production loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,225 26404 DEBUG thanhdz odoo.modules.loading: Loading module iap (14/19) 
+2025-05-28 06:58:14,225 26404 DEBUG thanhdz odoo.modules.loading: Module iap loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,225 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_editor (15/19) 
+2025-05-28 06:58:14,229 26404 DEBUG thanhdz odoo.modules.loading: Module web_editor loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,229 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_enterprise (16/19) 
+2025-05-28 06:58:14,229 26404 DEBUG thanhdz odoo.modules.loading: Module web_enterprise loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,229 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_map (17/19) 
+2025-05-28 06:58:14,231 26404 DEBUG thanhdz odoo.modules.loading: Module web_map loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,231 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_mobile (18/19) 
+2025-05-28 06:58:14,231 26404 DEBUG thanhdz odoo.modules.loading: Module web_mobile loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,231 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_unsplash (19/19) 
+2025-05-28 06:58:14,232 26404 DEBUG thanhdz odoo.modules.loading: Module web_unsplash loaded in 0.00s, 0 queries 
+2025-05-28 06:58:14,232 26404 INFO thanhdz odoo.modules.loading: 19 modules loaded in 0.06s, 0 queries (+0 extra) 
+2025-05-28 06:58:14,261 26404 WARNING thanhdz odoo.fields: Field product.style.code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:14,261 26404 WARNING thanhdz odoo.fields: Field production.order.name: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:14,261 26404 WARNING thanhdz odoo.fields: Field production.bundle.bundle_no: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:14,261 26404 WARNING thanhdz odoo.fields: Field production.worker.entry.employee_id with unknown comodel_name 'hr.employee' 
+2025-05-28 06:58:14,262 26404 WARNING thanhdz odoo.fields: Field production.salary.adjust.employee_id with unknown comodel_name 'hr.employee' 
+2025-05-28 06:58:14,262 26404 WARNING thanhdz odoo.fields: Field product.lot.lot_code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:14,266 26404 INFO thanhdz odoo.modules.loading: Modules loaded. 
+2025-05-28 06:58:14,270 26404 INFO thanhdz odoo.modules.registry: Registry loaded in 0.236s 
+2025-05-28 06:58:14,271 26404 INFO thanhdz odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-05-28 06:58:14,279 26404 DEBUG ? odoo.modules.module: module CONTRIBUTING.md: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,279 26404 DEBUG ? odoo.modules.module: module COPYRIGHT: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,292 26404 DEBUG ? odoo.modules.module: module l10n_generic_coa: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,296 26404 DEBUG ? odoo.modules.module: module LICENSE: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,307 26404 DEBUG ? odoo.modules.module: module README.md: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,325 26404 DEBUG ? odoo.modules.module: module __init__.py: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,325 26404 DEBUG ? odoo.modules.module: module __pycache__: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,326 26404 DEBUG ? odoo.modules.module: module garment_authorization: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-05-28 06:58:14,444 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:14] "POST /web/webclient/version_info HTTP/1.1" 200 - 1 0.001 0.198
+2025-05-28 06:58:14,965 26404 WARNING thanhdz odoo.addons.base.models.ir_qweb: Found deprecated directive @t-esc="title or 'Odoo'" in template 180. Replace by @t-out 
+2025-05-28 06:58:14,965 26404 WARNING thanhdz odoo.addons.base.models.ir_qweb: Found deprecated directive @t-esc='request.csrf_token(None)' in template 180. Replace by @t-out 
+2025-05-28 06:58:14,965 26404 WARNING thanhdz odoo.addons.base.models.ir_qweb: Found deprecated directive @t-esc='debug' in template 180. Replace by @t-out 
+2025-05-28 06:58:14,970 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:14] "GET /web HTTP/1.1" 200 - 99 0.099 11.743
+2025-05-28 06:58:15,537 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:15] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 22 0.006 0.060
+2025-05-28 06:58:15,538 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:15] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 10 0.014 0.036
+2025-05-28 06:58:15,563 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:15] "GET /bus/websocket_worker_bundle?v=1.0.7 HTTP/1.1" 304 - 4 0.003 0.058
+2025-05-28 06:58:15,889 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:15] "GET /websocket HTTP/1.1" 101 - 1 0.000 0.004
+2025-05-28 06:58:15,896 26404 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-05-28 06:58:16,751 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:16] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.016
+2025-05-28 06:58:17,393 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:17] "POST /web/action/load HTTP/1.1" 200 - 10 0.008 0.004
+2025-05-28 06:58:17,647 26404 DEBUG thanhdz odoo.api: call ir.module.module().get_views(options={'action_id': 38, 'load_filters': True, 'toolbar': True}, views=[[False, 'kanban'], [False, 'list'], [False, 'form'], [94, 'search']]) 
+2025-05-28 06:58:17,738 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:17] "POST /web/dataset/call_kw/ir.module.module/get_views HTTP/1.1" 200 - 52 0.023 0.071
+2025-05-28 06:58:17,750 26404 DEBUG thanhdz odoo.api: call ir.module.module().search_panel_select_range('module_type', category_domain=[], enable_counters=False, expand=True, filter_domain=[], hierarchize=True, limit=200, search_domain=[['application', '=', True]]) 
+2025-05-28 06:58:17,750 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:17] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 1 0.001 0.002
+2025-05-28 06:58:18,056 26404 DEBUG thanhdz odoo.api: call ir.module.module().search_panel_select_range('category_id', category_domain=[], enable_counters=True, expand=False, filter_domain=[], hierarchize=True, limit=200, search_domain=[['application', '=', True]]) 
+2025-05-28 06:58:18,057 26404 DEBUG thanhdz odoo.api: call ir.module.module().web_search_read(count_limit=10001, domain=[['application', '=', True]], limit=80, offset=0, order='', specification={'icon': {}, 'icon_flag': {}, 'to_buy': {}, 'name': {}, 'state': {}, 'summary': {}, 'website': {}, 'application': {}, 'module_type': {}, 'shortdesc': {}}) 
+2025-05-28 06:58:18,101 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:18] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 71 0.029 0.019
+2025-05-28 06:58:18,439 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:18] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 8 0.006 0.379
+2025-05-28 06:58:22,998 26404 DEBUG thanhdz odoo.api: call ir.module.module().search_panel_select_range('category_id', category_domain=[], enable_counters=True, expand=False, filter_domain=[], hierarchize=True, limit=200, search_domain=['&', ['application', '=', True], '|', '|', ['summary', 'ilike', 'order'], ['shortdesc', 'ilike', 'order'], ['name', 'ilike', 'order']]) 
+2025-05-28 06:58:23,045 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:23] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 70 0.028 0.021
+2025-05-28 06:58:23,262 26404 DEBUG thanhdz odoo.api: call ir.module.module().web_search_read(count_limit=10001, domain=['&', ['application', '=', True], '|', '|', ['summary', 'ilike', 'order'], ['shortdesc', 'ilike', 'order'], ['name', 'ilike', 'order']], limit=80, offset=0, order='', specification={'icon': {}, 'icon_flag': {}, 'to_buy': {}, 'name': {}, 'state': {}, 'summary': {}, 'website': {}, 'application': {}, 'module_type': {}, 'shortdesc': {}}) 
+2025-05-28 06:58:23,277 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:23] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 8 0.007 0.011
+2025-05-28 06:58:26,506 26404 DEBUG thanhdz odoo.api: call ir.module.module(454,).button_immediate_install() 
+2025-05-28 06:58:26,507 26404 INFO thanhdz odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_install on ['Garment Order Management'] to user thanh123 #2 via 127.0.0.1 
+2025-05-28 06:58:26,507 26404 INFO thanhdz odoo.addons.base.models.ir_module: User #2 triggered module installation 
+2025-05-28 06:58:26,509 26404 INFO thanhdz odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Garment Order Management'] to user thanh123 #2 via 127.0.0.1 
+2025-05-28 06:58:26,579 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for "'Install'"  
+2025-05-28 06:58:26,590 26404 DEBUG thanhdz odoo.modules.registry: Multiprocess load registry signaling: [Registry: 9] [Cache default: 2] [Cache assets: 1] [Cache templates: 1] [Cache routing: 1] 
+2025-05-28 06:58:26,596 26404 INFO thanhdz odoo.modules.loading: loading 1 modules... 
+2025-05-28 06:58:26,596 26404 DEBUG thanhdz odoo.modules.loading: Loading module base (1/1) 
+2025-05-28 06:58:26,603 26404 DEBUG thanhdz odoo.modules.loading: Module base loaded in 0.01s, 0 queries 
+2025-05-28 06:58:26,603 26404 INFO thanhdz odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-05-28 06:58:26,620 26404 INFO thanhdz odoo.modules.loading: updating modules list 
+2025-05-28 06:58:26,622 26404 INFO thanhdz odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 127.0.0.1 
+2025-05-28 06:58:27,541 26404 DEBUG thanhdz odoo.modules.loading: Updating graph with 18 more modules 
+2025-05-28 06:58:27,541 26404 INFO thanhdz odoo.modules.loading: loading 19 modules... 
+2025-05-28 06:58:27,541 26404 DEBUG thanhdz odoo.modules.loading: Loading module web (2/19) 
+2025-05-28 06:58:27,542 26404 DEBUG thanhdz odoo.modules.loading: Module web loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,542 26404 DEBUG thanhdz odoo.modules.loading: Loading module auth_totp (3/19) 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Module auth_totp loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Loading module base_import (4/19) 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Module base_import loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Loading module base_import_module (5/19) 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Module base_import_module loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Loading module base_setup (6/19) 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Module base_setup loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,543 26404 DEBUG thanhdz odoo.modules.loading: Loading module bus (7/19) 
+2025-05-28 06:58:27,544 26404 DEBUG thanhdz odoo.modules.loading: Module bus loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,544 26404 DEBUG thanhdz odoo.modules.loading: Loading module garment_base (8/19) 
+2025-05-28 06:58:27,545 26404 DEBUG thanhdz odoo.modules.loading: Module garment_base loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,545 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_cohort (9/19) 
+2025-05-28 06:58:27,546 26404 DEBUG thanhdz odoo.modules.loading: Module web_cohort loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,546 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_gantt (10/19) 
+2025-05-28 06:58:27,549 26404 DEBUG thanhdz odoo.modules.loading: Module web_gantt loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,549 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_grid (11/19) 
+2025-05-28 06:58:27,549 26404 DEBUG thanhdz odoo.modules.loading: Module web_grid loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,549 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_tour (12/19) 
+2025-05-28 06:58:27,549 26404 DEBUG thanhdz odoo.modules.loading: Module web_tour loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,550 26404 DEBUG thanhdz odoo.modules.loading: Loading module garment_production (13/19) 
+2025-05-28 06:58:27,550 26404 DEBUG thanhdz odoo.modules.loading: Module garment_production loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,550 26404 DEBUG thanhdz odoo.modules.loading: Loading module iap (14/19) 
+2025-05-28 06:58:27,550 26404 DEBUG thanhdz odoo.modules.loading: Module iap loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,550 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_editor (15/19) 
+2025-05-28 06:58:27,552 26404 DEBUG thanhdz odoo.modules.loading: Module web_editor loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,552 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_enterprise (16/19) 
+2025-05-28 06:58:27,552 26404 DEBUG thanhdz odoo.modules.loading: Module web_enterprise loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,552 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_map (17/19) 
+2025-05-28 06:58:27,553 26404 DEBUG thanhdz odoo.modules.loading: Module web_map loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,553 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_mobile (18/19) 
+2025-05-28 06:58:27,553 26404 DEBUG thanhdz odoo.modules.loading: Module web_mobile loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,553 26404 DEBUG thanhdz odoo.modules.loading: Loading module web_unsplash (19/19) 
+2025-05-28 06:58:27,553 26404 DEBUG thanhdz odoo.modules.loading: Module web_unsplash loaded in 0.00s, 0 queries 
+2025-05-28 06:58:27,553 26404 INFO thanhdz odoo.modules.loading: 19 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-05-28 06:58:27,554 26404 DEBUG thanhdz odoo.modules.loading: Updating graph with 1 more modules 
+2025-05-28 06:58:27,554 26404 INFO thanhdz odoo.modules.loading: loading 20 modules... 
+2025-05-28 06:58:27,554 26404 INFO thanhdz odoo.modules.loading: Loading module garment_order (13/20) 
+2025-05-28 06:58:27,602 26404 DEBUG thanhdz odoo.models: Patching res.config.settings.report_footer with translate=True 
+2025-05-28 06:58:27,604 26404 DEBUG thanhdz odoo.models: Patching base.document.layout.report_header with translate=True 
+2025-05-28 06:58:27,604 26404 DEBUG thanhdz odoo.models: Patching base.document.layout.report_footer with translate=True 
+2025-05-28 06:58:27,604 26404 DEBUG thanhdz odoo.models: Patching base.document.layout.company_details with translate=True 
+2025-05-28 06:58:27,608 26404 WARNING thanhdz odoo.fields: Field product.style.code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,608 26404 WARNING thanhdz odoo.fields: Field production.order.name: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,608 26404 WARNING thanhdz odoo.fields: Field production.bundle.bundle_no: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,608 26404 WARNING thanhdz odoo.fields: Field product.lot.lot_code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,633 26404 INFO thanhdz odoo.modules.loading: loading garment_order/security/ir.model.access.csv 
+2025-05-28 06:58:27,654 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for "'See all possible values'"  
+2025-05-28 06:58:27,654 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for "'external id'"  
+2025-05-28 06:58:27,654 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for ""Unknown value '%s' for boolean field '%%(field)s'""  
+2025-05-28 06:58:27,654 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for ""Use '1' for yes and '0' for no""  
+2025-05-28 06:58:27,655 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for "'See all possible values'"  
+2025-05-28 06:58:27,655 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for "'external id'"  
+2025-05-28 06:58:27,656 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for ""Unknown value '%s' for boolean field '%%(field)s'""  
+2025-05-28 06:58:27,656 26404 DEBUG thanhdz odoo.tools.translate: no translation language detected, skipping translation for ""Use '1' for yes and '0' for no""  
+2025-05-28 06:58:27,659 26404 DEBUG thanhdz odoo.modules.registry: Invalidating default model caches from call_cache_clearing_methods C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_model.py:2065 
+2025-05-28 06:58:27,660 26404 WARNING thanhdz odoo.addons.base.models.ir_model: Rule access.garment.order has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-05-28 06:58:27,660 26404 WARNING thanhdz odoo.addons.base.models.ir_model: Rule access.garment.specification_detail has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-05-28 06:58:27,673 26404 INFO thanhdz odoo.modules.loading: loading garment_order/views/order_view.xml 
+2025-05-28 06:58:27,701 26404 DEBUG thanhdz odoo.modules.registry: Invalidating templates model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_view.py:504 
+2025-05-28 06:58:27,721 26404 DEBUG thanhdz odoo.modules.registry: Invalidating templates model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_view.py:504 
+2025-05-28 06:58:27,727 26404 DEBUG thanhdz odoo.modules.registry: Invalidating templates model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_view.py:504 
+2025-05-28 06:58:27,732 26404 DEBUG thanhdz odoo.modules.registry: Invalidating default model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_actions.py:309 
+2025-05-28 06:58:27,735 26404 DEBUG thanhdz odoo.modules.registry: Invalidating default model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_actions.py:78 
+2025-05-28 06:58:27,736 26404 DEBUG thanhdz odoo.modules.registry: Invalidating default model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_actions.py:309 
+2025-05-28 06:58:27,737 26404 DEBUG thanhdz odoo.modules.registry: Invalidating default model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_actions.py:78 
+2025-05-28 06:58:27,738 26404 INFO thanhdz odoo.modules.loading: loading garment_order/views/base_menu.xml 
+2025-05-28 06:58:27,742 26404 DEBUG thanhdz odoo.modules.registry: Invalidating default model caches from create C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_menu.py:165 
+2025-05-28 06:58:27,804 26404 INFO thanhdz odoo.modules.loading: Module garment_order loaded in 0.25s, 68 queries (+68 other) 
+2025-05-28 06:58:27,805 26404 INFO thanhdz odoo.modules.loading: 20 modules loaded in 0.25s, 68 queries (+68 extra) 
+2025-05-28 06:58:27,815 26404 WARNING thanhdz odoo.fields: Field product.style.code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,815 26404 WARNING thanhdz odoo.fields: Field production.order.name: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,815 26404 WARNING thanhdz odoo.fields: Field production.bundle.bundle_no: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,815 26404 WARNING thanhdz odoo.fields: Field product.lot.lot_code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,826 26404 WARNING thanhdz odoo.fields: Field product.style.code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,826 26404 WARNING thanhdz odoo.fields: Field production.order.name: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,826 26404 WARNING thanhdz odoo.fields: Field production.bundle.bundle_no: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,826 26404 WARNING thanhdz odoo.fields: Field product.lot.lot_code: unknown parameter 'unique', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2025-05-28 06:58:27,844 26404 DEBUG thanhdz odoo.models: column web is in the table ir_module_module but not in the corresponding object ir.module.module 
+2025-05-28 06:58:27,853 26404 DEBUG thanhdz odoo.models: column password is in the table res_users but not in the corresponding object res.users 
+2025-05-28 06:58:27,853 26404 DEBUG thanhdz odoo.models: column totp_secret is in the table res_users but not in the corresponding object res.users 
+2025-05-28 06:58:27,853 26404 DEBUG thanhdz odoo.models: column index is in the table res_users_apikeys but not in the corresponding object res.users.apikeys 
+2025-05-28 06:58:27,853 26404 DEBUG thanhdz odoo.models: column key is in the table res_users_apikeys but not in the corresponding object res.users.apikeys 
+2025-05-28 06:58:27,857 26404 DEBUG thanhdz odoo.models: column index is in the table auth_totp_device but not in the corresponding object auth_totp.device 
+2025-05-28 06:58:27,857 26404 DEBUG thanhdz odoo.models: column key is in the table auth_totp_device but not in the corresponding object auth_totp.device 
+2025-05-28 06:58:27,882 26404 DEBUG thanhdz odoo.modules.registry: Invalidating templates model caches from write C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_view.py:520 
+2025-05-28 06:58:27,885 26404 DEBUG thanhdz odoo.modules.registry: Invalidating templates model caches from write C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_ui_view.py:520 
+2025-05-28 06:58:28,052 26404 INFO thanhdz odoo.modules.loading: Modules loaded. 
+2025-05-28 06:58:28,055 26404 INFO thanhdz odoo.modules.registry: Registry loaded in 1.473s 
+2025-05-28 06:58:28,055 26404 INFO thanhdz odoo.addons.base.models.ir_module: getting next ir.actions.todo() 
+2025-05-28 06:58:28,059 26404 INFO thanhdz odoo.modules.registry: Registry changed, signaling through the database 
+2025-05-28 06:58:28,061 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:28] "POST /web/dataset/call_button HTTP/1.1" 200 - 3082 0.830 0.727
+2025-05-28 06:58:28,387 26404 INFO thanhdz odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-05-28 06:58:28,757 26404 WARNING thanhdz odoo.addons.base.models.ir_qweb: Found deprecated directive @t-esc="title or 'Odoo'" in template 180. Replace by @t-out 
+2025-05-28 06:58:28,758 26404 WARNING thanhdz odoo.addons.base.models.ir_qweb: Found deprecated directive @t-esc='request.csrf_token(None)' in template 180. Replace by @t-out 
+2025-05-28 06:58:28,758 26404 WARNING thanhdz odoo.addons.base.models.ir_qweb: Found deprecated directive @t-esc='debug' in template 180. Replace by @t-out 
+2025-05-28 06:58:28,762 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:28] "GET /web HTTP/1.1" 200 - 83 0.031 0.347
+2025-05-28 06:58:29,109 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:29] "GET /web/webclient/load_menus/68be4d6cd631957540b03934656897189d1fa7d0d913afc5a6dca03978dd2a02 HTTP/1.1" 200 - 2 0.001 0.017
+2025-05-28 06:58:29,114 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:29] "GET /web/webclient/translations/683d20c311f91a7c9470b6457cd28883a5a83c46?lang=en_US HTTP/1.1" 200 - 4 0.020 0.002
+2025-05-28 06:58:47,763 26404 DEBUG thanhdz odoo.addons.base.models.assetsbundle: Asset Changed: bundle: web.assets_web -- version: 1fd68e9 
+2025-05-28 06:58:48,216 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:48] "GET /web/assets/1fd68e9/web.assets_web.min.js HTTP/1.1" 200 - 28 0.019 19.412
+2025-05-28 06:58:48,677 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:48] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 22 0.010 0.011
+2025-05-28 06:58:48,681 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:48] "GET /bus/websocket_worker_bundle?v=1.0.7 HTTP/1.1" 304 - 4 0.003 0.005
+2025-05-28 06:58:49,001 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:49] "GET /websocket HTTP/1.1" 101 - 1 0.000 0.003
+2025-05-28 06:58:49,943 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:49] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.000 0.002
+2025-05-28 06:58:51,988 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:51] "POST /web/action/load HTTP/1.1" 200 - 8 0.004 0.003
+2025-05-28 06:58:52,248 26404 DEBUG thanhdz odoo.api: call garment.order().get_views(options={'action_id': 142, 'load_filters': True, 'toolbar': True}, views=[[False, 'list'], [False, 'form'], [False, 'search']]) 
+2025-05-28 06:58:52,269 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:52] "POST /web/dataset/call_kw/garment.order/get_views HTTP/1.1" 200 - 24 0.008 0.016
+2025-05-28 06:58:52,325 26404 DEBUG thanhdz odoo.api: call garment.order().web_search_read(count_limit=10001, domain=[], limit=80, offset=0, order='', specification={'name': {}, 'order_number': {}, 'shape': {}, 'quantity': {}, 'state': {}, 'receiving_company': {}, 'receiving_date': {}, 'cutting_date': {}, 'published_by': {'fields': {'display_name': {}}}, 'issuing_date': {}}) 
+2025-05-28 06:58:52,330 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:52] "POST /web/dataset/call_kw/garment.order/web_search_read HTTP/1.1" 200 - 7 0.005 0.002
+2025-05-28 06:58:52,593 26404 DEBUG thanhdz odoo.api: call res.users().has_group('base.group_allow_export') 
+2025-05-28 06:58:52,594 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:58:52] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 2 0.000 0.004
+2025-05-28 06:59:11,141 26404 DEBUG thanhdz odoo.api: call garment.order(3,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'remark': {}, 'state': {}, 'published_by': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 06:59:11,147 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:11] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 8 0.003 0.005
+2025-05-28 06:59:11,501 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:11] "POST /garment/get_materials HTTP/1.1" 200 - 4 0.005 0.004
+2025-05-28 06:59:11,510 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:11] "POST /garment/get_colors HTTP/1.1" 200 - 4 0.014 0.003
+2025-05-28 06:59:11,579 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:11] "GET /web/bundle/web_editor.backend_assets_wysiwyg?lang=en_US&debug=1 HTTP/1.1" 200 - 7 0.003 0.083
+2025-05-28 06:59:11,978 26404 DEBUG thanhdz odoo.api: call garment.order(3,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'remark': {}, 'state': {}, 'published_by': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 06:59:11,990 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:11] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 8 0.009 0.007
+2025-05-28 06:59:12,851 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:12] "POST /garment/get_materials HTTP/1.1" 200 - 4 0.002 0.042
+2025-05-28 06:59:12,857 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:12] "POST /garment/get_colors HTTP/1.1" 200 - 4 0.009 0.040
+2025-05-28 06:59:12,870 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:12] "GET /web/assets/3ea0a11/web_editor.backend_assets_wysiwyg.min.css HTTP/1.1" 200 - 14 0.008 1.117
+2025-05-28 06:59:13,263 26404 DEBUG thanhdz odoo.api: call garment.order(3,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'remark': {}, 'state': {}, 'published_by': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 06:59:13,271 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:13] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 8 0.006 0.004
+2025-05-28 06:59:13,597 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:13] "POST /garment/get_colors HTTP/1.1" 200 - 4 0.002 0.003
+2025-05-28 06:59:13,597 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:13] "POST /garment/get_materials HTTP/1.1" 200 - 4 0.003 0.003
+2025-05-28 06:59:14,137 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 06:59:14,217 26404 DEBUG thanhdz odoo.api: call garment.order(3,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'remark': {}, 'state': {}, 'published_by': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 06:59:14,222 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:14] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 8 0.003 0.004
+2025-05-28 06:59:14,313 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:14] "GET /web/assets/8e5ea80/web_editor.backend_assets_wysiwyg.min.js HTTP/1.1" 200 - 14 0.006 2.408
+2025-05-28 06:59:14,549 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:14] "POST /garment/get_materials HTTP/1.1" 200 - 4 0.001 0.003
+2025-05-28 06:59:14,549 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 06:59:14] "POST /garment/get_colors HTTP/1.1" 200 - 4 0.001 0.002
+2025-05-28 06:59:15,171 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:00:07,169 26404 DEBUG thanhdz odoo.api: call garment.order().web_search_read(count_limit=10001, domain=[], limit=80, offset=0, order='', specification={'name': {}, 'order_number': {}, 'shape': {}, 'quantity': {}, 'state': {}, 'receiving_company': {}, 'receiving_date': {}, 'cutting_date': {}, 'published_by': {'fields': {'display_name': {}}}, 'issuing_date': {}}) 
+2025-05-28 07:00:07,173 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:00:07] "POST /web/dataset/call_kw/garment.order/web_search_read HTTP/1.1" 200 - 7 0.004 0.003
+2025-05-28 07:00:09,226 26404 DEBUG thanhdz odoo.api: call garment.order().get_views(options={'action_id': False, 'load_filters': True, 'toolbar': True}, views=[[False, 'form'], [False, 'search']]) 
+2025-05-28 07:00:09,236 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:00:09] "POST /web/dataset/call_kw/garment.order/get_views HTTP/1.1" 200 - 12 0.003 0.008
+2025-05-28 07:00:09,556 26404 DEBUG thanhdz odoo.api: call garment.order().onchange({}, [], {'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'cutting_date': {}, 'department_id': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'other_cost': {}, 'progress_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 07:00:09,558 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:00:09] "POST /web/dataset/call_kw/garment.order/onchange HTTP/1.1" 200 - 2 0.000 0.003
+2025-05-28 07:00:10,922 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:00:10,926 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:00:10] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.004 0.003
+2025-05-28 07:00:14,181 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:00:16,197 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:01:14,192 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:01:17,216 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:01:21,784 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:01:21,787 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:21] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.001 0.004
+2025-05-28 07:01:24,140 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:01:24,145 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:24] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.001 0.008
+2025-05-28 07:01:26,612 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:01:26,614 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:26] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.002 0.002
+2025-05-28 07:01:31,638 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:01:31,640 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:31] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.002 0.002
+2025-05-28 07:01:44,809 26404 DEBUG thanhdz odoo.api: call garment.order().web_save({'sample_id': 2, 'name': 'Nguyen Thanh', 'unit_price': 0, 'issuing_company': 'Atin', 'receiving_company': 'Atin', 'order_number': '99', 'shape': False, 'issuing_company_phone': '0332812606', 'receiving_company_phone': False, 'quantity': 0, 'color': False, 'cutting_date': False, 'department_id': False, 'specification_detail': [['Color', 'XXS', 'XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'], ['', 0, 0, 0, 0, 0, 0, 0, 0]], 'material_detail': [['Material Name', 'Material Code', 'Color', 'Color Code', 'Specification', 'Unit', 'Unit Price', 'Position', 'Quantity per Unit', 'Loss per Unit', 'Total Quantity'], ['', '', '', '', '', '', '', '', '', '', '']], 'other_cost': [{'cost_name': '', 'amount': 0}], 'progress_detail': False, 'image_detail': False, 'related_document': False}, specification={}) 
+2025-05-28 07:01:44,955 26404 ERROR thanhdz odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\http.py", line 2157, in __call__
+    response = request._serve_db()
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\http.py", line 1732, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\service\model.py", line 133, in retrying
+    result = func()
+             ^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\http.py", line 1759, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\http.py", line 1960, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\base\models\ir_http.py", line 207, in _dispatch
+    result = endpoint(**request.params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\http.py", line 722, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\web\controllers\dataset.py", line 24, in call_kw
+    return self._call_kw(model, method, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\web\controllers\dataset.py", line 20, in _call_kw
+    return call_kw(request.env[model], method, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\api.py", line 466, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\api.py", line 453, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\addons\web\models\models.py", line 73, in web_save
+    self = self.create(vals)
+           ^^^^^^^^^^^^^^^^^
+  File "<decorator-gen-0>", line 2, in create
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\api.py", line 414, in _model_create_multi
+    return create(self, [arg])
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\models.py", line 4582, in create
+    records = self._create(data_list)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\models.py", line 4749, in _create
+    colval = field.convert_to_column(stored[fname], self, stored)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\fields.py", line 2811, in convert_to_column
+    value = self.convert_to_cache(value, record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\odoo-final-project\src\odoo\odoo\fields.py", line 2821, in convert_to_cache
+    raise ValueError("Wrong value for %s: %r" % (self, value))
+ValueError: Wrong value for garment.order.state: 'new'
+2025-05-28 07:01:44,957 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:44] "POST /web/dataset/call_kw/garment.order/web_save HTTP/1.1" 200 - 2 0.001 0.151
+2025-05-28 07:01:48,946 26404 DEBUG thanhdz odoo.api: call garment.order(3,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'remark': {}, 'state': {}, 'published_by': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 07:01:49,006 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:49] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 8 0.004 0.059
+2025-05-28 07:01:49,328 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:49] "POST /garment/get_colors HTTP/1.1" 200 - 4 0.001 0.002
+2025-05-28 07:01:49,328 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:49] "POST /garment/get_materials HTTP/1.1" 200 - 4 0.002 0.002
+2025-05-28 07:01:51,463 26404 DEBUG thanhdz odoo.api: call garment.order().web_search_read(count_limit=10001, domain=[], limit=80, offset=0, order='', specification={'name': {}, 'order_number': {}, 'shape': {}, 'quantity': {}, 'state': {}, 'receiving_company': {}, 'receiving_date': {}, 'cutting_date': {}, 'published_by': {'fields': {'display_name': {}}}, 'issuing_date': {}}) 
+2025-05-28 07:01:51,466 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:51] "POST /web/dataset/call_kw/garment.order/web_search_read HTTP/1.1" 200 - 7 0.002 0.003
+2025-05-28 07:01:58,406 26404 DEBUG thanhdz odoo.api: call garment.order(2,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'remark': {}, 'state': {}, 'published_by': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 07:01:58,413 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:58] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 8 0.005 0.005
+2025-05-28 07:01:58,672 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:58] "POST /garment/get_materials HTTP/1.1" 200 - 4 0.001 0.002
+2025-05-28 07:01:58,740 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:01:58] "POST /garment/get_colors HTTP/1.1" 200 - 4 0.002 0.005
+2025-05-28 07:02:00,986 26404 DEBUG thanhdz odoo.api: call garment.order(2,).action_open_edit_form() 
+2025-05-28 07:02:00,988 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:02:00] "POST /web/dataset/call_button HTTP/1.1" 200 - 3 0.000 0.003
+2025-05-28 07:02:01,306 26404 DEBUG thanhdz odoo.api: call garment.order().get_views(options={'action_id': False, 'load_filters': False, 'toolbar': False}, views=[[372, 'form']]) 
+2025-05-28 07:02:01,311 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:02:01] "POST /web/dataset/call_kw/garment.order/get_views HTTP/1.1" 200 - 4 0.002 0.007
+2025-05-28 07:02:01,568 26404 DEBUG thanhdz odoo.api: call garment.order(2,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'cutting_date': {}, 'department_id': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'other_cost': {}, 'progress_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}}) 
+2025-05-28 07:02:01,571 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:02:01] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 6 0.000 0.006
+2025-05-28 07:02:04,383 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:02:04,386 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:02:04] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.004 0.000
+2025-05-28 07:02:05,899 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:02:05,903 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:02:05] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.002 0.004
+2025-05-28 07:02:11,540 26404 DEBUG thanhdz odoo.api: call garment.order(2,).web_read(specification={'sample_id': {'fields': {'display_name': {}}}, 'name': {}, 'unit_price': {}, 'issuing_company': {}, 'receiving_company': {}, 'order_number': {}, 'shape': {}, 'issuing_company_phone': {}, 'receiving_company_phone': {}, 'quantity': {}, 'color': {}, 'remark': {}, 'state': {}, 'published_by': {'fields': {'display_name': {}}}, 'specification_detail': {}, 'material_detail': {}, 'image_detail': {}, 'write_date': {}, 'related_document': {}, 'display_name': {}}) 
+2025-05-28 07:02:11,546 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:02:11] "POST /web/dataset/call_kw/garment.order/web_read HTTP/1.1" 200 - 8 0.004 0.003
+2025-05-28 07:02:14,206 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:02:18,236 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:03:14,214 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:03:19,257 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:04:14,223 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:04:20,284 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:05:14,238 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:05:21,298 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:06:14,249 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:06:22,327 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:07:14,256 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:07:23,351 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:08:14,261 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:08:24,374 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:09:14,271 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:09:25,389 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:09:57,805 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:09:57] "POST /web/action/load HTTP/1.1" 200 - 8 0.002 0.005
+2025-05-28 07:09:58,062 26404 DEBUG thanhdz odoo.api: call production.order().get_views(options={'action_id': 126, 'load_filters': True, 'toolbar': True}, views=[[False, 'list'], [False, 'kanban'], [False, 'form'], [False, 'pivot'], [False, 'graph'], [False, 'search']]) 
+2025-05-28 07:09:58,118 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:09:58] "POST /web/dataset/call_kw/production.order/get_views HTTP/1.1" 200 - 53 0.016 0.042
+2025-05-28 07:09:58,141 26404 DEBUG thanhdz odoo.api: call production.order().web_search_read(count_limit=10001, domain=[['state', '=', 'draft']], limit=80, offset=0, order='', specification={'bed_number': {}, 'name': {}, 'style_id': {'fields': {'display_name': {}}}, 'image': {}, 'write_date': {}, 'quantity': {}, 'process_count': {}, 'cost_total': {}, 'client': {}, 'state': {}, 'department': {}, 'salary_month': {}, 'shipping_date': {}, 'delivery_date': {}, 'planned_date': {}, 'progress_percentage': {}}) 
+2025-05-28 07:09:58,149 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:09:58] "POST /web/dataset/call_kw/production.order/web_search_read HTTP/1.1" 200 - 11 0.007 0.003
+2025-05-28 07:10:14,287 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:10:26,410 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:11:14,304 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:11:27,423 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:12:14,320 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:12:28,439 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:12:38,903 26404 DEBUG thanhdz odoo.api: call production.order(7,).web_read(specification={'state': {}, 'process_count': {}, 'image': {}, 'write_date': {}, 'name': {}, 'order_name': {}, 'order_number': {}, 'client': {}, 'delivery_date': {}, 'sample_id': {'fields': {'display_name': {}}}, 'sample_name': {}, 'sample_number': {}, 'brand': {}, 'development_date': {}, 'designer': {}, 'sample_color': {}, 'planned_date': {}, 'shipping_date': {}, 'cost_total': {}, 'progress_percentage': {}, 'line_ids': {'fields': {'size': {}, 'color': {}, 'planned_qty': {}, 'done_qty': {}, 'bundle_ids': {'fields': {'bundle_no': {}, 'qty': {}, 'ticket_printed': {}}, 'limit': 40, 'order': ''}}, 'limit': 40, 'order': ''}, 'material_ids': {'fields': {'name': {}, 'item_number': {}, 'specification': {}, 'unit': {}, 'quantity': {}, 'total_usage': {}, 'unit_price': {}}, 'limit': 40, 'order': ''}, 'process_ids': {'fields': {'sequence': {}, 'name': {}, 'unit_price': {}, 'multiplier': {}, 'quantity': {}, 'total_price': {}, 'note': {}}, 'limit': 40, 'order': 'sequence ASC'}, 'process_requirements': {}, 'cost_ids': {'fields': {'note': {}, 'amount': {}, 'cost_type': {}}, 'limit': 40, 'order': '', 'context': {'default_cost_type': 'other'}}, 'total_other_cost': {}, 'total_material_cost': {}, 'total_process_cost': {}, 'progress_ids': {'fields': {'step_name': {}, 'completed_qty': {}, 'date': {}, 'note': {}}, 'limit': 40, 'order': ''}, 'distribution_ids': {'fields': {'allocate_qty': {}, 'method': {}}, 'limit': 40, 'order': ''}, 'display_name': {}}) 
+2025-05-28 07:12:38,929 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:12:38] "POST /web/dataset/call_kw/production.order/web_read HTTP/1.1" 200 - 42 0.021 0.007
+2025-05-28 07:13:14,326 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:13:29,456 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:14:14,337 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:14:30,473 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:15:14,348 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:15:31,501 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:16:14,353 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:16:32,523 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:17:14,367 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:17:33,546 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:18:14,382 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:18:34,570 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:19:14,385 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:19:35,589 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:20:14,391 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:20:20,226 26404 DEBUG thanhdz odoo.api: call garment.sample().name_search(args=[], limit=8, name='', operator='ilike') 
+2025-05-28 07:20:20,229 26404 INFO thanhdz werkzeug: 127.0.0.1 - - [28/May/2025 07:20:20] "POST /web/dataset/call_kw/garment.sample/name_search HTTP/1.1" 200 - 4 0.002 0.004
+2025-05-28 07:20:36,611 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:21:14,394 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:21:37,627 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:22:14,396 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:22:38,640 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:23:14,409 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:23:39,667 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:24:14,420 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:24:40,682 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:25:14,427 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:25:41,706 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:26:14,439 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:26:42,733 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:27:14,449 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:27:43,756 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:28:14,466 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:28:44,777 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:29:14,468 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:29:45,800 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:30:14,486 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:30:46,820 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:31:14,489 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:31:47,840 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:32:14,498 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:32:48,862 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:33:14,511 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:33:49,878 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:34:14,524 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:34:50,893 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:35:14,525 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:35:51,913 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:36:14,530 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:36:52,931 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:37:14,545 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:37:53,954 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:38:14,559 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:38:54,972 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:39:14,567 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:39:55,997 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:40:14,580 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:40:57,013 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:41:14,590 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:41:58,039 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:42:14,605 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:42:59,066 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:43:14,619 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:44:00,088 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:44:14,628 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:45:01,115 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:45:14,639 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:46:02,141 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:46:14,649 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:47:03,163 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:47:14,655 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:48:04,191 26404 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-05-28 07:48:14,672 26404 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-05-28 07:48:42,618 26404 INFO thanh123 odoo.service.server: Initiating shutdown 
+2025-05-28 07:48:42,619 26404 INFO thanh123 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-05-28 07:48:42,965 26404 DEBUG thanh123 odoo.service.server: on_close call <bound method Event.set of <threading.Event at 0x174e9015510: unset>> 
+2025-05-28 07:48:42,986 26404 DEBUG thanh123 odoo.service.server: on_close call <bound method Websocket._kick_all of <class 'odoo.addons.bus.websocket.Websocket'>> 
+2025-05-28 07:48:42,989 26404 DEBUG thanh123 odoo.service.server: current thread: <_MainThread(MainThread, started 30400)> 
+2025-05-28 07:48:42,991 26404 DEBUG thanh123 odoo.service.server: process <_MainThread(MainThread, started 30400)> (False) 
+2025-05-28 07:48:42,991 26404 DEBUG thanh123 odoo.service.server: process <Thread(odoo.service.cron.cron0, started daemon 30284)> (True) 
+2025-05-28 07:48:42,992 26404 DEBUG thanh123 odoo.service.server: process <Thread(odoo.service.cron.cron1, started daemon 29996)> (True) 
+2025-05-28 07:48:42,992 26404 DEBUG thanh123 odoo.service.server: process <ImDispatch(odoo.addons.bus.models.bus.Bus, started daemon 30472)> (True) 
+2025-05-28 07:48:42,992 26404 DEBUG thanh123 odoo.service.server: process <Thread(odoo.service.http.request.29888, started 29888)> (False) 
+2025-05-28 07:48:42,992 26404 DEBUG thanh123 odoo.service.server: join and sleep 
+2025-05-28 07:48:43,061 26404 INFO thanh123 odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  
+2025-05-28 07:48:43,062 26404 DEBUG thanh123 odoo.service.server: -- 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="garment_production.QuantityListTable" owl="1">
+        <div class="size_quantity_table_container">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">Size</th>
+                        <th class="text-center">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="state.rows" t-as="row" t-key="row_index">
+                        <tr>
+                            <td class="text-center">
+                                <input type="text" 
+                                       class="form-control size-input" 
+                                       t-att-value="row.size"
+                                       t-on-input="(ev) => this.onSizeChange(row_index, ev)"/>
+                            </td>
+                            <td class="text-center">
+                                <div class="input-group">
+                                    <input type="number" 
+                                           class="form-control quantity-input" 
+                                           t-att-value="row.quantity"
+                                           t-on-input="(ev) => this.onQuantityChange(row_index, ev)"/>
+                                    <button t-if="state.rows.length > 1" 
+                                            class="btn btn-danger btn-remove-row"
+                                            t-on-click="() => this.removeRow(row_index)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <div class="text-center mt-3">
+                <button class="btn btn-secondary btn-add-row" t-on-click="() => this.addRow()">
+                    <i class="fa fa-plus"></i> Add Size
+                </button>
+            </div>
+        </div>
+    </t>
+</templates> 

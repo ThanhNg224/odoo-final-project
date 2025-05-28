@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- QR Info Template -->
+    <template id="qr_info_template" name="QR Info">
+        <html>
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title t-esc="title"/>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+                    .container { max-width: 800px; margin: 0 auto; }
+                    .card { border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px; }
+                    .card-header { background: #007bff; color: white; padding: 15px; border-radius: 4px 4px 0 0; }
+                    .card-body { padding: 15px; }
+                    .card-footer { padding: 15px; border-top: 1px solid #ddd; color: #666; }
+                    .table { width: 100%; border-collapse: collapse; }
+                    .table th, .table td { padding: 8px; border: 1px solid #ddd; }
+                    .table th { background: #f8f9fa; text-align: left; width: 30%; }
+                    .text-center { text-align: center; }
+                    .img-fluid { max-width: 100%; height: auto; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 t-esc="title"/>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                <div style="flex: 2; min-width: 300px;">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr t-foreach="fields" t-as="field">
+                                                <th><t t-esc="field['label']"/></th>
+                                                <td><t t-esc="field['value']"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <t t-if="record.image_detail">
+                                        <div class="text-center">
+                                            <img t-att-src="'data:image/png;base64,%s' % record.image_detail" 
+                                                 class="img-fluid" style="max-height: 200px;" alt="Product Image"/>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <p>Scanned from QR Code</p>
+                        </div>
+                    </div>
+                </div>
+            </body>
+        </html>
+    </template>
+
+    <!-- QR Error Template -->
+    <template id="qr_error_template" name="QR Error">
+        <html>
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title>Error</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+                    .container { max-width: 800px; margin: 0 auto; }
+                    .alert { padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+                    .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+                    .alert-heading { margin-top: 0; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="alert alert-danger">
+                        <h4 class="alert-heading">Error</h4>
+                        <p t-esc="error_message"/>
+                        <hr/>
+                        <p>Please scan a valid QR code or contact the administrator.</p>
+                    </div>
+                </div>
+            </body>
+        </html>
+    </template>
+
+    <!-- QR Generate Template -->
+    <template id="qr_generate_template" name="QR Generate">
+        <html>
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title t-esc="title"/>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+                    .container { max-width: 800px; margin: 0 auto; }
+                    .card { border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px; }
+                    .card-header { background: #007bff; color: white; padding: 15px; border-radius: 4px 4px 0 0; }
+                    .card-body { padding: 15px; }
+                    .text-center { text-align: center; }
+                    .img-fluid { max-width: 100%; height: auto; }
+                    .btn { display: inline-block; padding: 8px 16px; background: #17a2b8; color: white; text-decoration: none; border-radius: 4px; }
+                    .alert { padding: 15px; border-radius: 4px; margin: 15px 0; }
+                    .alert-info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+                    .qr-code { width: 200px; height: 200px; margin: 20px auto; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 t-esc="title"/>
+                        </div>
+                        <div class="card-body">
+                            <div style="max-width: 400px; margin: 0 auto;">
+                                <div class="text-center">
+                                    <h4>Scan this QR code to view details</h4>
+                                    <div class="qr-code">
+                                        <img t-att-src="'/report/barcode/QR/%s?width=200&amp;height=200' % qr_url" 
+                                             style="width: 100%; height: 100%; object-fit: contain;" alt="QR Code"/>
+                                    </div>
+                                    <div>
+                                        <a t-att-href="qr_url" class="btn" target="_blank">
+                                            View Info Page
+                                        </a>
+                                    </div>
+                                    <div class="alert alert-info">
+                                        <p style="margin: 0;">QR URL: <span t-esc="qr_url"/></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+        </html>
+    </template>
+</odoo>

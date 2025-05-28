@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
+    <xpath expr="//div[contains(@class,'o_control_panel')]" position="before">
+      <t t-if="env.config.viewType === 'list' and state.viewName === 'garment.sample.tree'">
+        <div class="d-flex justify-content-center align-items-center gap-4 py-4 stats-container">
+          <div class="stats-card">
+              <div class="stats-title"><t t-esc="state.info.new_development.label"/></div>
+              <div class="stats-value text-primary"><t t-esc="state.info.new_development.count"/></div>
+          </div>
+          <div class="stats-card">
+              <div class="stats-title"><t t-esc="state.info.eliminated.label"/></div>
+              <div class="stats-value text-danger"><t t-esc="state.info.eliminated.count"/></div>
+          </div>
+          <div class="stats-card">
+              <div class="stats-title"><t t-esc="state.info.production_available.label"/></div>
+              <div class="stats-value text-success"><t t-esc="state.info.production_available.count"/></div>
+          </div>
+        </div>
+      </t>
+    </xpath>
+  </t>
+</templates>

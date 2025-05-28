@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_production_distribution_tree" model="ir.ui.view">
+        <field name="name">production.distribution.tree</field>
+        <field name="model">production.distribution</field>
+        <field name="arch" type="xml">
+            <tree string="Production Distributions">
+                <field name="order_id"/>
+                <field name="allocate_qty"/>
+                <field name="method"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_distribution_form" model="ir.ui.view">
+        <field name="name">production.distribution.form</field>
+        <field name="model">production.distribution</field>
+        <field name="arch" type="xml">
+            <form string="Production Distribution">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="order_id"/>
+                        </group>
+                        <group>
+                            <field name="allocate_qty"/>
+                            <field name="method"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_distribution" model="ir.actions.act_window">
+        <field name="name">Distributions</field>
+        <field name="res_model">production.distribution</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_distribution" name="Distributions"
+              parent="menu_garment_production_root" action="action_production_distribution" sequence="50"/>
+</odoo> 

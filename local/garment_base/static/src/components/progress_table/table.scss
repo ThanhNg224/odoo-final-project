@@ -1,0 +1,80 @@
+.progress-card {
+    min-width: 300px;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.progress-card .card-header {
+    padding: 0.75rem 1rem;
+}
+
+.progress-card .card-header .btn-link {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.progress-card .card-header .btn-link:hover {
+    opacity: 1;
+}
+
+.progress-card .badge {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.label-vertical {
+    font-weight: 600;
+    white-space: nowrap;
+    color: #495057;
+}
+
+.field-label {
+    font-weight: 500;
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-body hr {
+    margin: 1rem 0;
+}
+
+/* 1. Đảm bảo tab-pane và widget gốc đủ cao để con flex có thể fill */
+.tab-pane.active,
+.o_field_widget.o_field_progress_template {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Nội dung chính (progress table) cũng flex column và fill */
+.o_field_widget.o_field_progress_template .o_progress_table {
+  display: flex;
+  flex-direction: column;
+  flex: 1;             /* chiếm hết không gian dọc */
+  margin: 0;           /* loại bớt margin nếu có */
+  padding: 0;          /* loại bớt padding nếu có */
+}
+
+/* 3. Khung scroll cho cards */
+.o_field_widget.o_field_progress_template .table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.o_field_widget.o_field_progress_template .o_progress_cards {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    min-width: min-content;
+}

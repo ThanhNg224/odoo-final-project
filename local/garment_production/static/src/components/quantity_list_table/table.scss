@@ -1,0 +1,35 @@
+.bold-first tbody tr:first-child td,
+.bold-first tbody tr td:first-child,
+.bold-first thead th {
+    font-weight: bold;
+}
+
+/* Make columns evenly distributed */
+.table-responsive table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table-responsive table th,
+.table-responsive table td {
+    width: 50%;
+    text-align: left;
+    padding: 8px;
+}
+
+.cell-text {
+    display: inline-block;
+    min-height: 1.5em;
+    width: calc(100% - 10px);
+    vertical-align: middle;
+}
+
+/* Add some basic hover indication for editable cells */
+[contenteditable="true"]:hover {
+    background-color: #f8f9fa;
+}
+
+[contenteditable="true"]:focus {
+    outline: 2px solid #0d6efd;
+    background-color: #f8f9fa;
+} 

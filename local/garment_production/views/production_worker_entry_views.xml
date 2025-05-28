@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_production_worker_entry_tree" model="ir.ui.view">
+        <field name="name">production.worker.entry.tree</field>
+        <field name="model">production.worker.entry</field>
+        <field name="arch" type="xml">
+            <tree string="Worker Entries">
+                <field name="employee_id"/>
+                <field name="bundle_id"/>
+                <field name="operation_id"/>
+                <field name="output_qty"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_worker_entry_form" model="ir.ui.view">
+        <field name="name">production.worker.entry.form</field>
+        <field name="model">production.worker.entry</field>
+        <field name="arch" type="xml">
+            <form string="Worker Entry">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="bundle_id"/>
+                            <field name="operation_id"/>
+                        </group>
+                        <group>
+                            <field name="output_qty"/>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                    <field name="note"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_worker_entry" model="ir.actions.act_window">
+        <field name="name">Worker Entries</field>
+        <field name="res_model">production.worker.entry</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_worker_entry" name="Worker Entries"
+              parent="menu_garment_production_root" action="action_production_worker_entry" sequence="40"/>
+</odoo> 

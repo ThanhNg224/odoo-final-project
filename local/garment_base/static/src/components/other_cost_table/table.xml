@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="garment.OtherCostTable">
+        <t t-if="props.record.data[props.name]">
+            <div class="d-flex justify-content-between mb-2" t-if="!props.readonly">
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm" t-on-click="addRow">
+                        Add New Cost
+                    </button>
+                </div>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="() => saveTemplate()">
+                        Save Template
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" t-on-click="() => useTemplate()">
+                        Use Template
+                    </button>
+                </div>
+            </div>
+
+            <table class="table table-sm" t-att-class="classFromDecoration">
+                <thead>
+                    <tr>
+                        <th>Cost Name</th>
+                        <th>Amount</th>
+                        <th t-if="!props.readonly" class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="state.rows" t-as="row" t-key="row_index" t-index="row_index">
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" t-att-value="row.cost_name" 
+                                       t-on-input="(event) => updateCell(event, 'cost_name', row_index)" 
+                                       t-att-disabled="props.readonly"/>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" t-att-value="row.amount || 0" 
+                                       t-on-input="(event) => updateCell(event, 'amount', row_index)" 
+                                       t-att-disabled="props.readonly"
+                                       step="1"/>
+                            </td>
+                            <t t-if="!props.readonly">
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" t-on-click="() => deleteRow(row_index)">
+                                        Delete
+                                    </button>
+                                </td>
+                            </t>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </t>
+    </t>
+</templates>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="garment.ProgressTable">
+        <div class="o_progress_table">
+            <!-- controls -->
+            <div class="d-flex justify-content-between mb-3">
+                <button type="button" class="btn btn-primary btn-sm" t-on-click="addRow">Add Progress</button>
+                <div>
+                    <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="saveTemplate">Save Template</button>
+                    <button type="button" class="btn btn-primary btn-sm" t-on-click="useTemplate">Use Template</button>
+                </div>
+            </div>
+            <!-- cards container -->
+            <div class="table-wrapper">
+                <div class="o_progress_cards">
+                    <t t-foreach="state.rows" t-as="row" t-key="row_index">
+                        <div class="card progress-card flex-shrink-0 me-3">
+                            <!-- header -->
+                            <div class="card-header d-flex align-items-center justify-content-between" t-att-class="{
+                                'bg-dark': row.state === 'not_started',
+                                'bg-info': row.state === 'in_progress',
+                                'bg-success': row.state === 'completed'
+                            }">
+                                <div class="d-flex align-items-center">
+                                    <span class="text-white fw-bold me-2">
+                                        <t t-esc="row_index + 1"/>
+                                    </span>
+                                    <span class="text-white fw-bold">
+                                        <t t-esc="row.name"/>
+                                    </span>
+                                </div>
+                                <div class="card-nav">
+                                    <button class="btn btn-link btn-sm p-0 me-1 text-white" t-if="row_index > 0" t-on-click="() => this.moveRow(row_index, -1)">
+                                        <i class="fa fa-chevron-left"/>
+                                    </button>
+                                    <button class="btn btn-link btn-sm p-0 text-white" t-if="row_index &lt; state.rows.length - 1" t-on-click="() => this.moveRow(row_index, 1)">
+                                        <i class="fa fa-chevron-right"/>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-header py-2">
+                                <div class="d-flex align-items-center">
+                                    <span class="me-2 fw-bold">Status:</span>
+                                    <span class="fw-bold" t-att-class="{
+                                        'text-dark': row.state === 'not_started',
+                                        'text-info': row.state === 'in_progress',
+                                        'text-success': row.state === 'completed'
+                                    }">
+                                        <t t-esc="{
+                                            'not_started': 'Not Started',
+                                            'in_progress': 'In Progress',
+                                            'completed': 'Completed'
+                                        }[row.state] || 'Not Started'"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="label-vertical" style="width: 80px;">Plan</div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Start Date:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.plan.start_date || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">End Date:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.plan.end_date || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Quantity:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.plan.quantity || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">In Charge:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.plan.person_in_charge || '-'"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="d-flex mt-2">
+                                    <div class="label-vertical" style="width: 80px;">Actual</div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Start Date:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.actual.start_date || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">End Date:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.actual.end_date || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Total Qty:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.actual.total_quantity || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Completed:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.actual.completed_quantity || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Defect:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.actual.defect_quantity || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Department:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="departmentNames[row.actual.department_id] || '-'"/>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <div class="field-label" style="width: 100px;">Unit Price:</div>
+                                            <div class="flex-grow-1">
+                                                <span t-esc="row.actual.unit_price || '-'"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <t t-if="row.remark">
+                                    <hr/>
+                                    <div class="d-flex">
+                                        <div class="label-vertical" style="width: 80px;">Remark</div>
+                                        <div class="flex-grow-1">
+                                            <span t-esc="row.remark"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="card-footer text-end">
+                                <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="() => this.editRow(row_index)">
+                                    Edit
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm" t-on-click="() => this.removeRow(row_index)">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

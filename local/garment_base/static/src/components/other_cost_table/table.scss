@@ -1,0 +1,33 @@
+// TODO: remove second selector when we remove legacy badge field
+span.badge {
+    border: 10px;
+    font-size: 12px;
+    user-select: none;
+    background-color: red;
+    font-weight: 500;
+    transition: none;
+    color: white;
+}
+
+.bold-first tbody tr:first-child td,
+.bold-first tbody tr td:first-child {
+    font-weight: bold;
+}
+
+.delete-col {
+    width: 80px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.cell-text {
+    display: inline-block;
+    min-height: 1.5em;
+    width: calc(100% - 80px);
+    vertical-align: middle;
+}
+
+.o_form_view .o_form_sheet_bg {
+    max-width: none !important;
+    width: 100% !important;
+}

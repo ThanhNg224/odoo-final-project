@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="garment.MaterialDetailTable">
+        <t t-if="props.record.data[props.name]">
+            <!-- Controls above table -->
+            <div class="d-flex justify-content-between mb-2" t-if="!props.readonly">
+                <!-- Left group -->
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm" t-on-click="addRow">
+                        Add Row
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm ms-1" t-on-click="addColumn">
+                        Add Column
+                    </button>
+                </div>
+                <!-- Right group -->
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="() => saveTemplate()">
+                        Save Template
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" t-on-click="() => useTemplate()">
+                        Use Template
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="table table-sm table-bordered mb-0" t-att-class="classFromDecoration">
+                    <thead>
+                        <tr>
+                            <t t-foreach="state.rows[0]" t-as="header" t-key="header_index" t-index="header_index">
+                                <th class="p-0 text-center">
+                                    <button type="button" 
+                                            class="btn btn-sm btn-outline-danger" 
+                                            t-on-click="() => deleteColumn(header_index)" 
+                                            t-if="!state.protectedColumns.includes(header) &amp;&amp; !props.readonly">
+                                        -
+                                    </button>
+                                </th>
+                            </t>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="state.rows" t-as="row" t-key="row_index" t-index="row_index">
+                            <tr>
+                                <t t-foreach="Object.values(row)" t-as="cell" t-key="cell_index" t-index="cell_index">
+                                    <td t-att-contenteditable="!props.readonly &amp;&amp; (row_index !== 0 || cell_index >= state.originalColumnCount) &amp;&amp; !['Material Name', 'Color', 'Material Code', 'Color Code', 'Total Quantity Used'].includes(state.rows[0][cell_index])" 
+                                        t-on-blur="(event) => onCellBlur(event, row_index, cell_index)"
+                                        t-on-click="(event) => onCellClick(event, row_index, cell_index)">
+                                        <t t-esc="cell"/>
+                                    </td>
+                                </t>
+                                <t t-if="!props.readonly">
+                                    <td class="delete-col text-center">
+                                        <button type="button" 
+                                                class="btn btn-sm btn-outline-danger" 
+                                                t-on-click="() => deleteRow(row_index)"
+                                                t-if="row_index !== 0">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Material Dropdown -->
+            <div t-if="state.showMaterialDropdown" 
+                 class="dropdown-menu show" 
+                 role="menu" 
+                 aria-labelledby="materialDropdown"
+                 t-att-style="state.dropdownPosition ? 'position: fixed; top: ' + state.dropdownPosition.top + 'px; left: ' + state.dropdownPosition.left + 'px;' : ''">
+                <div class="dropdown-header">Select Material</div>
+                <t t-foreach="state.materials" t-as="material" t-key="material.code">
+                    <button type="button" 
+                            class="dropdown-item" 
+                            role="menuitem"
+                            t-on-click="() => onMaterialSelect(material)">
+                        <t t-esc="material.code"/> - <t t-esc="material.name"/>
+                    </button>
+                </t>
+            </div>
+
+            <!-- Color Dropdown -->
+            <div t-if="state.showColorDropdown" 
+                 class="dropdown-menu show" 
+                 role="menu" 
+                 aria-labelledby="colorDropdown"
+                 t-att-style="state.dropdownPosition ? 'position: fixed; top: ' + state.dropdownPosition.top + 'px; left: ' + state.dropdownPosition.left + 'px;' : ''">
+                <div class="dropdown-header">Select Color</div>
+                <t t-foreach="state.colors" t-as="color" t-key="color.code">
+                    <button type="button" 
+                            class="dropdown-item" 
+                            role="menuitem"
+                            t-on-click="() => onColorSelect(color)">
+                        <t t-esc="color.code"/> - <t t-esc="color.name"/>
+                    </button>
+                </t>
+            </div>
+        </t>
+    </t>
+</templates>

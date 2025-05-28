@@ -1,0 +1,45 @@
+<odoo>
+    <record id="view_production_salary_adjust_tree" model="ir.ui.view">
+        <field name="name">production.salary.adjust.tree</field>
+        <field name="model">production.salary.adjust</field>
+        <field name="arch" type="xml">
+            <tree string="Salary Adjustments">
+                <field name="employee_id"/>
+                <field name="month"/>
+                <field name="old_amount"/>
+                <field name="new_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_salary_adjust_form" model="ir.ui.view">
+        <field name="name">production.salary.adjust.form</field>
+        <field name="model">production.salary.adjust</field>
+        <field name="arch" type="xml">
+            <form string="Salary Adjustment">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="month"/>
+                        </group>
+                        <group>
+                            <field name="old_amount"/>
+                            <field name="new_amount"/>
+                        </group>
+                    </group>
+                    <field name="reason"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_salary_adjust" model="ir.actions.act_window">
+        <field name="name">Salary Adjustments</field>
+        <field name="res_model">production.salary.adjust</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_salary_adjust" name="Salary Adjustments"
+              parent="menu_garment_production_root" action="action_production_salary_adjust" sequence="90"/>
+</odoo> 

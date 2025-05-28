@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_stock_production_inout_tree" model="ir.ui.view">
+        <field name="name">stock.production.inout.tree</field>
+        <field name="model">stock.production.inout</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Movements" decoration-success="direction=='in'" decoration-danger="direction=='out'">
+                <field name="lot_id"/>
+                <field name="direction"/>
+                <field name="qty"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_stock_production_inout_form" model="ir.ui.view">
+        <field name="name">stock.production.inout.form</field>
+        <field name="model">stock.production.inout</field>
+        <field name="arch" type="xml">
+            <form string="Stock Movement">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="lot_id"/>
+                            <field name="direction"/>
+                        </group>
+                        <group>
+                            <field name="qty"/>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_production_inout" model="ir.actions.act_window">
+        <field name="name">Stock Movements</field>
+        <field name="res_model">stock.production.inout</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_stock_production_inout" name="Stock Movements"
+              parent="menu_garment_production_root" action="action_stock_production_inout" sequence="60"/>
+</odoo> 

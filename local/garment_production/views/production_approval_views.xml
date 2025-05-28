@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_production_approval_tree" model="ir.ui.view">
+        <field name="name">production.approval.tree</field>
+        <field name="model">production.approval</field>
+        <field name="arch" type="xml">
+            <tree string="Production Approvals" decoration-success="approved" decoration-danger="not approved">
+                <field name="order_id"/>
+                <field name="approved"/>
+                <field name="approval_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_approval_form" model="ir.ui.view">
+        <field name="name">production.approval.form</field>
+        <field name="model">production.approval</field>
+        <field name="arch" type="xml">
+            <form string="Production Approval">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="order_id"/>
+                        </group>
+                        <group>
+                            <field name="approved"/>
+                            <field name="approval_date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_approval" model="ir.actions.act_window">
+        <field name="name">Production Approvals</field>
+        <field name="res_model">production.approval</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_approval" name="Approvals" 
+              parent="menu_garment_production_root" action="action_production_approval" sequence="70"/>
+</odoo> 

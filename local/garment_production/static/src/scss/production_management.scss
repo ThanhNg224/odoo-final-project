@@ -1,0 +1,256 @@
+// Production Management custom styles
+
+// Status colors
+.status-draft {
+    background-color: #f0f8ff;
+}
+
+.status-in-progress {
+    background-color: #f0fff0;
+}
+
+.status-done {
+    background-color: #e6f7ff;
+}
+
+// Summary cards
+.summary-card {
+    background-color: #f0f8ff;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+// Progress bar styling
+.o_progressbar {
+    height: 8px !important;
+    margin-bottom: 16px !important;
+}
+
+// Kanban card customization
+.o_kanban_record.production_order {
+    border-left: 4px solid #0ea5e9;
+}
+
+// Form view section headings
+.o_form_label.section_heading {
+    font-weight: 600;
+    font-size: 16px;
+    color: #3f3f3f;
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+// Filter button styling
+.filter-button {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.filter-button.active {
+    background-color: #0ea5e9;
+    color: white;
+    border-color: #0ea5e9;
+}
+
+// Table styling
+.production-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th {
+        background-color: #f0f8ff;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    td {
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    tr:hover {
+        background-color: #f9f9f9;
+    }
+}
+
+// Size chart styling
+.size-chart-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    
+    th {
+        background-color: #f0f8ff;
+    }
+}
+
+// Material details table
+.material-table {
+    width: 100% !important;
+    table-layout: auto !important;
+    border-collapse: collapse;
+    margin: 0 !important;
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        min-width: 100px; /* Ensure minimum width for all cells */
+    }
+    
+    th {
+        background-color: #f0f8ff;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: visible;
+    }
+}
+
+// Process price list table
+.process-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    th {
+        background-color: #f0f8ff;
+    }
+    
+    .multiplier-col {
+        background-color: #e6f7ff;
+    }
+}
+
+// Fix for tight table columns - ensures headers are visible
+.o_list_view th {
+    min-width: 100px;  // Increased minimum width for all table headers
+    white-space: nowrap;
+    overflow: visible;
+    padding: 8px 12px;
+}
+
+// Set specific minimum widths for common columns
+.o_list_view {
+    width: 100% !important;
+    table-layout: auto !important;
+    margin: 0 !important;
+    
+    th[data-name="name"],
+    th[data-name="material_name"] {
+        min-width: 150px;
+    }
+    
+    th[data-name="item_number"],
+    th[data-name="specification"] {
+        min-width: 120px;
+    }
+    
+    th[data-name="quantity"],
+    th[data-name="unit"],
+    th[data-name="color"] {
+        min-width: 100px;
+    }
+    
+    th[data-name="total_usage"],
+    th[data-name="unit_price"],
+    th[data-name="total_price"] {
+        min-width: 120px;
+    }
+}
+
+// Ensure full width table containers
+.o_form_view .o_notebook .tab-content {
+    width: 100% !important;
+    overflow-x: auto;
+    padding-top: 15px !important; /* Add spacing at the top to prevent overlap */
+}
+
+.o_form_view .o_notebook .tab-pane {
+    padding: 0 !important;
+}
+
+// Remove width restrictions from table containers
+.table-responsive, 
+.o_list_view_container, 
+.o_list_renderer, 
+.o_list_table {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+}
+
+/* Fix table overlap with headers */
+.o_notebook .nav-tabs {
+    margin-bottom: 15px !important;
+}
+
+/* Force tables to expand to full width */
+.o_content, 
+.o_form_sheet_bg, 
+.o_form_sheet, 
+.o_form_view,
+.o_notebook,
+.tab-content,
+.tab-pane {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Fix order lines table */
+.o_form_view .o_field_widget .o_list_renderer {
+    margin-top: 15px !important;
+    width: 100% !important;
+}
+
+/* Make sure form takes maximum width available */
+.o_form_sheet {
+    min-width: 90vw !important;
+    max-width: 95vw !important;
+}
+
+/* Order lines table specific styling */
+.order-lines-table {
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+.order-lines-container {
+    padding-top: 20px !important;
+}
+
+/* Override Odoo's default table width restrictions */
+.o_form_view .o_form_sheet {
+    min-width: 90vw !important;
+    max-width: 95vw !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+}
+
+/* Ensure the notebook container takes full width */
+.o_notebook {
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+/* Remove conflicting CSS */
+.o_form_sheet_bg {
+    padding: 0 !important;
+}
+
+/* Make sure tables fill the available space */
+.o_list_view {
+    display: block !important;
+    overflow-x: auto !important;
+} 

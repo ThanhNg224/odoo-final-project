@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_production_finance_approval_tree" model="ir.ui.view">
+        <field name="name">production.finance.approval.tree</field>
+        <field name="model">production.finance.approval</field>
+        <field name="arch" type="xml">
+            <tree string="Finance Approvals" decoration-success="approved" decoration-danger="not approved">
+                <field name="order_id"/>
+                <field name="amount"/>
+                <field name="approved"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_finance_approval_form" model="ir.ui.view">
+        <field name="name">production.finance.approval.form</field>
+        <field name="model">production.finance.approval</field>
+        <field name="arch" type="xml">
+            <form string="Finance Approval">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="order_id"/>
+                            <field name="amount"/>
+                        </group>
+                        <group>
+                            <field name="approved"/>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_finance_approval" model="ir.actions.act_window">
+        <field name="name">Finance Approvals</field>
+        <field name="res_model">production.finance.approval</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_finance_approval" name="Finance Approvals"
+              parent="menu_garment_production_root" action="action_production_finance_approval" sequence="80"/>
+</odoo> 

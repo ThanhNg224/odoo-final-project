@@ -1,0 +1,10 @@
+// TODO: remove second selector when we remove legacy badge field
+span.badge {
+    border: 10px;
+    font-size: 12px;
+    user-select: none;
+    background-color: red;
+    font-weight: 500;
+    transition: none;
+    color: white;
+}

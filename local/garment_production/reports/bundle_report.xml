@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Enhanced QWeb Template with Original JSON QR Data and More Information -->
+  <template id="report_bundle_qr">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="bundle">
+        <!-- Generate QR Data -->
+        <t t-set="qr_data" t-value="{
+          'bundle_no': bundle.bundle_no,
+          'size': bundle.size,
+          'qty': bundle.qty,
+          'order': bundle.order_line_id.order_id.name if bundle.order_line_id and bundle.order_line_id.order_id else '',
+          'sample': bundle.order_line_id.order_id.sample_name if bundle.order_line_id and bundle.order_line_id.order_id else '',
+          'client': bundle.order_line_id.order_id.client if bundle.order_line_id and bundle.order_line_id.order_id else ''
+        }"/>
+        
+        <div class="page" style="padding:30px; font-family:Arial, sans-serif; max-width:600px; margin:0 auto; text-align:center; background-color:#f9f9f9; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+          
+          <!-- Header Section -->
+          <div style="border-bottom:2px solid #3498db; padding-bottom:15px; margin-bottom:20px;">
+            <h1 style="color:#2c3e50; font-size:28px; margin-bottom:5px;">Bundle Ticket</h1>
+            <h2 style="color:#3498db; font-size:32px; font-weight:bold; margin-top:0;" t-esc="bundle.bundle_no"/>
+          </div>
+
+          <!-- Bundle Information Section -->
+          <div style="background-color:white; padding:20px; border-radius:6px; margin-bottom:20px; text-align:left; border:1px solid #e0e0e0;">
+            <h3 style="margin-top:0; color:#2c3e50; border-bottom:1px solid #eee; padding-bottom:8px; font-size:18px;">Bundle Details</h3>
+            <table style="width:100%; border-collapse:collapse;">
+              <!-- Size -->
+              <tr style="background-color:#f8f9fa;">
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Size:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <span t-field="bundle.size"/>
+                </td>
+              </tr>
+              
+              <!-- Quantity -->
+              <tr>
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Quantity:</td>
+                <td style="padding:10px; font-size:20px; font-weight:bold; color:#2c3e50;">
+                  <span t-field="bundle.qty"/>
+                </td>
+              </tr>
+              
+              <!-- Creation Date -->
+              <tr style="background-color:#f8f9fa;">
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Created On:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <span t-field="bundle.create_date" t-options="{'widget': 'date'}"/>
+                </td>
+              </tr>
+              
+              <!-- Bundle ID -->
+              <tr>
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Bundle ID:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <span t-field="bundle.id"/>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Order Information Section -->
+          <div style="background-color:white; padding:20px; border-radius:6px; margin-bottom:20px; text-align:left; border:1px solid #e0e0e0;">
+            <h3 style="margin-top:0; color:#2c3e50; border-bottom:1px solid #eee; padding-bottom:8px; font-size:18px;">Order Information</h3>
+            <table style="width:100%; border-collapse:collapse;">
+              <!-- Order -->
+              <tr style="background-color:#f8f9fa;">
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Order Ref:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <t t-if="bundle.order_line_id and bundle.order_line_id.order_id">
+                    <span t-field="bundle.order_line_id.order_id.name"/>
+                  </t>
+                  <t t-else="">-</t>
+                </td>
+              </tr>
+              
+              <!-- Client -->
+              <tr>
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Client:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <t t-if="bundle.order_line_id and bundle.order_line_id.order_id and bundle.order_line_id.order_id.client">
+                    <span t-field="bundle.order_line_id.order_id.client"/>
+                  </t>
+                  <t t-else="">-</t>
+                </td>
+              </tr>
+              
+              <!-- Sample -->
+              <tr style="background-color:#f8f9fa;">
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Sample:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <t t-if="bundle.order_line_id and bundle.order_line_id.order_id and bundle.order_line_id.order_id.sample_name">
+                    <span t-field="bundle.order_line_id.order_id.sample_name"/>
+                  </t>
+                  <t t-else="">-</t>
+                </td>
+              </tr>
+              
+              <!-- Order Date -->
+              <tr>
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Order Date:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <t t-if="bundle.order_line_id and bundle.order_line_id.order_id">
+                    <span t-field="bundle.order_line_id.order_id.create_date" t-options="{'widget': 'date'}"/>
+                  </t>
+                  <t t-else="">-</t>
+                </td>
+              </tr>
+              
+              <!-- Planned Quantity from OrderLine -->
+              <tr style="background-color:#f8f9fa;">
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Planned Qty:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <t t-if="bundle.order_line_id and bundle.order_line_id.planned_qty">
+                    <span t-field="bundle.order_line_id.planned_qty"/>
+                  </t>
+                  <t t-else="">-</t>
+                </td>
+              </tr>
+              
+              <!-- Done Quantity from OrderLine -->
+              <tr>
+                <td style="padding:10px; font-weight:bold; color:#7f8c8d; width:30%; font-size:16px;">Done Qty:</td>
+                <td style="padding:10px; font-size:16px; color:#2c3e50;">
+                  <t t-if="bundle.order_line_id and bundle.order_line_id.done_qty">
+                    <span t-field="bundle.order_line_id.done_qty"/>
+                  </t>
+                  <t t-else="">-</t>
+                </td>
+              </tr>
+            </table>
+          </div>
+          
+          <!-- QR Code Section with JSON Data - KEPT AS ORIGINAL -->
+          <div style="margin:0 auto; text-align:center; background-color:white; padding:20px; border-radius:6px; display:inline-block; border:1px solid #e0e0e0;">
+            <!-- Convert qr_data dictionary to JSON string for the QR code -->
+            <img t-att-src="'/report/barcode/QR/' + json.dumps(qr_data)" 
+                 style="width:180px; height:180px;" alt="QR Code"/>
+            <div style="margin-top:10px; font-size:12px; color:#7f8c8d;">Scan for complete bundle details</div>
+          </div>
+          
+          <!-- Generation Timestamp -->
+          <div style="margin-top:15px; font-size:12px; color:#95a5a6; border-top:1px solid #ddd; padding-top:10px;">
+            <div>Generated: <t t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></div>
+          </div>
+        </div>
+      </t>
+    </t>
+  </template>
+
+  <!-- Report definitions remain unchanged -->
+  <record id="action_bundle_qr_report" model="ir.actions.report">
+    <field name="name">Print Bundle Ticket</field>
+    <field name="model">production.bundle</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">garment_production.report_bundle_qr</field>
+    <field name="report_file">garment_production.report_bundle_qr</field>
+    <field name="binding_model_id" eval="ref('garment_base.model_production_bundle')"/>
+
+    <field name="binding_type">report</field>
+  </record>
+  
+  <record id="action_bundle_qr_report_html" model="ir.actions.report">
+    <field name="name">View Bundle Ticket</field>
+    <field name="model">production.bundle</field>
+    <field name="report_type">qweb-html</field>
+    <field name="report_name">garment_production.report_bundle_qr</field>
+    <field name="report_file">garment_production.report_bundle_qr</field>
+    <field name="binding_model_id" eval="ref('garment_base.model_production_bundle')"/>
+
+    <field name="binding_type">report</field>
+  </record>
+</odoo>

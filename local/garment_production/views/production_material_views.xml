@@ -1,0 +1,63 @@
+<odoo>
+    <record id="view_production_material_tree" model="ir.ui.view">
+        <field name="name">production.material.tree</field>
+        <field name="model">production.material</field>
+        <field name="arch" type="xml">
+            <tree string="Production Materials" class="material-table">
+                <field name="name"/>
+                <field name="item_number"/>
+                <field name="specification"/>
+                <field name="unit"/>
+                <field name="location"/>
+                <field name="single_piece_qty"/>
+                <field name="unit_loss"/>
+                <field name="quantity"/>
+                <field name="total_usage"/>
+                <field name="unit_price"/>
+                <field name="supplier"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_material_form" model="ir.ui.view">
+        <field name="name">production.material.form</field>
+        <field name="model">production.material</field>
+        <field name="arch" type="xml">
+            <form string="Production Material">
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Material Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="item_number"/>
+                            <field name="specification"/>
+                            <field name="unit"/>
+                            <field name="location"/>
+                        </group>
+                        <group>
+                            <field name="single_piece_qty"/>
+                            <field name="unit_loss"/>
+                            <field name="quantity"/>
+                            <field name="total_usage"/>
+                            <field name="unit_price"/>
+                            <field name="supplier"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_material" model="ir.actions.act_window">
+        <field name="name">Materials</field>
+        <field name="res_model">production.material</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_material" name="Materials"
+              parent="menu_garment_production_root" action="action_production_material" sequence="75"/>
+</odoo> 

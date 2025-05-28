@@ -1,0 +1,8 @@
+<odoo>
+    <menuitem 
+        id="menu_garment_groups_view" 
+        name="Garment Groups"
+        parent="base.menu_users"
+        action="action_garment_groups_view"
+        sequence="40" />
+</odoo>

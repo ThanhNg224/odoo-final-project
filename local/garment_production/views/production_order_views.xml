@@ -1,0 +1,346 @@
+<odoo>
+    <!-- List/Tree View -->
+    <record id="view_production_order_tree" model="ir.ui.view">
+        <field name="name">production.order.tree</field>
+        <field name="model">production.order</field>
+        <field name="arch" type="xml">
+            <tree string="Production Orders" decoration-info="state=='draft'" decoration-warning="state=='in_progress'" decoration-success="state=='done'" class="production-table">
+                <field name="bed_number" string="Bed number"/>
+                <field name="name" string="Production model number"/>
+                <field name="style_id" string="Style"/>
+                <field name="image" widget="image" class="oe_avatar" options="{'size': [40, 50]}"/>
+                <field name="quantity" string="Quantity"/>
+                <field name="process_count" string="Number of processes"/>
+                <field name="cost_total" string="Total process price" widget="monetary"/>
+                <field name="style_id" string="Shape"/>
+                <field name="client" string="Client"/>
+                <field name="state" string="State"/>
+                <field name="department" string="Department"/>
+                <field name="salary_month" string="Salary month"/>
+                <field name="shipping_date" string="Shipping date"/>
+                <field name="delivery_date" string="Delivery date"/>
+                <field name="planned_date" string="Release date"/>
+                <field name="progress_percentage" widget="progressbar"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_production_order_form" model="ir.ui.view">
+        <field name="name">production.order.form</field>
+        <field name="model">production.order</field>
+        <field name="arch" type="xml">
+            <form string="Production Order">
+                <header>
+                    <button name="set_in_progress" string="Start Production" type="object" 
+                            class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="set_done" string="Mark as Done" type="object" 
+                            class="oe_highlight" invisible="state != 'in_progress'"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
+                </header>
+                <sheet>
+                    <!-- Main Information -->
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" icon="fa-list" name="action_view_processes" type="object">
+                            <field string="Processes" name="process_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Production Reference"/>
+                        </h1>
+                    </div>
+                    
+                    <!-- Order Section -->
+                    <group name="order_info">
+                        <group string="Order" name="order_left">
+                            <field name="order_name" placeholder="Order Name"/>
+                            <field name="order_number" placeholder="Order Number"/>
+                            <field name="client"/>
+                            <field name="delivery_date"/>
+                        </group>
+                        <group name="order_right">
+                        </group>
+                    </group>
+                    
+                    <!-- Sample Information Section -->
+                    <group name="sample_info">
+                        <group string="Sample Information" name="sample_left">
+                            <field name="sample_id" options="{'no_create': True}" domain="[]" 
+                                   widget="many2one"/>
+                            <field name="sample_name" invisible="1"/>
+                            <field name="sample_number" invisible="1"/>
+                            <field name="brand" readonly="1"/>
+                            <field name="development_date" readonly="1"/>
+                            <field name="designer" readonly="1"/>
+                            <field name="sample_color" readonly="1"/>
+                        </group>
+                        <group name="sample_right">
+                        </group>
+                    </group>
+                    
+                    <group name="dates">
+                        <group string="Dates" name="dates_left">
+                            <field name="planned_date"/>
+                            <field name="shipping_date"/>
+                            <field name="cost_total" widget="monetary"/>
+                        </group>
+                        <group name="dates_right">
+                        </group>
+                    </group>
+                    
+                    <!-- Progress Bar -->
+                    <div name="progress">
+                        <label for="progress_percentage" string="Progress"/>
+                        <field name="progress_percentage" widget="progressbar"/>
+                    </div>
+                    
+                    <!-- Tabs for different sections -->
+                    <notebook>
+                        <page string="Order Lines" name="order_lines">
+                            <div class="alert alert-info mb-3">
+                                <p><strong>Instructions:</strong> Order lines show the quantities for each size. You can generate these lines from the selected sample.</p>
+                            </div>
+                            
+                            <div class="text-left mb-3">
+                                <button name="generate_order_lines_from_sample" 
+                                        string="Generate from Sample" 
+                                        type="object" 
+                                        class="btn-primary"
+                                        invisible="sample_id == False"/>
+                            </div>
+                            
+                            <div class="order-lines-container" style="width: 100%; overflow-x: auto; margin-top: 15px;">
+                                <field name="line_ids">
+                                    <tree editable="bottom" class="o_list_view order-lines-table">
+                                        <field name="size"/>
+                                        <field name="color"/>
+                                        <field name="planned_qty"/>
+                                        <field name="done_qty"/>
+                                    </tree>
+                                </field>
+                            </div>
+                        </page>
+                        <page string="Bundles">
+                            <div class="text-left mb-3">
+                                <button name="generate_bundles"
+                                        string="Create Bundle"
+                                        type="object"
+                                        class="btn-primary"/>
+                            </div>
+                            <field name="line_ids">
+                                <tree>
+                                    <field name="size"/>
+                                    <field name="planned_qty"/>
+                                    <field name="bundle_ids" widget="one2many_list">
+                                        <tree>
+                                            <field name="bundle_no"/>
+                                            <field name="qty"/>
+                                            <field name="ticket_printed"/>
+                                        </tree>
+                                    </field>
+                                </tree>
+                            </field>
+                        </page>
+                        
+                        <page string="Material Details" name="materials">
+                            <div class="material-details-container" style="width: 100%; overflow-x: auto;">
+                                <field name="material_ids">
+                                    <tree class="material-table">
+                                        <field name="name"/>
+                                        <field name="item_number"/>
+                                        <field name="specification"/>
+                                        <field name="unit"/>
+                                        <field name="quantity"/>
+                                        <field name="total_usage"/>
+                                        <field name="unit_price"/>
+                                    </tree>
+                                </field>
+                            </div>
+                        </page>
+                        
+                        <page string="Process Price List" name="processes">
+                            <field name="process_ids">
+                                <tree editable="bottom" class="process-table">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="unit_price"/>
+                                    <field name="multiplier" class="multiplier-col"/>
+                                    <field name="quantity"/>
+                                    <field name="total_price"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                        
+                        <page string="Process Requirements" name="process_requirements">
+                            <field name="process_requirements" placeholder="Enter process requirements here..."/>
+                        </page>
+                        
+                        <page string="Other Costs" name="other_costs">
+                            <div class="alert alert-info mb-3">
+                                <p><strong>Information:</strong> These costs are imported from the sample. They represent additional costs related to production.</p>
+                            </div>
+                            
+                            <button name="action_remove_other_cost_entries" string="Clean Up Empty Entries" type="object" class="oe_highlight oe_right"/>
+                            
+                            <field name="cost_ids" domain="[('cost_type', '=', 'other')]" context="{'default_cost_type': 'other'}" options="{'always_reload': true}">
+                                <tree editable="bottom">
+                                    <field name="note" string="Cost Name"/>
+                                    <field name="amount" widget="monetary" sum="Total"/>
+                                    <field name="cost_type" invisible="1"/>
+                                </tree>
+                            </field>
+                            
+                            <group class="oe_subtotal_footer">
+                                <field name="total_other_cost" string="Total Other Cost" class="oe_subtotal_footer_separator" readonly="1" widget="monetary"/>
+                            </group>
+                        </page>
+                        
+                        <page string="Costs" name="costs">
+                            <div class="alert alert-info mb-3">
+                                <p><strong>Cost Summary:</strong> This shows the automatically calculated cost totals from different sections.</p>
+                            </div>
+                            
+                            <group class="oe_cost_summary">
+                                <group string="Cost Breakdown" class="oe_cost_table">
+                                    <field name="total_other_cost" string="Total Other Cost" widget="monetary" readonly="1"/>
+                                    <field name="total_material_cost" string="Material Cost" widget="monetary" readonly="1"/>
+                                    <field name="total_process_cost" string="Process Cost" widget="monetary" readonly="1"/>
+                                </group>
+                            </group>
+                            
+                            <group class="oe_subtotal_footer">
+                                <field name="cost_total" string="Total Cost" class="oe_subtotal_footer_separator" readonly="1" widget="monetary"/>
+                            </group>
+                        </page>
+                        
+                        <page string="Progress Entries" name="progress_entries">
+                            <field name="progress_ids">
+                                <tree editable="bottom">
+                                    <field name="step_name"/>
+                                    <field name="completed_qty"/>
+                                    <field name="date"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                        
+                        <page string="Distributions" name="distributions">
+                            <field name="distribution_ids">
+                                <tree editable="bottom">
+                                    <field name="allocate_qty"/>
+                                    <field name="method"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Kanban View -->
+    <record id="view_production_order_kanban" model="ir.ui.view">
+        <field name="name">production.order.kanban</field>
+        <field name="model">production.order</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="name"/>
+                <field name="bed_number"/>
+                <field name="style_id"/>
+                <field name="quantity"/>
+                <field name="completed_quantity"/>
+                <field name="state"/>
+                <field name="progress_percentage"/>
+                <field name="image"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click production_order">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('production.order', 'image', record.id.raw_value)" alt="Production"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title"><field name="name"/></strong>
+                                <div>Bed: <field name="bed_number"/></div>
+                                <div>Style: <field name="style_id"/></div>
+                                <div>Quantity: <field name="quantity"/> (<field name="completed_quantity"/> done)</div>
+                                <div class="oe_kanban_bottom_right">
+                                    <span t-attf-class="badge #{record.state.raw_value == 'draft' ? 'bg-info' : (record.state.raw_value == 'in_progress' ? 'bg-warning' : 'bg-success')}">
+                                        <field name="state"/>
+                                    </span>
+                                </div>
+                                <div class="o_kanban_progress">
+                                    <progress t-att-value="record.progress_percentage.raw_value" max="100"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_production_order_search" model="ir.ui.view">
+        <field name="name">production.order.search</field>
+        <field name="model">production.order</field>
+        <field name="arch" type="xml">
+            <search string="Search Production Orders">
+                <field name="name"/>
+                <field name="client"/>
+                <field name="department"/>
+                <field name="style_id"/>
+                <field name="sample_name"/>
+                <field name="sample_number"/>
+                <field name="brand"/>
+                <field name="designer"/>
+                <separator/>
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
+                <filter string="In Progress" name="in_progress" domain="[('state','=','in_progress')]"/>
+                <filter string="Done" name="done" domain="[('state','=','done')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="groupby_state" context="{'group_by': 'state'}"/>
+                    <filter string="Client" name="groupby_client" context="{'group_by': 'client'}"/>
+                    <filter string="Style" name="groupby_style" context="{'group_by': 'style_id'}"/>
+                    <filter string="Sample Name" name="groupby_sample_name" context="{'group_by': 'sample_name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_production_orders" model="ir.actions.act_window">
+        <field name="name">Production Orders</field>
+        <field name="res_model">production.order</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph</field>
+        <field name="context">{'search_default_draft': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new production order
+            </p>
+        </field>
+    </record>
+
+    <!-- Root Menu -->
+    <menuitem id="menu_garment_production_root" 
+              name="Production Management"
+              web_icon="garment_production,static/description/icon.png"
+              sequence="10"/>
+              
+    <!-- Configuration Menu -->
+    <menuitem id="menu_garment_production_config"
+              name="Configuration"
+              parent="menu_garment_production_root"
+              sequence="100"/>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_production_orders"
+              name="Production Orders"
+              parent="menu_garment_production_root"
+              action="action_production_orders"
+              sequence="10"/>
+</odoo>

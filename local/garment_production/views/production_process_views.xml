@@ -1,0 +1,50 @@
+<odoo>
+    <record id="view_production_process_tree" model="ir.ui.view">
+        <field name="name">production.process.tree</field>
+        <field name="model">production.process</field>
+        <field name="arch" type="xml">
+            <tree string="Process Price List" editable="bottom" class="process-table">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="unit_price"/>
+                <field name="multiplier" class="multiplier-col"/>
+                <field name="quantity"/>
+                <field name="total_price" sum="Total"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_process_form" model="ir.ui.view">
+        <field name="name">production.process.form</field>
+        <field name="model">production.process</field>
+        <field name="arch" type="xml">
+            <form string="Production Process">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                            <field name="unit_price"/>
+                        </group>
+                        <group>
+                            <field name="multiplier"/>
+                            <field name="quantity"/>
+                            <field name="total_price"/>
+                        </group>
+                    </group>
+                    <field name="note" placeholder="Add notes here..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_process" model="ir.actions.act_window">
+        <field name="name">Processes</field>
+        <field name="res_model">production.process</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_process" name="Processes"
+              parent="menu_garment_production_root" action="action_production_process" sequence="35"/>
+</odoo> 

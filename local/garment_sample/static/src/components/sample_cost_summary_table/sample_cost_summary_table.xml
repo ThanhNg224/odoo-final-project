@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="garment_sample.SampleCostSummaryTable" owl="1">
+        <div class="o_horizontal_separator mt-4 mb-3 text-uppercase fw-bolder small">Sample Cost Summary</div>
+        <div class="o_sample_cost_summary_table">
+            <table class="table table-sm table-bordered align-middle text-center mb-0">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th colspan="2">Material Cost (1)</th>
+                        <th colspan="2">Process Cost (2)</th>
+                        <th colspan="2">Other Cost (3)</th>
+                        <th colspan="2">Total Cost (1+2+3)</th>
+                        <th colspan="2">Quotation (4)</th>
+                        <th colspan="2">Profit (4-1-2-3)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Details</td>
+                        <td>Budget</td>
+                        <td>Actual</td>
+                        <td>Budget</td>
+                        <td>Actual</td>
+                        <td>Budget</td>
+                        <td>Actual</td>
+                        <td>Budget</td>
+                        <td>Actual</td>
+                        <td>Budget</td>
+                        <td>Actual</td>
+                        <td>Budget</td>
+                        <td>Actual</td>
+                    </tr>
+                    <tr>
+                        <td>Single Piece</td>
+                        <td><span t-esc="state.materialCostBudget"/></td>
+                        <td><span t-esc="state.materialCostActual"/></td>
+                        <td><span t-esc="state.processCostBudget"/></td>
+                        <td><span t-esc="state.processCostActual"/></td>
+                        <td><span t-esc="state.otherCostBudget"/></td>
+                        <td><span t-esc="state.otherCostActual"/></td>
+                        <td><span t-esc="state.totalCostBudget"/></td>
+                        <td><span t-esc="state.totalCostActual"/></td>
+                        <td><span t-esc="state.quoteBudget"/></td>
+                        <td><span t-esc="state.quoteActual"/></td>
+                        <td t-att-class="state.profitBudget &lt; 0 ? 'negative' : 'positive'">
+                            <span t-esc="state.profitBudget"/>
+                        </td>
+                        <td t-att-class="state.profitActual &lt; 0 ? 'negative' : 'positive'">
+                            <span t-esc="state.profitActual"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </t>
+</templates>

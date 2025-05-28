@@ -1,0 +1,9 @@
+{
+    "exclude": [
+      "src/odoo",        // exclude Odoo core
+      "**/__pycache__",
+      "**/node_modules",
+      ".venv"
+    ]
+  }
+  

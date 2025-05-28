@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form view cho Finished Product Size -->
+    <record id="view_finished_product_size_form" model="ir.ui.view">
+        <field name="name">garment.sample.finished.product.size.form</field>
+        <field name="model">garment.finished_product_size</field>
+        <field name="arch" type="xml">
+            <form string="Finished Product Size">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="template" widget="finished_product_size_table" options="{'is_from_sample_view': false}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action + Menu cho Finished Product Size -->
+    <record id="action_finished_product_size" model="ir.actions.act_window">
+        <field name="name">Finished Product Sizes</field>
+        <field name="res_model">garment.finished_product_size</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first finished product size
+            </p>
+        </field>
+    </record>
+
+    <!-- Form view cho Material Detail -->
+    <record id="view_material_detail_form" model="ir.ui.view">
+        <field name="name">garment.sample.material.detail.form</field>
+        <field name="model">garment.material_detail</field>
+        <field name="arch" type="xml">
+            <form string="Material Detail">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="template" widget="material_detail_table" options="{'is_from_sample_view': false}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action cho Material Detail -->
+    <record id="action_material_detail" model="ir.actions.act_window">
+        <field name="name">Material Details</field>
+        <field name="res_model">garment.material_detail</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first material detail
+            </p>
+        </field>
+    </record>
+
+    <!-- Form view cho Other Cost -->
+    <record id="view_other_cost_form" model="ir.ui.view">
+        <field name="name">garment.sample.other.cost.form</field>
+        <field name="model">garment.other_cost</field>
+        <field name="arch" type="xml">
+            <form string="Other Cost">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="template" widget="other_cost_table" options="{'is_from_sample_view': false}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action + Menu cho Other Cost -->
+    <record id="action_other_cost" model="ir.actions.act_window">
+        <field name="name">Other Costs</field>
+        <field name="res_model">garment.other_cost</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first other cost
+            </p>
+        </field>
+    </record>
+
+    <!-- Form view cho Process Table -->
+    <record id="view_process_table_form" model="ir.ui.view">
+        <field name="name">garment.process_table.form</field>
+        <field name="model">garment.process_table</field>
+        <field name="arch" type="xml">
+            <form string="Process Table">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="template" widget="process_table" options="{'is_from_sample_view': false}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action + Menu cho Process Table -->
+    <record id="action_process_table" model="ir.actions.act_window">
+        <field name="name">Process Table</field>
+        <field name="res_model">garment.process_table</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first process table
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,98 @@
+span.badge {
+    border: 10px;
+    font-size: 12px;
+    user-select: none;
+    background-color: red;
+    font-weight: 500;
+    transition: none;
+    color: white;
+}
+
+.bold-first tbody tr:first-child td,
+.bold-first tbody tr td:first-child {
+    font-weight: bold;
+}
+
+.delete-col {
+    width: 80px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.cell-text {
+    display: inline-block;
+    min-height: 1.5em;
+    width: calc(100% - 80px);
+    vertical-align: middle;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+}
+
+/* Prevent o_cell from expanding the dialog */
+.o_cell.o_wrap_input.flex-grow-1.flex-sm-grow-0.text-break {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.table-wrapper table {
+    white-space: nowrap;
+    border-collapse: collapse;
+    width: max-content; /* Allow table to be as wide as needed */
+    min-width: 100%; /* But at least as wide as container */
+    border-spacing: 0;
+}
+
+// Dropdown styles for floating outside the table
+.dropdown-menu {
+    position: fixed; // Position relative to viewport
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    margin: 0;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    z-index: 1050; // Higher z-index to float above other elements
+    background-color: white;
+}
+
+.dropdown-header {
+    display: block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+    white-space: nowrap;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+        color: #16181b;
+        text-decoration: none;
+        background-color: #f8f9fa;
+    }
+
+    &:active {
+        color: #fff;
+        text-decoration: none;
+        background-color: #0d6efd;
+    }
+}

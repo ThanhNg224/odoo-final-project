@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo data for Finished Product Size -->
+        <record id="specification_detail_demo_1" model="garment.specification_detail">
+            <field name="name">Demo: Standard Size Template</field>
+            <field name="template">
+                <![CDATA[
+                    [
+                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
+                        ["Black", 10, 20, 30, 40, 30, 20, 10, 5],
+                        ["White", 5, 15, 25, 35, 25, 15, 5, 2],
+                        ["Blue", 8, 18, 28, 38, 28, 18, 8, 4]
+                    ]
+                ]]>
+            </field>
+        </record>
+
+        <record id="specification_detail_demo_2" model="garment.specification_detail">
+            <field name="name">Demo: Summer Collection Template</field>
+            <field name="template">
+                <![CDATA[
+                    [
+                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
+                        ["Red", 5, 10, 20, 30, 20, 10, 5, 2],
+                        ["Yellow", 3, 8, 15, 25, 15, 8, 3, 1],
+                        ["Green", 4, 9, 18, 28, 18, 9, 4, 2]
+                    ]
+                ]]>
+            </field>
+        </record>
+
+
+
+        <record id="garment_order_demo_1" model="garment.order">
+            <field name="name">Winter Blouse Collection</field>
+            <field name="order_number">ORD-2024-002</field>
+            <field name="shape">Blouse</field>
+            <field name="color">Blue</field>
+            <field name="quantity">300</field>
+            <field name="unit_price">45.00</field>
+            <field name="cutting_date">2025-09-25</field>
+            <field name="issuing_date">2025-04-11</field>
+            <field name="receiving_date">2025-04-18</field>
+            <field name="state">draft</field>
+            <field name="material_detail">
+                <![CDATA[
+                    [
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""]
+                    ]
+                ]]>
+            </field>
+            <field name="specification_detail">
+                <![CDATA[
+                    [
+                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
+                        ["Blue", 8, 18, 28, 38, 28, 18, 8, 4]
+                    ]
+                ]]>
+            </field>
+            <field name="other_cost">
+                <![CDATA[
+                    [
+                        {"cost_name": "Embroidery", "amount": 800.00},
+                        {"cost_name": "Packaging", "amount": 400.00},
+                        {"cost_name": "Shipping", "amount": 300.00}
+                    ]
+                ]]>
+            </field>
+        </record>
+        <record id="garment_order_demo_2" model="garment.order">
+            <field name="name">Winter Jacket Collection</field>
+            <field name="order_number">ORD-2024-002</field>
+            <field name="shape">Jacket</field>
+            <field name="color">Blue</field>
+            <field name="quantity">300</field>
+            <field name="unit_price">45.00</field>
+            <field name="cutting_date">2025-09-25</field>
+            <field name="issuing_date">2025-04-11</field>
+            <field name="receiving_date">2025-04-18</field>
+            <field name="state">draft</field>
+            <field name="material_detail">
+                <![CDATA[
+                    [
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""]
+                    ]
+                ]]>
+            </field>
+            <field name="specification_detail">
+                <![CDATA[
+                    [
+                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
+                        ["Blue", 8, 18, 28, 38, 28, 18, 8, 4]
+                    ]
+                ]]>
+            </field>
+            <field name="other_cost">
+                <![CDATA[
+                    [
+                        {"cost_name": "Embroidery", "amount": 800.00},
+                        {"cost_name": "Packaging", "amount": 400.00},
+                        {"cost_name": "Shipping", "amount": 300.00}
+                    ]
+                ]]>
+            </field>
+        </record>
+
+        <!-- Create a test order -->
+        <record id="test_order_1" model="garment.order">
+            <field name="name">Test Order</field>
+            <field name="order_number">TEST-001</field>
+            <field name="shape">T-Shirt</field>
+            <field name="color">Blue</field>
+            <field name="quantity">100</field>
+            <field name="unit_price">10.00</field>
+            <field name="cutting_date">2025-05-11</field>
+            <field name="issuing_date">2025-04-11</field>
+            <field name="receiving_date">2025-04-16</field>
+            <field name="state">draft</field>
+            <field name="issuing_company">PMC</field>
+            <field name="receiving_company">PMC</field>
+        </record>
+    </data>
+</odoo>

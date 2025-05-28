@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_production_bundle_tree" model="ir.ui.view">
+        <field name="name">production.bundle.tree</field>
+        <field name="model">production.bundle</field>
+        <field name="arch" type="xml">
+            <tree string="Production Bundles">
+                <field name="bundle_no"/>
+                <field name="order_line_id"/>
+                <field name="size"/>
+                <field name="qty"/>
+                <field name="ticket_printed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_bundle_form" model="ir.ui.view">
+        <field name="name">production.bundle.form</field>
+        <field name="model">production.bundle</field>
+        <field name="arch" type="xml">
+            <form string="Production Bundle">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="bundle_no"/>
+                            <field name="order_line_id"/>
+                            <field name="size"/>
+                        </group>
+                        <group>
+                            <field name="qty"/>
+                            <field name="ticket_printed"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_bundle" model="ir.actions.act_window">
+        <field name="name">Production Bundles</field>
+        <field name="res_model">production.bundle</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_bundle" name="Bundles"
+              parent="menu_garment_production_root" action="action_production_bundle" sequence="30"/>
+</odoo> 

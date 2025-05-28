@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_product_lot_tree" model="ir.ui.view">
+        <field name="name">product.lot.tree</field>
+        <field name="model">product.lot</field>
+        <field name="arch" type="xml">
+            <tree string="Product Lots">
+                <field name="lot_code"/>
+                <field name="order_id"/>
+                <field name="quantity"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_product_lot_form" model="ir.ui.view">
+        <field name="name">product.lot.form</field>
+        <field name="model">product.lot</field>
+        <field name="arch" type="xml">
+            <form string="Product Lot">
+                <sheet>
+                    <group>
+                        <field name="lot_code"/>
+                        <field name="order_id"/>
+                        <field name="quantity"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_lot" model="ir.actions.act_window">
+        <field name="name">Product Lots</field>
+        <field name="res_model">product.lot</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_product_lot" name="Product Lots"
+              parent="menu_garment_production_root" action="action_product_lot" sequence="30"/>
+</odoo>

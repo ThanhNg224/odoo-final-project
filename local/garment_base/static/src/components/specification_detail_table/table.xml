@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="garment.SpecificationDetailTable">
+        <t t-if="props.record.data[props.name]">
+            <!-- Controls above table -->
+            <div class="d-flex justify-content-between mb-2 control-wrapper" t-if="!props.readonly">
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="this.addRow">
+                        Add Row
+                    </button>
+                </div>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="this.saveTemplate">
+                        Save Template
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" t-on-click="this.useTemplate">
+                        Use Template
+                    </button>
+                </div>
+            </div>
+
+            <!-- Size Checkbox Row -->
+            <div class="size-checkbox-row mb-3" t-if="!props.readonly">
+                <t t-foreach="state.availableSizes" t-as="size" t-key="size">
+                    <div class="custom-checkbox-wrapper">
+                    <input
+                        class="custom-checkbox"
+                        type="checkbox"
+                        t-att-id="'size-' + size"
+                        t-att-checked="state.existingSizes.includes(size)"
+                        t-on-change="() => this.toggleSizeColumn(size)"
+                    />
+                    <label class="custom-checkbox-label" t-att-for="'size-' + size">
+                        <t t-esc="size"/>
+                    </label>
+                    </div>
+                </t>
+            </div>
+
+            <!-- Table -->
+            <div class="table-wrapper">
+                <table class="table table-sm bold-first" t-att-class="classFromDecoration">
+                    <thead>
+                        <tr>
+                            <t t-foreach="state.rows[0]" t-as="row" t-key="row_index" t-index="row_index">
+                                <td class="p-0 text-start">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" 
+                                            t-on-click="() => deleteColumn(row_index)" 
+                                            t-if="state.rows[0].length > 1 &amp;&amp; !props.readonly &amp;&amp; row_index > 0">
+                                        -
+                                    </button>
+                                </td>
+                            </t>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="state.rows" t-as="row" t-key="row_index" t-index="row_index">
+                            <tr>
+                                <t t-foreach="Object.values(row)" t-as="cell" t-key="cell_index" t-index="cell_index">
+                                    <td
+                                        t-att-contenteditable="!props.readonly &amp;&amp; row_index > 0"
+                                        t-on-blur="row_index > 0 ? (event) => onCellBlur(event, row_index, cell_index) : undefined"
+                                    >
+                                        <t t-esc="cell"/>
+                                    </td>
+                                </t>
+                                <td class="text-start fw-bold" t-if="row_index > 0">
+                                    <t t-esc="this.getRowSum(row)"/>
+                                </td>
+                                <td t-if="row_index === 0" class="fw-bold text-start">Sum</td>
+                                <t t-if="state.rows.length > 2 &amp;&amp; !props.readonly &amp;&amp; row_index > 1">
+                                    <td class="delete-col text-center">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" t-on-click="() => deleteRow(row_index)">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</templates>

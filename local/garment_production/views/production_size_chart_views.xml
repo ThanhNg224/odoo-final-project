@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_production_size_chart_tree" model="ir.ui.view">
+        <field name="name">production.size.chart.tree</field>
+        <field name="model">production.size.chart</field>
+        <field name="arch" type="xml">
+            <tree string="Size Chart" editable="bottom" class="size-chart-table">
+                <field name="row_number"/>
+                <field name="column"/>
+                <field name="value"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_production_size_chart_form" model="ir.ui.view">
+        <field name="name">production.size.chart.form</field>
+        <field name="model">production.size.chart</field>
+        <field name="arch" type="xml">
+            <form string="Size Chart Entry">
+                <sheet>
+                    <group>
+                        <field name="row_number"/>
+                        <field name="column"/>
+                        <field name="value"/>
+                    </group>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_production_size_chart" model="ir.actions.act_window">
+        <field name="name">Size Charts</field>
+        <field name="res_model">production.size.chart</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_production_size_chart" name="Size Charts"
+              parent="menu_garment_production_root" action="action_production_size_chart" sequence="85"/>
+</odoo> 

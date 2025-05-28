@@ -1,0 +1,138 @@
+<odoo>
+  <!-- First create garment sample records -->
+  <record id="demo_sample_1" model="garment.sample">
+    <field name="name">Demo T-Shirt Sample</field>
+    <field name="number">DS-001</field>
+    <field name="shape">T-Shirt</field>
+    <field name="client">Demo Fashion</field>
+    <field name="brand">Demo Brand</field>
+    <field name="designer">Demo Designer</field>
+    <field name="pattern_maker">Demo Pattern Maker</field>
+    <field name="development_date">2025-04-01</field>
+    <field name="state">in_progress</field>
+    <field name="finished_product_size">
+      <![CDATA[
+        [
+          ["Size", "Chest (cm)", "Length (cm)"],
+          ["M", "100", "70"],
+          ["L", "105", "72"],
+          ["XL", "110", "74"]
+        ]
+      ]]>
+    </field>
+    <field name="material_detail">
+      <![CDATA[
+        [
+          ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Position", "Quantity per Item", "Loss per Item", "Total Quantity"],
+          ["Cotton", "CT001", "White", "WH001", "100% Cotton", "m", "Body", "1.5", "0.1", "1.6"]
+        ]
+      ]]>
+    </field>
+    <field name="process_table">
+      <![CDATA[
+        [
+          {
+            "name": "Cutting",
+            "unit_price": 5000,
+            "multiplier": 1,
+            "note": "Cut fabric"
+          },
+          {
+            "name": "Sewing",
+            "unit_price": 8000,
+            "multiplier": 1,
+            "note": "Sew pieces together"
+          }
+        ]
+      ]]>
+    </field>
+  </record>
+
+  <record id="demo_sample_2" model="garment.sample">
+    <field name="name">Demo Jeans Sample</field>
+    <field name="number">DS-002</field>
+    <field name="shape">Jeans</field>
+    <field name="client">Demo Fashion</field>
+    <field name="brand">Demo Brand</field>
+    <field name="designer">Demo Designer</field>
+    <field name="pattern_maker">Demo Pattern Maker</field>
+    <field name="development_date">2025-04-02</field>
+    <field name="state">in_progress</field>
+    <field name="finished_product_size">
+      <![CDATA[
+        [
+          ["Size", "Waist (cm)", "Length (cm)"],
+          ["32", "81", "105"],
+          ["34", "86", "106"]
+        ]
+      ]]>
+    </field>
+  </record>
+
+  <!-- First create product styles -->
+  <record id="demo_style_1" model="product.style">
+    <field name="code">TS-001</field>
+    <field name="name">White T-Shirt</field>
+    <field name="season">Summer 2025</field>
+  </record>
+
+  <record id="demo_style_2" model="product.style">
+    <field name="code">JN-001</field>
+    <field name="name">Blue Jeans</field>
+    <field name="season">Spring 2025</field>
+  </record>
+
+  <!-- Create operation prices -->
+  <record id="demo_operation_price_1" model="operation.price">
+    <field name="operation_name">Basic Sewing</field>
+    <field name="unit_price">5.50</field>
+  </record>
+
+  <!-- Create production orders -->
+  <record id="demo_order_1" model="production.order">
+    <field name="name">PO-001</field>
+    <field name="style_id" ref="demo_style_1"/>
+    <field name="planned_date">2025-04-15</field>
+    <field name="price_policy_id" ref="demo_operation_price_1"/>
+    <field name="state">in_progress</field>
+    <field name="finance_state">waiting</field>
+    <field name="cost_total">2750.00</field>
+    <field name="sample_id" ref="demo_sample_1"/>
+  </record>
+
+  <record id="demo_order_2" model="production.order">
+    <field name="name">PO-002</field>
+    <field name="style_id" ref="demo_style_2"/>
+    <field name="planned_date">2025-04-16</field>
+    <field name="price_policy_id" ref="demo_operation_price_1"/>
+    <field name="state">draft</field>
+    <field name="finance_state">waiting</field>
+    <field name="cost_total">1650.00</field>
+    <field name="sample_id" ref="demo_sample_2"/>
+  </record>
+
+  <!-- Create order lines -->
+  <record id="demo_order_line_1" model="production.order.line">
+    <field name="order_id" ref="demo_order_1"/>
+    <field name="size">M</field>
+    <field name="planned_qty">300</field>
+  </record>
+
+  <record id="demo_order_line_2" model="production.order.line">
+    <field name="order_id" ref="demo_order_1"/>
+    <field name="size">L</field>
+    <field name="planned_qty">200</field>
+  </record>
+
+  <record id="demo_order_line_3" model="production.order.line">
+    <field name="order_id" ref="demo_order_2"/>
+    <field name="size">32</field>
+    <field name="planned_qty">150</field>
+  </record>
+
+  <record id="demo_order_line_4" model="production.order.line">
+    <field name="order_id" ref="demo_order_2"/>
+    <field name="size">34</field>
+    <field name="planned_qty">150</field>
+  </record>
+</odoo>

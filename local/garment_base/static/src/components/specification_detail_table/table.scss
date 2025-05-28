@@ -1,0 +1,80 @@
+// TODO: remove second selector when we remove legacy badge field
+span.badge {
+    border: 10px;
+    font-size: 12px;
+    user-select: none;
+    background-color: red;
+    font-weight: 500;
+    transition: none;
+    color: white;
+}
+
+.bold-first tbody tr:first-child td,
+.bold-first tbody tr td:first-child {
+    font-weight: bold;
+}
+
+.delete-col {
+    width: 80px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.cell-text {
+    display: inline-block;
+    min-height: 1.5em;
+    width: calc(100% - 80px);
+    vertical-align: middle;
+}
+
+.o_form_view .o_form_sheet_bg {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.control-wrapper {
+    /* ensure wrapper is positioned for absolute child */
+    position: relative;
+}
+
+.size-checkbox-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #f5f7fa;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.custom-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    flex: 0 1 calc(25% - 10px);
+    margin-bottom: 8px;
+}
+
+/* 3) Enlarge & color the checkbox itself */
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #714B67;
+    /* toggle thumb color */
+    cursor: pointer;
+}
+
+/* 4) Label styling */
+.custom-checkbox-label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    user-select: none;
+}
+
+/* 5) When checked, highlight the whole wrapper */
+.custom-checkbox:checked+.custom-checkbox-label,
+.custom-checkbox:checked~.custom-checkbox-label {
+    color: #fff;
+}

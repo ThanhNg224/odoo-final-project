@@ -1,0 +1,16 @@
+<odoo>
+  <record id="demo_progress_1" model="production.progress">
+    <field name="order_id" ref="demo_order_1"/>
+    <field name="step_name">Cutting</field>
+    <field name="completed_qty">200</field>
+    <field name="note">Cutting in progress</field>
+    <field name="date">2025-04-15</field>
+  </record>
+  <record id="demo_progress_2" model="production.progress">
+    <field name="order_id" ref="demo_order_1"/>
+    <field name="step_name">Sewing</field>
+    <field name="completed_qty">150</field>
+    <field name="note">Sewing stage started</field>
+    <field name="date">2025-04-16</field>
+  </record>
+</odoo>

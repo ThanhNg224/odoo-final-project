@@ -1,0 +1,42 @@
+<odoo>
+<record id="view_production_progress_tree" model="ir.ui.view">
+    <field name="name">production.progress.tree</field>
+    <field name="model">production.progress</field>
+    <field name="arch" type="xml">
+        <tree string="Production Progress">
+            <field name="order_id" string="Production Order" width="180"/>
+            <field name="step_name" string="Production Step" width="180"/>
+            <field name="completed_qty" string="Completed Quantity" width="160"/>
+            <field name="note" string="Note" width="220"/>
+            <field name="date" string="Date" width="140"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_production_progress_form" model="ir.ui.view">
+    <field name="name">production.progress.form</field>
+    <field name="model">production.progress</field>
+    <field name="arch" type="xml">
+        <form string="Production Progress Entry">
+            <sheet>
+                <group>
+                    <field name="order_id"/>
+                    <field name="step_name"/>
+                    <field name="completed_qty"/>
+                    <field name="note"/>
+                    <field name="date"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="action_production_progress" model="ir.actions.act_window">
+    <field name="name">Production Progress</field>
+    <field name="res_model">production.progress</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_production_progress" name="Production Progress"
+          parent="menu_garment_production_root" action="action_production_progress" sequence="20"/>
+</odoo>

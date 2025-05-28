@@ -1,0 +1,917 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* garment_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e-20231119\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-23 23:19+0000\n"
+"PO-Revision-Date: 2025-05-23 23:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#, python-format
+msgid "Actions"
+msgstr "Thao tác"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Actual"
+msgstr "Thực tế"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.xml:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
+#, python-format
+msgid "Add Column"
+msgstr "Thêm Cột"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
+#, python-format
+msgid "Add New Cost"
+msgstr "Thêm Chi Phí Mới"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#, python-format
+msgid "Add Process"
+msgstr ""
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Add Progress"
+msgstr "Thêm Tiến Độ"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.xml:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
+#, python-format
+msgid "Add Row"
+msgstr "Thêm Hàng"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__all_samples
+msgid "All Samples"
+msgstr "Tất cả Mẫu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
+#, python-format
+msgid "Amount"
+msgstr "Số Tiền"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__brand
+msgid "Brand"
+msgstr "Thương hiệu"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__in_progress
+msgid "Can be produced"
+msgstr "Có thể sản xuất"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__cancelled
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#, python-format
+msgid "Cannot delete protected columns"
+msgstr "Không Thể Xóa Các Cột Được Bảo Vệ"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__client
+msgid "Client"
+msgstr "Khách hàng"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__name
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__color
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__color
+msgid "Color"
+msgstr "Màu"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__code
+msgid "Color Code"
+msgstr "Mã Màu"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__completed
+msgid "Completed"
+msgstr "Hoàn tất"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Completed:"
+msgstr "Hoàn thành:"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__confirmed
+msgid "Confirmed"
+msgstr "Đã xác nhận"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
+#, python-format
+msgid "Cost Name"
+msgstr "Tên chi phí"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__create_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__create_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__create_date
+msgid "Created on"
+msgstr "Ngày Tạo"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__cutting_date
+msgid "Cutting Date"
+msgstr "Ngày Cắt Vải"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Defect:"
+msgstr "Lỗi:"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.xml:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Delete"
+msgstr "Xóa"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_department
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__department_id
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__department_id
+msgid "Department"
+msgstr "Bộ Phận"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__name
+msgid "Department Name"
+msgstr "Tên Bộ Phận"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Department:"
+msgstr "Bộ Phận:"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__designer
+msgid "Designer"
+msgstr "Người thiết kế"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__development_date
+msgid "Development Date"
+msgstr "Ngày Phát Triển"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__display_name
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__display_name
+msgid "Display Name"
+msgstr "Tên Hiển Thị"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__draft
+msgid "Draft"
+msgstr "Bản Nháp"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__eliminated
+msgid "Eliminated"
+msgstr "Đã Loại Bỏ"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "End Date:"
+msgstr "Ngày kết thúc:"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Error"
+msgstr "Lỗi"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Error loading template"
+msgstr "Lỗi tải mẫu dữ liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Error loading templates"
+msgstr "Lỗi tải mẫu dữ liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Error saving template"
+msgstr "Lỗi lưu mẫu dữ liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Failed to apply template: %s"
+msgstr "Không Thể Áp Dụng Mẫu: %s"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#, python-format
+msgid "Failed to load colors"
+msgstr "Không Thể Tải Dữ Liệu Màu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#, python-format
+msgid "Failed to load materials"
+msgstr "Không Thể Tải Dữ Liệu Nguyên Vật Liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Failed to load templates: %s"
+msgstr "Không Thể Tải Mẫu: %s"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Failed to save template"
+msgstr "Không Thể Lưu Mẫu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Failed to save template: %s"
+msgstr "Không Thể Lưu Mẫu: %s"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_finished_product_size
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__finished_product_size
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__finished_product_size
+msgid "Finished Product Size"
+msgstr "Kích Thước Thành Phẩm"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_order
+msgid "Garment Order"
+msgstr "Đơn Hàng May Mặc"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_sample
+msgid "Garment Sample"
+msgstr "Mẫu May Mặc"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__id
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__id
+msgid "ID"
+msgstr "ID"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__image_detail
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__image_detail
+msgid "Image Details"
+msgstr "Chi Tiết Hình Ảnh"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "In Charge:"
+msgstr "Phụ Trách:"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__in_production
+msgid "In Production"
+msgstr "Đang Sản Xuất"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#, python-format
+msgid "Invalid template data format"
+msgstr "Định dạng dữ liệu mẫu không hợp lệ"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_inventory_color
+msgid "Inventory Color"
+msgstr "Dữ liệu Màu"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_inventory_material
+msgid "Inventory Material"
+msgstr "Dữ liệu Vật liệu"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_company
+msgid "Issuing Company"
+msgstr "Công Ty Phát Hành"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_date
+msgid "Issuing Date"
+msgstr "Ngày Phát Hành"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__write_uid
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__write_uid
+msgid "Last Updated by"
+msgstr "Cập Nhật Gần Nhất Bởi"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__write_date
+msgid "Last Updated on"
+msgstr "Cập Nhật Gần Nhất Vào"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__code
+msgid "Material Code"
+msgstr "Mã Vật Liệu"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_material_detail
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__material_detail
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__material_detail
+msgid "Material Detail"
+msgstr "Chi Tiết Vật Liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#, python-format
+msgid "Material Detail Table"
+msgstr "Bảng Chi Tiết Vật Liệu"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__name
+msgid "Material Name"
+msgstr "Tên Vật Liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#, python-format
+msgid "Multiplier"
+msgstr "Hệ Số Nhân"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__name
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__name
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__name
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__name
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__name
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__name
+#, python-format
+msgid "Name"
+msgstr "Tên"
+
+#. module: garment_base
+#: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__new
+msgid "New development, pending approval"
+msgstr "Phát triển mới, chờ phê duyệt"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#, python-format
+msgid "No data"
+msgstr "Không có dữ liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "No progress data to save"
+msgstr "Không có dữ liệu tiến độ để lưu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "No templates available"
+msgstr "Không có mẫu nào khả dụng"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "No templates found"
+msgstr "Không tìm thấy mẫu nào"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#, python-format
+msgid "Notes"
+msgstr "Ghi Chú"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__name
+msgid "Order Name"
+msgstr "Tên Đơn Hàng"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__order_number
+msgid "Order Number"
+msgstr "Số Đơn Hàng"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_other_cost
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__other_cost
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__other_cost
+msgid "Other Costs"
+msgstr "Chi Phí Khác"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_drafter
+msgid "Pattern Drafter"
+msgstr "Người Thiết Kế Rập"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_maker
+msgid "Pattern Maker"
+msgstr "Người Làm Rập"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_size
+msgid "Pattern Size"
+msgstr "Kích Thước Rập"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_company_phone
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__receiving_company_phone
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__phone_number
+msgid "Phone Number"
+msgstr "Số Điện Thoại"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Plan"
+msgstr "Kế Hoạch"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__process_requirements
+msgid "Process Requirements"
+msgstr "Yêu Cầu Quy Trình"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_process_table
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__process_table
+msgid "Process Table"
+msgstr "Bảng Quy Trình"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__progress_detail
+msgid "Progress Detail"
+msgstr "Chi Tiết Tiến Độ"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_progress_template
+msgid "Progress Template"
+msgstr "Mẫu Tiến Độ"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Progress deleted successfully"
+msgstr "Xóa tiến độ thành công"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Progress updated successfully"
+msgstr "Cập nhật tiến độ thành công"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__published_by
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__published_by
+msgid "Published By"
+msgstr "Người Đăng"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__quantity
+msgid "Quantity"
+msgstr "Số Lượng"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Quantity:"
+msgstr "Số Lượng:"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__quotation
+msgid "Quotation"
+msgstr "Báo Giá"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__receiving_company
+msgid "Receiving Company"
+msgstr "Công Ty Nhận"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__receiving_date
+msgid "Receiving Date"
+msgstr "Ngày Nhận"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__related_document
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__related_document
+msgid "Related Documents"
+msgstr "Tài Liệu Liên Quan"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__sample_id
+msgid "Related Sample"
+msgstr "Mẫu Liên Quan"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Remark"
+msgstr "Ghi Chú"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__remark
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__remark
+msgid "Remarks"
+msgstr "Ghi Chú"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__number
+msgid "Sample Number"
+msgstr "Số Mẫu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.xml:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Save Template"
+msgstr "Lưu Mẫu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
+#, python-format
+msgid "Select Color"
+msgstr "Chọn Màu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
+#, python-format
+msgid "Select Material"
+msgstr "Chọn Nguyên Liệu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#, python-format
+msgid "Serial Number"
+msgstr "Số Thứ Tự"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__shape
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__shape
+msgid "Shape"
+msgstr "Hình Dáng"
+
+#. module: garment_base
+#: model:ir.model,name:garment_base.model_garment_specification_detail
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__specification_detail
+msgid "Specification Detail"
+msgstr "Chi Tiết Thông Số"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Start Date:"
+msgstr "Ngày Bắt Đầu:"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__state
+msgid "State"
+msgstr "Trạng Thái"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__state
+msgid "Status"
+msgstr "Trạng Thái"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Status:"
+msgstr "Trạng Thái:"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Success"
+msgstr "Thành Công"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__supervisor
+msgid "Supervisor"
+msgstr "Người Giám Sát"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#, python-format
+msgid "Table"
+msgstr "Bảng"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "TableProcess"
+msgstr "Bảng Quy Trình"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Task name is required"
+msgstr "Tên công việc là bắt buộc"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__template
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__template
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__template
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__template
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__template
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__template
+msgid "Template"
+msgstr "Mẫu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Template '%s' applied successfully!"
+msgstr "Áp dụng mẫu '%s' thành công!"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Template '%s' saved successfully!"
+msgstr "Lưu mẫu '%s' thành công!"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__name
+msgid "Template Name"
+msgstr "Tên Mẫu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Template loaded successfully"
+msgstr "Tải mẫu thành công"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.js:0
+#, python-format
+msgid "Template saved successfully"
+msgstr "Lưu mẫu thành công"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Total Qty:"
+msgstr "Tổng SL:"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__unit_price
+#, python-format
+msgid "Unit Price"
+msgstr "Đơn Giá"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Unit Price:"
+msgstr "Đơn Giá:"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__quantity
+msgid "Unit Quantity"
+msgstr "Đơn Vị Số Lượng"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Unknown error occurred"
+msgstr "Đã xảy ra lỗi không xác định"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__update_date
+msgid "Update At"
+msgstr "Cập Nhật Lúc"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.xml:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
+#: code:addons/garment_base/static/src/components/process_table/table.xml:0
+#: code:addons/garment_base/static/src/components/progress_table/table.xml:0
+#, python-format
+msgid "Use Template"
+msgstr "Sử Dụng Mẫu"
+
+#. module: garment_base
+#. odoo-javascript
+#: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
+#: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
+#: code:addons/garment_base/static/src/components/process_table/table.js:0
+#, python-format
+msgid "Warning"
+msgstr "Cảnh Báo"

@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_approval_request_tree" model="ir.ui.view">
+        <field name="name">approval.request.tree</field>
+        <field name="model">approval.request</field>
+        <field name="arch" type="xml">
+            <tree string="Approval Requests">
+                <field name="order_id"/>
+                <field name="approver"/>
+                <field name="approved"/>
+                <field name="approval_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_approval_request_form" model="ir.ui.view">
+        <field name="name">approval.request.form</field>
+        <field name="model">approval.request</field>
+        <field name="arch" type="xml">
+            <form string="Approval Request">
+                <sheet>
+                    <group>
+                        <field name="order_id"/>
+                        <field name="approver"/>
+                        <field name="approved"/>
+                        <field name="approval_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_approval_request" model="ir.actions.act_window">
+        <field name="name">Approval Requests</field>
+        <field name="res_model">approval.request</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_approval_request" name="Approval Requests"
+              parent="menu_production_root" action="action_approval_request" sequence="50"/>
+</odoo>
