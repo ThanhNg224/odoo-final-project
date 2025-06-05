@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_garment_order,access.garment.order,garment_base.model_garment_order,,1,1,1,1
-access_garment_specification_detail,access.garment.specification_detail,garment_base.model_garment_specification_detail,,1,1,1,1

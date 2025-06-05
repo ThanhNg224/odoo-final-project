@@ -154,8 +154,8 @@
     <field name="name">Print Bundle Ticket</field>
     <field name="model">production.bundle</field>
     <field name="report_type">qweb-pdf</field>
-    <field name="report_name">garment_production.report_bundle_qr</field>
-    <field name="report_file">garment_production.report_bundle_qr</field>
+    <field name="report_name">production_management.report_bundle_qr</field>
+    <field name="report_file">production_management.report_bundle_qr</field>
     <field name="binding_model_id" eval="ref('garment_base.model_production_bundle')"/>
 
     <field name="binding_type">report</field>
@@ -165,8 +165,8 @@
     <field name="name">View Bundle Ticket</field>
     <field name="model">production.bundle</field>
     <field name="report_type">qweb-html</field>
-    <field name="report_name">garment_production.report_bundle_qr</field>
-    <field name="report_file">garment_production.report_bundle_qr</field>
+    <field name="report_name">production_management.report_bundle_qr</field>
+    <field name="report_file">production_management.report_bundle_qr</field>
     <field name="binding_model_id" eval="ref('garment_base.model_production_bundle')"/>
 
     <field name="binding_type">report</field>

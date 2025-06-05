@@ -1,126 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- Demo data for Finished Product Size -->
-        <record id="specification_detail_demo_1" model="garment.specification_detail">
-            <field name="name">Demo: Standard Size Template</field>
+        <!-- SPECIFICATION DETAIL TEMPLATES -->
+        <record id="specification_detail_standard" model="garment.specification_detail">
+            <field name="name">Standard Size Distribution Template</field>
             <field name="template">
                 <![CDATA[
                     [
-                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
-                        ["Black", 10, 20, 30, 40, 30, 20, 10, 5],
-                        ["White", 5, 15, 25, 35, 25, 15, 5, 2],
-                        ["Blue", 8, 18, 28, 38, 28, 18, 8, 4]
+                        ["Color Code", "Color Name", "Pantone", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "Total", "Notes"],
+                        ["BL-001", "Navy Blue", "19-3928 TCX", 5, 15, 30, 50, 30, 15, 5, 2, 1, 153, "Main collection color"],
+                        ["WH-001", "Pure White", "11-0601 TCX", 3, 10, 25, 40, 25, 10, 3, 1, 0, 117, "Classic color"],
+                        ["BK-001", "Jet Black", "19-4005 TCX", 4, 12, 28, 45, 28, 12, 4, 2, 1, 136, "Best seller"]
                     ]
                 ]]>
             </field>
         </record>
 
-        <record id="specification_detail_demo_2" model="garment.specification_detail">
-            <field name="name">Demo: Summer Collection Template</field>
+        <record id="specification_detail_premium" model="garment.specification_detail">
+            <field name="name">Premium Collection Size Distribution</field>
             <field name="template">
                 <![CDATA[
                     [
-                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
-                        ["Red", 5, 10, 20, 30, 20, 10, 5, 2],
-                        ["Yellow", 3, 8, 15, 25, 15, 8, 3, 1],
-                        ["Green", 4, 9, 18, 28, 18, 9, 4, 2]
+                        ["Color Code", "Color Name", "Pantone", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL", "Total", "Fabric Type", "Wash Care"],
+                        ["RD-001", "Ruby Red", "18-1663 TCX", 2, 8, 20, 35, 20, 8, 2, 95, "100% Organic Cotton", "Machine wash cold"],
+                        ["GD-001", "Golden Ochre", "16-1142 TCX", 1, 5, 15, 25, 15, 5, 1, 67, "Linen-Cotton Blend", "Dry clean only"],
+                        ["GR-001", "Forest Green", "19-6311 TCX", 3, 7, 18, 30, 18, 7, 3, 86, "Recycled Polyester", "Hand wash recommended"]
                     ]
                 ]]>
             </field>
         </record>
 
-
-
-        <record id="garment_order_demo_1" model="garment.order">
-            <field name="name">Winter Blouse Collection</field>
-            <field name="order_number">ORD-2024-002</field>
-            <field name="shape">Blouse</field>
-            <field name="color">Blue</field>
-            <field name="quantity">300</field>
-            <field name="unit_price">45.00</field>
-            <field name="cutting_date">2025-09-25</field>
-            <field name="issuing_date">2025-04-11</field>
-            <field name="receiving_date">2025-04-18</field>
-            <field name="state">draft</field>
-            <field name="material_detail">
+        <!-- GARMENT ORDERS -->
+        <record id="order_premium_shirts" model="garment.order">
+            <field name="name">Premium Dress Shirts Collection</field>
+            <field name="order_number">ORD-2024-1001</field>
+            <field name="client">Elegant Apparel Inc.</field>
+            <field name="brand">Elegance</brand>
+            <field name="shape">Dress Shirt</shape>
+            <field name="color">Multiple</color>
+            <field name="quantity">500</quantity>
+            <field name="unit_price">850000</unit_price>
+            <field name="currency">VND</currency>
+            <field name="issuing_date">2024-06-01</issuing_date>
+            <field name="cutting_date">2024-06-15</cutting_date>
+            <field name="delivery_date">2024-08-30</delivery_date>
+            <field name="state">confirmed</state>
+            <field name="priority">1</priority>
+            <field name="issuing_company">Elegant Apparel HQ</issuing_company>
+            <field name="receiving_company">Vietnam Manufacturing Center</receiving_company>
+            <field name="designer">Michael Chen</designer>
+            <field name="production_manager">Sarah Johnson</production_manager>
+            <field name="quality_controller">David Wilson</quality_controller>
+            <field name="material_detail" ref="material_detail_tshirt_basic"/>
+            <field name="specification_detail" ref="specification_detail_standard"/>
+            <field name="other_cost">
                 <![CDATA[
                     [
-                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
-                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""]
+                        {
+                            "cost_id": "ORD-OC-1001",
+                            "cost_name": "Custom Embroidery",
+                            "category": "Decoration",
+                            "amount": 25000000,
+                            "currency": "VND",
+                            "supplier": "Precision Embroidery Co.",
+                            "notes": "Logo on left chest"
+                        },
+                        {
+                            "cost_id": "ORD-OC-1002",
+                            "cost_name": "Premium Packaging",
+                            "category": "Presentation",
+                            "amount": 15000000,
+                            "currency": "VND",
+                            "supplier": "Luxury Packaging Ltd.",
+                            "notes": "Wooden hangers + garment bags"
+                        },
+                        {
+                            "cost_id": "ORD-OC-1003",
+                            "cost_name": "Express Shipping",
+                            "category": "Logistics",
+                            "amount": 30000000,
+                            "currency": "VND",
+                            "supplier": "Global Logistics Inc.",
+                            "notes": "Air freight for timely delivery"
+                        }
                     ]
                 ]]>
             </field>
+            <field name="technical_notes">1. All seams must be French seams. 2. Collar and cuffs must be reinforced with interfacing. 3. Buttons must be mother-of-pearl with 4-hole attachment.</field>
+            <field name="quality_requirements">1. Zero tolerance for fabric defects. 2. Stitch density: 12-14 stitches per inch. 3. Color fastness rating minimum 4.</field>
+        </record>
+
+        <record id="order_denim_jackets" model="garment.order">
+            <field name="name">Autumn Denim Jackets Collection</field>
+            <field name="order_number">ORD-2024-1002</field>
+            <field name="client">Urban Outfitters Co.</field>
+            <field name="brand">Streetwear</brand>
+            <field name="shape">Denim Jacket</shape>
+            <field name="color">Indigo Blue</color>
+            <field name="quantity">750</quantity>
+            <field name="unit_price">1200000</unit_price>
+            <field name="currency">VND</currency>
+            <field name="issuing_date">2024-05-15</issuing_date>
+            <field name="cutting_date">2024-06-01</cutting_date>
+            <field name="delivery_date">2024-09-15</delivery_date>
+            <field name="state">in_progress</state>
+            <field name="priority">2</priority>
+            <field name="issuing_company">Urban Outfitters Global</issuing_company>
+            <field name="receiving_company">Vietnam Denim Factory</receiving_company>
+            <field name="designer">Emma Rodriguez</designer>
+            <field name="production_manager">James Wilson</production_manager>
+            <field name="quality_controller">Lisa Nguyen</quality_controller>
+            <field name="material_detail" ref="material_detail_jeans_premium"/>
             <field name="specification_detail">
                 <![CDATA[
                     [
-                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
-                        ["Blue", 8, 18, 28, 38, 28, 18, 8, 4]
+                        ["Color Code", "Color Name", "Pantone", "XS", "S", "M", "L", "XL", "2XL", "Total", "Wash Type"],
+                        ["DN-001", "Dark Indigo", "19-3928 TCX", 50, 150, 250, 150, 50, 50, 700, "Stone wash"],
+                        ["DN-002", "Vintage Blue", "17-4023 TCX", 10, 15, 20, 15, 10, 0, 70, "Enzyme wash"]
                     ]
                 ]]>
             </field>
             <field name="other_cost">
                 <![CDATA[
                     [
-                        {"cost_name": "Embroidery", "amount": 800.00},
-                        {"cost_name": "Packaging", "amount": 400.00},
-                        {"cost_name": "Shipping", "amount": 300.00}
+                        {
+                            "cost_id": "ORD-OC-2001",
+                            "cost_name": "Custom Hardware",
+                            "category": "Materials",
+                            "amount": 45000000,
+                            "currency": "VND",
+                            "supplier": "YKK Vietnam",
+                            "notes": "Antique brass zippers and buttons"
+                        },
+                        {
+                            "cost_id": "ORD-OC-2002",
+                            "cost_name": "Specialty Washing",
+                            "category": "Finishing",
+                            "amount": 60000000,
+                            "currency": "VND",
+                            "supplier": "Eco Wash Services",
+                            "notes": "Environmentally friendly process"
+                        }
                     ]
                 ]]>
             </field>
+            <field name="technical_notes">1. Triple-stitch all stress points. 2. Use selvedge denim for exposed seams. 3. Inside seams must be flat-felled.</field>
+            <field name="quality_requirements">1. Wash effect consistency ±5%. 2. Zipper pull strength minimum 50kg. 3. Pocket bags must be 100% cotton.</field>
         </record>
-        <record id="garment_order_demo_2" model="garment.order">
-            <field name="name">Winter Jacket Collection</field>
-            <field name="order_number">ORD-2024-002</field>
-            <field name="shape">Jacket</field>
-            <field name="color">Blue</field>
-            <field name="quantity">300</field>
-            <field name="unit_price">45.00</field>
-            <field name="cutting_date">2025-09-25</field>
-            <field name="issuing_date">2025-04-11</field>
-            <field name="receiving_date">2025-04-18</field>
-            <field name="state">draft</field>
+
+        <!-- TEST ORDER -->
+        <record id="order_test_qa" model="garment.order">
+            <field name="name">QA Test Order - Spring Collection</field>
+            <field name="order_number">ORD-TEST-2024</field>
+            <field name="client">Internal QA Department</client>
+            <field name="brand">Quality Assurance</brand>
+            <field name="shape">T-Shirt</shape>
+            <field name="color">White</color>
+            <field name="quantity">50</quantity>
+            <field name="unit_price">0</unit_price>
+            <field name="currency">VND</currency>
+            <field name="issuing_date">2024-06-01</issuing_date>
+            <field name="cutting_date">2024-06-05</cutting_date>
+            <field name="delivery_date">2024-06-20</delivery_date>
+            <field name="state">draft</state>
+            <field name="priority">3</priority>
+            <field name="purpose">Quality control testing for new fabric batch</purpose>
             <field name="material_detail">
                 <![CDATA[
                     [
-                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
-                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""]
+                        ["Material ID", "Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Quantity"],
+                        ["MAT-TEST-001", "Test Fabric", "TST-001", "White", "WH-001", "New organic cotton blend", "m", 100]
                     ]
                 ]]>
             </field>
-            <field name="specification_detail">
-                <![CDATA[
-                    [
-                        ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
-                        ["Blue", 8, 18, 28, 38, 28, 18, 8, 4]
-                    ]
-                ]]>
-            </field>
-            <field name="other_cost">
-                <![CDATA[
-                    [
-                        {"cost_name": "Embroidery", "amount": 800.00},
-                        {"cost_name": "Packaging", "amount": 400.00},
-                        {"cost_name": "Shipping", "amount": 300.00}
-                    ]
-                ]]>
-            </field>
-        </record>
-
-        <!-- Create a test order -->
-        <record id="test_order_1" model="garment.order">
-            <field name="name">Test Order</field>
-            <field name="order_number">TEST-001</field>
-            <field name="shape">T-Shirt</field>
-            <field name="color">Blue</field>
-            <field name="quantity">100</field>
-            <field name="unit_price">10.00</field>
-            <field name="cutting_date">2025-05-11</field>
-            <field name="issuing_date">2025-04-11</field>
-            <field name="receiving_date">2025-04-16</field>
-            <field name="state">draft</field>
-            <field name="issuing_company">PMC</field>
-            <field name="receiving_company">PMC</field>
         </record>
     </data>
 </odoo>

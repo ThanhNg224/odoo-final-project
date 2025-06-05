@@ -2,6 +2,8 @@ from . import model_dynamic_templates
 from . import model_order
 from . import model_sample
 from . import model_others
+from . import model_group
+from . import model_user
 
 # From production_management
 from . import product_style

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="group_sample_viewer" model="res.groups">
+        <field name="name">Garment Sample Viewer</field>
+    </record>
+    <record id="group_sample_approval" model="res.groups">
+        <field name="name">Garment Sample Approval</field>
+    </record>
+    <record id="group_sample_management" model="res.groups">
+        <field name="name">Garment Sample Management</field>
+    </record>
+    <record id="group_production_management" model="res.groups">
+        <field name="name">Garment Production Management</field>
+    </record>
+
+    <record id="permission_sample_viewer" model="garment.permission">
+        <field name="name">Sample Viewer</field>
+        <field name="group_id" ref="group_sample_viewer"/>
+    </record>
+    <record id="permission_sample_approval" model="garment.permission">
+        <field name="name">Sample Approval</field>
+        <field name="group_id" ref="group_sample_approval"/>
+    </record>
+    <record id="permission_sample_management" model="garment.permission">
+        <field name="name">Sample Management</field>
+        <field name="group_id" ref="group_sample_management"/>
+    </record>
+</odoo>

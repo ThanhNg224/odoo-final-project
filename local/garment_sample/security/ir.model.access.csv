@@ -1,9 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_garment_department,access.garment.department,garment_base.model_garment_department,,1,1,1,1
-access_garment_other_cost,access.garment.other_cost,garment_base.model_garment_other_cost,,1,1,1,1
-access_garment_finished_product_size,access.garment.finished_product_size,garment_base.model_garment_finished_product_size,,1,1,1,1
-access_garment_material_detail,access.garment.material_detail,garment_base.model_garment_material_detail,,1,1,1,1
-access_garment_process_table,access.garment.process_table,garment_base.model_garment_process_table,,1,1,1,1
-access_garment_sample,access.garment.sample,garment_base.model_garment_sample,,1,1,1,1
-access_garment_inventory_color,access.garment.inventory.color,garment_base.model_garment_inventory_color,,1,1,1,1
-access_garment_inventory_material,access.garment.inventory.material,garment_base.model_garment_inventory_material,,1,1,1,1

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="garment_production.QuantityListTable">
+    <t t-name="production_management.QuantityListTable">
         <t t-if="props.record.data[props.name]">
             <!-- Removed the controls div with 5 buttons -->
             

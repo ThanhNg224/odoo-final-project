@@ -34,11 +34,11 @@ class Sample(models.Model):
         ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
         ["", "", "", "", "", "", "", 0, 0, 0, 0, 0, ""]
     ])
-    process_table = fields.Json(string='Process Table', default=lambda self: [{"name": "", "unit_price": 0, "multiplier": 1, "notes": ""}])
-    other_cost = fields.Json(string='Other Costs', default=lambda self: [{"cost_name": "", "amount": 0}])
+    process_table = fields.Json(string='Process Table', default=lambda self: [])
+    other_cost = fields.Json(string='Other Costs', default=lambda self: [])
 
     progress_detail = fields.Json(string='Progress Detail', default=lambda self: [])
-    process_requirements = fields.Html(string='Process Requirements')
+    technical_requirements = fields.Html(string='Technical Requirements')
     remark = fields.Html(string='Remarks')
     state = fields.Selection([
         ('new', 'New development, pending approval'),
@@ -48,9 +48,13 @@ class Sample(models.Model):
 
     department_id = fields.Many2one('garment.department', string='Department')
     published_by = fields.Many2one('res.users', string='Published By', default=lambda self: self.env.user)
-    image_detail = fields.Binary(string='Image Details', attachment=True)
+    image_details = fields.Many2many(comodel_name='ir.attachment', string="Image Details", 
+        relation='garment_sample_image_detail_rel',
+        column1='sample_id',
+        column2='image_id')
     related_document = fields.Binary(string='Related Documents', attachment=True)
-
+    is_stored = fields.Boolean(string='Is Stored', default=False)
+    # order_ids = fields.Many2many('garment.order', 'garment_order_sample_rel', 'sample_id', 'order_id', string='Related Orders')
     all_samples = fields.Many2many('garment.sample', compute='_compute_all_samples', string="All Samples")
 
     @api.depends()
@@ -105,6 +109,11 @@ class Sample(models.Model):
             'context': {'default_state': 'new'},
         }
 
+    def action_stock_in(self):
+        self.ensure_one()
+        self.write({'is_stored': True})
+        return True
+
     def action_mark_ready_for_production(self):
         self.ensure_one()
         self.write({'state': 'in_progress'})
@@ -122,6 +131,42 @@ class Sample(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': action['name'],
+            'res_model': 'garment.sample',
+            'view_mode': 'tree,form',
+            'target': 'main',
+            'flags': {'mode': 'list'},
+            'context': {
+                'form_view_ref': 'garment_sample.view_garment_sample_form_view',
+                'create_view_ref': 'garment_sample.view_garment_sample_form_edit'
+            }
+        }
+
+    def unlink(self):
+        for record in self:
+            # Get all attachment IDs related to this sample
+            attachment_ids = self.env['ir.attachment'].search([
+                '|',
+                ('res_model', '=', self._name),
+                ('res_id', '=', record.id),
+                ('res_model', '=', self._name),
+                ('res_id', 'in', record.image_details.ids)
+            ]).ids
+
+            # Delete directly from ir.attachment table
+            if attachment_ids:
+                self.env.cr.execute("DELETE FROM ir_attachment WHERE id IN %s", (tuple(attachment_ids),))
+
+            # Delete the sample record from database
+            self.env.cr.execute("DELETE FROM garment_sample WHERE id = %s", (record.id,))
+            self.env.cr.execute("DELETE FROM garment_sample_image_detail_rel WHERE sample_id = %s", (record.id,))
+            
+        return True
+
+    def action_save(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Garment Samples',
             'res_model': 'garment.sample',
             'view_mode': 'tree,form',
             'target': 'main',

@@ -267,7 +267,7 @@ export class OtherCostTable extends Component {
                             });
 
                             if (result) {
-                                console.log('Raw template data:', result.table_data);
+                                // console.log('Raw template data:', result.table_data);
                                 let templateData;
 
                                 if (typeof result.table_data === 'string') {
@@ -288,7 +288,7 @@ export class OtherCostTable extends Component {
                                     templateData = result.table_data;
                                 }
 
-                                console.log('Parsed template data:', templateData);
+                                // console.log('Parsed template data:', templateData);
 
                                 // Ensure each row has all required fields
                                 this.state.rows = templateData.map(row => ({

@@ -252,8 +252,8 @@ export class MaterialDetailTable extends Component {
             // Find the material name column index
             const materialNameCol = this.state.rows[0].indexOf('Material Name');
 
-            console.log('Before update - Current cell value:', this.state.rows[row][col]);
-            console.log('Before update - Material name cell value:', this.state.rows[row][materialNameCol]);
+            // console.log('Before update - Current cell value:', this.state.rows[row][col]);
+            // console.log('Before update - Material name cell value:', this.state.rows[row][materialNameCol]);
 
             // Create a new row array to ensure reactivity
             const updatedRow = [...this.state.rows[row]];
@@ -263,8 +263,8 @@ export class MaterialDetailTable extends Component {
             // Update the entire row
             this.state.rows[row] = updatedRow;
 
-            console.log('After update - Current cell value:', this.state.rows[row][col]);
-            console.log('After update - Material name cell value:', this.state.rows[row][materialNameCol]);
+            // console.log('After update - Current cell value:', this.state.rows[row][col]);
+            // console.log('After update - Material name cell value:', this.state.rows[row][materialNameCol]);
 
             // Force a UI update
             this.state.forceUpdate++;

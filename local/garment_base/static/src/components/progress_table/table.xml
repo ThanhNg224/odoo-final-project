@@ -6,13 +6,19 @@
             <div class="d-flex justify-content-between mb-3">
                 <button type="button" class="btn btn-primary btn-sm" t-on-click="addRow">Add Progress</button>
                 <div>
-                    <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="saveTemplate">Save Template</button>
-                    <button type="button" class="btn btn-primary btn-sm" t-on-click="useTemplate">Use Template</button>
+                    <button type="button" class="btn btn-primary btn-sm me-1" t-on-click="saveTemplate">Save Progress</button>
+                    <button type="button" class="btn btn-primary btn-sm" t-on-click="useTemplate">Use Progress</button>
                 </div>
             </div>
             <!-- cards container -->
             <div class="table-wrapper">
-                <div class="o_progress_cards">
+                <t t-if="!state.rows || state.rows.length === 0">
+                    <div class="alert alert-info text-center m-3">
+                        <i class="fa fa-info-circle me-2"/>
+                        No progress data available. Let's start creating a progress.
+                    </div>
+                </t>
+                <div class="o_progress_cards" t-if="state.rows &amp;&amp; state.rows.length > 0">
                     <t t-foreach="state.rows" t-as="row" t-key="row_index">
                         <div class="card progress-card flex-shrink-0 me-3">
                             <!-- header -->

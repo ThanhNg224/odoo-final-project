@@ -22,25 +22,25 @@
 }
 
 // Progress bar styling
-.o_progressbar {
-    height: 8px !important;
-    margin-bottom: 16px !important;
-}
+// .o_progressbar {
+//     height: 8px !important;
+//     margin-bottom: 16px !important;
+// }
 
 // Kanban card customization
 .o_kanban_record.production_order {
     border-left: 4px solid #0ea5e9;
 }
 
-// Form view section headings
-.o_form_label.section_heading {
-    font-weight: 600;
-    font-size: 16px;
-    color: #3f3f3f;
-    background-color: #f5f5f5;
-    padding: 8px;
-    border-radius: 4px;
-}
+// // Form view section headings
+// .o_form_label.section_heading {
+//     font-weight: 600;
+//     font-size: 16px;
+//     color: #3f3f3f;
+//     background-color: #f5f5f5;
+//     padding: 8px;
+//     border-radius: 4px;
+// }
 
 // Filter button styling
 .filter-button {
@@ -133,124 +133,124 @@
     }
 }
 
-// Fix for tight table columns - ensures headers are visible
-.o_list_view th {
-    min-width: 100px;  // Increased minimum width for all table headers
-    white-space: nowrap;
-    overflow: visible;
-    padding: 8px 12px;
-}
+// // Fix for tight table columns - ensures headers are visible
+// .o_list_view th {
+//     min-width: 100px;  // Increased minimum width for all table headers
+//     white-space: nowrap;
+//     overflow: visible;
+//     padding: 8px 12px;
+// }
 
-// Set specific minimum widths for common columns
-.o_list_view {
-    width: 100% !important;
-    table-layout: auto !important;
-    margin: 0 !important;
+// // Set specific minimum widths for common columns
+// .o_list_view {
+//     width: 100% !important;
+//     table-layout: auto !important;
+//     margin: 0 !important;
     
-    th[data-name="name"],
-    th[data-name="material_name"] {
-        min-width: 150px;
-    }
+//     th[data-name="name"],
+//     th[data-name="material_name"] {
+//         min-width: 150px;
+//     }
     
-    th[data-name="item_number"],
-    th[data-name="specification"] {
-        min-width: 120px;
-    }
+//     th[data-name="item_number"],
+//     th[data-name="specification"] {
+//         min-width: 120px;
+//     }
     
-    th[data-name="quantity"],
-    th[data-name="unit"],
-    th[data-name="color"] {
-        min-width: 100px;
-    }
+//     th[data-name="quantity"],
+//     th[data-name="unit"],
+//     th[data-name="color"] {
+//         min-width: 100px;
+//     }
     
-    th[data-name="total_usage"],
-    th[data-name="unit_price"],
-    th[data-name="total_price"] {
-        min-width: 120px;
-    }
-}
+//     th[data-name="total_usage"],
+//     th[data-name="unit_price"],
+//     th[data-name="total_price"] {
+//         min-width: 120px;
+//     }
+// }
 
-// Ensure full width table containers
-.o_form_view .o_notebook .tab-content {
-    width: 100% !important;
-    overflow-x: auto;
-    padding-top: 15px !important; /* Add spacing at the top to prevent overlap */
-}
+// // Ensure full width table containers
+// .o_form_view .o_notebook .tab-content {
+//     width: 100% !important;
+//     overflow-x: auto;
+//     padding-top: 15px !important; /* Add spacing at the top to prevent overlap */
+// }
 
-.o_form_view .o_notebook .tab-pane {
-    padding: 0 !important;
-}
+// .o_form_view .o_notebook .tab-pane {
+//     padding: 0 !important;
+// }
 
-// Remove width restrictions from table containers
-.table-responsive, 
-.o_list_view_container, 
-.o_list_renderer, 
-.o_list_table {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-}
+// // Remove width restrictions from table containers
+// .table-responsive, 
+// .o_list_view_container, 
+// .o_list_renderer, 
+// .o_list_table {
+//     width: 100% !important;
+//     min-width: 100% !important;
+//     max-width: none !important;
+// }
 
-/* Fix table overlap with headers */
-.o_notebook .nav-tabs {
-    margin-bottom: 15px !important;
-}
+// /* Fix table overlap with headers */
+// .o_notebook .nav-tabs {
+//     margin-bottom: 15px !important;
+// }
 
-/* Force tables to expand to full width */
-.o_content, 
-.o_form_sheet_bg, 
-.o_form_sheet, 
-.o_form_view,
-.o_notebook,
-.tab-content,
-.tab-pane {
-    width: 100% !important;
-    max-width: 100% !important;
-}
+// /* Force tables to expand to full width */
+// .o_content, 
+// .o_form_sheet_bg, 
+// .o_form_sheet, 
+// .o_form_view,
+// .o_notebook,
+// .tab-content,
+// .tab-pane {
+//     width: 100% !important;
+//     max-width: 100% !important;
+// }
 
-/* Fix order lines table */
-.o_form_view .o_field_widget .o_list_renderer {
-    margin-top: 15px !important;
-    width: 100% !important;
-}
+// /* Fix order lines table */
+// .o_form_view .o_field_widget .o_list_renderer {
+//     margin-top: 15px !important;
+//     width: 100% !important;
+// }
 
-/* Make sure form takes maximum width available */
-.o_form_sheet {
-    min-width: 90vw !important;
-    max-width: 95vw !important;
-}
+// /* Make sure form takes maximum width available */
+// .o_form_sheet {
+//     min-width: 90vw !important;
+//     max-width: 95vw !important;
+// }
 
-/* Order lines table specific styling */
-.order-lines-table {
-    width: 100% !important;
-    margin-top: 20px !important;
-}
+// /* Order lines table specific styling */
+// .order-lines-table {
+//     width: 100% !important;
+//     margin-top: 20px !important;
+// }
 
-.order-lines-container {
-    padding-top: 20px !important;
-}
+// .order-lines-container {
+//     padding-top: 20px !important;
+// }
 
-/* Override Odoo's default table width restrictions */
-.o_form_view .o_form_sheet {
-    min-width: 90vw !important;
-    max-width: 95vw !important;
-    margin: 0 auto !important;
-    padding: 20px !important;
-}
+// /* Override Odoo's default table width restrictions */
+// .o_form_view .o_form_sheet {
+//     min-width: 90vw !important;
+//     max-width: 95vw !important;
+//     margin: 0 auto !important;
+//     padding: 20px !important;
+// }
 
-/* Ensure the notebook container takes full width */
-.o_notebook {
-    width: 100% !important;
-    margin-top: 20px !important;
-}
+// /* Ensure the notebook container takes full width */
+// .o_notebook {
+//     width: 100% !important;
+//     margin-top: 20px !important;
+// }
 
-/* Remove conflicting CSS */
-.o_form_sheet_bg {
-    padding: 0 !important;
-}
+// /* Remove conflicting CSS */
+// .o_form_sheet_bg {
+//     padding: 0 !important;
+// }
 
-/* Make sure tables fill the available space */
-.o_list_view {
-    display: block !important;
-    overflow-x: auto !important;
-} 
+// /* Make sure tables fill the available space */
+// .o_list_view {
+//     display: block !important;
+//     overflow-x: auto !important;
+// } 

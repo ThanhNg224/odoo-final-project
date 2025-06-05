@@ -72,9 +72,3 @@ span.badge {
     color: #333;
     user-select: none;
 }
-
-/* 5) When checked, highlight the whole wrapper */
-.custom-checkbox:checked+.custom-checkbox-label,
-.custom-checkbox:checked~.custom-checkbox-label {
-    color: #fff;
-}

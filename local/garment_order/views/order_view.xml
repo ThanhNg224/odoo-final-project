@@ -44,7 +44,7 @@
                 </header>
                 <sheet>
                     <group string="Basic Info" col="3">
-                        <field name="sample_id"/>
+                        <field name="sample_ids" widget="many2many_tags"/>
                     </group>
                     <group string="Basic Info" col="3">
                         <group>
@@ -118,7 +118,7 @@
                 </header>
                 <sheet>
                     <group string="Basic Info" colspan="4">
-                        <field name="sample_id"/>
+                        <field name="sample_ids" widget="many2many_tags"/>
                         <!-- <field name="production_id"/> -->
                     </group>
 

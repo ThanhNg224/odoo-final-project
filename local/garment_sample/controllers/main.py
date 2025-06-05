@@ -1,50 +1,64 @@
 from datetime import datetime
+import calendar
 from odoo import http
 from odoo.http import request, route
 from odoo.tools.translate import _
 
 class GarmentSampleController(http.Controller):    
-    @http.route('/garment/sample/general_info', type='json', auth='user')
+    @http.route('/garment/sample/general_info', type='json', auth='public')
     def get_general_info(self):
-        # Get current month and year for filtering
-        current_year = datetime.now().year
-        current_month = datetime.now().strftime("%m")
-        date_filter = f"{current_month}/{current_year}"
+        try:
+            # Get current month and year for filtering
+            current_year = datetime.now().year
+            current_month = datetime.now().month
+            date_filter = f"{current_month:02d}/{current_year}"
 
-        # Fetch data for each category
-        current_month = datetime.now().month
-        new_development_count = request.env['garment.sample'].sudo().search_count([
-            ('state', '=', 'new'),
-            ('development_date', '>=', f'{current_year}-{current_month:02d}-01'),
-            ('development_date', '<=', f'{current_year}-{current_month:02d}-31')
-        ])
+            # Get the last day of the current month
+            last_day = calendar.monthrange(current_year, current_month)[1]
 
-        eliminated_count = request.env['garment.sample'].sudo().search_count([
-            ('state', '=', 'eliminated'),
-            ('update_date', '>=', f'{current_year}-{current_month:02d}-01'),
-            ('update_date', '<=', f'{current_year}-{current_month:02d}-31')
-        ])
+            # Use sudo() to ensure access regardless of user rights
+            env = request.env['garment.sample'].sudo()
+            
+            # Fetch data for each category
+            new_development_count = env.search_count([
+                ('state', '=', 'new'),
+                ('update_date', '>=', f'{current_year}-{current_month:02d}-01'),
+                ('update_date', '<=', f'{current_year}-{current_month:02d}-{last_day}')
+            ])
 
-        production_available_count = request.env['garment.sample'].sudo().search_count([
-            ('state', '=', 'in_progress'),
-            ('update_date', '>=', f'{current_year}-{current_month:02d}-01'),
-            ('update_date', '<=', f'{current_year}-{current_month:02d}-31')
-        ])
+            eliminated_count = env.search_count([
+                ('state', '=', 'eliminated'),
+                ('update_date', '>=', f'{current_year}-{current_month:02d}-01'),
+                ('update_date', '<=', f'{current_year}-{current_month:02d}-{last_day}')
+            ])
 
-        return {
-            "new_development": {
-                "label": _("New development in %(date_filter)s, pending approval") % {'date_filter': date_filter},
-                "count": new_development_count
-            },
-            "eliminated": {
-                "label": _("Eliminated in %(date_filter)s") % {'date_filter': date_filter},
-                "count": eliminated_count
-            },
-            "production_available": {
-                "label": _("Production available in %(date_filter)s") % {'date_filter': date_filter},
-                "count": production_available_count
+            production_available_count = env.search_count([
+                ('state', '=', 'in_progress'),
+                ('update_date', '>=', f'{current_year}-{current_month:02d}-01'),
+                ('update_date', '<=', f'{current_year}-{current_month:02d}-{last_day}')
+            ])
+
+            return {
+                "new_development": {
+                    "label": _("New development in %(date_filter)s, pending approval") % {'date_filter': date_filter},
+                    "count": new_development_count
+                },
+                "eliminated": {
+                    "label": _("Eliminated in %(date_filter)s") % {'date_filter': date_filter},
+                    "count": eliminated_count
+                },
+                "production_available": {
+                    "label": _("Production available in %(date_filter)s") % {'date_filter': date_filter},
+                    "count": production_available_count
+                }
             }
-        }
+        except Exception as e:
+            return {
+                "error": str(e),
+                "new_development": {"label": "New Development", "count": 0},
+                "eliminated": {"label": "Eliminated", "count": 0},
+                "production_available": {"label": "Production Available", "count": 0}
+            }
     
     @http.route('/garment/sample/get_sample_cost_summary', type='json', auth='user')
     def get_sample_cost_summary(self, sample_id):
@@ -65,3 +79,16 @@ class GarmentSampleController(http.Controller):
                 'quotation': sample.quotation or 0
             }
         return False 
+
+    
+    
+    @http.route('/garment/sample/search_read', type='json', auth='user')
+    def search_samples(self, fields=None, domain=None):
+        if fields is None:
+            fields = ['id', 'name']
+        if domain is None:
+            domain = []
+        sample = request.env['garment.sample'].sudo().search_read(domain, fields)
+        return sample
+
+    

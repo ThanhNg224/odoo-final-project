@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_permission_tree" model="ir.ui.view">
+        <field name="name">garment.permission.tree</field>
+        <field name="model">garment.permission</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="group_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_permission_form" model="ir.ui.view">
+        <field name="name">garment.permission.form</field>
+        <field name="model">garment.permission</field>
+        <field name="arch" type="xml">
+            <form string="Permission">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="group_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_permissions" model="ir.actions.act_window">
+        <field name="name">Permissions</field>
+        <field name="res_model">garment.permission</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

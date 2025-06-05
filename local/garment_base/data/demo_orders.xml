@@ -1,138 +1,200 @@
 <odoo>
-  <!-- First create garment sample records -->
-  <record id="demo_sample_1" model="garment.sample">
-    <field name="name">Demo T-Shirt Sample</field>
-    <field name="number">DS-001</field>
-    <field name="shape">T-Shirt</field>
-    <field name="client">Demo Fashion</field>
-    <field name="brand">Demo Brand</field>
-    <field name="designer">Demo Designer</field>
-    <field name="pattern_maker">Demo Pattern Maker</field>
-    <field name="development_date">2025-04-01</field>
-    <field name="state">in_progress</field>
-    <field name="finished_product_size">
-      <![CDATA[
-        [
-          ["Size", "Chest (cm)", "Length (cm)"],
-          ["M", "100", "70"],
-          ["L", "105", "72"],
-          ["XL", "110", "74"]
-        ]
-      ]]>
-    </field>
-    <field name="material_detail">
-      <![CDATA[
-        [
-          ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Position", "Quantity per Item", "Loss per Item", "Total Quantity"],
-          ["Cotton", "CT001", "White", "WH001", "100% Cotton", "m", "Body", "1.5", "0.1", "1.6"]
-        ]
-      ]]>
-    </field>
-    <field name="process_table">
-      <![CDATA[
-        [
-          {
-            "name": "Cutting",
-            "unit_price": 5000,
-            "multiplier": 1,
-            "note": "Cut fabric"
-          },
-          {
-            "name": "Sewing",
-            "unit_price": 8000,
-            "multiplier": 1,
-            "note": "Sew pieces together"
-          }
-        ]
-      ]]>
-    </field>
-  </record>
+    <data noupdate="1">
+        <!-- GARMENT SAMPLE RECORDS -->
+        <record id="sample_premium_tshirt" model="garment.sample">
+            <field name="name">Premium Cotton T-Shirt Sample</field>
+            <field name="number">SMP-2024-1001</field>
+            <field name="shape">T-Shirt</field>
+            <field name="client">Elegant Apparel Inc.</field>
+            <field name="brand">Elegance</brand>
+            <field name="designer">Michael Chen</designer>
+            <field name="pattern_maker">Sarah Johnson</pattern_maker>
+            <field name="pattern_drafter">David Wilson</pattern_drafter>
+            <field name="development_date">2024-06-01</development_date>
+            <field name="state">approved</state>
+            <field name="finished_product_size">
+                <![CDATA[
+                    [
+                        ["Size Code", "Size Name", "Chest (cm)", "Length (cm)", "Sleeve Length (cm)", "Tolerance (±cm)"],
+                        ["TS-S", "Small", "96-100", "68-70", "58-60", "1.0"],
+                        ["TS-M", "Medium", "100-104", "70-72", "60-62", "1.0"],
+                        ["TS-L", "Large", "104-108", "72-74", "62-64", "1.5"]
+                    ]
+                ]]>
+            </field>
+            <field name="material_detail">
+                <![CDATA[
+                    [
+                        ["Material ID", "Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Position", "Quantity per Item", "Loss per Item", "Total Quantity", "Supplier"],
+                        ["MAT-1001", "Organic Cotton Fabric", "CTN-ORG-001", "White", "WH-001", "200gsm, Oeko-Tex Certified", "m", "Body", 1.8, 0.15, 1.95, "Global Textiles Co."],
+                        ["MAT-1002", "Reinforced Polyester Thread", "THR-POL-002", "White", "WH-001", "40/2, High Tensile", "spools", "Seams", 0.05, 0.005, 0.055, "Thread Masters Ltd."],
+                        ["MAT-1003", "Neck Ribbing", "RIB-NK-003", "White", "WH-001", "95% Cotton 5% Spandex", "m", "Neckline", 0.25, 0.02, 0.27, "Elastic Solutions Inc."]
+                    ]
+                ]]>
+            </field>
+            <field name="process_table">
+                <![CDATA[
+                    [
+                        {
+                            "process_id": "PRO-TS-001",
+                            "name": "Fabric Inspection",
+                            "department": "Quality Control",
+                            "unit_price": 15000,
+                            "multiplier": 1,
+                            "time_estimate": "2 hours",
+                            "quality_standard": "AQL 2.5"
+                        },
+                        {
+                            "process_id": "PRO-TS-002",
+                            "name": "Auto Cutting",
+                            "department": "Cutting",
+                            "unit_price": 25000,
+                            "multiplier": 1,
+                            "time_estimate": "4 hours",
+                            "quality_standard": "±1mm tolerance"
+                        },
+                        {
+                            "process_id": "PRO-TS-003",
+                            "name": "Overlock Stitching",
+                            "department": "Sewing",
+                            "unit_price": 35000,
+                            "multiplier": 1,
+                            "time_estimate": "6 hours",
+                            "quality_standard": "12-14 stitches/inch"
+                        }
+                    ]
+                ]]>
+            </field>
+            <field name="technical_requirements">1. All seams must be overlocked. 2. Neck ribbing stretch ratio 1:1.5. 3. Label placement tolerance ±0.5cm.</field>
+        </record>
 
-  <record id="demo_sample_2" model="garment.sample">
-    <field name="name">Demo Jeans Sample</field>
-    <field name="number">DS-002</field>
-    <field name="shape">Jeans</field>
-    <field name="client">Demo Fashion</field>
-    <field name="brand">Demo Brand</field>
-    <field name="designer">Demo Designer</field>
-    <field name="pattern_maker">Demo Pattern Maker</field>
-    <field name="development_date">2025-04-02</field>
-    <field name="state">in_progress</field>
-    <field name="finished_product_size">
-      <![CDATA[
-        [
-          ["Size", "Waist (cm)", "Length (cm)"],
-          ["32", "81", "105"],
-          ["34", "86", "106"]
-        ]
-      ]]>
-    </field>
-  </record>
+        <record id="sample_premium_jeans" model="garment.sample">
+            <field name="name">Selvedge Denim Jeans Sample</field>
+            <field name="number">SMP-2024-1002</field>
+            <field name="shape">Jeans</field>
+            <field name="client">Urban Outfitters Co.</field>
+            <field name="brand">Streetwear</brand>
+            <field name="designer">Emma Rodriguez</designer>
+            <field name="pattern_maker">James Wilson</pattern_maker>
+            <field name="pattern_drafter">Lisa Nguyen</pattern_drafter>
+            <field name="development_date">2024-05-15</development_date>
+            <field name="state">approved</state>
+            <field name="finished_product_size">
+                <![CDATA[
+                    [
+                        ["Size Code", "Waist (cm)", "Hip (cm)", "Inseam (cm)", "Leg Opening (cm)", "Tolerance (±cm)"],
+                        ["JN-30", "76-80", "92-96", "81", "42", "1.0"],
+                        ["JN-32", "80-84", "96-100", "82", "43", "1.0"],
+                        ["JN-34", "84-88", "100-104", "83", "44", "1.5"]
+                    ]
+                ]]>
+            </field>
+        </record>
 
-  <!-- First create product styles -->
-  <record id="demo_style_1" model="product.style">
-    <field name="code">TS-001</field>
-    <field name="name">White T-Shirt</field>
-    <field name="season">Summer 2025</field>
-  </record>
+        <!-- PRODUCT STYLES -->
+        <record id="style_premium_tshirt" model="product.style">
+            <field name="code">ELG-TS-2024</field>
+            <field name="name">Premium Organic Cotton T-Shirt</field>
+            <field name="season">Summer 2024</season>
+            <field name="collection">Essential</collection>
+            <field name="target_gender">Unisex</target_gender>
+            <field name="material_composition">100% Organic Cotton</material_composition>
+            <field name="sample_id" ref="sample_premium_tshirt"/>
+        </record>
 
-  <record id="demo_style_2" model="product.style">
-    <field name="code">JN-001</field>
-    <field name="name">Blue Jeans</field>
-    <field name="season">Spring 2025</field>
-  </record>
+        <record id="style_selvedge_jeans" model="product.style">
+            <field name="code">URB-JN-2024</field>
+            <field name="name">Raw Selvedge Denim Jeans</field>
+            <field name="season">Autumn 2024</season>
+            <field name="collection">Heritage</collection>
+            <field name="target_gender">Men</target_gender>
+            <field name="material_composition">100% Cotton Selvedge Denim</material_composition>
+            <field name="sample_id" ref="sample_premium_jeans"/>
+        </record>
 
-  <!-- Create operation prices -->
-  <record id="demo_operation_price_1" model="operation.price">
-    <field name="operation_name">Basic Sewing</field>
-    <field name="unit_price">5.50</field>
-  </record>
+        <!-- OPERATION PRICES -->
+        <record id="operation_sewing_standard" model="operation.price">
+            <field name="operation_name">Standard Sewing Operation</field>
+            <field name="code">OP-SEW-001</field>
+            <field name="unit_price">55000</unit_price>
+            <field name="currency">VND</currency>
+            <field name="time_estimate">15</time_estimate> <!-- minutes per unit -->
+            <field name="skill_level">Intermediate</skill_level>
+            <field name="machine_type">Overlock</machine_type>
+        </record>
 
-  <!-- Create production orders -->
-  <record id="demo_order_1" model="production.order">
-    <field name="name">PO-001</field>
-    <field name="style_id" ref="demo_style_1"/>
-    <field name="planned_date">2025-04-15</field>
-    <field name="price_policy_id" ref="demo_operation_price_1"/>
-    <field name="state">in_progress</field>
-    <field name="finance_state">waiting</field>
-    <field name="cost_total">2750.00</field>
-    <field name="sample_id" ref="demo_sample_1"/>
-  </record>
+        <record id="operation_cutting_premium" model="operation.price">
+            <field name="operation_name">Premium Fabric Cutting</field>
+            <field name="code">OP-CUT-002</field>
+            <field name="unit_price">85000</unit_price>
+            <field name="currency">VND</currency>
+            <field name="time_estimate">25</time_estimate>
+            <field name="skill_level">Advanced</skill_level>
+            <field name="machine_type">Auto Cutter</machine_type>
+        </record>
 
-  <record id="demo_order_2" model="production.order">
-    <field name="name">PO-002</field>
-    <field name="style_id" ref="demo_style_2"/>
-    <field name="planned_date">2025-04-16</field>
-    <field name="price_policy_id" ref="demo_operation_price_1"/>
-    <field name="state">draft</field>
-    <field name="finance_state">waiting</field>
-    <field name="cost_total">1650.00</field>
-    <field name="sample_id" ref="demo_sample_2"/>
-  </record>
+        <!-- PRODUCTION ORDERS -->
+        <record id="production_order_tshirt" model="production.order">
+            <field name="name">PROD-2024-1001</field>
+            <field name="style_id" ref="style_premium_tshirt"/>
+            <field name="planned_date">2024-06-15</planned_date>
+            <field name="deadline_date">2024-07-30</deadline_date>
+            <field name="price_policy_id" ref="operation_sewing_standard"/>
+            <field name="state">in_progress</state>
+            <field name="finance_state">approved</finance_state>
+            <field name="cost_total">82500000</cost_total>
+            <field name="currency">VND</currency>
+            <field name="sample_id" ref="sample_premium_tshirt"/>
+            <field name="production_manager">Robert Kim</production_manager>
+            <field name="quality_supervisor">Anna Lee</quality_supervisor>
+            <field name="priority">1</priority>
+        </record>
 
-  <!-- Create order lines -->
-  <record id="demo_order_line_1" model="production.order.line">
-    <field name="order_id" ref="demo_order_1"/>
-    <field name="size">M</field>
-    <field name="planned_qty">300</field>
-  </record>
+        <record id="production_order_jeans" model="production.order">
+            <field name="name">PROD-2024-1002</field>
+            <field name="style_id" ref="style_selvedge_jeans"/>
+            <field name="planned_date">2024-07-01</planned_date>
+            <field name="deadline_date">2024-09-15</deadline_date>
+            <field name="price_policy_id" ref="operation_cutting_premium"/>
+            <field name="state">confirmed</state>
+            <field name="finance_state">approved</finance_state>
+            <field name="cost_total">127500000</cost_total>
+            <field name="currency">VND</currency>
+            <field name="sample_id" ref="sample_premium_jeans"/>
+            <field name="production_manager">Daniel Park</production_manager>
+            <field name="quality_supervisor">Sophia Chen</quality_supervisor>
+            <field name="priority">2</priority>
+        </record>
 
-  <record id="demo_order_line_2" model="production.order.line">
-    <field name="order_id" ref="demo_order_1"/>
-    <field name="size">L</field>
-    <field name="planned_qty">200</field>
-  </record>
+        <!-- PRODUCTION ORDER LINES -->
+        <record id="order_line_tshirt_s" model="production.order.line">
+            <field name="order_id" ref="production_order_tshirt"/>
+            <field name="size">TS-S</size>
+            <field name="color">White</color>
+            <field name="color_code">WH-001</color_code>
+            <field name="planned_qty">500</planned_qty>
+            <field name="completed_qty">120</completed_qty>
+            <field name="defect_qty">8</defect_qty>
+        </record>
 
-  <record id="demo_order_line_3" model="production.order.line">
-    <field name="order_id" ref="demo_order_2"/>
-    <field name="size">32</field>
-    <field name="planned_qty">150</field>
-  </record>
+        <record id="order_line_tshirt_m" model="production.order.line">
+            <field name="order_id" ref="production_order_tshirt"/>
+            <field name="size">TS-M</size>
+            <field name="color">White</color>
+            <field name="color_code">WH-001</color_code>
+            <field name="planned_qty">750</planned_qty>
+            <field name="completed_qty">250</completed_qty>
+            <field name="defect_qty">12</defect_qty>
+        </record>
 
-  <record id="demo_order_line_4" model="production.order.line">
-    <field name="order_id" ref="demo_order_2"/>
-    <field name="size">34</field>
-    <field name="planned_qty">150</field>
-  </record>
+        <record id="order_line_jeans_32" model="production.order.line">
+            <field name="order_id" ref="production_order_jeans"/>
+            <field name="size">JN-32</size>
+            <field name="color">Indigo Blue</color>
+            <field name="color_code">BL-IND-001</color_code>
+            <field name="planned_qty">400</planned_qty>
+            <field name="completed_qty">0</completed_qty>
+            <field name="defect_qty">0</defect_qty>
+        </record>
+    </data>
 </odoo>

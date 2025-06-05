@@ -81,6 +81,6 @@ export class QuantityListTable extends Component {
     }
 }
 
-QuantityListTable.template = 'garment_production.QuantityListTable';
+QuantityListTable.template = 'production_management.QuantityListTable';
 
 registry.category("views").add('quantity_list_table', QuantityListTable); 

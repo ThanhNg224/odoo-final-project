@@ -66,8 +66,36 @@ class ProductionOrder(models.Model):
     total_process_cost = fields.Float('Total Process Cost', compute='_compute_process_cost', store=True)
     
     # Order related fields - to be connected to Order module later
-    order_name = fields.Char(string='Order Name')
-    order_number = fields.Char(string='Order Number')
+    # — Link đến đơn hàng có sẵn từ module garment_base —
+    garment_order_id = fields.Many2one(
+        'garment.order',
+        string='Đơn hàng',
+        ondelete='set null',
+        context={'default_state': 'confirmed'},
+    )
+    order_name    = fields.Char(string='Tên đơn hàng',    readonly=True, store=True)
+    order_number  = fields.Char(string='Mã đơn hàng',     readonly=True, store=True)
+    client        = fields.Char(string='Khách hàng',      readonly=True, store=True)
+    delivery_date = fields.Date(string='Ngày giao hàng',  readonly=True, store=True)
+
+    @api.onchange('garment_order_id')
+    def _onchange_garment_order_id(self):
+        if not self.garment_order_id:
+            # nếu bỏ chọn thì xóa giá trị cũ
+            self.order_name = False
+            self.order_number = False
+            self.client = False
+            self.delivery_date = False
+            return
+        # gán tự động từ record đã chọn
+        self.order_name    = self.garment_order_id.name
+        # nếu trong garment.order có field order_number thì đổi .name thành .order_number
+        self.order_number  = self.garment_order_id.order_number
+        
+        # Fix for missing client attribute - use issuing_company instead
+        self.client        = self.garment_order_id.issuing_company
+        
+        self.delivery_date = self.garment_order_id.receiving_date  # Or use a different date field if appropriate
     
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):

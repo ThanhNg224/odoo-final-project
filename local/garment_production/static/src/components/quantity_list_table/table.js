@@ -100,7 +100,7 @@ class TemplateSelectionDialog extends Component {
 }
 
 export class QuantityListTable extends Component {
-    static template = "garment_production.QuantityListTable";
+    static template = "production_management.QuantityListTable";
     static props = {
         ...standardFieldProps,
         decorations: { type: Object, optional: true },
@@ -230,7 +230,7 @@ export class QuantityListTable extends Component {
             this.dialog.add(TemplateNameDialog, {
                 confirm: async (templateName) => {
                     try {
-                        const result = await this.rpc('/garment_production/save_quantity_template', {
+                        const result = await this.rpc('/production_management/save_quantity_template', {
                             name: templateName,
                             table_data: tableData,
                             model: this.state.template_model,
@@ -268,7 +268,7 @@ export class QuantityListTable extends Component {
     useTemplate = async () => {
         try {
             // Fetch all templates
-            const templates = await this.rpc('/garment_production/get_quantity_templates', {
+            const templates = await this.rpc('/production_management/get_quantity_templates', {
                 model: this.state.template_model,
             });
 
@@ -289,7 +289,7 @@ export class QuantityListTable extends Component {
                     templates: templates,
                     confirm: async (selectedTemplate) => {
                         try {
-                            const result = await this.rpc('/garment_production/get_quantity_template', {
+                            const result = await this.rpc('/production_management/get_quantity_template', {
                                 template_id: selectedTemplate.id,
                                 model: this.state.template_model,
                             });

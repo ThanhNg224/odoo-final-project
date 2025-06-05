@@ -597,7 +597,7 @@ msgid "Plan"
 msgstr "Kế Hoạch"
 
 #. module: garment_base
-#: model:ir.model.fields,field_description:garment_base.field_garment_sample__process_requirements
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__technical_requirements
 msgid "Process Requirements"
 msgstr "Yêu Cầu Quy Trình"
 

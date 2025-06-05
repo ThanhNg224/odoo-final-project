@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="garment_production.QuantityListTable" owl="1">
+    <t t-name="production_management.QuantityListTable" owl="1">
         <div class="size_quantity_table_container">
             <table class="table table-bordered table-striped">
                 <thead>

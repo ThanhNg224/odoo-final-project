@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="garment.Many2ManyImage">
+        <div t-attf-class="o_m2m_image_grid {{props.className ? props.className : ''}}" aria-atomic="true">
+            <div class="o_image_grid">
+                <t t-foreach="files" t-as="file" t-key="file.id">
+                    <div class="o_image_item">
+                        <div class="o_image_wrapper">
+                            <a t-att-href="getUrl(file.id)" 
+                               class="o_image_link"
+                               download=""
+                               t-att-title="'Download ' + file.name">
+                                <img t-att-src="getUrl(file.id)" 
+                                     t-att-alt="file.name"
+                                     class="o_image_thumbnail"/>
+                            </a>
+                            <div class="o_image_info">
+                                <a t-att-href="getUrl(file.id)" 
+                                   class="o_image_name"
+                                   download=""
+                                   t-att-title="'Download ' + file.name">
+                                    <t t-esc="file.name"/>
+                                </a>
+                            </div>
+                            <div t-if="!props.readonly" class="o_image_delete" 
+                                 t-on-click.stop="() => this.onFileRemove(file.id)"
+                                 title="Delete">
+                                <i class="fa fa-trash"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-if="!props.readonly">
+                    <div class="o_image_item">
+                        <div class="o_image_wrapper o_dropzone" 
+                             t-on-dragover.prevent="onDragOver"
+                             t-on-dragleave.prevent="onDragLeave"
+                             t-on-drop.prevent="onDrop">
+                            <FileInput
+                                multiUpload="true"
+                                onUpload.bind="onFileUploaded"
+                                resModel="props.record.resModel"
+                                resId="props.record.resId or 0"
+                                accept="'image/*'"
+                            >
+                                <div class="o_dropzone_content">
+                                    <i class="fa fa-cloud-upload"/>
+                                    <div class="o_dropzone_text">
+                                        <t t-esc="getDropzoneText()"/>
+                                    </div>
+                                </div>
+                            </FileInput>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+
+</templates>

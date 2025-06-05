@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Template for control panel -->
+    <t t-name="garment.FormStatusIndicator.CustomButtons" t-inherit="web.FormStatusIndicator" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'o_form_status_indicator_buttons')]" position="replace">
+            <div class="o_form_status_indicator_buttons d-flex" t-att-class="{ invisible: !(props.model.root.isNew or displayButtons) }">
+                <button type="button" class="btn btn-primary ms-2" data-hotkey="s" t-on-click.stop="save" aria-label="Save Record" t-ref="save">
+                    <i class="fa fa-save me-1" />
+                    Save manually
+                </button>
+
+                <!-- Custom Discard Button -->
+                <button type="button" class="btn btn-secondary ms-2" data-hotkey="j" t-on-click.stop="discard" aria-label="Discard Changes">
+                    <i class="fa fa-undo fa-fw" />
+                    Discard
+                </button>
+            </div>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="garment_sample.create_button.buttons" t-inherit="web.ListView.Buttons">
+        <xpath expr="//div[hasclass('o_list_buttons')]" position="inside">
+            <button 
+                type="button" 
+                class="btn btn-primary create_button" 
+                t-on-click="onCreateButtonClick"
+                t-if="state.canCreate"
+            >
+                New
+            </button>
+        </xpath>
+    </t>
+
+    <t t-name="garment.sample.SampleTreeRow">
+        <tr class="o_data_row" t-att-class="getRowClass(record)" t-att-data-id="record.id" t-on-click.capture="(ev) => this.onClickCapture(record, ev)" t-on-mouseover.capture="(ev) => this.ignoreEventInSelectionMode(ev)" t-on-mouseout.capture="(ev) => this.ignoreEventInSelectionMode(ev)" t-on-mouseenter.capture="(ev) => this.ignoreEventInSelectionMode(ev)" t-on-touchstart="(ev) => this.onRowTouchStart(record, ev)" t-on-touchend="() => this.onRowTouchEnd(record)" t-on-touchmove="() => this.onRowTouchMove(record)">
+            <td t-on-keydown.synthetic="(ev) => this.onCellKeydown(ev, group, record)" t-if="hasSelectors" class="o_list_record_selector user-select-none" t-on-click.stop="() => this.toggleRecordSelection(record)" tabindex="-1">
+                <CheckBox disabled="!canSelectRecord" value="record.selected" onChange.alike="() => this.toggleRecordSelection(record)" />
+            </td>
+            <t t-foreach="getColumns(record)" t-as="column" t-key="column.id">
+                <t t-if="column.type === 'field'">
+                    <t t-set="isInvisible" t-value="evalInvisible(column.invisible, record) or !(column.name in record.data)"/>
+                    <td t-on-keydown.synthetic="(ev) => this.onCellKeydown(ev, group, record)" class="o_data_cell cursor-pointer" t-att-class="getCellClass(column, record)" t-att-name="column.name" t-att-colspan="column.colspan" t-att-data-tooltip="!isInvisible ? getCellTitle(column, record) : false" data-tooltip-delay="1000" t-on-click="(ev) => this.onCellClicked(record, column, ev)" tabindex="-1">
+                        <t t-if="!isInvisible">
+                            <t t-if="canUseFormatter(column, record)" t-out="getFormattedValue(column, record)"/>
+                            <Field t-else="" name="column.name" record="record" type="column.widget" class="getFieldClass(column)" fieldInfo="column" t-props="getFieldProps(record, column)"/>
+                        </t>
+                    </td>
+                </t>
+            </t>
+        </tr>
+        <!-- Progress bar row -->
+        <t t-if="getProgressStates(record).length > 0">
+            <tr class="progress-bar-row" t-att-data-id="record.id">
+                <td t-att-colspan="getColumns(record).length + (hasSelectors ? 1 : 0)">
+                    <div class="progress-container">
+                        <t t-foreach="getProgressStates(record)" t-as="state" t-key="state">
+                            <div class="progress-bar" t-att-class="getProgressBarClass(state)">
+                                <span class="progress-bar-text" t-esc="getProgressBarText(state)"/>
+                            </div>
+                        </t>
+                    </div>
+                </td>
+            </tr>
+        </t>
+    </t>
+</templates>

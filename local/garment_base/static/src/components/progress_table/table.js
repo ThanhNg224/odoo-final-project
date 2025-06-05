@@ -230,12 +230,12 @@ class EditProgressDialog extends Component {
 
     async loadDepartments() {
         try {
-            console.log("Loading departments...");
+            // console.log("Loading departments...");
             const departments = await this.rpc('/garment/department/search_read', {
                 fields: ['id', 'name'],
                 domain: []
             });
-            console.log("Loaded departments:", departments);
+            // console.log("Loaded departments:", departments);
             if (departments && departments.length > 0) {
                 this.state.departments = departments;
             } else {
@@ -348,26 +348,7 @@ export class ProgressTable extends Component {
 
     async initializeData() {
         if (!this.state.rows.length) {
-            this.state.rows = [{
-                name: "Unnamed",
-                state: "not_started",
-                plan: {
-                    start_date: "",
-                    end_date: "",
-                    quantity: 0,
-                    person_in_charge: ""
-                },
-                actual: {
-                    start_date: "",
-                    end_date: "",
-                    total_quantity: 0,
-                    completed_quantity: 0,
-                    defect_quantity: 0,
-                    department_id: "",
-                    unit_price: 0
-                },
-                remark: ""
-            }];
+            this.state.rows = [];
             this.props.record.update({ [this.props.name]: this.state.rows });
         }
     }
@@ -560,12 +541,12 @@ export class ProgressTable extends Component {
 
     async loadDepartments() {
         try {
-            console.log("Loading departments in ProgressTable...");
+            // console.log("Loading departments in ProgressTable...");
             const departments = await this.rpc('/garment/department/search_read', {
                 fields: ['id', 'name'],
                 domain: []
             });
-            console.log("Loaded departments in ProgressTable:", departments);
+            // console.log("Loaded departments in ProgressTable:", departments);
             const deptMap = {};
             departments.forEach(dept => {
                 deptMap[dept.id] = dept.name;

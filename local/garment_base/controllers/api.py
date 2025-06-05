@@ -23,7 +23,7 @@ class GarmentController(http.Controller):
     def save_template(self, name, table_data, model):
         try:
             # Directly create the template in the target model
-            template = request.env[model].create({
+            template = request.env[model].sudo().create({
                 'name': name,
                 'template': table_data,
             })
@@ -37,14 +37,14 @@ class GarmentController(http.Controller):
 
     @http.route('/garment/get_materials', type='json', auth='user')
     def get_materials(self):
-        materials = request.env['garment.inventory.material'].search_read(
+        materials = request.env['garment.inventory.material'].sudo().search_read(
             [], ['name', 'code']
         )
         return materials
 
     @http.route('/garment/get_colors', type='json', auth='user')
     def get_colors(self):
-        colors = request.env['garment.inventory.color'].search_read(
+        colors = request.env['garment.inventory.color'].sudo().search_read(
             [], ['name', 'code']
         )
         return colors 
@@ -57,4 +57,14 @@ class GarmentController(http.Controller):
             domain = []
         departments = request.env['garment.department'].sudo().search_read(domain, fields)
         return departments
+
+    @http.route('/garment/check_permission', type='json', auth='user')
+    def check_permission(self, permission_name):
+        user = request.env.user
+        has_permission = user.has_group(permission_name)
+        return {
+            'has_permission': has_permission,
+            'user_id': user.id,
+            'user_name': user.name
+        }
     

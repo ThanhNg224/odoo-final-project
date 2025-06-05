@@ -57,10 +57,14 @@
                     <!-- Order Section -->
                     <group name="order_info">
                         <group string="Order" name="order_left">
-                            <field name="order_name" placeholder="Order Name"/>
-                            <field name="order_number" placeholder="Order Number"/>
-                            <field name="client"/>
-                            <field name="delivery_date"/>
+                        <!-- Picker -->
+                            <field name="garment_order_id" options="{'no_create': True}"  
+                                   placeholder="select existing order"/>
+                            <!--Auto filled, read only-->
+                            <field name="order_name" readonly="1"/>
+                            <field name="order_number" readonly="1"/>
+                            <field name="client" readonly="1"/>
+                            <field name="delivery_date" readonly="1"/>
                         </group>
                         <group name="order_right">
                         </group>
@@ -327,7 +331,7 @@
 
     <!-- Root Menu -->
     <menuitem id="menu_garment_production_root" 
-              name="Production Management"
+              name="Production"
               web_icon="garment_production,static/description/icon.png"
               sequence="10"/>
               

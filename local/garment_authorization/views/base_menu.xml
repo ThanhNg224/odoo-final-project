@@ -1,8 +1,6 @@
 <odoo>
-    <menuitem 
-        id="menu_garment_groups_view" 
-        name="Garment Groups"
-        parent="base.menu_users"
-        action="action_garment_groups_view"
-        sequence="40" />
+    <menuitem id="menu_garment_authorization_root" name="Garment Authorization" sequence="99"/>
+    <menuitem id="menu_garment_authorization_group" name="Groups" parent="menu_garment_authorization_root" action="action_groups"/>
+    <menuitem id="menu_garment_authorization_permission" name="Permissions" parent="menu_garment_authorization_root" action="action_permissions"/>
+    <menuitem id="menu_garment_authorization_user" name="Users" parent="menu_garment_authorization_root" action="action_garment_user"/>
 </odoo>

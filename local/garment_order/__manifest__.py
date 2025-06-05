@@ -1,14 +1,12 @@
-# __manifest__.py
 {
     "name": "Garment Order Management",
     "author": "Phung Minh Chien",
     "license": "LGPL-3",
-    "depends": ["web", "base", "garment_base"],
+    "depends": ["web", "base", "garment_base", "garment_authorization"],
     "external_dependencies": {
         'python': ['xlsxwriter', 'reportlab'],
     },
     "data": [
-        "security/ir.model.access.csv",
         "views/order_view.xml",
         "views/base_menu.xml",
     ],

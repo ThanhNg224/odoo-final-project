@@ -35,16 +35,16 @@ class GarmentOrder(models.Model):
         ('cancelled', 'Cancelled')
     ], string="Status", default='draft')
 
-    sample_id = fields.Many2one('garment.sample', string="Related Sample")
+    sample_ids = fields.Many2many('garment.sample', 'garment_order_sample_rel', 'order_id', 'sample_id', string='Samples')
     # production_id = fields.Many2one('garment.production', string="Related Production")
     department_id = fields.Many2one('garment.department', string='Department')
     published_by = fields.Many2one('res.users', string='Published By', default=lambda self: self.env.user)
     progress_detail = fields.Json(string='Progress Detail', default=lambda self: [])
     material_detail = fields.Json(string='Material Detail', default=lambda self: [
-        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Unit Price", "Position", "Quantity per Unit", "Loss per Unit", "Total Quantity"],
-        ['', '', '', '', '', '', '', '', '', '', '']
+        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+        ["", "", "", "", "", "", "", 0, 0, 0, 0, 0, ""]
     ])
-    other_cost = fields.Json(string='Other Costs', default=lambda self: [{"cost_name": "", "amount": 0}])
+    other_cost = fields.Json(string='Other Costs', default=lambda self: [])
     specification_detail = fields.Json(string='Specification Detail', default=lambda self: [
         ["Color", "XXS", "XS", "S", "M", "L", "XL", "2XL", "3XL"],
         ['', 0, 0, 0, 0, 0, 0, 0, 0],

@@ -88,7 +88,7 @@ class OtherCost(models.Model):
     _description = 'Other Costs'
 
     name = fields.Char(string='Name')
-    template = fields.Json(string='Template', default=lambda self: [{"cost_name": "", "amount": 0}])
+    template = fields.Json(string='Template', default=lambda self: [])
 
     @api.model
     def create(self, vals):
@@ -113,7 +113,7 @@ class ProcessTable(models.Model):
     _description = 'Process Table'
 
     name = fields.Char(string='Name')
-    template = fields.Json(string='Template', default=lambda self: [{"name": "", "unit_price": 0, "multiplier": 1, "notes": ""}])
+    template = fields.Json(string='Template', default=lambda self: [])
 
     @api.model
     def create(self, vals):

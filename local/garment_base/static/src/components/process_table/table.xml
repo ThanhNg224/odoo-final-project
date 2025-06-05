@@ -19,6 +19,12 @@
             </div>
         </div>
 
+        <t t-if="!state.rows || state.rows.length === 0">
+            <div class="alert alert-info text-center m-3">
+                <i class="fa fa-info-circle me-2"/>
+                No process data available. Let's start creating a process.
+            </div>
+        </t>
         <t t-if="state.rows and state.rows.length">
             <table class="table table-sm align-middle text-center">
                 <thead>
@@ -48,9 +54,6 @@
                     </t>
                 </tbody>
             </table>
-        </t>
-        <t t-else="">
-            <span class="text-muted">No data</span>
         </t>
     </t>
 </templates>

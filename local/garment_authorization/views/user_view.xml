@@ -1,0 +1,53 @@
+<odoo>
+  <record id="view_res_users_tree_inherit" model="ir.ui.view">
+    <field name="name">res.users.tree.garment</field>
+    <field name="model">res.users</field>
+    <field name="arch" type="xml">
+      <tree>
+          <field name="name"/>
+          <field name="login"/>
+          <field name="garment_group_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- <record id="view_res_users_form_edit_odoo" model="ir.ui.view">
+      <field name="name">res.users.form.garment.odoo</field>
+      <field name="model">res.users</field>
+      <field name="inherit_id" ref="base.view_users_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//sheet" position="inside">
+              <group string="Garment Group">
+                  <field name="garment_group_id"/>
+              </group>
+          </xpath>
+      </field>
+  </record> -->
+  <record id="view_res_users_form_edit_auth" model="ir.ui.view">
+      <field name="name">res.users.form.garment.auth</field>
+      <field name="model">res.users</field>
+      <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group string="User Information">
+                <field name="name"/>
+                <field name="login"/>
+                <field name="email"/>
+              </group>
+              <group string="Garment Group">
+                <field name="garment_group_id"/>
+              </group>
+            </sheet>
+          </form>
+      </field>
+  </record>
+
+  <record id="action_garment_user" model="ir.actions.act_window">
+    <field name="name">Users</field>
+    <field name="res_model">res.users</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_ids" eval="[(5, 0, 0),
+                                 (0, 0, {'view_mode': 'tree', 'view_id': ref('view_res_users_tree_inherit')}),
+                                 (0, 0, {'view_mode': 'form', 'view_id': ref('view_res_users_form_edit_auth')})]"/>
+  </record>
+</odoo>

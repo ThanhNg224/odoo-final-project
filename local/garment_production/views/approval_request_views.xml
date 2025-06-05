@@ -36,5 +36,5 @@
     </record>
 
     <menuitem id="menu_approval_request" name="Approval Requests"
-              parent="menu_production_root" action="action_approval_request" sequence="50"/>
+              parent="menu_garment_production_root" action="action_approval_request" sequence="50"/>
 </odoo>

@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="menu_garment_production_root" 
+              name="Production"
+              web_icon="garment_production,static/description/icon.png"
+              sequence="10"/>
+</odoo>

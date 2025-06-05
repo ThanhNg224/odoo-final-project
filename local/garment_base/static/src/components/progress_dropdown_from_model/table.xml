@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="garment.ProgressDropdown">
+        <div class="o_progress_dropdown">
+            <div class="d-flex align-items-center mb-3">
+                <label class="form-label me-2 mb-0">Select Approved Sample:</label>
+                <select class="form-select" style="width: 300px;" 
+                        t-model="state.selectedSampleId" 
+                        t-on-change="handleSampleSelection">
+                    <option value="">Select a sample...</option>
+                    <t t-foreach="Object.entries(state.sampleNames)" t-as="entry" t-key="entry[0]">
+                        <option t-att-value="entry[0]">
+                            <t t-esc="entry[1]"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+
+        </div>
+    </t>
+</templates>
+
+
