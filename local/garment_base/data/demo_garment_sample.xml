@@ -2,66 +2,54 @@
     <data noupdate="1">
         <!-- DEPARTMENT DATA -->
         <record id="department_cutting" model="garment.department">
-            <field name="name">Cutting Department</field>
+            <field name="name">Cutting</field>
             <field name="supervisor">Nguyen Van A</field>
-            <field name="code">CUT-001</field>
-            <field name="location">Factory Floor A, Zone 1</field>
         </record>
 
         <record id="department_sewing" model="garment.department">
-            <field name="name">Sewing Department</field>
+            <field name="name">Sewing</field>
             <field name="supervisor">Nguyen Van B</field>
-            <field name="code">SEW-002</field>
-            <field name="location">Factory Floor A, Zone 2</field>
         </record>
 
         <record id="department_stitching" model="garment.department">
-            <field name="name">Stitching Department</field>
+            <field name="name">Stitching</field>
             <field name="supervisor">Nguyen Van C</field>
-            <field name="code">STI-003</field>
-            <field name="location">Factory Floor B, Zone 1</field>
         </record>
 
         <record id="department_washing" model="garment.department">
-            <field name="name">Washing Department</field>
+            <field name="name">Washing</field>
             <field name="supervisor">Nguyen Van D</field>
-            <field name="code">WAS-004</field>
-            <field name="location">Factory Floor B, Zone 2</field>
         </record>
 
         <record id="department_packing" model="garment.department">
-            <field name="name">Packing Department</field>
+            <field name="name">Packing</field>
             <field name="supervisor">Nguyen Van E</field>
-            <field name="code">PAC-005</field>
-            <field name="location">Factory Floor C, Zone 1</field>
         </record>
 
         <!-- FINISHED PRODUCT SIZE DATA -->
         <record id="finished_product_size_men_shirt" model="garment.finished_product_size">
-            <field name="name">Standard: Men's Dress Shirt Sizes</field>
+            <field name="name">Demo: Men's Shirt Sizes</field>
             <field name="template">
                 <![CDATA[
                     [
-                        ["Size Code", "Size Name", "Chest (cm)", "Waist (cm)", "Length (cm)", "Sleeve Length (cm)", "Collar Size (cm)", "Tolerance (±cm)"],
-                        ["MS-S", "Small", "92-96", "80-84", "68-70", "58-60", "37-39", "1.5"],
-                        ["MS-M", "Medium", "96-100", "84-88", "70-72", "60-62", "39-41", "1.5"],
-                        ["MS-L", "Large", "100-104", "88-92", "72-74", "62-64", "41-43", "1.5"],
-                        ["MS-XL", "Extra Large", "104-108", "92-96", "74-76", "64-66", "43-45", "2.0"]
+                        ["Size", "Chest (cm)", "Waist (cm)", "Length (cm)"],
+                        ["M", "98", "88", "70"],
+                        ["L", "105", "94", "72"],
+                        ["XL", "110", "100", "74"]
                     ]
                 ]]>
             </field>
         </record>
 
         <record id="finished_product_size_women_dress" model="garment.finished_product_size">
-            <field name="name">Standard: Women's Formal Dress Sizes</field>
+            <field name="name">Demo: Women's Dress Sizes</field>
             <field name="template">
                 <![CDATA[
                     [
-                        ["Size Code", "Size Name", "Bust (cm)", "Waist (cm)", "Hip (cm)", "Length (cm)", "Shoulder (cm)", "Sleeve Length (cm)", "Tolerance (±cm)"],
-                        ["WD-XS", "Extra Small", "78-82", "62-66", "86-90", "82-84", "35-37", "54-56", "1.0"],
-                        ["WD-S", "Small", "82-86", "66-70", "90-94", "84-86", "37-39", "56-58", "1.0"],
-                        ["WD-M", "Medium", "86-90", "70-74", "94-98", "86-88", "39-41", "58-60", "1.5"],
-                        ["WD-L", "Large", "90-94", "74-78", "98-102", "88-90", "41-43", "60-62", "1.5"]
+                        ["Size", "Bust (cm)", "Waist (cm)", "Hip (cm)", "Length (cm)"],
+                        ["S", "84", "66", "90", "85"],
+                        ["M", "88", "70", "94", "87"],
+                        ["L", "92", "74", "98", "89"]
                     ]
                 ]]>
             </field>
@@ -69,30 +57,45 @@
 
         <!-- MATERIAL DETAIL DATA -->
         <record id="material_detail_tshirt_basic" model="garment.material_detail">
-            <field name="name">Premium Cotton T-Shirt Material Specification</field>
+            <field name="name">Demo: T-Shirt Basic Material</field>
             <field name="template">
                 <![CDATA[
                     [
-                        ["Material ID", "Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price (VND)", "Supplier ID", "Supplier Name", "Lead Time (days)", "MOQ", "Quality Standard"],
-                        ["MAT-1001", "Organic Cotton Fabric", "CTN-ORG-001", "White", "WH-001", "100% Organic Cotton, 200gsm, Oeko-Tex Certified", "m", "Main body", 2.75, 0.25, 0, 0, 85000, "SUP-2001", "Global Textiles Co.", "15", "1000m", "ISO 9001"],
-                        ["MAT-1002", "Reinforced Polyester Thread", "THR-POL-002", "White", "WH-001", "100% Polyester 40/2, High Tensile Strength", "spools", "Seams", 55, 5.5, 0, 0, 120000, "SUP-2002", "Thread Masters Ltd.", "7", "100 spools", "ISO 9001"],
-                        ["MAT-1003", "Woven Care Label", "LBL-CARE-003", "White", "WH-001", "100% Cotton, 2.5x4cm, Washable at 40°C", "pieces", "Side seam", 105, 10.5, 0, 0, 1500, "SUP-2003", "Label Solutions Inc.", "10", "5000pcs", "Oeko-Tex Standard 100"],
-                        ["MAT-1004", "Eco Packaging Bag", "PKG-ECO-004", "Clear", "CL-001", "Recycled PE, 35x45cm, Biodegradable", "pieces", "Final packaging", 105, 5.25, 0, 0, 2500, "SUP-2004", "Green Packaging Co.", "5", "2000pcs", "ISO 14001"]
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""],
+                        ["Thread", "THR-001", "White", "WH-001", "Polyester 40/2", "spools", "Seams", 50, 5, 0, 0, 1, ""],
+                        ["Label", "LBL-001", "White", "WH-001", "Woven, 2x4cm", "pieces", "Inside collar", 100, 10, 0, 0, 1, ""],
+                        ["Packaging Bag", "PKG-001", "Clear", "CL-001", "PE, 30x40cm", "pieces", "Final packaging", 100, 5, 0, 0, 1, ""]
                     ]
                 ]]>
             </field>
         </record>
 
         <record id="material_detail_jeans_premium" model="garment.material_detail">
-            <field name="name">Premium Denim Jeans Material Specification</field>
+            <field name="name">Demo: Premium Jeans Material</field>
             <field name="template">
                 <![CDATA[
                     [
-                        ["Material ID", "Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price (VND)", "Supplier ID", "Supplier Name", "Lead Time (days)", "MOQ", "Quality Standard"],
-                        ["MAT-2001", "Selvedge Denim Fabric", "DNM-SLV-001", "Indigo Blue", "BL-IND-001", "100% Cotton, 14oz, Raw Selvedge, Shrink-to-fit", "m", "Main body", 3.5, 0.35, 0, 0, 250000, "SUP-3001", "Denim Masters Co.", "30", "500m", "ISO 9001"],
-                        ["MAT-2002", "Golden Poly-Cotton Thread", "THR-GLD-002", "Golden", "GD-001", "70% Polyester 30% Cotton, 30/2, Heavy Duty", "spools", "Seams", 65, 6.5, 0, 0, 180000, "SUP-3002", "Thread Excellence Ltd.", "10", "50 spools", "ISO 9001"],
-                        ["MAT-2003", "YKK Metal Zipper", "ZIP-YKK-003", "Brass", "BR-001", "YKK #5, 22cm, Antique Brass Finish", "pcs", "Front fly", 110, 11, 0, 0, 35000, "SUP-3003", "YKK Vietnam", "15", "1000pcs", "ISO 9001"],
-                        ["MAT-2004", "Copper Rivet", "RVT-CPR-004", "Copper", "CP-001", "Solid Copper, 15mm, Reinforced Backing", "pcs", "Stress points", 120, 12, 0, 0, 12000, "SUP-3004", "Hardware Solutions Co.", "20", "5000pcs", "ISO 9001"]
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Denim Fabric", "DNM-001", "Blue", "BL-001", "Stone wash, 12oz", "m", "Main body", 3.2, 0.3, 0, 0, 1, ""],
+                        ["Thread", "THR-002", "Golden", "GD-001", "Cotton 30/2", "spools", "Seams", 60, 6, 0, 0, 1, ""],
+                        ["Zipper", "ZIP-001", "Brass", "BR-001", "YKK #5, 20cm", "pcs", "Front fly", 100, 10, 0, 0, 1, ""],
+                        ["Button", "BTN-001", "Brass", "BR-001", "Antique finish, 20mm", "pcs", "Front closure", 100, 10, 0, 0, 1, ""]
+                    ]
+                ]]>
+            </field>
+        </record>
+
+        <record id="material_detail_sample_c" model="garment.material_detail">
+            <field name="name">Demo: Sample C Material</field>
+            <field name="template">
+                <![CDATA[
+                    [
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Chiffon", "CHF-001", "White", "WH-001", "100% Polyester, sheer", "m", "Overlay", 3.0, 0.3, 0, 0, 1, ""],
+                        ["Lining", "LIN-001", "White", "WH-001", "100% Cotton, soft", "m", "Underlay", 2.5, 0.2, 0, 0, 1, ""],
+                        ["Zipper", "ZIP-002", "White", "WH-001", "Invisible, 40cm", "pcs", "Center back", 75, 7, 0, 0, 1, ""],
+                        ["Thread", "THR-003", "White", "WH-001", "Polyester 50/2", "spools", "Seams", 50, 5, 0, 0, 1, ""]
                     ]
                 ]]>
             </field>
@@ -100,45 +103,59 @@
 
         <!-- OTHER COST DATA -->
         <record id="other_cost_basic_sample" model="garment.other_cost">
-            <field name="name">Standard Production Overhead Costs</field>
+            <field name="name">Basic Sample Costs</field>
             <field name="template">
                 <![CDATA[
                     [
                         {
-                            "cost_id": "OVH-1001",
                             "cost_name": "Machine Maintenance",
-                            "cost_category": "Equipment",
-                            "amount": 3000000,
-                            "currency": "VND",
-                            "frequency": "monthly",
-                            "responsible_department": "Maintenance"
+                            "amount": 30000
                         },
                         {
-                            "cost_id": "OVH-1002",
                             "cost_name": "Raw Material Wastage",
-                            "cost_category": "Materials",
-                            "amount": 1500000,
-                            "currency": "VND",
-                            "frequency": "per production batch",
-                            "responsible_department": "Quality Control"
+                            "amount": 15000
                         },
                         {
-                            "cost_id": "OVH-1003",
                             "cost_name": "Packaging Material",
-                            "cost_category": "Logistics",
-                            "amount": 2000000,
-                            "currency": "VND",
-                            "frequency": "per order",
-                            "responsible_department": "Packing"
+                            "amount": 20000
+                        }
+                    ]
+                ]]>
+            </field>
+        </record>
+
+        <record id="other_cost_premium_sample" model="garment.other_cost">
+            <field name="name">Premium Sample Costs</field>
+            <field name="template">
+                <![CDATA[
+                    [
+                        {
+                            "cost_name": "Logistics and Shipping",
+                            "amount": 50000
                         },
                         {
-                            "cost_id": "OVH-1004",
-                            "cost_name": "Quality Control Testing",
-                            "cost_category": "Quality",
-                            "amount": 1800000,
-                            "currency": "VND",
-                            "frequency": "weekly",
-                            "responsible_department": "Quality Assurance"
+                            "cost_name": "Quality Inspection",
+                            "amount": 18000
+                        },
+                        {
+                            "cost_name": "Employee Training",
+                            "amount": 25000
+                        },
+                        {
+                            "cost_name": "Product Certification",
+                            "amount": 12000
+                        },
+                        {
+                            "cost_name": "Storage and Warehousing",
+                            "amount": 40000
+                        },
+                        {
+                            "cost_name": "Marketing and Promotions",
+                            "amount": 35000
+                        },
+                        {
+                            "cost_name": "Repair and Maintenance",
+                            "amount": 27000
                         }
                     ]
                 ]]>
@@ -147,94 +164,463 @@
 
         <!-- PROCESS TABLE DATA -->
         <record id="process_table_tshirt_new" model="garment.process_table">
-            <field name="name">Standard T-Shirt Production Process</field>
+            <field name="name">T-Shirt Process Table</field>
             <field name="template">
                 <![CDATA[
                     [
                         {
-                            "process_id": "PRO-1001",
-                            "serial_number": 1,
-                            "name": "Fabric Inspection and Relaxation",
-                            "department": "Fabric Store",
+                            "name": "Fabric Cutting",
+                            "unit_price": 10000,
+                            "multiplier": 1,
+                            "note": "Use laser cutter for precision"
+                        },
+                        {
+                            "name": "Body Stitching",
                             "unit_price": 15000,
                             "multiplier": 1,
-                            "time_estimate": "4 hours",
-                            "equipment": "Inspection Table",
-                            "quality_checkpoints": ["Fabric defects", "Shrinkage test"],
-                            "note": "Must relax fabric for 24 hours before cutting"
+                            "note": "Double stitch for durability"
                         },
                         {
-                            "process_id": "PRO-1002",
-                            "serial_number": 2,
-                            "name": "Pattern Making and Grading",
-                            "department": "Pattern Room",
-                            "unit_price": 25000,
-                            "multiplier": 1,
-                            "time_estimate": "8 hours",
-                            "equipment": "CAD System",
-                            "quality_checkpoints": ["Pattern accuracy", "Seam allowance"],
-                            "note": "Use digital pattern making software"
-                        },
-                        {
-                            "process_id": "PRO-1003",
                             "serial_number": 3,
-                            "name": "Fabric Cutting",
-                            "department": "Cutting",
-                            "unit_price": 18000,
+                            "name": "Label Attachment",
+                            "unit_price": 5000,
                             "multiplier": 1,
-                            "time_estimate": "6 hours",
-                            "equipment": "Auto Cutter",
-                            "quality_checkpoints": ["Cut precision", "Layer alignment"],
-                            "note": "Maintain 99% material utilization"
+                            "note": "Woven label on neck",
+                            "operate": "Manual"
                         }
                     ]
                 ]]>
             </field>
         </record>
 
+        <!-- PROGRESS DETAIL DATA -->
+        <record id="progress_template_tshirt" model="garment.progress_template">
+            <field name="name">T-Shirt Progress Details</field>
+            <field name="template">
+                <![CDATA[
+        [
+            {
+                "name": "Pattern Making",
+                "state": "in_progress",
+                "plan": {"start_date": "2025-05-01", "end_date": "2025-05-05", "quantity": 1000, "person_in_charge": "John Doe"},
+                "actual": {"start_date": "2025-05-01", "end_date": "2025-05-04", "total_quantity": 1000, "completed_quantity": 950, "defect_quantity": 50, "department_id": 2, "unit_price": 2.5},
+                "remark": "Completed on time"
+            },
+            {
+                "name": "Cutting",
+                "state": "in_progress",
+                "plan": {"start_date": "2025-05-06", "end_date": "2025-05-08", "quantity": 1000, "person_in_charge": "Jane Smith"},
+                "actual": {"start_date": "2025-05-06", "end_date": "2025-05-07", "total_quantity": 1000, "completed_quantity": 980, "defect_quantity": 20, "department_id": 3, "unit_price": 3.0},
+                "remark": "Minor defects"
+            },
+            {
+                "name": "Sewing",
+                "state": "not_started",
+                "plan": {"start_date": "2025-05-09", "end_date": "2025-05-12", "quantity": 1000, "person_in_charge": "Alice Lee"},
+                "actual": {"start_date": "", "end_date": "", "total_quantity": 0, "completed_quantity": 0, "defect_quantity": 0, "department_id": 1, "unit_price": 0},
+                "remark": ""
+            },
+            {
+                "name": "Quality Check",
+                "state": "not_started",
+                "plan": {"start_date": "2025-05-13", "end_date": "2025-05-14", "quantity": 1000, "person_in_charge": "Mark Tan"},
+                "actual": {"start_date": "", "end_date": "", "total_quantity": 0, "completed_quantity": 0, "defect_quantity": 0, "department_id": 4, "unit_price": 0},
+                "remark": ""
+            }
+        ]
+        ]]>
+            </field>
+        </record>
+
+        <record id="progress_template_jeans" model="garment.progress_template">
+            <field name="name">Jeans Progress Details</field>
+            <field name="template">
+                <![CDATA[
+        [
+            {
+                "name": "Pattern Making",
+                "state": "completed",
+                "plan": {"start_date": "2025-05-01", "end_date": "2025-05-03", "quantity": 500, "person_in_charge": "Emily Zhang"},
+                "actual": {"start_date": "2025-05-01", "end_date": "2025-05-02", "total_quantity": 510, "completed_quantity": 500, "defect_quantity": 10, "department_id": 1, "unit_price": 4.0},
+                "remark": "High precision"
+            },
+            {
+                "name": "Denim Cutting",
+                "state": "in_progress",
+                "plan": {"start_date": "2025-05-04", "end_date": "2025-05-06", "quantity": 500, "person_in_charge": "Liam Wang"},
+                "actual": {"start_date": "2025-05-04", "end_date": "", "total_quantity": 305, "completed_quantity": 300, "defect_quantity": 5, "department_id": 5, "unit_price": 5.0},
+                "remark": "Ongoing"
+            },
+            {
+                "name": "Stitching",
+                "state": "not_started",
+                "plan": {"start_date": "2025-05-07", "end_date": "2025-05-10", "quantity": 500, "person_in_charge": "Sophia Chen"},
+                "actual": {"start_date": "", "end_date": "", "total_quantity": 0, "completed_quantity": 0, "defect_quantity": 0, "department_id": 5, "unit_price": 0},
+                "remark": ""
+            },
+            {
+                "name": "Washing",
+                "state": "not_started",
+                "plan": {"start_date": "2025-05-11", "end_date": "2025-05-12", "quantity": 500, "person_in_charge": "Michael Lee"},
+                "actual": {"start_date": "", "end_date": "", "total_quantity": 0, "completed_quantity": 0, "defect_quantity": 0, "department_id": 3, "unit_price": 0},
+                "remark": ""
+            },
+            {
+                "name": "Packaging",
+                "state": "not_started",
+                "plan": {"start_date": "2025-05-13", "end_date": "2025-05-14", "quantity": 500, "person_in_charge": "Oliver Tan"},
+                "actual": {"start_date": "", "end_date": "", "total_quantity": 0, "completed_quantity": 0, "defect_quantity": 0, "department_id": 1, "unit_price": 0},
+                "remark": ""
+            }
+        ]
+        ]]>
+            </field>
+        </record>
+
         <!-- SAMPLE DATA -->
         <record id="sample_demo_1" model="garment.sample">
-            <field name="name">Premium Men's Dress Shirt</field>
-            <field name="number">SMP-2024-001</field>
-            <field name="shape">Dress Shirt</field>
-            <field name="color">Classic White</field>
-            <field name="client">Elegant Apparel Inc.</field>
-            <field name="brand">Elegance</field>
-            <field name="quotation">QT-2024-001</field>
-            <field name="designer">Michael Chen</field>
-            <field name="pattern_maker">Sarah Johnson</field>
-            <field name="pattern_drafter">David Wilson</field>
-            <field name="quantity">500</field>
-            <field name="pattern_size">MS-M (Medium)</field>
-            <field name="development_date">2024-03-15</field>
-            <field name="finished_product_size" ref="finished_product_size_men_shirt"/>
-            <field name="material_detail" ref="material_detail_tshirt_basic"/>
-            <field name="process_table" ref="process_table_tshirt_new"/>
-            <field name="other_cost" ref="other_cost_basic_sample"/>
-            <field name="technical_requirements">1. All seams must be double-stitched with 1cm seam allowance. 2. Collar stand must be reinforced with fusible interfacing. 3. Buttonholes must be reinforced with gimp thread.</field>
-            <field name="remark">Client requires Oeko-Tex certified materials only. Delivery must be completed by 2024-05-30.</field>
+            <field name="name">Sample A</field>
+            <field name="number">SA-001</field>
+            <field name="shape">T-Shirt</field>
+            <field name="color">Red</field>
+            <field name="client">ABC Fashion</field>
+            <field name="brand">StylePro</field>
+            <field name="quotation">1</field>
+            <field name="designer">John Doe</field>
+            <field name="pattern_maker">Jane Smith</field>
+            <field name="pattern_drafter">Emily White</field>
+            <field name="quantity">50</field>
+            <field name="pattern_size">M</field>
+            <field name="development_date">2025-05-05</field>
+            <field name="finished_product_size">
+                <![CDATA[
+                    [
+                        ["Size", "Chest (cm)", "Waist (cm)", "Length (cm)"],
+                        ["M", "98", "88", "70"],
+                        ["L", "105", "94", "72"],
+                        ["XL", "110", "100", "74"]
+                    ]
+                ]]>
+            </field>
+            <field name="material_detail">
+                <![CDATA[
+                    [
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""],
+                        ["Thread", "THR-001", "White", "WH-001", "Polyester 40/2", "spools", "Seams", 50, 5, 0, 0, 1, ""],
+                        ["Label", "LBL-001", "White", "WH-001", "Woven, 2x4cm", "pieces", "Inside collar", 100, 10, 0, 0, 1, ""],
+                        ["Packaging Bag", "PKG-001", "Clear", "CL-001", "PE, 30x40cm", "pieces", "Final packaging", 100, 5, 0, 0, 1, ""]
+                    ]
+                ]]>
+            </field>
+            <field name="process_table">
+                <![CDATA[
+                    [
+                        {
+                            "serial_number": 1,
+                            "name": "Fabric Cutting",
+                            "unit_price": 10000,
+                            "multiplier": 1,
+                            "note": "Use laser cutter for precision",
+                            "operate": "Auto Cutter"
+                        },
+                        {
+                            "serial_number": 2,
+                            "name": "Body Stitching",
+                            "unit_price": 15000,
+                            "multiplier": 1,
+                            "note": "Double stitch for durability",
+                            "operate": "Flat Lock Machine"
+                        },
+                        {
+                            "serial_number": 3,
+                            "name": "Label Attachment",
+                            "unit_price": 5000,
+                            "multiplier": 1,
+                            "note": "Woven label on neck",
+                            "operate": "Manual"
+                        }
+                    ]
+                ]]>
+            </field>
+            <field name="other_cost">
+                <![CDATA[
+                    [
+                        {
+                            "cost_name": "Electricity and Water",
+                            "amount": 50000
+                        },
+                        {
+                            "cost_name": "Washing and Ironing",
+                            "amount": 10000
+                        },
+                        {
+                            "cost_name": "Packaging",
+                            "amount": 15000
+                        },
+                        {
+                            "cost_name": "Transportation",
+                            "amount": 20000
+                        },
+                        {
+                            "cost_name": "Quality Control",
+                            "amount": 12000
+                        }
+                    ]
+                ]]>
+            </field>
+            <field name="technical_requirements">Ensure tight stitching and clean cuts.</field>
+            <field name="remark">Use eco-friendly dyes only.</field>
+            <field name="state">new</field>
+            <field name="department_id" ref="department_cutting"/>
+            <!-- <field name="published_by" ref="chien"/> -->
+        </record>
+
+        <record id="sample_demo_2" model="garment.sample">
+            <field name="name">Sample B</field>
+            <field name="number">SA-002</field>
+            <field name="shape">Jeans</field>
+            <field name="color">Blue</field>
+            <field name="client">Denim Co.</field>
+            <field name="brand">JeanFlex</field>
+            <field name="quotation">2</field>
+            <field name="designer">Alice Nguyen</field>
+            <field name="pattern_maker">Bob Tran</field>
+            <field name="pattern_drafter">Carol Pham</field>
+            <field name="quantity">100</field>
+            <field name="pattern_size">L</field>
+            <field name="development_date">2025-05-11</field>
+            <field name="finished_product_size">
+                <![CDATA[
+                    [
+                        ["Size", "Waist (cm)", "Hip (cm)", "Length (cm)"],
+                        ["M", "82", "100", "105"],
+                        ["L", "88", "106", "107"],
+                        ["XL", "94", "112", "109"]
+                    ]
+                ]]>
+            </field>
+            <field name="material_detail">
+                <![CDATA[
+                    [
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""],
+                        ["Thread", "THR-001", "White", "WH-001", "Polyester 40/2", "spools", "Seams", 50, 5, 0, 0, 1, ""],
+                        ["Label", "LBL-001", "White", "WH-001", "Woven, 2x4cm", "pieces", "Inside collar", 100, 10, 0, 0, 1, ""],
+                        ["Packaging Bag", "PKG-001", "Clear", "CL-001", "PE, 30x40cm", "pieces", "Final packaging", 100, 5, 0, 0, 1, ""]
+                    ]
+                ]]>
+            </field>
+            <field name="process_table">
+                <![CDATA[
+                    [
+                        {
+                            "serial_number": 1,
+                            "name": "Fabric Cutting",
+                            "unit_price": 12000,
+                            "multiplier": 1,
+                            "note": "Cut on bias for stretch fit",
+                            "operate": "Auto Cutter"
+                        },
+                        {
+                            "serial_number": 2,
+                            "name": "Side Seams",
+                            "unit_price": 18000,
+                            "multiplier": 1,
+                            "note": "Chain stitch for strength",
+                            "operate": "Overlock Machine"
+                        },
+                        {
+                            "serial_number": 3,
+                            "name": "Rivet Attachment",
+                            "unit_price": 8000,
+                            "multiplier": 1,
+                            "note": "Brass rivet at stress points",
+                            "operate": "Manual"
+                        }
+                    ]
+                ]]>
+            </field>
+            <field name="other_cost">
+                <![CDATA[
+                    [
+                        {
+                            "cost_name": "Logistics and Shipping",
+                            "amount": 50000
+                        },
+                        {
+                            "cost_name": "Quality Inspection",
+                            "amount": 18000
+                        },
+                        {
+                            "cost_name": "Employee Training",
+                            "amount": 25000
+                        },
+                        {
+                            "cost_name": "Product Certification",
+                            "amount": 12000
+                        },
+                        {
+                            "cost_name": "Storage and Warehousing",
+                            "amount": 40000
+                        },
+                        {
+                            "cost_name": "Marketing and Promotions",
+                            "amount": 35000
+                        },
+                        {
+                            "cost_name": "Repair and Maintenance",
+                            "amount": 27000
+                        }
+                    ]
+                ]]>
+            </field>
+            <field name="technical_requirements">Use reinforced stitching on back pockets.</field>
+            <field name="remark">Include hang tags with brand logo.</field>
             <field name="state">in_progress</field>
+            <field name="department_id" ref="department_packing"/>
+            <!-- <field name="published_by" ref="chien"/> -->
+        </record>
+
+        <record id="sample_demo_3" model="garment.sample">
+            <field name="name">Sample C</field>
+            <field name="number">SA-003</field>
+            <field name="shape">Dress</field>
+            <field name="color">White</field>
+            <field name="client">Elegance Ltd.</field>
+            <field name="brand">PureLine</field>
+            <field name="quotation">3</field>
+            <field name="designer">David Le</field>
+            <field name="pattern_maker">Emma Vo</field>
+            <field name="pattern_drafter">Frank Do</field>
+            <field name="quantity">75</field>
+            <field name="pattern_size">S</field>
+            <field name="development_date">2025-05-12</field>
+            <field name="finished_product_size">
+                <![CDATA[
+                    [
+                        ["Size", "Bust (cm)", "Waist (cm)", "Hip (cm)", "Length (cm)"],
+                        ["S", "86", "68", "92", "90"],
+                        ["M", "90", "72", "96", "92"],
+                        ["L", "94", "76", "100", "94"]
+                    ]
+                ]]>
+            </field>
+            <field name="material_detail">
+                <![CDATA[
+                    [
+                        ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
+                        ["Cotton Fabric", "CTN-001", "White", "WH-001", "100% Cotton, 180gsm", "m", "Main body", 2.5, 0.2, 0, 0, 1, ""],
+                        ["Thread", "THR-001", "White", "WH-001", "Polyester 40/2", "spools", "Seams", 50, 5, 0, 0, 1, ""],
+                        ["Label", "LBL-001", "White", "WH-001", "Woven, 2x4cm", "pieces", "Inside collar", 100, 10, 0, 0, 1, ""],
+                        ["Packaging Bag", "PKG-001", "Clear", "CL-001", "PE, 30x40cm", "pieces", "Final packaging", 100, 5, 0, 0, 1, ""]
+                    ]
+                ]]>
+            </field>
+            <field name="process_table">
+                <![CDATA[
+                    [
+                        {
+                            "serial_number": 1,
+                            "name": "Overlay Cutting",
+                            "unit_price": 13000,
+                            "multiplier": 1,
+                            "note": "Align nap direction",
+                            "operate": "Manual Cutter"
+                        },
+                        {
+                            "serial_number": 2,
+                            "name": "Bodice Stitching",
+                            "unit_price": 16000,
+                            "multiplier": 1,
+                            "note": "Use stay tape on neckline",
+                            "operate": "Flat Lock Machine"
+                        },
+                        {
+                            "serial_number": 3,
+                            "name": "Zipper Insertion",
+                            "unit_price": 7000,
+                            "multiplier": 1,
+                            "note": "Invisible zipper technique",
+                            "operate": "Manual"
+                        }
+                    ]
+                ]]>
+            </field>
+            <field name="other_cost">
+
+                <![CDATA[
+                    [
+                        {
+                            "cost_name": "Machine Maintenance",
+                            "amount": 30000
+                        },
+                        {
+                            "cost_name": "Raw Material Wastage",
+                            "amount": 15000
+                        },
+                        {
+                            "cost_name": "Packaging Material",
+                            "amount": 20000
+                        }
+                    ]
+                ]]>
+            </field>
+            <field name="technical_requirements">Ensure no puckering on seams.</field>
+            <field name="remark">Attach care instruction label inside.</field>
+            <field name="state">new</field>
             <field name="department_id" ref="department_sewing"/>
         </record>
 
-        <!-- INVENTORY DATA -->
         <record id="inventory_material_1" model="garment.inventory.material">
-            <field name="name">Organic Cotton Fabric</field>
-            <field name="code">CTN-ORG-001</field>
-            <field name="specification">100% Organic Cotton, 200gsm, Oeko-Tex Certified</field>
-            <field name="unit">meter</field>
-            <field name="current_stock">1250.75</field>
-            <field name="minimum_stock">500.00</field>
-            <field name="lead_time">15</field>
-            <field name="supplier_code">SUP-2001</field>
+            <field name="name">Cotton Fabric</field>
+            <field name="code">CTN-001</field>
+        </record>
+        <record id="inventory_material_2" model="garment.inventory.material">
+            <field name="name">Thread</field>
+            <field name="code">THR-001</field>
+        </record>
+        <record id="inventory_material_3" model="garment.inventory.material">
+            <field name="name">Label</field>
+            <field name="code">LBL-001</field>
+        </record>
+        <record id="inventory_material_4" model="garment.inventory.material">
+            <field name="name">Packaging Bag</field>
+            <field name="code">PKG-001</field>
+        </record>
+        <record id="inventory_material_5" model="garment.inventory.material">
+            <field name="name">Denim Fabric</field>
+            <field name="code">DNM-001</field>
+        </record>
+        <record id="inventory_material_6" model="garment.inventory.material">
+            <field name="name">Zipper</field>
+            <field name="code">ZIP-001</field>
+        </record>
+        <record id="inventory_material_7" model="garment.inventory.material">
+            <field name="name">Button</field>
+            <field name="code">BTN-001</field>
         </record>
 
         <record id="inventory_color_1" model="garment.inventory.color">
-            <field name="name">Classic White</field>
+            <field name="name">White</field>
             <field name="code">WH-001</field>
-            <field name="pantone_code">11-0601 TCX</field>
-            <field name="hex_code">#FFFFFF</field>
-            <field name="color_group">Neutrals</field>
+        </record>
+        <record id="inventory_color_2" model="garment.inventory.color">
+            <field name="name">Blue</field>
+            <field name="code">BL-001</field>
+        </record>
+        <record id="inventory_color_3" model="garment.inventory.color">
+            <field name="name">Golden</field>
+            <field name="code">GD-001</field>
+        </record>
+        <record id="inventory_color_4" model="garment.inventory.color">
+            <field name="name">Brass</field>
+            <field name="code">BR-001</field>
+        </record>
+        <record id="inventory_color_5" model="garment.inventory.color">
+            <field name="name">Clear</field>
+            <field name="code">CL-001</field>
         </record>
     </data>
 </odoo>
+

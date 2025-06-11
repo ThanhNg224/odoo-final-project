@@ -35,6 +35,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_product_lot" name="Product Lots"
-              parent="menu_garment_production_root" action="action_product_lot" sequence="30"/>
+    <!-- <menuitem id="menu_product_lot" name="Product Lots"
+              parent="menu_garment_production_root" action="action_product_lot" sequence="30"/> -->
 </odoo>

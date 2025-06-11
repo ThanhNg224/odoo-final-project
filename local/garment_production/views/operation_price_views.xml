@@ -33,6 +33,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_operation_price" name="Operation Prices"
-              parent="menu_garment_production_root" action="action_operation_price" sequence="40"/>
+    <!-- <menuitem id="menu_operation_price" name="Operation Prices"
+              parent="menu_garment_production_root" action="action_operation_price" sequence="40"/> -->
 </odoo>

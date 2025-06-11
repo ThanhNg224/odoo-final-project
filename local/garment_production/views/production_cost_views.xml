@@ -37,6 +37,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_production_cost" name="Production Costs"
-              parent="menu_garment_production_root" action="action_production_cost" sequence="65"/>
+    <!-- <menuitem id="menu_production_cost" name="Production Costs"
+              parent="menu_garment_production_root" action="action_production_cost" sequence="65"/> -->
 </odoo> 

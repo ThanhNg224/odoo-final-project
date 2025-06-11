@@ -1,83 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- MAIN PRODUCTION SEQUENCES -->
+        <!-- Production Order Sequence -->
         <record id="seq_production_order" model="ir.sequence">
-            <field name="name">Production Order Reference</field>
+            <field name="name">Production Order</field>
             <field name="code">production.order</field>
-            <field name="prefix">PROD/%(year)s/</field>
+            <field name="prefix">PRO/</field>
             <field name="padding">4</field>
             <field name="company_id" eval="False"/>
-            <field name="number_next">1001</field>
-        </record>
-
-        <record id="seq_garment_sample" model="ir.sequence">
-            <field name="name">Garment Sample Reference</field>
-            <field name="code">garment.sample</field>
-            <field name="prefix">SMP/%(year)s/</field>
-            <field name="padding">4</field>
-            <field name="number_next">1001</field>
-        </record>
-
-        <record id="seq_garment_order" model="ir.sequence">
-            <field name="name">Garment Order Reference</field>
-            <field name="code">garment.order</field>
-            <field name="prefix">ORD/%(year)s/</field>
-            <field name="padding">4</field>
-            <field name="number_next">1001</field>
-        </record>
-
-        <!-- MATERIAL AND INVENTORY SEQUENCES -->
-        <record id="seq_material_reference" model="ir.sequence">
-            <field name="name">Material Reference Code</field>
-            <field name="code">material.reference</field>
-            <field name="prefix">MAT/</field>
-            <field name="padding">4</field>
-            <field name="number_next">1001</field>
-        </record>
-
-        <record id="seq_inventory_movement" model="ir.sequence">
-            <field name="name">Inventory Movement Reference</field>
-            <field name="code">inventory.movement</field>
-            <field name="prefix">MOV/%(year)s/</field>
-            <field name="padding">5</field>
-            <field name="number_next">1</field>
-        </record>
-
-        <!-- QUALITY CONTROL SEQUENCES -->
-        <record id="seq_quality_inspection" model="ir.sequence">
-            <field name="name">Quality Inspection Reference</field>
-            <field name="code">quality.inspection</field>
-            <field name="prefix">QC/%(month)s/</field>
-            <field name="padding">4</field>
-            <field name="number_next">1</field>
-        </record>
-
-        <!-- OPERATION SEQUENCES -->
-        <record id="seq_operation_code" model="ir.sequence">
-            <field name="name">Operation Code</field>
-            <field name="code">operation.code</field>
-            <field name="prefix">OP/</field>
-            <field name="padding">3</field>
-            <field name="number_next">101</field>
-        </record>
-
-        <!-- DEPARTMENT SEQUENCES -->
-        <record id="seq_department_code" model="ir.sequence">
-            <field name="name">Department Code</field>
-            <field name="code">department.code</field>
-            <field name="prefix">DEPT/</field>
-            <field name="padding">3</field>
-            <field name="number_next">101</field>
-        </record>
-
-        <!-- PROGRESS TRACKING SEQUENCES -->
-        <record id="seq_production_progress" model="ir.sequence">
-            <field name="name">Production Progress Reference</field>
-            <field name="code">production.progress</field>
-            <field name="prefix">PRG/%(year)s/</field>
-            <field name="padding">5</field>
-            <field name="number_next">1</field>
         </record>
     </data>
-</odoo>
+</odoo> 

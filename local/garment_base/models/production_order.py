@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError  # Add this line
 from datetime import datetime
 import json
 import ast
@@ -23,9 +24,8 @@ class ProductionOrder(models.Model):
         ('paid', 'Paid')
     ], string='Finance Status', default='waiting')
     cost_total = fields.Float('Total Cost', compute='_compute_cost_total', digits=(16, 2), store=True)
-    
-    # Sample related fields - Required field for production order
-    sample_id = fields.Many2one('garment.sample', string='Sample', required=True)
+      # Sample related fields - Required field for production order
+    sample_id = fields.Many2one('garment.sample', string='Sample', required=False)
     sample_name = fields.Char(string='Sample Name', store=True)
     sample_number = fields.Char(string='Sample Number', store=True)
     brand = fields.Char(related='sample_id.brand', string='Brand', readonly=True, store=True)
@@ -76,86 +76,112 @@ class ProductionOrder(models.Model):
     order_name    = fields.Char(string='Tên đơn hàng',    readonly=True, store=True)
     order_number  = fields.Char(string='Mã đơn hàng',     readonly=True, store=True)
     client        = fields.Char(string='Khách hàng',      readonly=True, store=True)
-    delivery_date = fields.Date(string='Ngày giao hàng',  readonly=True, store=True)
-
+    delivery_date = fields.Date(string='Ngày giao hàng',  readonly=True, store=True)    # Add this field to help with domain management
+    available_sample_ids = fields.Many2many(
+        'garment.sample', 
+        compute='_compute_available_samples',
+        string='Available Samples'
+    )
+    
+    @api.depends('garment_order_id', 'garment_order_id.sample_ids')
+    def _compute_available_samples(self):
+        for record in self:
+            if record.garment_order_id and record.garment_order_id.sample_ids:
+                record.available_sample_ids = record.garment_order_id.sample_ids
+            else:
+                record.available_sample_ids = self.env['garment.sample']  # Empty recordset
+    
     @api.onchange('garment_order_id')
     def _onchange_garment_order_id(self):
+        result = {}
+        
         if not self.garment_order_id:
-            # nếu bỏ chọn thì xóa giá trị cũ
+            # Clear all related fields when order is removed
             self.order_name = False
             self.order_number = False
             self.client = False
             self.delivery_date = False
-            return
-        # gán tự động từ record đã chọn
-        self.order_name    = self.garment_order_id.name
-        # nếu trong garment.order có field order_number thì đổi .name thành .order_number
-        self.order_number  = self.garment_order_id.order_number
+            self.sample_id = False
+            
+            # Return empty domain
+            result['domain'] = {'sample_id': [('id', '=', False)]}
+            return result
         
-        # Fix for missing client attribute - use issuing_company instead
-        self.client        = self.garment_order_id.issuing_company
+        # Fill order information
+        self.order_name = self.garment_order_id.name
+        self.order_number = self.garment_order_id.order_number
+        self.client = self.garment_order_id.issuing_company
+        self.delivery_date = self.garment_order_id.receiving_date
         
-        self.delivery_date = self.garment_order_id.receiving_date  # Or use a different date field if appropriate
+        # Clear current sample selection when order changes
+        self.sample_id = False
+        
+        # Get available samples
+        available_samples = self.garment_order_id.sample_ids
+        
+        if not available_samples:
+            # Show warning if no samples available
+            result['warning'] = {
+                'title': 'No Samples Available',
+                'message': f'The selected order "{self.garment_order_id.name}" has no samples associated with it. Please add samples to this order first.'
+            }
+            result['domain'] = {'sample_id': [('id', '=', False)]}
+        else:
+            # Set domain to filter samples
+            result['domain'] = {'sample_id': [('id', 'in', available_samples.ids)]}
+        
+        return result
+    @api.onchange('sample_id')
+    def _onchange_sample_id(self):
+        if self.sample_id:
+            # Check if selected sample belongs to the current order
+            if self.garment_order_id and self.sample_id not in self.garment_order_id.sample_ids:
+                return {
+                    'warning': {
+                        'title': 'Invalid Sample Selection',
+                        'message': 'The selected sample does not belong to the current order. Please select a valid sample.'
+                    },
+                    'value': {'sample_id': False}
+                }
+            
+            self.sample_name = self.sample_id.name
+            self.sample_number = self.sample_id.number
+            
+            # Copy process requirements safely
+            if hasattr(self.sample_id, 'technical_requirements') and self.sample_id.technical_requirements:
+                self.process_requirements = self.sample_id.technical_requirements
+            else:
+                self.process_requirements = ''
+        else:
+            # Clear sample-related fields when no sample is selected
+            self.sample_name = False
+            self.sample_number = False
+            self.process_requirements = ''
     
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
         args = args or []
         domain = []
         if name:
-            domain = ['|', ('name', operator, name), ('number', operator, name)]
-        return self.env['garment.sample'].search(domain + args, limit=limit).name_get()
+            domain = ['|', ('name', operator, name), ('order_name', operator, name)]
+        return self._search(domain + args, limit=limit)
     
-    @api.onchange('sample_id')
-    def _onchange_sample_id(self):
-        if self.sample_id:
-            self.sample_name = self.sample_id.name
-            self.sample_number = self.sample_id.number
-            
-            # Copy process requirements
-            self.process_requirements = self.sample_id.process_requirements
-            
-            # Remove any "Other cost" entries that might be created
-            # This will be executed when the form is saved due to onchange limitations
-            self.with_context(commit_other_cost_cleanup=True).update({'sample_id': self.sample_id.id})
-            
-            # Try to clean up invalid entries immediately
-            self.action_remove_other_cost_entries()
-    
-    @api.onchange('sample_name')
-    def _onchange_sample_name(self):
-        if self.sample_name:
-            samples = self.env['garment.sample'].search([('name', 'ilike', self.sample_name)])
-            return {'domain': {'sample_id': [('id', 'in', samples.ids)]}}
-    
-    @api.onchange('sample_number')
-    def _onchange_sample_number(self):
-        if self.sample_number:
-            samples = self.env['garment.sample'].search([('number', 'ilike', self.sample_number)])
-            return {'domain': {'sample_id': [('id', 'in', samples.ids)]}}
+
+
+   
     
     @api.depends('progress_ids.completed_qty')
     def _compute_completed_quantity(self):
         for order in self:
-            if order.progress_ids:
-                # Get the latest progress entry for each step
-                steps = {}
-                for progress in order.progress_ids:
-                    if progress.step_name not in steps or progress.date > steps[progress.step_name].date:
-                        steps[progress.step_name] = progress
-                
-                # Use the minimum completed quantity across all steps
-                if steps:
-                    order.completed_quantity = min(step.completed_qty for step in steps.values())
-                else:
-                    order.completed_quantity = 0
-            else:
-                order.completed_quantity = 0
+            # Calculate total completed quantity from all order lines
+            order.completed_quantity = sum(line.done_qty for line in order.line_ids)
     
-    @api.depends('completed_quantity', 'quantity')
+    @api.depends('completed_quantity', 'line_ids.planned_qty')
     def _compute_progress_percentage(self):
         for order in self:
-            if order.quantity > 0:
-                order.progress_percentage = (order.completed_quantity / order.quantity) * 100
+            total_planned = sum(line.planned_qty for line in order.line_ids)
+            if total_planned > 0:
+                order.progress_percentage = (order.completed_quantity / total_planned) * 100
             else:
                 order.progress_percentage = 0
     
@@ -202,11 +228,13 @@ class ProductionOrder(models.Model):
     def set_in_progress(self):
         for record in self:
             record.state = 'in_progress'
+            _logger.info(f"Production order {record.name} set to 'in_progress'")
         return True
     
     def set_done(self):
         for record in self:
             record.state = 'done'
+            _logger.info(f"Production order {record.name} set to 'done'")
         return True
         
     def action_view_lines(self):

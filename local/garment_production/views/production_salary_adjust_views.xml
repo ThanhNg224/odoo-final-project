@@ -40,6 +40,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_production_salary_adjust" name="Salary Adjustments"
-              parent="menu_garment_production_root" action="action_production_salary_adjust" sequence="90"/>
+    <!-- <menuitem id="menu_production_salary_adjust" name="Salary Adjustments"
+              parent="menu_garment_production_root" action="action_production_salary_adjust" sequence="90"/> -->
 </odoo> 

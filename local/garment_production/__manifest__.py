@@ -6,6 +6,8 @@
     "author": "Siu",
     "depends": ["web", "base", "garment_base", "garment_authorization"],
     "data": [
+        # Reports
+        "reports/bundle_report.xml",
         # Views
         "views/base_menu.xml",
         "views/approval_request_views.xml",
@@ -33,6 +35,7 @@
     "assets": {
         "web.assets_backend": [
             "garment_production/static/src/scss/production_management.scss",
+            'garment_production/static/src/js/production_enhancements.js',
         ],
     }
 }

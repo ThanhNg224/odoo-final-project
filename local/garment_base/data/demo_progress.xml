@@ -1,81 +1,16 @@
 <odoo>
-    <data noupdate="1">
-        <!-- PROGRESS FOR PREMIUM TSHIRT PRODUCTION ORDER -->
-        <record id="progress_tshirt_cutting" model="production.progress">
-            <field name="order_id" ref="production_order_tshirt"/>
-            <field name="step_name">Fabric Cutting</field>
-            <field name="department_id" ref="department_cutting"/>
-            <field name="responsible">Nguyen Van A</field>
-            <field name="planned_qty">1250</planned_qty>
-            <field name="completed_qty">850</completed_qty>
-            <field name="defect_qty">15</defect_qty>
-            <field name="state">in_progress</field>
-            <field name="start_date">2024-06-15</start_date>
-            <field name="end_date">2024-06-18</end_date>
-            <field name="note">Using auto cutter for precision. Current utilization rate at 98%</note>
-        </record>
-
-        <record id="progress_tshirt_sewing" model="production.progress">
-            <field name="order_id" ref="production_order_tshirt"/>
-            <field name="step_name">Sewing</field>
-            <field name="department_id" ref="department_sewing"/>
-            <field name="responsible">Nguyen Van B</field>
-            <field name="planned_qty">1250</planned_qty>
-            <field name="completed_qty">420</completed_qty>
-            <field name="defect_qty">8</defect_qty>
-            <field name="state">in_progress</field>
-            <field name="start_date">2024-06-19</start_date>
-            <field name="note">Using overlock machines for seam finishing. Maintaining 12 stitches per inch</note>
-        </record>
-
-        <record id="progress_tshirt_quality" model="production.progress">
-            <field name="order_id" ref="production_order_tshirt"/>
-            <field name="step_name">Quality Inspection</field>
-            <field name="department_id" ref="department_packing"/>
-            <field name="responsible">Lisa Nguyen</field>
-            <field name="planned_qty">1250</planned_qty>
-            <field name="completed_qty">250</completed_qty>
-            <field name="defect_qty">3</defect_qty>
-            <field name="state">not_started</field>
-            <field name="note">Scheduled to begin after sewing completion</note>
-        </record>
-
-        <!-- PROGRESS FOR DENIM JEANS PRODUCTION ORDER -->
-        <record id="progress_jeans_cutting" model="production.progress">
-            <field name="order_id" ref="production_order_jeans"/>
-            <field name="step_name">Denim Cutting</field>
-            <field name="department_id" ref="department_cutting"/>
-            <field name="responsible">Tran Minh C</field>
-            <field name="planned_qty">400</planned_qty>
-            <field name="completed_qty">120</completed_qty>
-            <field name="defect_qty">2</defect_qty>
-            <field name="state">in_progress</field>
-            <field name="start_date">2024-07-01</start_date>
-            <field name="note">Selvedge denim requires manual cutting for optimal yield</note>
-        </record>
-
-        <record id="progress_jeans_stitching" model="production.progress">
-            <field name="order_id" ref="production_order_jeans"/>
-            <field name="step_name">Stitching</field>
-            <field name="department_id" ref="department_stitching"/>
-            <field name="responsible">Pham Hong D</field>
-            <field name="planned_qty">400</planned_qty>
-            <field name="completed_qty">0</completed_qty>
-            <field name="defect_qty">0</defect_qty>
-            <field name="state">not_started</field>
-            <field name="note">Awaiting completion of cutting phase</note>
-        </record>
-
-        <record id="progress_jeans_washing" model="production.progress">
-            <field name="order_id" ref="production_order_jeans"/>
-            <field name="step_name">Specialty Washing</field>
-            <field name="department_id" ref="department_washing"/>
-            <field name="responsible">Le Van E</field>
-            <field name="planned_qty">400</planned_qty>
-            <field name="completed_qty">0</completed_qty>
-            <field name="defect_qty">0</defect_qty>
-            <field name="state">not_started</field>
-            <field name="note">Environmentally friendly enzyme wash process</note>
-        </record>
-    </data>
+  <record id="demo_progress_1" model="production.progress">
+    <field name="order_id" ref="demo_order_1"/>
+    <field name="step_name">Cutting</field>
+    <field name="completed_qty">200</field>
+    <field name="note">Cutting in progress</field>
+    <field name="date">2025-04-15</field>
+  </record>
+  <record id="demo_progress_2" model="production.progress">
+    <field name="order_id" ref="demo_order_1"/>
+    <field name="step_name">Sewing</field>
+    <field name="completed_qty">150</field>
+    <field name="note">Sewing stage started</field>
+    <field name="date">2025-04-16</field>
+  </record>
 </odoo>

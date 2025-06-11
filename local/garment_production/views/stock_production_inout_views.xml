@@ -39,6 +39,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_stock_production_inout" name="Stock Movements"
-              parent="menu_garment_production_root" action="action_stock_production_inout" sequence="60"/>
+    <!-- <menuitem id="menu_stock_production_inout" name="Stock Movements"
+              parent="menu_garment_production_root" action="action_stock_production_inout" sequence="60"/> -->
 </odoo> 

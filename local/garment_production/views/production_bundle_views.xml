@@ -1,32 +1,63 @@
 <odoo>
+    <!-- Tree View with Action Buttons -->
     <record id="view_production_bundle_tree" model="ir.ui.view">
         <field name="name">production.bundle.tree</field>
         <field name="model">production.bundle</field>
         <field name="arch" type="xml">
-            <tree string="Production Bundles">
+            <tree string="Production Bundles" 
+                  decoration-success="is_completed == True"
+                  decoration-muted="is_completed == False"
+                  decoration-info="ticket_printed == True and is_completed == False"
+                  multi_edit="1"
+                  editable="bottom">
                 <field name="bundle_no"/>
                 <field name="order_line_id"/>
                 <field name="size"/>
                 <field name="qty"/>
-                <field name="ticket_printed"/>
+                <field name="is_completed" string="Completed" widget="boolean_toggle"/>
+                <field name="completion_date" string="Completed On" readonly="1"/>
+                <field name="ticket_printed" widget="boolean_toggle"/>
+                <!-- Action buttons for each row -->
+                <button name="action_view_qr_ticket" 
+                        type="object" 
+                        icon="fa-eye" 
+                        title="View QR Ticket"
+                        class="btn-sm btn-primary"/>
+                <button name="action_download_qr_ticket" 
+                        type="object" 
+                        icon="fa-download" 
+                        title="Download QR Ticket"
+                        class="btn-sm btn-success"/>
             </tree>
         </field>
     </record>
 
+    <!-- Form View -->
     <record id="view_production_bundle_form" model="ir.ui.view">
         <field name="name">production.bundle.form</field>
         <field name="model">production.bundle</field>
         <field name="arch" type="xml">
             <form string="Production Bundle">
+                <header>
+                    <button name="action_view_qr_ticket" 
+                            string="View QR Ticket" 
+                            type="object" 
+                            class="oe_highlight"/>
+                    <button name="action_download_qr_ticket" 
+                            string="Download QR Ticket" 
+                            type="object"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
                             <field name="bundle_no"/>
                             <field name="order_line_id"/>
                             <field name="size"/>
+                            <field name="qty"/>
                         </group>
                         <group>
-                            <field name="qty"/>
+                            <field name="is_completed" string="Completed"/>
+                            <field name="completion_date" string="Completed On" readonly="1"/>
                             <field name="ticket_printed"/>
                         </group>
                     </group>
@@ -35,12 +66,41 @@
         </field>
     </record>
 
+    <!-- Window Action -->
     <record id="action_production_bundle" model="ir.actions.act_window">
         <field name="name">Production Bundles</field>
         <field name="res_model">production.bundle</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Server Actions for Bulk Operations -->
+    <record id="action_bulk_view_qr" model="ir.actions.server">
+        <field name="name">📱 View QR Tickets</field>
+        <field name="model_id" ref="garment_base.model_production_bundle"/>
+        <field name="binding_model_id" ref="garment_base.model_production_bundle"/>
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">
+    if records:
+        action = env.ref('garment_production.action_bundle_qr_report_html')
+        action = action.report_action(records)
+        </field>
+    </record>
+
+    <record id="action_bulk_download_qr" model="ir.actions.server">
+        <field name="name">📥 Download QR Tickets</field>
+        <field name="model_id" ref="garment_base.model_production_bundle"/>
+        <field name="binding_model_id" ref="garment_base.model_production_bundle"/>
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">
+    if records:
+        action = env.ref('garment_production.action_bundle_qr_report')
+        action = action.report_action(records)
+        </field>
+    </record>
+
+    <!-- Menu -->
     <menuitem id="menu_production_bundle" name="Bundles"
               parent="menu_garment_production_root" action="action_production_bundle" sequence="30"/>
-</odoo> 
+</odoo>

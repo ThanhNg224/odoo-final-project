@@ -37,6 +37,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_production_approval" name="Approvals" 
-              parent="menu_garment_production_root" action="action_production_approval" sequence="70"/>
+    <!-- <menuitem id="menu_production_approval" name="Approvals" 
+              parent="menu_garment_production_root" action="action_production_approval" sequence="70"/> -->
 </odoo> 

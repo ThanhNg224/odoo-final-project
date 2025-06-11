@@ -3,15 +3,16 @@
         <field name="name">production.order.line.tree</field>
         <field name="model">production.order.line</field>
         <field name="arch" type="xml">
-            <tree string="Order Lines">
-                <field name="order_id"/>
-                <field name="sample_id"/>
-                <field name="sample_name"/>
+            <tree string="Order Lines" decoration-info="progress == 0" decoration-warning="progress &gt; 0 and progress &lt; 100" decoration-success="progress &gt;= 100">
+                <field name="order_id" string="Production Order"/>
+                <field name="sample_name" string="Sample"/>
                 <field name="client"/>
-                <field name="color"/>
                 <field name="size"/>
-                <field name="planned_qty"/>
-                <field name="done_qty"/>
+                <field name="color"/>
+                <field name="planned_qty" string="Planned"/>
+                <field name="done_qty" string="Done"/>
+                <field name="progress" string="Progress %" widget="progressbar"/>
+                <field name="completion_status" string="Status"/>
             </tree>
         </field>
     </record>
@@ -22,28 +23,42 @@
         <field name="arch" type="xml">
             <form string="Order Line">
                 <sheet>
-                    <group>
-                        <group>
-                            <field name="order_id"/>
-                            <field name="sample_id"/>
-                            <field name="sample_name"/>
-                            <field name="client"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="order_id" readonly="1"/>
+                        </h1>
+                        <h2>
+                            Size: <field name="size" readonly="1" class="oe_inline"/>
+                            - <field name="completion_status" readonly="1" class="oe_inline"/>
+                        </h2>
+                    </div>
+                    
+                    <group col="4">
+                        <group string="Order Information" colspan="2">
+                            <field name="sample_name" readonly="1"/>
+                            <field name="client" readonly="1"/>
                             <field name="color"/>
-                            <field name="size"/>
                         </group>
-                        <group>
+                        <group string="Quantities" colspan="2">
                             <field name="planned_qty"/>
-                            <field name="done_qty"/>
+                            <field name="done_qty" readonly="1"/>
+                            <field name="progress" widget="progressbar" readonly="1"/>
                         </group>
                     </group>
+                    
                     <notebook>
                         <page string="Bundles">
+                            <div class="alert alert-info mb-3" role="alert">
+                                <p><strong>Bundle Management:</strong> Check the "Completed" box when each bundle is finished. This will automatically update the progress.</p>
+                            </div>
                             <field name="bundle_ids">
-                                <tree editable="bottom">
-                                    <field name="bundle_no"/>
-                                    <field name="size"/>
-                                    <field name="qty"/>
-                                    <field name="ticket_printed"/>
+                                <tree editable="bottom" decoration-success="is_completed" decoration-muted="not is_completed">
+                                    <field name="bundle_no" string="Bundle #"/>
+                                    <field name="size" readonly="1"/>
+                                    <field name="qty" string="Quantity"/>
+                                    <field name="is_completed" string="Completed" widget="boolean_toggle"/>
+                                    <field name="completion_date" string="Completed On" readonly="1"/>
+                                    <field name="ticket_printed" string="Ticket Printed"/>
                                 </tree>
                             </field>
                         </page>
@@ -57,11 +72,16 @@
         <field name="name">Order Lines</field>
         <field name="res_model">production.order.line</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No order lines found
+            </p>
+            <p>
+                Order lines are automatically created when you generate them from a sample in a production order.
+            </p>
+        </field>
     </record>
 
-    <!-- Menu hidden but action kept for internal reference -->
-    <!--
     <menuitem id="menu_production_order_line" name="Order Lines" 
               parent="menu_garment_production_root" action="action_production_order_line" sequence="20"/>
-    -->
-</odoo> 
+</odoo>

@@ -58,6 +58,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_production_material" name="Materials"
-              parent="menu_garment_production_root" action="action_production_material" sequence="75"/>
+    <!-- <menuitem id="menu_production_material" name="Materials"
+              parent="menu_garment_production_root" action="action_production_material" sequence="75"/> -->
 </odoo> 
