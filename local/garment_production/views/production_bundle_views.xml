@@ -81,9 +81,14 @@
         <field name="binding_type">action</field>
         <field name="state">code</field>
         <field name="code">
-    if records:
-        action = env.ref('garment_production.action_bundle_qr_report_html')
-        action = action.report_action(records)
+if records:
+    action = {
+        'type': 'ir.actions.report',
+        'report_name': 'garment_production.report_bundle_qr',
+        'report_type': 'qweb-html',
+        'data': {},
+        'context': env.context,
+    }
         </field>
     </record>
 
@@ -94,9 +99,14 @@
         <field name="binding_type">action</field>
         <field name="state">code</field>
         <field name="code">
-    if records:
-        action = env.ref('garment_production.action_bundle_qr_report')
-        action = action.report_action(records)
+if records:
+    action = {
+        'type': 'ir.actions.report',
+        'report_name': 'garment_production.report_bundle_qr',
+        'report_type': 'qweb-pdf',
+        'data': {},
+        'context': env.context,
+    }
         </field>
     </record>
 

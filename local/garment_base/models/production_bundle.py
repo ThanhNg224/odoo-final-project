@@ -23,38 +23,24 @@ class ProductionBundle(models.Model):
     def action_view_qr_ticket(self):
         """View QR ticket in browser"""
         self.ensure_one()
-        try:
-            action = self.env.ref('garment_production.action_bundle_qr_report_html')
-            return action.report_action(self)
-        except Exception as e:
-            # Fallback if the report doesn't exist
-            return {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': 'QR Report Not Found',
-                    'message': f'QR report template not found: {str(e)}',
-                    'type': 'warning',
-                }
-            }
+        return {
+            'type': 'ir.actions.report',
+            'report_name': 'garment_production.report_bundle_qr',
+            'report_type': 'qweb-html',
+            'data': {},
+            'context': self.env.context,
+        }
 
     def action_download_qr_ticket(self):
         """Download QR ticket as PDF"""
         self.ensure_one()
-        try:
-            action = self.env.ref('garment_production.action_bundle_qr_report')
-            return action.report_action(self)
-        except Exception as e:
-            # Fallback if the report doesn't exist
-            return {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': 'QR Report Not Found',
-                    'message': f'QR report template not found: {str(e)}',
-                    'type': 'warning',
-                }
-            }
+        return {
+            'type': 'ir.actions.report',
+            'report_name': 'garment_production.report_bundle_qr',
+            'report_type': 'qweb-pdf',
+            'data': {},
+            'context': self.env.context,
+        }
 
     @api.onchange('is_completed')
     def _onchange_is_completed(self):

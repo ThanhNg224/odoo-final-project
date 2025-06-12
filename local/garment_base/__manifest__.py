@@ -8,6 +8,7 @@
         'python': ['xlsxwriter', 'reportlab'],
     },
     "data": [
+        "security/ir.model.access.csv",
         "views/qr_templates.xml",
     ],
     "assets": {

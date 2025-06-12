@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_production_bundle,production.bundle,model_production_bundle,base.group_user,1,1,1,1
+access_production_order,production.order,model_production_order,base.group_user,1,1,1,1
+access_production_order_line,production.order.line,model_production_order_line,base.group_user,1,1,1,1
