@@ -38,4 +38,4 @@
             'garment_production/static/src/js/production_enhancements.js',
         ],
     }
-}
+} # type: ignore
