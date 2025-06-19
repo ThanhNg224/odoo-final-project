@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Report Definition -->
+    <record id="report_production_order" model="ir.actions.report">
+        <field name="name">Production Order Report</field>
+        <field name="model">production.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">garment_production.report_production_order_template</field>
+        <field name="report_file">garment_production.report_production_order_template</field>
+    </record>
+
+    <!-- Report Template -->
+    <template id="report_production_order_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="order">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        
+                        <!-- Header -->
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>Production Order</h2>
+                                <p><strong>Order #:</strong> <span t-field="order.name"/></p>
+                                <p><strong>Sample:</strong> <span t-field="order.sample_name"/></p>
+                            </div>
+                            <div class="col-6 text-right">
+                                <p><strong>Date:</strong> <span t-field="order.planned_date"/></p>
+                                <p><strong>Status:</strong> <span t-field="order.state"/></p>
+                                <p><strong>Progress:</strong> <span t-field="order.progress_percentage"/>%</p>
+                            </div>
+                        </div>
+
+                        <!-- Order Information -->
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <h4>Order Information</h4>
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td><strong>Client:</strong></td>
+                                        <td><span t-field="order.client"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Order Name:</strong></td>
+                                        <td><span t-field="order.order_name"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Order Number:</strong></td>
+                                        <td><span t-field="order.order_number"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total Quantity:</strong></td>
+                                        <td><span t-field="order.quantity"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Delivery Date:</strong></td>
+                                        <td><span t-field="order.delivery_date"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <h4>Sample Information</h4>
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td><strong>Sample Code:</strong></td>
+                                        <td><span t-field="order.sample_code"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Brand:</strong></td>
+                                        <td><span t-field="order.brand"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Designer:</strong></td>
+                                        <td><span t-field="order.designer"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Development Date:</strong></td>
+                                        <td><span t-field="order.development_date"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Finance Status:</strong></td>
+                                        <td><span t-field="order.finance_state"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Order Lines -->
+                        <div class="row mt-4" t-if="order.line_ids">
+                            <div class="col-12">
+                                <h4>Order Lines</h4>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Size</th>
+                                            <th>Color</th>
+                                            <th>Planned Qty</th>
+                                            <th>Done Qty</th>
+                                            <th>Progress %</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="order.line_ids" t-as="line">
+                                            <tr>
+                                                <td><span t-field="line.size"/></td>
+                                                <td><span t-field="line.color"/></td>
+                                                <td><span t-field="line.planned_qty"/></td>
+                                                <td><span t-field="line.done_qty"/></td>
+                                                <td><span t-field="line.progress"/>%</td>
+                                                <td><span t-field="line.completion_status"/></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Cost Summary -->
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <h4>Cost Summary</h4>
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td><strong>Material Cost:</strong></td>
+                                        <td class="text-right"><span t-esc="'{:,.2f}'.format(order.total_material_cost)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Process Cost:</strong></td>
+                                        <td class="text-right"><span t-esc="'{:,.2f}'.format(order.total_process_cost)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Other Cost:</strong></td>
+                                        <td class="text-right"><span t-esc="'{:,.2f}'.format(order.total_other_cost)"/></td>
+                                    </tr>
+                                    <tr class="table-active">
+                                        <td><strong>Total Cost:</strong></td>
+                                        <td class="text-right"><strong><span t-esc="'{:,.2f}'.format(order.cost_total)"/></strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Process Requirements -->
+                        <div class="row mt-4" t-if="order.process_requirements">
+                            <div class="col-12">
+                                <h4>Process Requirements</h4>
+                                <p><span t-field="order.process_requirements"/></p>
+                            </div>
+                        </div>
+
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+

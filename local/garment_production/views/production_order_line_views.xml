@@ -53,12 +53,11 @@
                             </div>
                             <field name="bundle_ids">
                                 <tree editable="bottom" decoration-success="is_completed" decoration-muted="not is_completed">
-                                    <field name="bundle_no" string="Bundle #" width="12%"/>
-                                    <field name="size" readonly="1" width="8%"/>
-                                    <field name="qty" string="Quantity" width="10%"/>
-                                    <field name="is_completed" string="Completed" widget="boolean_toggle" width="12%"/>
-                                    <field name="completion_date" string="Completed On" readonly="1" width="20%"/>
-                                    <field name="ticket_printed" string="Ticket Printed" widget="boolean_toggle" width="15%"/>
+                                    <field name="bundle_no" string="Bundle #" width="15%"/>
+                                    <field name="size" readonly="1" width="10%"/>
+                                    <field name="qty" string="Quantity" width="15%"/>
+                                    <field name="is_completed" string="Completed" widget="boolean_toggle" width="15%"/>
+                                    <field name="ticket_printed" string="Ticket Printed" widget="boolean_toggle" width="20%"/>
                                 </tree>
                             </field>
                         </page>

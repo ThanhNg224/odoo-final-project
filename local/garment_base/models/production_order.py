@@ -370,9 +370,17 @@ class ProductionOrder(models.Model):
 
     def generate_bundles(self):
         Bundle = self.env['production.bundle']
-        bundle_counter = self.env['production.bundle'].search_count([]) + 1
-
+        
         for order in self:
+            # Clear existing bundles for this production order first
+            existing_bundles = Bundle.search([('order_line_id.order_id', '=', order.id)])
+            if existing_bundles:
+                existing_bundles.unlink()
+                _logger.info(f"Cleared {len(existing_bundles)} existing bundles for order {order.name}")
+            
+            # Get the next bundle counter after clearing
+            bundle_counter = Bundle.search_count([]) + 1
+            
             for line in order.line_ids:
                 size = line.size
                 qty_remaining = line.planned_qty
@@ -392,6 +400,10 @@ class ProductionOrder(models.Model):
 
                     bundle_counter += 1
                     qty_remaining -= current_qty
+            
+            _logger.info(f"Generated new bundles for order {order.name}")
+        
+        return True
 
     def action_refresh_quantity(self):
         """Manually refresh the total quantity calculation"""
@@ -657,10 +669,10 @@ class ProductionOrder(models.Model):
         """Export production order as PDF"""
         return {
             'type': 'ir.actions.report',
-            'report_name': 'garment_production.report_production_order',
+            'report_name': 'garment_production.report_production_order_template',
             'report_type': 'qweb-pdf',
-            'data': {},
-            'context': dict(self.env.context),
+            'data': {'ids': self.ids},
+            'context': dict(self.env.context, active_ids=self.ids),
         }
 
     def _generate_production_code(self):
@@ -696,6 +708,35 @@ class ProductionOrder(models.Model):
             'context': {'form_view_initial_mode': 'view'},  # Force view mode
         }
 
+    def action_clean_material_entries(self):
+        """Action to clean up invalid material entries"""
+        for order in self:
+            # Remove empty material entries
+            self.env['production.material'].search([
+                ('order_id', '=', order.id),
+                '|', '|', '|',
+                ('name', '=', False),
+                ('name', '=', ''),
+                ('unit_price', '<=', 0),
+                ('quantity', '<=', 0)
+            ]).unlink()
+            
+        return True
+
+    def action_clean_process_entries(self):
+        """Action to clean up invalid process entries"""
+        for order in self:
+            # Remove empty process entries
+            self.env['production.process'].search([
+                ('order_id', '=', order.id),
+                '|', '|',
+                ('name', '=', False),
+                ('name', '=', ''),
+                ('unit_price', '<=', 0)
+            ]).unlink()
+            
+        return True
+
 
 class GarmentSampleExtended(models.Model):
     _inherit = 'garment.sample'
@@ -706,4 +747,12 @@ class GarmentSampleExtended(models.Model):
             name = f"{sample.name} [{sample.code}]" if sample.code else sample.name
             result.append((sample.id, name))
         return result
+
+    # Remove the duplicate methods that were incorrectly placed here
+        for sample in self:
+            name = f"{sample.name} [{sample.code}]" if sample.code else sample.name
+            result.append((sample.id, name))
+        return result
+
+    # Remove the duplicate methods that were incorrectly placed here
 

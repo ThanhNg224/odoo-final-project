@@ -8,6 +8,7 @@
     "data": [
         # Reports
         "reports/bundle_report.xml",
+        "reports/production_order_report.xml",
         # Views
         "views/base_menu.xml",
         "views/production_finance_wizard_views.xml",
@@ -35,8 +36,7 @@
     "auto_install": False,
     "assets": {
         "web.assets_backend": [
-            "garment_production/static/src/scss/production_management.scss",
-            'garment_production/static/src/js/production_enhancements.js',
+            "garment_production/static/src/css/production_views.css",
         ],
-    }
+    },
 }

@@ -1,0 +1,313 @@
+/* Production Tree View Styling */
+.o_production_tree {
+    font-size: 13px;
+}
+
+.o_production_tree .o_list_table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.o_production_tree th,
+.o_production_tree td {
+    padding: 8px 12px;
+    vertical-align: middle;
+    border-right: 1px solid #dee2e6;
+}
+
+/* Header alignment - ALL LEFT */
+.o_production_tree .o_column_sortable {
+    font-weight: 600;
+    background-color: #f8f9fa;
+    text-align: left !important;
+    padding-left: 12px;
+}
+
+/* ALL data cells left aligned */
+.o_production_tree .o_data_cell {
+    text-align: left !important;
+    padding-left: 12px;
+    padding-right: 8px;
+}
+
+/* Specific styling for monetary fields - still left aligned */
+.o_production_tree .o_field_monetary {
+    text-align: left !important;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+}
+
+/* Specific styling for numerical fields - still left aligned */
+.o_production_tree .o_field_integer,
+.o_production_tree .o_field_float {
+    text-align: left !important;
+    font-weight: 500;
+}
+
+/* Progress bar styling - LONGER */
+.o_production_tree .o_progressbar,
+.o_progressbar {
+    height: 22px !important;
+    border-radius: 11px !important;
+    margin: 2px 4px !important;
+    text-align: left !important;
+    min-width: 250px !important; /* Make progress bars much longer */
+    width: 250px !important;
+}
+
+.o_production_tree .o_progressbar .o_progressbar_value,
+.o_progressbar .o_progressbar_value {
+    line-height: 22px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+/* Progress bars in form views - even longer */
+.o_form_view .o_progressbar {
+    height: 25px !important;
+    border-radius: 22px !important;
+    min-width: 250px !important;
+    width: 250px !important;
+}
+
+/* Progress bars in order lines tables */
+.o_order_lines_table .o_progressbar {
+    height: 22px !important;
+    border-radius: 11px !important;
+    min-width: 160px !important;
+    width: 160px !important;
+}
+
+/* Badge styling - left aligned */
+.o_production_tree .badge {
+    min-width: 80px;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-align: left !important;
+}
+
+/* Date field styling - left aligned */
+.o_production_tree .o_field_date {
+    text-align: left !important;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Ensure consistent column widths */
+.o_production_tree .o_list_table col:nth-child(1) { width: 12%; }
+.o_production_tree .o_list_table col:nth-child(2) { width: 15%; }
+.o_production_tree .o_list_table col:nth-child(3) { width: 15%; }
+.o_production_tree .o_list_table col:nth-child(4) { width: 10%; }
+.o_production_tree .o_list_table col:nth-child(5) { width: 18%; } /* Increased width for longer progress column */
+.o_production_tree .o_list_table col:nth-child(6) { width: 12%; }
+.o_production_tree .o_list_table col:nth-child(7) { width: 8%; }
+.o_production_tree .o_list_table col:nth-child(8) { width: 5%; }
+.o_production_tree .o_list_table col:nth-child(9) { width: 5%; }
+
+/* Order Lines specific styling - ALL LEFT - Enhanced */
+.o_order_lines_table th,
+.o_order_lines_table td,
+.o_order_lines_table .o_data_cell,
+.o_order_lines_table .o_column_sortable {
+    padding: 8px 12px;
+    vertical-align: middle;
+    text-align: left !important;
+}
+
+/* Force left alignment for numerical fields in order lines */
+.o_order_lines_table .o_field_integer,
+.o_order_lines_table .o_field_float,
+.o_order_lines_table .o_field_monetary {
+    text-align: left !important;
+    font-weight: 500;
+}
+
+.o_order_lines_table .o_progressbar {
+    text-align: left !important;
+}
+
+/* Target order lines within production order form specifically */
+form[data-model="production.order"] .o_order_lines_table th,
+form[data-model="production.order"] .o_order_lines_table td,
+form[data-model="production.order"] .o_order_lines_table .o_data_cell {
+    text-align: left !important;
+}
+
+/* Force left alignment for specific field types in production order form */
+form[data-model="production.order"] .o_order_lines_table .o_field_integer,
+form[data-model="production.order"] .o_order_lines_table .o_field_float,
+form[data-model="production.order"] .o_order_lines_table .o_field_monetary,
+form[data-model="production.order"] .o_order_lines_table [name="planned_qty"],
+form[data-model="production.order"] .o_order_lines_table [name="done_qty"],
+form[data-model="production.order"] .o_order_lines_table [name="progress"] {
+    text-align: left !important;
+}
+
+/* Target any tree views within production order notebooks */
+.o_form_view .o_notebook .o_field_one2many .o_list_view th,
+.o_form_view .o_notebook .o_field_one2many .o_list_view td,
+.o_form_view .o_notebook .o_field_one2many .o_list_view .o_data_cell {
+    text-align: left !important;
+}
+
+/* Override any default right alignment for numerical fields in production views */
+.o_form_view[data-model="production.order"] .o_field_integer,
+.o_form_view[data-model="production.order"] .o_field_float,
+.o_form_view[data-model="production.order"] .o_field_monetary {
+    text-align: left !important;
+}
+
+/* Bundle table styling - ALL LEFT */
+.o_production_tree .o_field_boolean {
+    text-align: left !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .o_production_tree th,
+    .o_production_tree td {
+        padding: 6px 8px;
+        font-size: 12px;
+        text-align: left !important;
+    }
+    
+    .o_production_tree .badge {
+        min-width: 60px;
+        font-size: 10px;
+        padding: 3px 6px;
+        text-align: left !important;
+    }
+    
+    .o_production_tree .o_progressbar,
+    .o_progressbar {
+        min-width: 120px !important;
+        width: 120px !important;
+    }
+}
+
+/* Fix for text overflow */
+.o_production_tree .o_data_cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left !important;
+}
+
+/* Hover effects */
+.o_production_tree tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.o_production_tree tbody tr:hover .o_data_cell {
+    background-color: transparent;
+}
+
+/* Global override for all table cells in production views - Enhanced */
+.o_production_tree *,
+.o_order_lines_table *,
+.o_list_view_material *,
+.o_list_view_process *,
+form[data-model="production.order"] .o_field_one2many * {
+    text-align: left !important;
+}
+
+/* Super specific override for order lines in production order */
+.o_form_view[data-model="production.order"] .o_field_one2many[name="line_ids"] th,
+.o_form_view[data-model="production.order"] .o_field_one2many[name="line_ids"] td,
+.o_form_view[data-model="production.order"] .o_field_one2many[name="line_ids"] .o_data_cell,
+.o_form_view[data-model="production.order"] .o_field_one2many[name="line_ids"] .o_field_integer,
+.o_form_view[data-model="production.order"] .o_field_one2many[name="line_ids"] .o_field_float,
+.o_form_view[data-model="production.order"] .o_field_one2many[name="line_ids"] .o_progressbar {
+    text-align: left !important;
+}
+
+/* Progress bar enhancements for better visibility */
+.o_progressbar .progress-bar {
+    transition: width 0.3s ease-in-out !important;
+}
+
+/* Progress bar colors */
+.o_progressbar .progress-bar.bg-success {
+    background-color: #28a745 !important;
+}
+
+.o_progressbar .progress-bar.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.o_progressbar .progress-bar.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+/* Force longer progress bars everywhere */
+.o_field_progressbar,
+.o_field_progressbar .o_progressbar {
+    min-width: 150px !important;
+    width: 150px !important;
+    height: 22px !important;
+}
+
+/* SUPER SPECIFIC - Force left alignment for production order tabs */
+/* Target Order Lines tab specifically */
+.o_form_view .o_notebook_headers .nav-link:contains("Order Lines") ~ .tab-content .o_field_one2many th,
+.o_form_view .o_notebook_headers .nav-link:contains("Order Lines") ~ .tab-content .o_field_one2many td,
+.o_form_view .o_notebook .tab-pane[data-name="order_lines"] th,
+.o_form_view .o_notebook .tab-pane[data-name="order_lines"] td,
+.o_form_view .o_notebook .tab-pane[data-name="order_lines"] .o_data_cell,
+.o_form_view .o_notebook .tab-pane[data-name="order_lines"] .o_field_integer,
+.o_form_view .o_notebook .tab-pane[data-name="order_lines"] .o_field_float,
+.o_form_view .o_notebook .tab-pane[data-name="order_lines"] .o_progressbar {
+    text-align: left !important;
+}
+
+/* Target Bundles tab specifically */
+.o_form_view .o_notebook .tab-pane .o_field_one2many th,
+.o_form_view .o_notebook .tab-pane .o_field_one2many td,
+.o_form_view .o_notebook .tab-pane .o_field_one2many .o_data_cell,
+.o_form_view .o_notebook .tab-pane .o_field_one2many .o_field_integer,
+.o_form_view .o_notebook .tab-pane .o_field_one2many .o_field_float,
+.o_form_view .o_notebook .tab-pane .o_field_one2many .o_progressbar {
+    text-align: left !important;
+}
+
+/* Nuclear option - target ALL numerical fields in production order forms */
+form.o_form_view .o_field_integer,
+form.o_form_view .o_field_float,
+form.o_form_view .o_field_monetary,
+form.o_form_view .o_progressbar,
+form.o_form_view .o_field_progressbar {
+    text-align: left !important;
+}
+
+/* Target specific field names */
+form.o_form_view [name="planned_qty"],
+form.o_form_view [name="done_qty"],
+form.o_form_view [name="progress"] {
+    text-align: left !important;
+}
+
+/* Target all table cells in notebook tabs */
+.o_form_view .o_notebook .o_list_view th,
+.o_form_view .o_notebook .o_list_view td,
+.o_form_view .o_notebook .o_list_view .o_data_cell {
+    text-align: left !important;
+}
+
+/* Target all progressbars everywhere */
+.o_progressbar,
+.o_field_progressbar,
+.progress-bar {
+    text-align: left !important;
+}
+
+/* Override Odoo's default right alignment for numbers */
+.o_list_view .o_list_number_th,
+.o_list_view .o_data_cell.o_list_number {
+    text-align: left !important;
+}
+
+/* Target tree views within forms */
+.o_form_view .o_field_one2many .o_list_view .o_data_cell,
+.o_form_view .o_field_one2many .o_list_view th {
+    text-align: left !important;
+}

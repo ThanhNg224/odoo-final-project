@@ -11,18 +11,18 @@
                   decoration-success="state == 'done'"
                   decoration-bf="progress_percentage &gt;= 100"
                   class="o_production_tree">
-                <field name="name" string="Order #"/>
+                <field name="name" string="Order"/>
                 <field name="sample_name" string="Sample"/>
                 <field name="client" string="Client"/>
                 <field name="quantity" string="Total Quantity"/>
                 <field name="progress_percentage" widget="progressbar" string="Progress"/>
                 <field name="cost_total" widget="monetary" string="Total Cost"/>
                 <field name="planned_date" string="Planned"/>
-                <field name="state" widget="badge" 
+                <field name="state" widget="badge" string="Status"
                        decoration-info="state == 'draft'" 
                        decoration-warning="state == 'in_progress'" 
                        decoration-success="state == 'done'"/>
-                <field name="finance_state" widget="badge" 
+                <field name="finance_state" widget="badge" string="Finance Status"
                         decoration-danger="finance_state == 'waiting'"
                         decoration-warning="finance_state == 'partial'" 
                         decoration-success="finance_state == 'paid'"/>
@@ -39,6 +39,9 @@
                 <header>
                     <button name="action_open_edit_form" type="object" string="Edit" class="oe_highlight" groups="base.group_user"/>
                     <button name="action_export_pdf" type="object" class="btn-primary" string="Export PDF" data-hotkey="p"/>
+                    <button name="action_refresh_quantity" string="Refresh Quantities" 
+                            type="object" class="btn-warning" 
+                            title="Manually refresh quantity calculations"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
                 </header>
                 <sheet>
@@ -116,20 +119,41 @@
 
                         <page string="Bundles">
                             <div class="alert alert-info mb-3" role="alert">
-                                <p><strong>Instructions:</strong> Bundle management allows you to organize production quantities. Mark bundles as completed to track progress.</p>
+                                <p><strong>Instructions:</strong> Bundles are managed per size. Completed bundles affect progress tracking.</p>
                             </div>
-                        
+
                             <field name="line_ids" readonly="1">
-                                <tree create="false" delete="false">
-                                    <field name="size" string="Size"/>
-                                    <field name="planned_qty" string="Planned Qty"/>
-                                    <field name="done_qty" string="Done Qty"/>
-                                    <field name="progress" string="Progress %" widget="progressbar"/>
+                                <tree string="Line Bundles" create="false" delete="false">
+                                    <field name="size"/>
+                                    <field name="planned_qty" string="Planned"/>
+                                    <field name="done_qty" string="Done"/>
+                                    <field name="bundle_ids" widget="one2many_list">
+                                        <tree decoration-muted="not is_completed" decoration-success="is_completed">
+                                            <field name="bundle_no" string="Bundle"/>
+                                            <field name="qty" string="Quantity"/>
+                                            <field name="is_completed" widget="boolean_toggle"/>
+                                        </tree>
+                                    </field>
                                 </tree>
                             </field>
                         </page>
 
                         <page string="Material Details" name="materials">
+                            <div class="alert alert-info mb-3" role="alert">
+                                <p><strong>Instructions:</strong> Material details are automatically filled from the sample. Adjust quantities as needed.</p>
+                            </div>
+                            
+                            <!-- Clean up button for view-only form -->
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <button name="action_clean_material_entries" 
+                                            string="Clean Up Empty Material Entries" 
+                                            type="object" 
+                                            class="btn btn-warning"
+                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                </div>
+                            </div>
+                            
                             <field name="material_ids" readonly="1">
                                 <tree class="o_list_view_material">
                                     <field name="name" string="Material Name" width="25%"/>
@@ -144,15 +168,30 @@
                         </page>
                         
                         <page string="Process Price List" name="processes">
+                            <div class="alert alert-info mb-3" role="alert">
+                                <p><strong>Instructions:</strong> Process prices are used for cost calculation. Adjust as necessary based on the production requirements.</p>
+                            </div>
+                            
+                            <!-- Clean up button for view-only form -->
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <button name="action_clean_process_entries" 
+                                            string="Clean Up Empty Process Entries" 
+                                            type="object" 
+                                            class="btn btn-warning"
+                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                </div>
+                            </div>
+                            
                             <field name="process_ids" readonly="1">
                                 <tree class="o_list_view_process">
                                     <field name="sequence" widget="handle" string="#" width="5%"/>
-                                    <field name="name" string="Process Name" width="30%"/>
-                                    <field name="unit_price" string="Unit Price" width="15%"/>
-                                    <field name="multiplier" string="Multiplier" width="15%" class="multiplier-col"/>
-                                    <field name="quantity" string="Quantity" width="15%"/>
-                                    <field name="total_price" string="Total Price" width="15%"/>
-                                    <field name="note" string="Note" width="5%"/>
+                                    <field name="name" string="Process Name" width="25%"/>
+                                    <field name="unit_price" string="Unit Price" width="12%"/>
+                                    <field name="multiplier" string="Multiplier" width="12%" class="multiplier-col"/>
+                                    <field name="quantity" string="Quantity" width="12%"/>
+                                    <field name="total_price" string="Total Price" width="12%"/>
+                                    <field name="note" string="Note" width="22%"/>
                                 </tree>
                             </field>
                         </page>
@@ -166,16 +205,26 @@
                                 <p><strong>Information:</strong> These costs are imported from the sample. They represent additional costs related to production.</p>
                             </div>
                             
-                            <field name="cost_ids" domain="[('cost_type', '=', 'other')]" readonly="1">
-                                <tree>
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <button name="action_remove_other_cost_entries" 
+                                            string="Clean Up Empty Other Cost Entries" 
+                                            type="object" 
+                                            class="btn btn-warning"
+                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                </div>
+                            </div>
+                            
+                            <field name="cost_ids" domain="[('cost_type', '=', 'other')]" context="{'default_cost_type': 'other'}" options="{'always_reload': true}">
+                                <tree editable="bottom">
                                     <field name="note" string="Cost Name"/>
-                                    <field name="amount" widget="monetary"/>
+                                    <field name="amount" widget="monetary" sum="Total"/>
                                     <field name="cost_type" invisible="1"/>
                                 </tree>
                             </field>
                             
                             <group class="oe_subtotal_footer">
-                                <field name="total_other_cost" string="Total Other Cost" readonly="1" widget="monetary"/>
+                                <field name="total_other_cost" string="Total Other Cost" class="oe_subtotal_footer_separator" readonly="1" widget="monetary"/>
                             </group>
                         </page>
                         
@@ -331,59 +380,62 @@
                             </field>
                         </page>
 
-                        <!-- Replace the entire Bundles page section: -->
                         <page string="Bundles">
                             <div class="alert alert-info mb-3" role="alert">
-                                <p><strong>Instructions:</strong> Bundle management allows you to organize production quantities. Mark bundles as completed to track progress.</p>
+                                <p><strong>Instructions:</strong> Bundles are managed per size. Completed bundles affect progress tracking.</p>
                             </div>
-                        
+
                             <div class="row mb-3">
                                 <div class="col-md-8">
                                     <button name="generate_bundles"
                                             string="Generate Bundles" 
                                             type="object"
                                             class="btn btn-primary"
+                                            invisible="not sample_id"
                                             style="padding: 8px 16px; font-size: 14px;"/>
                                 </div>
                             </div>
-                        
-                            <field name="line_ids">
-                                <tree create="false" delete="false">
-                                    <field name="size" string="Size"/>
-                                    <field name="planned_qty" string="Planned Qty"/>
-                                    <field name="done_qty" string="Done Qty"/>
-                                    <field name="progress" string="Progress %" widget="progressbar"/>
+
+                            <field name="line_ids" readonly="1">
+                                <tree string="Line Bundles" create="false" delete="false">
+                                    <field name="size"/>
+                                    <field name="planned_qty" string="Planned"/>
+                                    <field name="done_qty" string="Done"/>
+                                    <field name="bundle_ids" widget="one2many_list">
+                                        <tree decoration-muted="not is_completed" decoration-success="is_completed">
+                                            <field name="bundle_no" string="Bundle"/>
+                                            <field name="qty" string="Quantity"/>
+                                            <field name="is_completed" widget="boolean_toggle"/>
+                                        </tree>
+                                    </field>
                                 </tree>
                             </field>
-                            
-                            <!-- Show all bundles across all order lines with completion checkbox -->
-                            <div class="mt-4">
-                                <h4>All Bundles</h4>
-                                <field name="line_ids" mode="tree">
-                                    <tree create="false" delete="false">
-                                        <field name="bundle_ids" widget="one2many_list">
-                                            <tree editable="bottom" decoration-success="is_completed" decoration-muted="not is_completed">
-                                                <field name="bundle_no" string="Bundle #"/>
-                                                <field name="size"/>
-                                                <field name="qty" string="Quantity"/>
-                                                <field name="is_completed" string="Completed" widget="boolean_toggle"/>
-                                                <field name="completion_date" string="Completed On" readonly="1"/>
-                                                <field name="ticket_printed" string="Ticket Printed"/>
-                                            </tree>
-                                        </field>
-                                    </tree>
-                                </field>
-                            </div>
                         </page>
 
+
                         <page string="Material Details" name="materials">
+                            <div class="alert alert-info mb-3" role="alert">
+                                <p><strong>Instructions:</strong> Material details are automatically filled from the sample. Adjust quantities as needed.</p>
+                            </div>
+                            
+                            <!-- Clean up button for view-only form -->
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <button name="action_clean_material_entries" 
+                                            string="Clean Up Empty Material Entries" 
+                                            type="object" 
+                                            class="btn btn-warning"
+                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                </div>
+                            </div>
+                            
                             <field name="material_ids">
                                 <tree editable="bottom" class="o_list_view_material">
                                     <field name="name" string="Material Name" width="25%"/>
                                     <field name="item_number" string="Item No." width="15%"/>
                                     <field name="specification" string="Specification" width="20%"/>
                                     <field name="unit" string="Unit" width="10%"/>
-                                    <field name="quantity" string="Qty" width="10%"/>
+                                    <field name="quantity" string="Quantity" width="10%"/>
                                     <field name="total_usage" string="Usage" width="10%"/>
                                     <field name="unit_price" string="Price" width="10%"/>
                                 </tree>
@@ -391,15 +443,30 @@
                         </page>
                         
                         <page string="Process Price List" name="processes">
+                            <div class="alert alert-info mb-3" role="alert">
+                                <p><strong>Instructions:</strong> Process prices are used for cost calculation. Adjust as necessary based on the production requirements.</p>
+                            </div>
+                            
+                            <!-- Clean up button for view-only form -->
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <button name="action_clean_process_entries" 
+                                            string="Clean Up Empty Process Entries" 
+                                            type="object" 
+                                            class="btn btn-warning"
+                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                </div>
+                            </div>
+                            
                             <field name="process_ids">
                                 <tree editable="bottom" class="o_list_view_process">
                                     <field name="sequence" widget="handle" string="#" width="5%"/>
-                                    <field name="name" string="Process Name" width="30%"/>
-                                    <field name="unit_price" string="Unit Price" width="15%"/>
-                                    <field name="multiplier" string="Multiplier" width="15%" class="multiplier-col"/>
-                                    <field name="quantity" string="Quantity" width="15%"/>
-                                    <field name="total_price" string="Total Price" width="15%"/>
-                                    <field name="note" string="Note" width="5%"/>
+                                    <field name="name" string="Process Name" width="25%"/>
+                                    <field name="unit_price" string="Unit Price" width="12%"/>
+                                    <field name="multiplier" string="Multiplier" width="12%" class="multiplier-col"/>
+                                    <field name="quantity" string="Quantity" width="12%"/>
+                                    <field name="total_price" string="Total Price" width="12%"/>
+                                    <field name="note" string="Note" width="22%"/>
                                 </tree>
                             </field>
                         </page>
@@ -413,7 +480,15 @@
                                 <p><strong>Information:</strong> These costs are imported from the sample. They represent additional costs related to production.</p>
                             </div>
                             
-                            <button name="action_remove_other_cost_entries" string="Clean Up Empty Entries" type="object" class="oe_highlight oe_right"/>
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <button name="action_remove_other_cost_entries" 
+                                            string="Clean Up Empty Other Cost Entries" 
+                                            type="object" 
+                                            class="btn btn-warning"
+                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                </div>
+                            </div>
                             
                             <field name="cost_ids" domain="[('cost_type', '=', 'other')]" context="{'default_cost_type': 'other'}" options="{'always_reload': true}">
                                 <tree editable="bottom">

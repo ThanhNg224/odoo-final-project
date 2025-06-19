@@ -15,7 +15,6 @@
                 <field name="size"/>
                 <field name="qty"/>
                 <field name="is_completed" string="Completed" widget="boolean_toggle"/>
-                <field name="completion_date" string="Completed On" readonly="1"/>
                 <field name="ticket_printed" widget="boolean_toggle"/>
                 <!-- Action buttons for each row -->
                 <button name="action_view_qr_ticket" 
@@ -57,7 +56,6 @@
                         </group>
                         <group>
                             <field name="is_completed" string="Completed"/>
-                            <field name="completion_date" string="Completed On" readonly="1"/>
                             <field name="ticket_printed"/>
                         </group>
                     </group>
