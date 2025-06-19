@@ -245,61 +245,98 @@ export class MaterialDetailTable extends Component {
     }
 
     // Handle material selection
-    onMaterialSelect = (material) => {
+    onMaterialSelect = async (material) => {
         if (this.state.activeCell) {
             const { row, col } = this.state.activeCell;
 
-            // Find the material name column index
+            // Find the column indices
             const materialNameCol = this.state.rows[0].indexOf('Material Name');
+            const unitCol = this.state.rows[0].indexOf('Unit');
+            const unitPriceCol = this.state.rows[0].indexOf('Unit Price');
+            const supplierCol = this.state.rows[0].indexOf('Supplier');
 
-            // console.log('Before update - Current cell value:', this.state.rows[row][col]);
-            // console.log('Before update - Material name cell value:', this.state.rows[row][materialNameCol]);
+            try {
+                // Fetch material details from inventory
+                const materialDetails = await this.rpc('/garment/inventory/get_material_details', {
+                    material_id: material.id
+                });
 
-            // Create a new row array to ensure reactivity
-            const updatedRow = [...this.state.rows[row]];
-            updatedRow[col] = material.code;
-            updatedRow[materialNameCol] = material.name;
+                // Create a new row array to ensure reactivity
+                const updatedRow = [...this.state.rows[row]];
+                updatedRow[col] = material.code;
+                updatedRow[materialNameCol] = material.name;
 
-            // Update the entire row
-            this.state.rows[row] = updatedRow;
+                // Update additional fields if they exist
+                if (unitCol !== -1 && materialDetails.unit) {
+                    updatedRow[unitCol] = materialDetails.unit;
+                }
+                if (unitPriceCol !== -1 && materialDetails.unit_price) {
+                    updatedRow[unitPriceCol] = materialDetails.unit_price;
+                }
+                if (supplierCol !== -1 && materialDetails.supplier) {
+                    updatedRow[supplierCol] = materialDetails.supplier;
+                }
 
-            // console.log('After update - Current cell value:', this.state.rows[row][col]);
-            // console.log('After update - Material name cell value:', this.state.rows[row][materialNameCol]);
 
-            // Force a UI update
-            this.state.forceUpdate++;
+                // Update the entire row
+                this.state.rows[row] = updatedRow;
 
-            // Update the record with a new array
-            this.props.record.update({ [this.props.name]: [...this.state.rows] });
+                // Force a UI update
+                this.state.forceUpdate++;
 
-            // Hide dropdown
-            this.state.showMaterialDropdown = false;
-            this.state.activeCell = null;
-            this.state.dropdownPosition = null;
+                // Update the record with a new array
+                this.props.record.update({ [this.props.name]: [...this.state.rows] });
 
+                // Hide dropdown
+                this.state.showMaterialDropdown = false;
+                this.state.activeCell = null;
+                this.state.dropdownPosition = null;
+            } catch (error) {
+                console.error('Error fetching material details:', error);
+                this.notification.add(
+                    _t("Failed to fetch material details"),
+                    {
+                        type: 'danger',
+                        sticky: false,
+                        title: _t("Error"),
+                    }
+                );
+            }
         }
     }
 
     // Handle color selection
-    onColorSelect = (color) => {
+    onColorSelect = async (color) => {
         if (this.state.activeCell) {
             const { row, col } = this.state.activeCell;
 
             // Find the color name column index
             const colorNameCol = this.state.rows[0].indexOf('Color');
 
-            // Update color code in the clicked cell
-            this.state.rows[row][col] = color.code;
-            // Update color name
-            this.state.rows[row][colorNameCol] = color.name;
+            try {
+                // Update color code in the clicked cell
+                this.state.rows[row][col] = color.code;
+                // Update color name
+                this.state.rows[row][colorNameCol] = color.name;
 
-            // Force update the record
-            this.props.record.update({ [this.props.name]: [...this.state.rows] });
+                // Force update the record
+                this.props.record.update({ [this.props.name]: [...this.state.rows] });
 
-            // Hide dropdown
-            this.state.showColorDropdown = false;
-            this.state.activeCell = null;
-            this.state.dropdownPosition = null;
+                // Hide dropdown
+                this.state.showColorDropdown = false;
+                this.state.activeCell = null;
+                this.state.dropdownPosition = null;
+            } catch (error) {
+                console.error('Error updating color:', error);
+                this.notification.add(
+                    _t("Failed to update color"),
+                    {
+                        type: 'danger',
+                        sticky: false,
+                        title: _t("Error"),
+                    }
+                );
+            }
         }
     }
 
@@ -349,8 +386,8 @@ export class MaterialDetailTable extends Component {
             // Calculate total quantity used
             const totalQuantity = (quantityPerItem + lossPerItem) * quantity;
 
-            // Update the Total Quantity Used column
-            this.state.rows[rowIndex][totalQuantityCol] = totalQuantity;
+            // Update the Total Quantity Used column (format 2 decimals)
+            this.state.rows[rowIndex][totalQuantityCol] = Number(totalQuantity.toFixed(2));
         }
     }
 

@@ -40,7 +40,7 @@ class GarmentSampleController(http.Controller):
 
             return {
                 "new_development": {
-                    "label": _("New development in %(date_filter)s, pending approval") % {'date_filter': date_filter},
+                    "label": _("New development in %(date_filter)s") % {'date_filter': date_filter},
                     "count": new_development_count
                 },
                 "eliminated": {
@@ -62,7 +62,7 @@ class GarmentSampleController(http.Controller):
     
     @http.route('/garment/sample/get_sample_cost_summary', type='json', auth='user')
     def get_sample_cost_summary(self, sample_id):
-        sample = request.env['garment.sample'].browse(int(sample_id))
+        sample = request.env['garment.sample'].sudo().browse(int(sample_id))
         if sample.exists():
             # Calculate material cost
             material_cost = 0
@@ -76,19 +76,13 @@ class GarmentSampleController(http.Controller):
                 'material_cost': material_cost,
                 'process_cost': sum(item.get('unit_price', 0) * item.get('multiplier', 1) for item in sample.process_table[1:] if isinstance(item, dict)),
                 'other_cost': sum(item.get('amount', 0) for item in sample.other_cost if isinstance(item, dict)),
-                'quotation': sample.quotation or 0
+                'quotation': sample.quotation or 0,
+                'actual_quotation': sample.actual_quotation or 0,
+                'total_cost': sample.total_price or 0,
             }
         return False 
 
     
-    
-    @http.route('/garment/sample/search_read', type='json', auth='user')
-    def search_samples(self, fields=None, domain=None):
-        if fields is None:
-            fields = ['id', 'name']
-        if domain is None:
-            domain = []
-        sample = request.env['garment.sample'].sudo().search_read(domain, fields)
-        return sample
+
 
     

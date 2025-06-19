@@ -290,12 +290,10 @@ $dark-gray: #495057;
         background: linear-gradient(45deg, $light-gray, white);
         color: $dark-gray;
         font-weight: 600;
-        padding: 1rem;
         border-bottom: 2px solid #e9ecef;
     }
     
     td {
-        padding: 0.75rem 1rem;
         border-bottom: 1px solid #f8f9fa;
     }
     
@@ -357,17 +355,6 @@ $dark-gray: #495057;
 // Form Field Enhancements
 .o_form_view {
     .o_field_widget {
-        &.o_field_many2one input {
-            border-radius: 6px;
-            border: 2px solid #e9ecef;
-            padding: 0.75rem;
-            transition: border-color 0.3s ease;
-            
-            &:focus {
-                border-color: $primary-color;
-                box-shadow: 0 0 0 3px rgba(46, 134, 193, 0.1);
-            }
-        }
         
         &.o_field_monetary,
         &.o_field_float,

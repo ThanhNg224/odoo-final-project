@@ -32,7 +32,7 @@ class GarmentQRController(http.Controller):
                     'title': f"Garment Sample: {record.name}",
                     'record': record,
                     'fields': [
-                        {'label': 'Sample Number', 'value': record.number},
+                        {'label': 'Sample Code', 'value': record.code},
                         {'label': 'Shape', 'value': record.shape},
                         {'label': 'Color', 'value': record.color},
                         {'label': 'Client', 'value': record.client},
@@ -49,7 +49,7 @@ class GarmentQRController(http.Controller):
                     'title': f"Garment Order: {record.name}",
                     'record': record,
                     'fields': [
-                        {'label': 'Order Number', 'value': record.order_number},
+                        {'label': 'Order Number', 'value': record.code},
                         {'label': 'Shape', 'value': record.shape},
                         {'label': 'Color', 'value': record.color},
                         {'label': 'Quantity', 'value': record.quantity},

@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Tree View for Stored Orders -->
+    <record id="view_stored_order_tree" model="ir.ui.view">
+        <field name="name">garment.order.stored.tree</field>
+        <field name="model">garment.order</field>
+        <field name="arch" type="xml">
+            <tree string="Stored Orders" create="false" delete="false" duplicate="false">
+                <field name="name" string="Order Name"/>
+                <field name="code" string="Order Number"/>
+                <field name="shape"/>
+                <field name="color"/>
+                <field name="quantity"/>
+                <field name="unit_price"/>
+                <field name="state"/>
+                <field name="issuing_company"/>
+                <field name="receiving_company"/>
+                <field name="cutting_date"/>
+                <field name="department_id" string="Department"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_stored_order" model="ir.actions.act_window">
+        <field name="name">Stored Orders</field>
+        <field name="res_model">garment.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_inventory.view_stored_order_tree"/>
+        <field name="domain">[('is_stored', '=', True)]</field>
+        <field name="context">{ 'tree_view_ref':'garment_inventory.view_stored_order_tree'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No stored orders found
+            </p>
+        </field>
+    </record>
+
+</odoo>

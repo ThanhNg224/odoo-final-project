@@ -1,0 +1,130 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_material_inventory_tree" model="ir.ui.view">
+        <field name="name">garment.inventory.material.tree</field>
+        <field name="model">garment.inventory.material</field>
+        <field name="arch" type="xml">
+            <tree string="Material Inventory" create="false" delete="false" duplicate="false">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="unit"/>
+                <field name="unit_price"/>
+                <field name="inventory_location"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form Create -->
+    <record id="view_material_inventory_form_create" model="ir.ui.view">
+        <field name="name">garment.inventory.material.form.create</field>
+        <field name="model">garment.inventory.material</field>
+        <field name="arch" type="xml">
+            <form string="Material Inventory">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="unit"/>
+                        </group>
+                        <group>
+                            <field name="inventory_location"/>
+                            <field name="unit_price"/>
+                            <field name="supplier"/>
+                            <field name="remarks"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Color Quantities">
+                            <field name="color_quantity_ids">
+                                <tree>
+                                    <field name="color_id"/>
+                                    <field name="quantity_on_hand"/>
+                                    <field name="quantity_reserved"/>
+                                    <field name="quantity_available"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_material_inventory_form_view" model="ir.ui.view">
+        <field name="name">garment.inventory.material.form.view</field>
+        <field name="model">garment.inventory.material</field>
+        <field name="arch" type="xml">
+            <form string="Material Inventory" create="false" delete="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code" readonly="1"/>
+                            <field name="name" readonly="1"/>
+                            <field name="unit" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="inventory_location" readonly="1"/>
+                            <field name="unit_price" readonly="1"/>
+                            <field name="supplier" readonly="1"/>
+                            <field name="remarks" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Color Quantities">
+                            <field name="color_quantity_ids" readonly="1">
+                                <tree>
+                                    <field name="color_id" readonly="1"/>
+                                    <field name="quantity_on_hand" readonly="1"/>
+                                    <field name="quantity_reserved" readonly="1"/>
+                                    <field name="quantity_available" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    <record id="view_material_inventory_color_quantity_form" model="ir.ui.view">
+        <field name="name">garment.inventory.material.color.quantity.form</field>
+        <field name="model">garment.inventory.material.color.quantity</field>
+        <field name="arch" type="xml">
+            <form string="Color Quantities">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="material_id" readonly="1"/>
+                            <field name="color_id"/>
+                        </group>
+                        <group>
+                            <field name="quantity_on_hand"/>
+                            <field name="quantity_reserved"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_material_inventory" model="ir.actions.act_window">
+        <field name="name">Material Inventory</field>
+        <field name="res_model">garment.inventory.material</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_inventory.view_material_inventory_tree"/>
+        <field name="context">{
+            'form_view_ref': 'garment_inventory.view_material_inventory_form_view',
+            'create_view_ref': 'garment_inventory.view_material_inventory_form_create',
+            'tree_view_ref': 'garment_inventory.view_material_inventory_tree'
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first material inventory
+            </p>
+        </field>
+    </record>
+</odoo>

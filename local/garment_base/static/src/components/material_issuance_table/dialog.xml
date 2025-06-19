@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="garment.MaterialIssuanceDialog">
+        <Dialog title="'Add Material Issuance'" size="'md'" onClose="() => props.close()">
+            <div class="p-4">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="material_select" class="form-label">Material *</label>
+                            <select 
+                                id="material_select" 
+                                class="form-control" 
+                                t-model="state.formData.material_id"
+                                t-on-change="onMaterialChange">
+                                <option value="">Select Material</option>
+                                <t t-foreach="state.materials" t-as="material" t-key="material.material_id">
+                                    <option t-att-value="material.material_id">
+                                        <t t-esc="material.code"/> - <t t-esc="material.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="color_select" class="form-label">Color *</label>
+                            <select 
+                                id="color_select" 
+                                class="form-control" 
+                                t-model="state.formData.color_id"
+                                t-on-change="onColorChange">
+                                <option value="">Select Color</option>
+                                <t t-foreach="state.availableColors" t-as="color" t-key="color.id">
+                                    <option t-att-value="color.id">
+                                        <t t-esc="color.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="item_code" class="form-label">Item Code</label>
+                            <input 
+                                type="text" 
+                                id="item_code" 
+                                class="form-control" 
+                                t-att-value="props.record.data.code"
+                                readonly="true"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="receiving_company" class="form-label">Receiving Company</label>
+                            <input 
+                                type="text" 
+                                id="receiving_company" 
+                                class="form-control" 
+                                t-model="state.formData.receiving_company" 
+                                placeholder="Enter receiving company"/>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="used_quantity" class="form-label">Used Quantity *</label>
+                            <input 
+                                type="number" 
+                                id="used_quantity" 
+                                class="form-control" 
+                                t-model="state.formData.used_quantity" 
+                                t-on-input="onQuantityChange"
+                                min="0" 
+                                step="0.01"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="defective_quantity" class="form-label">Defective Quantity</label>
+                            <input 
+                                type="number" 
+                                id="defective_quantity" 
+                                class="form-control" 
+                                t-model="state.formData.defective_quantity" 
+                                t-on-input="onQuantityChange"
+                                min="0" 
+                                step="0.01"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="total_quantity" class="form-label">Total Quantity</label>
+                            <input 
+                                type="number" 
+                                id="total_quantity" 
+                                class="form-control" 
+                                t-att-value="state.totalQuantity"
+                                readonly="true"
+                                step="0.01"/>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="unit_price" class="form-label">Unit Price</label>
+                            <input 
+                                type="number" 
+                                id="unit_price" 
+                                class="form-control" 
+                                t-att-value="state.formData.unit_price" 
+                                readonly="true"
+                                min="0" 
+                                step="0.01"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="total_price" class="form-label">Total Price</label>
+                            <input 
+                                type="number" 
+                                id="total_price" 
+                                class="form-control" 
+                                t-att-value="state.formData.total_price" 
+                                readonly="true"
+                                step="0.01"/>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="remark" class="form-label">Remark</label>
+                            <input 
+                                type="text" 
+                                id="remark" 
+                                class="form-control" 
+                                t-model="state.formData.remark" 
+                                placeholder="Enter remark"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <t t-set-slot="footer">
+                <div class="text-end">
+                    <button 
+                        type="button" 
+                        class="btn btn-secondary me-2" 
+                        t-on-click="() => props.close()">
+                        Cancel
+                    </button>
+                    <button 
+                        type="button" 
+                        class="btn btn-primary" 
+                        t-on-click="onConfirm">
+                        Confirm
+                    </button>
+                </div>
+            </t>
+        </Dialog>
+    </t>
+</templates>

@@ -1,0 +1,259 @@
+<odoo>
+    <!-- Waiting Receipts -->
+    <record id="view_garment_receipt_line_tree_waiting" model="ir.ui.view">
+        <field name="name">garment.receipt.line.tree.waiting</field>
+        <field name="model">garment.receipt.line</field>
+        <field name="arch" type="xml">
+            <tree string="Receipt Lines" create="false" js_class="receipt_tree_view">
+                <field name="serial_number"/>
+                <field name="type"/>
+                <field name="item_type"/>
+                <field name="item_id"/>
+                <field name="publisher"/>
+                <field name="publish_date"/>
+                <field name="remark"/>
+                <field name="state"/>
+                <field name="material_id" optional="show"/>
+                <field name="used_quantity" optional="show"/>
+                <field name="defective_quantity" optional="show"/>
+                <field name="unit_price" optional="show"/>
+                <field name="total_price" optional="show"/>
+                <field name="currency_id" optional="show"/>
+                <field name="receiving_company" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Approved Receipts Tree view-->
+    <record id="view_garment_receipt_line_tree_approved" model="ir.ui.view">
+        <field name="name">garment.receipt.line.tree.approved</field>
+        <field name="model">garment.receipt.line</field>
+        <field name="arch" type="xml">
+            <tree string="Receipt Lines" decoration-info="state == 'confirmed'" decoration-danger="state == 'cancelled'" create="false">
+                <field name="serial_number"/>
+                <field name="type"/>
+                <field name="item_type"/>
+                <field name="item_id"/>
+                <field name="publisher"/>
+                <field name="publish_date"/>
+                <field name="remark"/>
+                <field name="state"/>
+                <field name="material_id" optional="show"/>
+                <field name="used_quantity" optional="show"/>
+                <field name="defective_quantity" optional="show"/>
+                <field name="unit_price" optional="show"/>
+                <field name="total_price" optional="show"/>
+                <field name="currency_id" optional="show"/>
+                <field name="receiving_company" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Approved Receipts Tree view-->
+    <record id="view_garment_receipt_line_tree_nodelete" model="ir.ui.view">
+        <field name="name">garment.receipt.line.tree.nodelete</field>
+        <field name="model">garment.receipt.line</field>
+        <field name="arch" type="xml">
+            <tree string="Receipt Lines" decoration-info="state == 'confirmed'" decoration-danger="state == 'cancelled'" create="false" delete="false" duplicate="false">
+                <field name="serial_number"/>
+                <field name="type"/>
+                <field name="item_type"/>
+                <field name="item_id"/>
+                <field name="publisher"/>
+                <field name="publish_date"/>
+                <field name="remark"/>
+                <field name="state"/>
+                <field name="material_id" optional="show"/>
+                <field name="used_quantity" optional="show"/>
+                <field name="defective_quantity" optional="show"/>
+                <field name="unit_price" optional="show"/>
+                <field name="total_price" optional="show"/>
+                <field name="currency_id" optional="show"/>
+                <field name="receiving_company" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_garment_receipt_line_form_edit" model="ir.ui.view">
+        <field name="name">garment.receipt.line.form.edit</field>
+        <field name="model">garment.receipt.line</field>
+        <field name="arch" type="xml">
+            <form string="Receipt Lines" create="false">
+                <sheet>
+                    <group>
+                        <field name="serial_number"/>
+                        <field name="type"/>
+                        <field name="item_type"/>
+                        <field name="item_id" invisible="item_type == 'material' or item_type == 'other'"/>
+                    </group>
+                    <group>
+                        <field name="publisher"/>
+                        <field name="publish_date"/>
+                        <field name="remark"/>
+                    </group>
+                    <group>
+                        <field name="material_id" optional="show" invisible="item_type != 'material'"/>
+                        <field name="color_id" 
+                        optional="{'no_create': True, 'no_open': True}" 
+                        invisible="item_type != 'material'"
+                        widget="many2one"
+                        domain="[('id', 'in', available_color_ids)]"/>
+                        <field name="used_quantity" optional="show" invisible="item_type != 'material'"/>
+                        <field name="unit_price" optional="show" invisible="item_type != 'material'"/>
+                        <field name="currency_id" optional="show" invisible="item_type != 'material'"/>
+                        <field name="receiving_company" optional="show" invisible="item_type != 'material'"/>
+                        <field name="available_color_ids" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_garment_receipt_line_form_view" model="ir.ui.view">
+        <field name="name">garment.receipt.line.form.view</field>
+        <field name="model">garment.receipt.line</field>
+        <field name="arch" type="xml">
+            <form string="Receipts" create="false" delete="false" duplicate="false">
+                <header>
+                    <button name="action_mark_confirmed" type="object" string="Mark as Confirmed" class="btn-primary" groups="garment_authorization.group_inventory_approval"/>
+                    <button name="action_mark_cancelled" type="object" string="Mark as Cancelled" class="btn-danger" groups="garment_authorization.group_inventory_approval"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="serial_number" readonly="1"/>
+                        <field name="type" readonly="1"/>
+                        <field name="item_type" readonly="1"/>
+                        <field name="item_id" readonly="1"/>
+                        <field name="publisher" readonly="1"/>
+                        <field name="publish_date" readonly="1"/>
+                        <field name="remark" readonly="1"/>
+                        <field name="material_id" invisible="item_type != 'material'" readonly="1"/>
+                        <field name="color_id" invisible="item_type != 'material'" readonly="1"/>
+                        <field name="used_quantity" invisible="item_type != 'material'" readonly="1"/>
+                        <field name="unit_price" invisible="item_type != 'material'" readonly="1"/>
+                        <field name="currency_id" invisible="item_type != 'material'" readonly="1"/>
+                        <field name="receiving_company" invisible="item_type != 'material'" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_garment_receipt_line_form_approved" model="ir.ui.view">
+        <field name="name">garment.receipt.line.form.approved</field>
+        <field name="model">garment.receipt.line</field>
+        <field name="arch" type="xml">
+            <form string="Receipts" create="false">
+                <sheet>
+                    <group>
+                        <field name="serial_number" readonly="1"/>
+                        <field name="type" readonly="1"/>
+                        <field name="item_type" readonly="1"/>
+                        <field name="item_id" readonly="1"/>
+                        <field name="publisher" readonly="1"/>
+                        <field name="publish_date" readonly="1"/>
+                        <field name="remark" readonly="1"/>
+                        <field name="state" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_garment_receipt_line_form_nodelete" model="ir.ui.view">
+        <field name="name">garment.receipt.line.form.nodelete</field>
+        <field name="model">garment.receipt.line</field>
+        <field name="arch" type="xml">
+            <form string="Receipts" create="false" delete="false" duplicate="false">
+                <sheet>
+                    <group>
+                        <field name="serial_number" readonly="1"/>
+                        <field name="type" readonly="1"/>
+                        <field name="item_type" readonly="1"/>
+                        <field name="item_id" readonly="1"/>
+                        <field name="publisher" readonly="1"/>
+                        <field name="publish_date" readonly="1"/>
+                        <field name="remark" readonly="1"/>
+                        <field name="state" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Receipts History -->
+    <record id="action_garment_receipt_line_approved" model="ir.actions.act_window">
+        <field name="name">Receipts History</field>
+        <field name="res_model">garment.receipt.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_inventory.view_garment_receipt_line_tree_approved"/>
+        <field name="domain">[('state', '!=', 'draft')]</field>
+        <field name="context">{
+            'form_view_ref': 'garment_inventory.view_garment_receipt_line_form_approved',
+            'tree_view_ref': 'garment_inventory.view_garment_receipt_line_tree_approved'
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No receipt lines found
+            </p>
+        </field>
+    </record>
+
+    <!-- Waiting Receipts -->
+    <record id="action_garment_receipt_line_waiting" model="ir.actions.act_window">
+        <field name="name">Waiting Receipts</field>
+        <field name="res_model">garment.receipt.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_inventory.view_garment_receipt_line_tree_waiting"/>
+        <field name="domain">[('state', '=', 'draft')]</field>
+        <field name="context">{
+            'form_view_ref': 'garment_inventory.view_garment_receipt_line_form_view',
+            'create_view_ref': 'garment_inventory.view_garment_receipt_line_form_edit',
+            'tree_view_ref': 'garment_inventory.view_garment_receipt_line_tree_waiting'
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No waiting receipts found
+            </p>
+        </field>
+    </record>
+
+    <!-- Waiting Receipts purchases-->
+    <record id="action_garment_receipt_line_waiting_purchasing" model="ir.actions.act_window">
+        <field name="name">Waiting Receipts Purchasing</field>
+        <field name="res_model">garment.receipt.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_inventory.view_garment_receipt_line_tree_nodelete"/>
+        <field name="domain">[('state', '=', 'draft'), ('type', '=', 'in'), ('item_type', '=', 'material')]</field>
+        <field name="context">{
+            'form_view_ref': 'garment_inventory.view_garment_receipt_line_form_view',
+            'create_view_ref': 'garment_inventory.view_garment_receipt_line_form_edit',
+            'tree_view_ref': 'garment_inventory.view_garment_receipt_line_tree_waiting'
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No waiting receipts found
+            </p>
+        </field>
+    </record>
+
+    <!-- Receipts History without delete button-->
+    <record id="action_garment_receipt_line_nodelete" model="ir.actions.act_window">
+        <field name="name">Receipts History</field>
+        <field name="res_model">garment.receipt.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_inventory.view_garment_receipt_line_tree_nodelete"/>
+        <field name="domain">[('state', '!=', 'draft')]</field>
+        <field name="context">{
+            'form_view_ref': 'garment_inventory.view_garment_receipt_line_form_nodelete',
+            'create_view_ref': 'garment_inventory.view_garment_receipt_line_form_nodelete',
+            'tree_view_ref': 'garment_inventory.view_garment_receipt_line_tree_nodelete'
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No waiting receipts found
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Tree View for Stored Production Orders -->
+    <record id="view_stored_production_tree" model="ir.ui.view">
+        <field name="name">production.order.stored.tree</field>
+        <field name="model">production.order</field>
+        <field name="arch" type="xml">
+            <tree string="Stored Production Orders" create="false" delete="false" duplicate="false">
+                <field name="name" string="Order Reference"/>
+                <field name="sample_id" string="Sample"/>
+                <field name="sample_code" string="Sample Code"/>
+                <field name="brand"/>
+                <field name="quantity"/>
+                <field name="state"/>
+                <field name="finance_state" string="Finance Status"/>
+                <field name="client"/>
+                <field name="planned_date"/>
+                <field name="delivery_date"/>
+                <field name="progress_percentage" widget="percentage"/>
+                <field name="cost_total"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_stored_production" model="ir.actions.act_window">
+        <field name="name">Stored Productions</field>
+        <field name="res_model">production.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_stored', '=', True)]</field>
+        <field name="view_id" ref="garment_inventory.view_stored_production_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No stored production orders found
+            </p>
+        </field>
+    </record>
+
+</odoo>

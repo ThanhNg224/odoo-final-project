@@ -1,6 +1,3 @@
 <odoo>
-    <menuitem id="menu_garment_production_root" 
-              name="Production"
-              web_icon="garment_production,static/description/icon.png"
-              sequence="10"/>
+    <menuitem id="menu_garment_production_root" name="Production" web_icon="garment_production,static/description/icon.png" sequence="10" groups="garment_authorization.group_production_viewer,garment_authorization.group_production_approval,garment_authorization.group_production_management,garment_authorization.group_production_progress,garment_authorization.group_production_unit_price_process,garment_authorization.group_production_support_staff_count,garment_authorization.group_production_material_consumption"/>
 </odoo>

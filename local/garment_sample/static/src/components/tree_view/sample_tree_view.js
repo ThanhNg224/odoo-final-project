@@ -13,14 +13,29 @@ class CustomListController extends ListController {
         this.actionService = useService('action');
         this.userService = useService('user');
         this.state = useState({
-            canCreate: false
+            canCreate: false,
+            canDelete: false,
+            canDuplicate: false,
         });
-        onMounted(() => this.checkCreatePermission());
+        this.archInfo = this.props.archInfo;
+        this.activeActions = {
+            delete: false,
+            duplicate: false,
+        };
+        onMounted(() => this.checkPermissions());
     }
 
-    async checkCreatePermission() {
+    async checkPermissions() {
         const userGroups = await this.userService.hasGroup('garment_authorization.group_sample_management');
         this.state.canCreate = userGroups;
+        this.state.canDelete = userGroups;
+        this.state.canDuplicate = userGroups;
+        
+        // Update activeActions based on permissions
+        this.activeActions = {
+            delete: userGroups,
+            duplicate: userGroups,
+        };
     }
 
     onCreateButtonClick = () => {
@@ -36,6 +51,37 @@ class CustomListController extends ListController {
                 create: true
             }
         });
+    }
+
+    getStaticActionMenuItems() {
+        const list = this.model.root;
+        const isM2MGrouped = list.groupBy.some((groupBy) => {
+            const fieldName = groupBy.split(":")[0];
+            return list.fields[fieldName].type === "many2many";
+        });
+        return {
+            export: {
+                isAvailable: () => this.isExportEnable,
+                sequence: 10,
+                icon: "fa fa-upload",
+                description: _t("Export"),
+                callback: () => this.onExportData(),
+            },
+            duplicate: {
+                isAvailable: () => this.activeActions.duplicate && !isM2MGrouped,
+                sequence: 35,
+                icon: "fa fa-clone",
+                description: _t("Duplicate"),
+                callback: () => this.duplicateRecords(),
+            },
+            delete: {
+                isAvailable: () => this.activeActions.delete && !isM2MGrouped,
+                sequence: 40,
+                icon: "fa fa-trash-o",
+                description: _t("Delete"),
+                callback: () => this.onDeleteSelectedRecords(),
+            },
+        };
     }
 }
 

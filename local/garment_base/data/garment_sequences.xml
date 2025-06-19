@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequence for Sample Code -->
+        <record id="seq_garment_sample" model="ir.sequence">
+            <field name="name">Sample Code Sequence</field>
+            <field name="code">garment.sample</field>
+            <field name="prefix">SMP-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequence for Order Code -->
+        <record id="seq_garment_order" model="ir.sequence">
+            <field name="name">Order Code Sequence</field>
+            <field name="code">garment.order</field>
+            <field name="prefix">ORD-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequence for Production Order -->
+        <record id="seq_production_order" model="ir.sequence">
+            <field name="name">Production Order Sequence</field>
+            <field name="code">production.order</field>
+            <field name="prefix">PRD-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequence for Receipt Line -->
+        <record id="seq_garment_receipt_line" model="ir.sequence">
+            <field name="name">Receipt Line Sequence</field>
+            <field name="code">garment.receipt.line</field>
+            <field name="prefix">REC-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo> 

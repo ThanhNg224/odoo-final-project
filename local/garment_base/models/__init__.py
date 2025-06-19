@@ -2,8 +2,7 @@ from . import model_dynamic_templates
 from . import model_order
 from . import model_sample
 from . import model_others
-from . import model_group
-from . import model_user
+from . import model_inventory
 
 # From production_management
 from . import product_style
@@ -24,3 +23,4 @@ from . import product_lot
 from . import production_size_chart
 from . import production_finance_approval
 from . import production_approval
+from . import production_finance_wizard

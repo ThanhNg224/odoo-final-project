@@ -328,6 +328,7 @@ export class ProgressTable extends Component {
         this.actionService = useService("action");
         this.dialog = useService("dialog");
         this.notification = useService("notification");
+        this.userService = useService('user');
 
         this.state = useState({
             rows: Array.isArray(this.props.record.data[this.props.name]) ? this.props.record.data[this.props.name] : [],
@@ -337,13 +338,22 @@ export class ProgressTable extends Component {
             activeCell: null,
             dropdownPosition: null,
             forceUpdate: 0,
-            departments: {}
+            departments: {},
+            readonly: false,
         });
 
         onMounted(() => {
             this.initializeData();
             this.loadDepartments();
+            this.checkPermissions();
         });
+    }
+
+    async checkPermissions() {
+        const userGroups = await this.userService.hasGroup('garment_authorization.group_sample_management');
+        const recordState = this.props.record.data.state;
+        // Hide controls if user doesn't have permissions OR if the record state is not 'new'
+        this.state.readonly = !userGroups || (recordState && recordState !== 'new');
     }
 
     async initializeData() {

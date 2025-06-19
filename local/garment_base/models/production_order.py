@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-from odoo.exceptions import UserError  # Add this line
+from odoo.exceptions import UserError
 from datetime import datetime
 import json
 import ast
@@ -11,6 +11,7 @@ class ProductionOrder(models.Model):
     _name = 'production.order'
     _description = 'Production Order'
 
+    code = fields.Char('Production Code', readonly=True, copy=False, default=lambda self: self._generate_production_code())
     name = fields.Char('Order Reference', required=True, unique=True, default=lambda self: 'New')
     planned_date = fields.Date('Planned Date', required=True, default=fields.Date.today)
     state = fields.Selection([
@@ -19,15 +20,20 @@ class ProductionOrder(models.Model):
         ('done', 'Done')
     ], string='Status', default='draft')
     finance_state = fields.Selection([
-        ('waiting', 'Waiting'),
-        ('approved', 'Approved'),
-        ('paid', 'Paid')
+        ('waiting', 'Waiting Payment'),
+        ('partial', 'Partial Payment'),
+        ('paid', 'Fully Paid')
     ], string='Finance Status', default='waiting')
+    # Simple payment tracking
+    payment_amount = fields.Float('Payment Received', default=0.0, help="Amount received from customer")
+    payment_notes = fields.Text('Payment Notes', help="Notes about payments received")
+    finance_approved_by = fields.Many2one('res.users', string='Finance Approved By', readonly=True)
+    finance_approval_date = fields.Datetime('Finance Approval Date', readonly=True)
     cost_total = fields.Float('Total Cost', compute='_compute_cost_total', digits=(16, 2), store=True)
       # Sample related fields - Required field for production order
-    sample_id = fields.Many2one('garment.sample', string='Sample', required=False)
-    sample_name = fields.Char(string='Sample Name', store=True)
-    sample_number = fields.Char(string='Sample Number', store=True)
+    sample_id = fields.Many2one('garment.sample', string='Sample')
+    sample_name = fields.Char(string='Sample Name', store=True, compute='_compute_sample_fields')
+    sample_code = fields.Char(string='Sample Code', store=True, compute='_compute_sample_fields')
     brand = fields.Char(related='sample_id.brand', string='Brand', readonly=True, store=True)
     development_date = fields.Date(related='sample_id.development_date', string='Development Date', readonly=True, store=True)
     designer = fields.Char(related='sample_id.designer', string='Designer', readonly=True, store=True)
@@ -35,12 +41,12 @@ class ProductionOrder(models.Model):
     
     # Additional fields from UI
     bed_number = fields.Integer('Bed Number', default=1)
-    quantity = fields.Integer('Quantity', default=0)
-    client = fields.Char('Client')
+    quantity = fields.Integer('Total Quantity', compute='_compute_total_quantity', store=True, default=0)
+    client = fields.Char('Client', compute='_compute_order_fields', store=True)
     department = fields.Char('Department')
     salary_month = fields.Char('Salary Month')
     shipping_date = fields.Date('Shipping Date')
-    delivery_date = fields.Date('Delivery Date')
+    delivery_date = fields.Date('Delivery Date', compute='_compute_order_fields', store=True)
     image = fields.Binary("Product Image", attachment=True)
     process_count = fields.Integer('Number of Processes', compute='_compute_process_count')
     process_requirements = fields.Text('Process Requirements')
@@ -48,7 +54,7 @@ class ProductionOrder(models.Model):
     total_other_cost = fields.Float('Total Other Costs', compute='_compute_total_other_cost', store=True)
     
     # Relationships
-    style_id = fields.Many2one('product.style', string='Product Style', required=False)
+    style_id = fields.Many2one('product.style', string='Product Style')
     price_policy_id = fields.Many2one('operation.price', string='Price Policy')
     line_ids = fields.One2many('production.order.line', 'order_id', string='Order Lines')
     progress_ids = fields.One2many('production.progress', 'order_id', string='Progress Entries')
@@ -73,15 +79,42 @@ class ProductionOrder(models.Model):
         ondelete='set null',
         context={'default_state': 'confirmed'},
     )
-    order_name    = fields.Char(string='Tên đơn hàng',    readonly=True, store=True)
-    order_number  = fields.Char(string='Mã đơn hàng',     readonly=True, store=True)
-    client        = fields.Char(string='Khách hàng',      readonly=True, store=True)
-    delivery_date = fields.Date(string='Ngày giao hàng',  readonly=True, store=True)    # Add this field to help with domain management
+    order_name    = fields.Char(string='Order Name', compute='_compute_order_fields', store=True)
+    order_number  = fields.Char(string='Order Number', compute='_compute_order_fields', store=True)
+    is_stored = fields.Boolean(string='Is Stored', default=False)   # Add this field to help with domain management
     available_sample_ids = fields.Many2many(
         'garment.sample', 
         compute='_compute_available_samples',
         string='Available Samples'
     )
+
+    @api.depends('garment_order_id', 'garment_order_id.name', 'garment_order_id.code', 
+                 'garment_order_id.issuing_company', 'garment_order_id.receiving_date')
+    def _compute_order_fields(self):
+        """Compute order-related fields to ensure they always stay in sync"""
+        for record in self:
+            if record.garment_order_id:
+                record.order_name = record.garment_order_id.name
+                record.order_number = record.garment_order_id.code
+                record.client = record.garment_order_id.issuing_company
+                record.delivery_date = record.garment_order_id.receiving_date
+            else:
+                record.order_name = False
+                record.order_number = False
+                record.client = False
+                record.delivery_date = False
+
+    # NEW COMPUTED FIELDS for Sample information
+    @api.depends('sample_id', 'sample_id.name', 'sample_id.code')
+    def _compute_sample_fields(self):
+        """Compute sample-related fields to ensure they always stay in sync"""
+        for record in self:
+            if record.sample_id:
+                record.sample_name = record.sample_id.name
+                record.sample_code = record.sample_id.code
+            else:
+                record.sample_name = False
+                record.sample_code = False
     
     @api.depends('garment_order_id', 'garment_order_id.sample_ids')
     def _compute_available_samples(self):
@@ -90,28 +123,25 @@ class ProductionOrder(models.Model):
                 record.available_sample_ids = record.garment_order_id.sample_ids
             else:
                 record.available_sample_ids = self.env['garment.sample']  # Empty recordset
-    
+
+    @api.depends('line_ids', 'line_ids.planned_qty')
+    def _compute_total_quantity(self):
+        """Calculate total quantity from all order lines"""
+        for order in self:
+            total = sum(line.planned_qty for line in order.line_ids)
+            order.quantity = total
+            _logger.info(f"Computing quantity for order {order.name}: {total}")
+
     @api.onchange('garment_order_id')
     def _onchange_garment_order_id(self):
         result = {}
         
         if not self.garment_order_id:
-            # Clear all related fields when order is removed
-            self.order_name = False
-            self.order_number = False
-            self.client = False
-            self.delivery_date = False
             self.sample_id = False
             
             # Return empty domain
             result['domain'] = {'sample_id': [('id', '=', False)]}
             return result
-        
-        # Fill order information
-        self.order_name = self.garment_order_id.name
-        self.order_number = self.garment_order_id.order_number
-        self.client = self.garment_order_id.issuing_company
-        self.delivery_date = self.garment_order_id.receiving_date
         
         # Clear current sample selection when order changes
         self.sample_id = False
@@ -144,18 +174,12 @@ class ProductionOrder(models.Model):
                     'value': {'sample_id': False}
                 }
             
-            self.sample_name = self.sample_id.name
-            self.sample_number = self.sample_id.number
-            
             # Copy process requirements safely
             if hasattr(self.sample_id, 'technical_requirements') and self.sample_id.technical_requirements:
                 self.process_requirements = self.sample_id.technical_requirements
             else:
                 self.process_requirements = ''
         else:
-            # Clear sample-related fields when no sample is selected
-            self.sample_name = False
-            self.sample_number = False
             self.process_requirements = ''
     
     @api.model
@@ -166,9 +190,6 @@ class ProductionOrder(models.Model):
             domain = ['|', ('name', operator, name), ('order_name', operator, name)]
         return self._search(domain + args, limit=limit)
     
-
-
-   
     
     @api.depends('progress_ids.completed_qty')
     def _compute_completed_quantity(self):
@@ -182,6 +203,16 @@ class ProductionOrder(models.Model):
             total_planned = sum(line.planned_qty for line in order.line_ids)
             if total_planned > 0:
                 order.progress_percentage = (order.completed_quantity / total_planned) * 100
+                
+                # Auto-update state based on progress
+                if order.progress_percentage >= 100 and order.state == 'in_progress':
+                    order.state = 'done'
+                    _logger.info(f"Production order {order.name} automatically marked as 'done' - 100% complete")
+                elif order.progress_percentage > 0 and order.state == 'draft':
+                    # If there's progress but still in draft, move to in_progress
+                    if order.finance_state != 'waiting' or order.payment_amount > 0:
+                        order.state = 'in_progress'
+                        _logger.info(f"Production order {order.name} automatically moved to 'in_progress'")
             else:
                 order.progress_percentage = 0
     
@@ -224,19 +255,52 @@ class ProductionOrder(models.Model):
         for order in self:
             order.cost_total = order.total_material_cost + order.total_process_cost + order.total_other_cost
     
+    def action_mark_waiting(self):
+        """Mark as waiting for payment"""
+        self.finance_state = 'waiting'
+        return True
+    
+    def action_mark_partial_paid(self):
+        """Mark as partially paid"""
+        self.finance_state = 'partial'
+        self.finance_approved_by = self.env.user
+        self.finance_approval_date = fields.Datetime.now()
+        return True
+    
+    def action_mark_fully_paid(self):
+        """Mark as fully paid"""
+        self.finance_state = 'paid'
+        self.finance_approved_by = self.env.user
+        self.finance_approval_date = fields.Datetime.now()
+        return True
+    
+    def action_finance_wizard(self):
+        """Open simple finance update wizard"""
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Update Finance Status',
+            'res_model': 'production.finance.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'default_order_id': self.id}
+        }
+    
     # Action methods
     def set_in_progress(self):
         for record in self:
+            if record.finance_state == 'waiting' and record.payment_amount <= 0:
+                raise UserError("Cannot start production without any payment or finance approval!")
             record.state = 'in_progress'
             _logger.info(f"Production order {record.name} set to 'in_progress'")
         return True
     
-    def set_done(self):
-        for record in self:
-            record.state = 'done'
-            _logger.info(f"Production order {record.name} set to 'done'")
-        return True
-        
+    # Remove the set_done method since it's now automatic
+    # def set_done(self):
+    #     for record in self:
+    #         record.state = 'done'
+    #         _logger.info(f"Production order {record.name} set to 'done'")
+    #     return True
+
     def action_view_lines(self):
         self.ensure_one()
         return {
@@ -297,7 +361,8 @@ class ProductionOrder(models.Model):
                             'color': self.sample_id.color or '',  # Set color from sample
                         })
                         _logger.info(f"Created order line for size: {size_value}")
-        
+        # Recompute total quantity after creating order lines
+        self._compute_total_quantity()
         # Make sure to remove any "Other cost" entries that might have been created
         self.action_remove_other_cost_entries()
         
@@ -327,6 +392,11 @@ class ProductionOrder(models.Model):
 
                     bundle_counter += 1
                     qty_remaining -= current_qty
+
+    def action_refresh_quantity(self):
+        """Manually refresh the total quantity calculation"""
+        self._compute_total_quantity()
+        return True
 
     def copy_sample_data(self):
         """Copy material and process data from the sample to this production order."""
@@ -390,6 +460,14 @@ class ProductionOrder(models.Model):
         if self.sample_id.other_cost:
             self.update_other_costs_from_sample()
         
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get('code'):
+                vals['code'] = self._generate_production_code()
+        return super().create(vals_list)
+
+    
     def update_other_costs_from_sample(self):
         """Import other costs from the sample to this production order."""
         if not self.sample_id or not self.sample_id.other_cost:
@@ -448,10 +526,8 @@ class ProductionOrder(models.Model):
         # If sample_id is set, immediately copy the sample data
         if record.sample_id:
             record.copy_sample_data()
-            
             # Clean up any duplicate entries
             record.action_remove_other_cost_entries()
-        
         return record
     
     def write(self, vals):
@@ -555,13 +631,79 @@ class ProductionOrder(models.Model):
             
         return True
 
+    def action_open_edit_form(self):
+        """Open the edit form for the current record"""
+        try:
+            # Try to find the edit form view
+            edit_view = self.env.ref('garment_production.view_production_order_form_edit', raise_if_not_found=False)
+            if not edit_view:
+                # Fallback to default form view if edit view not found
+                edit_view = self.env.ref('garment_base.view_production_order_form', raise_if_not_found=False)
+        except:
+            edit_view = False
+            
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Edit Production Order',
+            'res_model': 'production.order',
+            'res_id': self.id,
+            'view_mode': 'form',
+            'view_id': edit_view.id if edit_view else False,
+            'target': 'current',
+            'context': dict(self.env.context),
+        }
+
+    def action_export_pdf(self):
+        """Export production order as PDF"""
+        return {
+            'type': 'ir.actions.report',
+            'report_name': 'garment_production.report_production_order',
+            'report_type': 'qweb-pdf',
+            'data': {},
+            'context': dict(self.env.context),
+        }
+
+    def _generate_production_code(self):
+        # Get the next sequence number
+        return self.env['ir.sequence'].next_by_code('production.order') or '/'
+
+
+    def action_save_and_back(self):
+        """Save the current record and return to the view-only form"""
+        self.ensure_one()
+        
+        # Force save any pending changes
+        if self.env.context.get('commit_other_cost_cleanup'):
+            self.action_remove_other_cost_entries()
+        
+        try:
+            # Try to find the view-only form
+            view_form = self.env.ref('garment_production.view_production_order_form', raise_if_not_found=False)
+            if not view_form:
+                # Fallback to default form view if view-only form not found
+                view_form = self.env.ref('garment_base.view_production_order_form', raise_if_not_found=False)
+        except:
+            view_form = False
+            
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Production Order',
+            'res_model': 'production.order',
+            'res_id': self.id,
+            'view_mode': 'form',
+            'view_id': view_form.id if view_form else False,
+            'target': 'main',  # Use 'main' instead of 'current' to replace current view
+            'context': {'form_view_initial_mode': 'view'},  # Force view mode
+        }
+
+
 class GarmentSampleExtended(models.Model):
     _inherit = 'garment.sample'
     
     def name_get(self):
         result = []
         for sample in self:
-            name = f"{sample.name} [{sample.number}]" if sample.number else sample.name
+            name = f"{sample.name} [{sample.code}]" if sample.code else sample.name
             result.append((sample.id, name))
         return result
 

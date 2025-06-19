@@ -1,25 +1,31 @@
 import base64
+import os
 from odoo.exceptions import ValidationError
 from odoo import models, fields, api, _
+from odoo.modules.module import get_module_resource
 import json
 import io
-import xlsxwriter
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.rl_config import TTFSearchPath
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
-from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from odoo.tools.misc import file_path
 
 class Sample(models.Model):
     _name = 'garment.sample'
     _description = 'Garment Sample'
 
     name = fields.Char(string='Name', required=True)
-    number = fields.Char(string='Sample Number')
+    code = fields.Char(string='Sample Code', copy=False, default=lambda self: self._generate_sample_code())
     shape = fields.Char(string='Shape')
     color = fields.Char(string='Color')
     brand = fields.Char(string='Brand')
     client = fields.Char(string='Client')
-    quotation = fields.Integer(string='Quotation')
+    quotation = fields.Float(string='Budget Quotation')
+    actual_quotation = fields.Float(string='Actual Quotation')
     designer = fields.Char(string='Designer')
     phone_number = fields.Char(string='Phone Number')
     pattern_maker = fields.Char(string='Pattern Maker')
@@ -41,11 +47,12 @@ class Sample(models.Model):
     technical_requirements = fields.Html(string='Technical Requirements')
     remark = fields.Html(string='Remarks')
     state = fields.Selection([
-        ('new', 'New development, pending approval'),
+        ('new', 'New development'),
         ('in_progress', 'Can be produced'),
         ('eliminated', 'Eliminated')
-    ])
+    ], string="Status", default='new')
 
+    currency_id = fields.Many2one('res.currency', string='Currency', default=lambda self: self.env.company.currency_id)
     department_id = fields.Many2one('garment.department', string='Department')
     published_by = fields.Many2one('res.users', string='Published By', default=lambda self: self.env.user)
     image_details = fields.Many2many(comodel_name='ir.attachment', string="Image Details", 
@@ -54,24 +61,69 @@ class Sample(models.Model):
         column2='image_id')
     related_document = fields.Binary(string='Related Documents', attachment=True)
     is_stored = fields.Boolean(string='Is Stored', default=False)
-    # order_ids = fields.Many2many('garment.order', 'garment_order_sample_rel', 'sample_id', 'order_id', string='Related Orders')
+    is_waiting_for_approval = fields.Boolean(string='Is Waiting for Approval', default=False)
+
+    order_ids = fields.Many2many('garment.order', 'garment_order_sample_rel', 'sample_id', 'order_id', string='Related Orders')
+    production_ids = fields.One2many('production.order', 'sample_id', string='Related Productions')
+    material_issuance_ids = fields.One2many(
+        'garment.receipt.line',
+        compute='_compute_material_issuance_ids',
+        string='Related Material Issuances'
+    )
     all_samples = fields.Many2many('garment.sample', compute='_compute_all_samples', string="All Samples")
+    total_price = fields.Float(string='Total Price', compute='_compute_total_price')
+
+    @api.depends()
+    def _compute_material_issuance_ids(self):
+        for record in self:
+            # Find all material receipt lines where item_type='sample' and item_id matches this sample's ID
+            material_lines = self.env['garment.receipt.line'].search([
+                ('from_type', '=', 'sample'),
+                ('item_type', '=', 'material'),
+                ('item_id', '=', str(record.id))
+            ])
+            record.material_issuance_ids = material_lines
+
+    @api.depends('material_detail', 'process_table', 'other_cost')
+    def _compute_total_price(self):
+        for record in self:
+            # Calculate material cost
+            material_cost = 0
+            if record.material_detail and len(record.material_detail) > 1:
+                for row in record.material_detail[1:]:  # Skip header row
+                    if len(row) >= 12:  # Ensure row has enough columns
+                        total_quantity_used = float(row[10] or 0)  # Total Quantity Used
+                        unit_price = float(row[11] or 0)  # Unit Price
+                        material_cost += total_quantity_used * unit_price
+
+            # Calculate process cost
+            process_cost = 0
+            if record.process_table and isinstance(record.process_table, list):
+                for item in record.process_table:
+                    if isinstance(item, dict):
+                        process_cost += item.get('unit_price', 0) * item.get('multiplier', 1)
+
+            # Calculate other cost
+            other_cost = 0
+            if record.other_cost and isinstance(record.other_cost, list):
+                for item in record.other_cost:
+                    if isinstance(item, dict):
+                        other_cost += item.get('amount', 0)
+
+            # Set total price as sum of all costs
+            record.total_price = material_cost + process_cost + other_cost
 
     @api.depends()
     def _compute_all_samples(self):
         for record in self:
             record.all_samples = self.env['garment.sample'].search([])
 
-    @api.model
-    def create(self, vals):
-        for key in ['finished_product_size', 'material_detail', 'process_table', 'other_cost']:
-            if key in vals and isinstance(vals[key], str):
-                try:
-                    vals[key] = json.loads(vals[key])
-                except Exception:
-                    pass
-        
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get('code'):
+                vals['code'] = self._generate_sample_code()
+        return super().create(vals_list)
 
     def write(self, vals):
         for key in ['finished_product_size', 'material_detail', 'process_table', 'other_cost']:
@@ -98,21 +150,95 @@ class Sample(models.Model):
             'context': {'form_view_ref': 'garment_sample.view_garment_sample_form_edit'},
         }
 
-    def action_open_pmc_form(self):
-        return {
-            'name': 'Create PMC Sample',
-            'type': 'ir.actions.act_window',
-            'res_model': 'garment.sample',
-            'view_mode': 'form',
-            'view_id': self.env.ref('garment_sample.view_garment_sample_form_edit').id,
-            'target': 'current',
-            'context': {'default_state': 'new'},
-        }
-
     def action_stock_in(self):
         self.ensure_one()
-        self.write({'is_stored': True})
-        return True
+        
+        print("before: " + str(self.is_stored) + " " + str(self.is_waiting_for_approval) + " " + str(self.id))
+        # Create inventory receipt line
+        if self.is_stored:
+            raise ValidationError(_("Sample is already in stock."))
+        self.env['garment.receipt.line'].create({
+            'type': 'in',
+            'item_type': 'sample',
+            'item_id': str(self.id),
+            'remark': f"Sample details: Shape: {self.shape}, Color: {self.color}, Brand: {self.brand}"
+        })
+        self.write({'is_waiting_for_approval': True})
+
+        # Show success notification using Odoo's bus notification system
+        self.env['bus.bus']._sendone(
+            self.env.user.partner_id,
+            'simple_notification',
+            {
+                'title': _('Success'),
+                'message': _('Stock in sample "%s" request has been successfully sent.') % self.name,
+                'type': 'success',
+                'sticky': False,
+                'fadeout': 2000,
+            }
+        )
+        print(str(self.is_stored) + " " + str(self.is_waiting_for_approval) + " " + str(self.id))
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('Garment Samples'),
+            'res_model': 'garment.sample',
+            'view_mode': 'tree,form',
+            'views': [
+                (self.env.ref('garment_sample.view_garment_sample_tree').id, 'tree'),
+                (self.env.ref('garment_sample.view_garment_sample_form_view').id, 'form')
+            ],
+            'target': 'main',
+            'domain': [('is_stored', '=', False)],
+            'context': {
+                'form_view_ref': 'garment_sample.view_garment_sample_form_view',
+                'create_view_ref': 'garment_sample.view_garment_sample_form_edit',
+                'tree_view_ref': 'garment_sample.view_garment_sample_tree'
+            },
+        }
+
+    def action_stock_out(self):
+        self.ensure_one()
+        if not self.is_stored:
+            raise ValidationError(_("Sample is not in stock."))
+        # Create inventory receipt line
+        self.env['garment.receipt.line'].create({
+            'type': 'out',
+            'item_type': 'sample',
+            'item_id': str(self.id),
+            'remark': f"Sample details: Shape: {self.shape}, Color: {self.color}, Brand: {self.brand}"
+        })
+        self.write({'is_waiting_for_approval': True})
+
+        # Show success notification using Odoo's bus notification system
+        self.env['bus.bus']._sendone(
+            self.env.user.partner_id,
+            'simple_notification',
+            {
+                'title': _('Success'),
+                'message': _('Stock out sample "%s" request has been successfully sent.') % self.name,
+                'type': 'success',
+                'sticky': False,
+                'fadeout': 2000,
+            }
+        )
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('Stored Samples'),
+            'res_model': 'garment.sample',
+            'view_mode': 'tree,form',
+            'views': [
+                (self.env.ref('garment_inventory.view_stored_sample_tree').id, 'tree'),
+                (self.env.ref('garment_inventory.view_stored_sample_form_view').id, 'form')
+            ],
+            'target': 'main',
+            'domain': [('is_stored', '=', True)],
+            'context': {
+                'tree_view_ref': 'garment_inventory.view_stored_sample_tree',
+                'form_view_ref': 'garment_inventory.view_stored_sample_form_view'
+            },
+        }
 
     def action_mark_ready_for_production(self):
         self.ensure_one()
@@ -176,102 +302,174 @@ class Sample(models.Model):
                 'create_view_ref': 'garment_sample.view_garment_sample_form_edit'
             }
         }
+    
+    @api.model
+    def _register_fonts(self):
+        from reportlab.pdfbase.ttfonts import TTFont
+        from reportlab.pdfbase import pdfmetrics
+        pdfmetrics.registerFont(TTFont('TimesNewRoman', file_path('garment_base/static/fonts/SVN-Times New Roman.ttf')))
+        pdfmetrics.registerFont(TTFont('TimesNewRoman-Bold', file_path('garment_base/static/fonts/SVN-Times New Roman Bold.ttf')))
+        pdfmetrics.registerFont(TTFont('TimesNewRoman-Italic', file_path('garment_base/static/fonts/SVN-Times New Roman Italic.ttf')))
+        pdfmetrics.registerFont(TTFont('TimesNewRoman-BoldItalic', file_path('garment_base/static/fonts/SVN-Times New Roman Bold Italic.ttf')))
+
+    def _get_season(self, date):
+        """Determine the season based on the given date.
+        Spring: March to May
+        Summer: June to August
+        Fall: September to November
+        Winter: December to February
+        """
+        if not date:
+            return ''
+            
+        month = date.month
+        year = date.year
+        
+        if 3 <= month <= 5:
+            season = _('Spring')
+        elif 6 <= month <= 8:
+            season = _('Summer')
+        elif 9 <= month <= 11:
+            season = _('Fall')
+        else:
+            season = _('Winter')
+            
+        return f"{season} {year}"
 
     def action_export_pdf(self):
         self.ensure_one()
-        
-        # Create a PDF buffer
+        self._register_fonts()
+
         buffer = io.BytesIO()
         doc = SimpleDocTemplate(buffer, pagesize=letter)
         styles = getSampleStyleSheet()
+        styles.add(ParagraphStyle(name='VN', fontName='TimesNewRoman', fontSize=12))
+        styles.add(ParagraphStyle(name='VN-Bold', fontName='TimesNewRoman-Bold', fontSize=12))
+        styles.add(ParagraphStyle(name='VN-Title', fontName='TimesNewRoman-Bold', fontSize=16, alignment=1))
         elements = []
-        
-        # Add title
-        title = Paragraph(f"Sample Report: {self.name}", styles['Title'])
+
+        # Title
+        title = Paragraph(f'<b>{_("SAMPLE DESIGN APPROVAL FORM")}</b>', styles['VN-Title'])
         elements.append(title)
-        elements.append(Spacer(1, 20))
-        
-        # Basic Info
-        basic_info = [
-            ['Field', 'Value'],
-            ['Sample Name', self.name],
-            ['Number', self.number],
-            ['Shape', self.shape],
-            ['Color', self.color],
-            ['Client', self.client],
-            ['Brand', self.brand],
-            ['Designer', self.designer],
-            ['Quantity', str(self.quantity)],
-            ['Pattern Size', self.pattern_size],
-            ['Development Date', str(self.development_date)],
+        elements.append(Spacer(1, 12))
+
+        status_labels = {
+            'new': _('New Development'),
+            'in_progress': _('Ready for Production'),
+            'eliminated': _('Eliminated'),
+        }
+
+        header_data = [
+            [f"{_('Sample Code')}: {self.code or ''}",              f"{_('Sample Name')}: {self.name or ''}"],
+            [f"{_('Designer')}: {self.designer or ''}",  f"{_('Creation Date')}: {self.development_date or ''}"],
+            [f"{_('Product Type')}: {self.shape or ''}",     f"{_('Season')}: {self._get_season(self.development_date)}"],
+            [f"{_('Size')}: {self.pattern_size or ''}",       f"{_('Color')}: {self.color or ''}"],
+            [f"{_('Status')}: {status_labels.get(self.state, '')}", ""],
         ]
-        
-        t = Table(basic_info, colWidths=[200, 300])
-        t.setStyle(TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('FONTSIZE', (0, 0), (-1, 0), 14),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-            ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-            ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
-            ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-            ('FONTSIZE', (0, 1), (-1, -1), 12),
-            ('GRID', (0, 0), (-1, -1), 1, colors.black)
+        tbl = Table(header_data, colWidths=[270, 270])
+        tbl.setStyle(TableStyle([
+            ('FONTNAME',     (0, 0), (-1, -1), 'TimesNewRoman'),
+            ('FONTSIZE',     (0, 0), (-1, -1), 11),
+            ('ALIGN',        (0, 0), (-1, -1), 'LEFT'),
+            ('BOTTOMPADDING',(0, 0), (-1, -1), 4),
         ]))
-        elements.append(t)
-        elements.append(Spacer(1, 20))
+        elements.append(tbl)
+        elements.append(Spacer(1, 10))
+
+        # Technical Information
+        elements.append(Paragraph(f'<b>{_("Technical Information")}:</b>', styles['VN']))
+        elements.append(Spacer(1, 6))
+
+        material_detail = self.material_detail or []
+
+        # --- Process material_detail to create tech_table_data ---
+        material_header = material_detail[0] if material_detail else []
         
-        # Add Finished Product Size
-        if self.finished_product_size:
-            elements.append(Paragraph("Finished Product Size", styles['Heading2']))
-            elements.append(Spacer(1, 10))
-            t = Table(self.finished_product_size)
-            t.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('FONTSIZE', (0, 0), (-1, 0), 12),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-                ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
-                ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-                ('FONTSIZE', (0, 1), (-1, -1), 10),
-                ('GRID', (0, 0), (-1, -1), 1, colors.black)
-            ]))
-            elements.append(t)
-            elements.append(Spacer(1, 20))
+        # Find column indices
+        name_idx = material_header.index(_('Material Name')) if _('Material Name') in material_header else None
+        spec_idx = material_header.index(_('Specification')) if _('Specification') in material_header else None
+        note_idx = material_header.index(_('Note')) if _('Note') in material_header else None
+
+        # Initialize table header
+        tech_table_data = [
+            [_('No.'), _('Category'), _('Description'), _('Note')]
+        ]
+
+        # Process each row from material_detail (skip header row)
+        for i, row in enumerate(material_detail[1:], start=1):
+            if not isinstance(row, list):
+                continue
+                
+            # Get complete strings for each field
+            category = str(row[name_idx]) if name_idx is not None and len(row) > name_idx else ''
+            description = str(row[spec_idx]) if spec_idx is not None and len(row) > spec_idx else ''
+            note = str(row[note_idx]) if note_idx is not None and len(row) > note_idx else ''
+            
+            # Add row if any field has data
+            if any([category, description, note]):
+                tech_table_data.append([str(i), category, description, note])
+
+        # Tạo Table và style như cũ
+        tech_tbl = Table(tech_table_data, colWidths=[40, 100, 300, 100])
+        tech_tbl.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+            ('FONTNAME',   (0, 0), (-1, 0), 'TimesNewRoman-Bold'),
+            ('ALIGN',      (0, 0), (-1, 0), 'CENTER'),
+            ('FONTSIZE',   (0, 0), (-1, 0), 11),
+            ('GRID',       (0, 0), (-1, -1), 1, colors.black),
+            ('FONTNAME',   (0, 1), (-1, -1), 'TimesNewRoman'),
+            ('FONTSIZE',   (0, 1), (-1, -1), 10),
+            ('VALIGN',     (0, 0), (-1, -1), 'MIDDLE'),
+        ]))
+        elements.append(tech_tbl)
+        elements.append(Spacer(1, 16))
+
+        # Approval section
+        elements.append(Paragraph(f'{_("Approval Comments")}: ____________________________________________', styles['VN']))
+        elements.append(Spacer(1, 10))
+        elements.append(Paragraph(f'{_("Approver")}: ____________________________________________  {_("Position")}: _______________', styles['VN']))
+        elements.append(Spacer(1, 10))
+        elements.append(Paragraph(f'{_("Approval Date")}: _______________', styles['VN']))
+        elements.append(Spacer(1, 10))
+
+        from reportlab.platypus import KeepTogether
+        from reportlab.graphics.shapes import Drawing, Rect
+        from reportlab.graphics import renderPDF
+        from reportlab.platypus.flowables import Flowable
         
-        # Add Material Detail
-        if self.material_detail:
-            elements.append(Paragraph("Material Detail", styles['Heading2']))
-            elements.append(Spacer(1, 10))
-            t = Table(self.material_detail)
-            t.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('FONTSIZE', (0, 0), (-1, 0), 12),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-                ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
-                ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-                ('FONTSIZE', (0, 1), (-1, -1), 10),
-                ('GRID', (0, 0), (-1, -1), 1, colors.black)
-            ]))
-            elements.append(t)
-            elements.append(Spacer(1, 20))
-        
-        # Build PDF
+        class CheckBox(Flowable):
+            def __init__(self, size=12):
+                self.size = size
+                self.width = size
+                self.height = size
+                
+            def wrap(self, availWidth, availHeight):
+                return (self.width, self.height)
+                
+            def draw(self):
+                # Vẽ hình vuông trống
+                self.canv.rect(0, 0, self.size, self.size, stroke=1, fill=0)
+        # Status checkboxes
+        approval_data = [
+            [f'{_("Status")}:', CheckBox(), _('Approve'), CheckBox(), _('Reject')]
+        ]
+        approval_table = Table(approval_data, colWidths=[100, 15, 50, 15, 80])
+        approval_table.setStyle(TableStyle([
+            ('FONTNAME', (0, 0), (-1, -1), 'TimesNewRoman'),
+            ('FONTSIZE', (0, 0), (-1, -1), 11),
+            ('ALIGN', (0, 0), (0, 0), 'LEFT'),
+            ('ALIGN', (1, 0), (1, 0), 'CENTER'),
+            ('ALIGN', (3, 0), (3, 0), 'CENTER'),
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+            ('LEFTPADDING', (0, 0), (-1, -1), 0),
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),
+        ]))
+        elements.append(approval_table)
+
         doc.build(elements)
         pdf_content = buffer.getvalue()
         buffer.close()
-        
-        # Create attachment
-        filename = f"sample_{self.name}_{fields.Date.today()}.pdf"
+        filename = f"sample_approval_form_{self.code}_{fields.Date.today()}.pdf"
         attachment = self.env['ir.attachment'].create({
             'name': filename,
             'type': 'binary',
@@ -280,100 +478,12 @@ class Sample(models.Model):
             'res_id': self.id,
             'mimetype': 'application/pdf'
         })
-        
-        # Return download URL
         return {
             'type': 'ir.actions.act_url',
             'url': f'/web/content/{attachment.id}?download=true',
             'target': 'new',
         }
 
-    def action_export_xlsx(self):
-        self.ensure_one()
-        
-        # Create a new Excel file
-        output = io.BytesIO()
-        workbook = xlsxwriter.Workbook(output)
-        
-        # Add a worksheet
-        worksheet = workbook.add_worksheet('Sample Details')
-        
-        # Define formats
-        header_format = workbook.add_format({
-            'bold': True,
-            'bg_color': '#D3D3D3',
-            'border': 1,
-            'align': 'center',
-            'valign': 'vcenter'
-        })
-        
-        cell_format = workbook.add_format({
-            'border': 1,
-            'align': 'center',
-            'valign': 'vcenter'
-        })
-        
-        # Write Basic Info
-        worksheet.write(0, 0, 'Sample Report', header_format)
-        worksheet.merge_range(0, 0, 0, 1, f'Sample Report: {self.name}', header_format)
-        
-        basic_info = [
-            ['Field', 'Value'],
-            ['Sample Name', self.name],
-            ['Number', self.number],
-            ['Shape', self.shape],
-            ['Color', self.color],
-            ['Client', self.client],
-            ['Brand', self.brand],
-            ['Designer', self.designer],
-            ['Quantity', str(self.quantity)],
-            ['Pattern Size', self.pattern_size],
-            ['Development Date', str(self.development_date)],
-        ]
-        
-        for row_num, row_data in enumerate(basic_info, start=2):
-            for col_num, cell_data in enumerate(row_data):
-                worksheet.write(row_num, col_num, cell_data, cell_format)
-        
-        # Write Finished Product Size
-        if self.finished_product_size:
-            row_num = len(basic_info) + 4
-            worksheet.write(row_num, 0, 'Finished Product Size', header_format)
-            worksheet.merge_range(row_num, 0, row_num, len(self.finished_product_size[0])-1, 'Finished Product Size', header_format)
-            
-            for row_idx, row_data in enumerate(self.finished_product_size, start=row_num+1):
-                for col_idx, cell_data in enumerate(row_data):
-                    worksheet.write(row_idx, col_idx, cell_data, cell_format)
-        
-        # Write Material Detail
-        if self.material_detail:
-            row_num = len(basic_info) + len(self.finished_product_size) + 6
-            worksheet.write(row_num, 0, 'Material Detail', header_format)
-            worksheet.merge_range(row_num, 0, row_num, len(self.material_detail[0])-1, 'Material Detail', header_format)
-            
-            for row_idx, row_data in enumerate(self.material_detail, start=row_num+1):
-                for col_idx, cell_data in enumerate(row_data):
-                    worksheet.write(row_idx, col_idx, cell_data, cell_format)
-        
-        # Close workbook
-        workbook.close()
-        xlsx_content = output.getvalue()
-        output.close()
-        
-        # Create attachment
-        filename = f"sample_{self.name}_{fields.Date.today()}.xlsx"
-        attachment = self.env['ir.attachment'].create({
-            'name': filename,
-            'type': 'binary',
-            'datas': base64.b64encode(xlsx_content),
-            'res_model': self._name,
-            'res_id': self.id,
-            'mimetype': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        })
-        
-        # Return download URL
-        return {
-            'type': 'ir.actions.act_url',
-            'url': f'/web/content/{attachment.id}?download=true',
-            'target': 'new',
-        }
+    def _generate_sample_code(self):
+        # Get the next sequence number
+        return self.env['ir.sequence'].next_by_code('garment.sample') or '/'

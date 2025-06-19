@@ -12,10 +12,6 @@
         "views/permission_view.xml",
         "views/base_menu.xml",
     ],
-    "assets": {
-        "web.assets_backend": [
-        ],
-    },
     "installable": True,
     "application": True,
 } # type: ignore

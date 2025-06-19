@@ -1,0 +1,124 @@
+<odoo>
+    <!-- Tree View for Stored Samples -->
+    <record id="view_stored_sample_tree" model="ir.ui.view">
+        <field name="name">garment.sample.stored.tree</field>
+        <field name="model">garment.sample</field>
+        <field name="arch" type="xml">
+            <tree string="Stored Samples" create="false" delete="false" duplicate="false">
+                <field name="name" string="Sample Name"/>
+                <field name="code" string="Sample Code"/>
+                <field name="shape"/>
+                <field name="color"/>
+                <field name="client"/>
+                <field name="brand"/>
+                <field name="quantity"/>
+                <field name="development_date"/>
+                <field name="department_id" string="Department"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- View-only form -->
+    <record id="view_stored_sample_form_view" model="ir.ui.view">
+        <field name="name">garment.sample.stored.form.view</field>
+        <field name="model">garment.sample</field>
+        <field name="arch" type="xml">
+            <form string="Stored Sample" create="false" delete="false" edit="false">
+                <header>
+                    <button name="action_stock_out" type="object" string="Stock Out" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group string="Basic Info" col="3">
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="client" readonly="1"/>
+                            <field name="designer" readonly="1"/>
+                            <field name="quantity" readonly="1"/>
+                            <field name="published_by" readonly="1"/>
+                            <field name="update_date" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="shape" readonly="1"/>
+                            <field name="brand" readonly="1"/>
+                            <field name="pattern_maker" readonly="1"/>
+                            <field name="pattern_size" readonly="1"/>
+                            <field name="phone_number" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="color" readonly="1"/>
+                            <field name="quotation" readonly="1"/>
+                            <field name="pattern_drafter" readonly="1"/>
+                            <field name="department_id" readonly="1"/>
+                            <field name="development_date" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Sample Detail">
+                            <group string="Finished Product Size">
+                                <field name="finished_product_size" widget="finished_product_size_table" string="" readonly="1"/>
+                            </group>
+                            <group string="Material Detail">
+                                <field name="material_detail" widget="material_detail_table" string="" readonly="1"/>
+                            </group>
+                            <group string="Technical Requirements">
+                                <field name="technical_requirements" string="" readonly="1"/>
+                            </group>
+                            <group string="Remarks">
+                                <field name="remark" string="" readonly="1"/>
+                            </group>
+                            <group string="Image Details">
+                                <field name="image_details" widget="many2many_image" readonly="1" string=""/>
+                            </group>
+                            <group string="Related Documents">
+                                <field name="related_document" filename="related_document_filename" readonly="1" string=""/>
+                            </group>
+                        </page>
+                        <page string="Material Issuance">
+
+                        </page>
+                        <page string="Sample Quotation">
+                            <widget name="sample_cost_summary_table" string="Sample Cost Summary"/>
+                            <group string="Process Cost">
+                                <field name="process_table" widget="process_table" string="" readonly="1" hide_fields="['multiplier']"/>
+                            </group>
+                            <group string="Other Cost">
+                                <field name="other_cost" widget="other_cost_table" string="" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Sample Progress">
+                            <field name="progress_detail" widget="progress_template" string=""/>
+                        </page>
+                        <!-- <page string="Sample Warehousing">
+                        </page>
+                        <page string="Related Orders">
+                        </page>
+                        <page string="Related Purchases">
+                        </page>
+                        <page string="Related Productions">
+                        </page> -->
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_stored_sample" model="ir.actions.act_window">
+        <field name="name">Stored Samples</field>
+        <field name="res_model">garment.sample</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_inventory.view_stored_sample_tree"/>
+        <field name="domain">[('is_stored', '=', True)]</field>
+        <field name="context">{ 
+            'tree_view_ref':'garment_inventory.view_stored_sample_tree', 
+            'form_view_ref':'garment_inventory.view_stored_sample_form_view'}
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No stored samples found
+            </p>
+        </field>
+    </record>
+
+</odoo>

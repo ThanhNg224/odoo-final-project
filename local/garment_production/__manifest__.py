@@ -1,5 +1,5 @@
 {
-    "name": "Garment Production",
+    "name": "Garment Production Management",
     "version": "1.0",
     "summary": "Manage manufacturing production steps for garment company",
     "category": "Manufacturing",
@@ -10,6 +10,7 @@
         "reports/bundle_report.xml",
         # Views
         "views/base_menu.xml",
+        "views/production_finance_wizard_views.xml",
         "views/approval_request_views.xml",
         "views/operation_price_views.xml",
         "views/production_approval_views.xml",

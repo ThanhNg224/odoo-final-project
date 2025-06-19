@@ -2,10 +2,11 @@
     <record id="view_garment_sample_tree" model="ir.ui.view">
         <field name="name">garment.sample.tree</field>
         <field name="model">garment.sample</field>
+        <field name="groups_id" eval="[(4, ref('garment_authorization.group_sample_viewer')), (4, ref('garment_authorization.group_sample_approval')), (4, ref('garment_authorization.group_sample_management'))]"/>
         <field name="arch" type="xml">
-            <tree string="Garment Samples" create="false" js_class="sample_tree_view">
+            <tree string="Garment Samples" js_class="sample_tree_view" create="false">
                 <field name="name" string="Sample Name"/>
-                <field name="number" string="Sample number"/>
+                <field name="code" string="Sample Code"/>
                 <field name="quantity"/>
                 <field name="shape"/>
                 <field name="color"/>
@@ -26,25 +27,20 @@
         <field name="arch" type="xml">
             <form string="Garment Sample" create="false" delete="false" edit="false">
                 <header>
-                    <div class="o_dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-download"/>
-                            Export
-                        </button>
-                        <div class="dropdown-menu" role="menu">
-                            <button name="action_export_pdf" type="object" class="dropdown-item" string="Export PDF" data-hotkey="p"/>
-                            <button name="action_export_xlsx" type="object" class="dropdown-item" string="Export Excel" data-hotkey="e"/>
-                        </div>
-                    </div>
-                    <button name="action_stock_in" type="object" string="Stock In" class="btn-primary" groups="garment_authorization.group_sample_approval"/>
+                    <button name="action_export_pdf" type="object" class="btn-primary" string="Export PDF" data-hotkey="p" groups="garment_authorization.group_sample_approval" invisible="state == 'eliminated'"/>
+                    <button name="action_stock_in" type="object" string="Stock In" class="btn-primary" groups="garment_authorization.group_sample_approval" invisible="is_waiting_for_approval or state == 'eliminated'"/>
                     <field name="state" widget="statusbar" statusbar_visible="new,in_progress,eliminated"/>
-                    <button name="action_open_edit_form" type="object" string="Edit" class="oe_highlight" groups="garment_authorization.group_sample_management"/>
-                    <button name="action_mark_ready_for_production" type="object" string="Mark as Ready for Production" class="btn-primary" groups="garment_authorization.group_sample_approval"/>
-                    <button name="action_mark_discontinued" type="object" string="Mark as Discontinued" class="btn-primary" groups="garment_authorization.group_sample_approval"/>
-                    <button name="action_delete_record" type="object" string="Delete" class="btn-danger" confirm="Are you sure you want to delete this record? This action cannot be undone." groups="garment_authorization.group_sample_management"/>
+                    <field name="is_waiting_for_approval" invisible="1"/>
+                    <field name="is_stored" invisible="1"/>
+                    <button name="action_open_edit_form" type="object" string="Edit" class="oe_highlight" groups="garment_authorization.group_sample_management" invisible="state == 'eliminated'"/>
+                    <button name="action_mark_ready_for_production" type="object" string="Mark as Ready for Production" class="btn-primary" groups="garment_authorization.group_sample_approval" invisible="state == 'in_progress'"/>
+                    <button name="action_mark_discontinued" type="object" string="Mark as Discontinued" class="btn-primary" groups="garment_authorization.group_sample_approval" invisible="state == 'eliminated'"/>
+                    <button name="action_delete_record" type="object" string="Delete" class="btn-danger" confirm="Are you sure you want to delete this record? This action cannot be undone." groups="garment_authorization.group_sample_management" invisible="state != 'eliminated'"/>
                 </header>
                 <sheet>
                     <group string="Basic Info" col="3">
+                        <field name="is_waiting_for_approval" invisible="1"/>
+                        <field name="is_stored" invisible="1"/>
                         <group>
                             <field name="name" readonly="1"/>
                             <field name="client" readonly="1"/>
@@ -54,18 +50,19 @@
                             <field name="update_date" readonly="1"/>
                         </group>
                         <group>
+                            <field name="code" readonly="1"/>
                             <field name="shape" readonly="1"/>
                             <field name="brand" readonly="1"/>
                             <field name="pattern_maker" readonly="1"/>
                             <field name="pattern_size" readonly="1"/>
-                            <field name="phone_number" readonly="1"/>
                         </group>
                         <group>
+                            <field name="phone_number" readonly="1"/>
                             <field name="color" readonly="1"/>
-                            <field name="quotation" readonly="1"/>
                             <field name="pattern_drafter" readonly="1"/>
                             <field name="department_id" readonly="1"/>
                             <field name="development_date" readonly="1"/>
+                            <field name="total_price" readonly="1"/>
                         </group>
                     </group>
 
@@ -91,9 +88,27 @@
                             </group>
                         </page>
                         <page string="Material Issuance">
-
+                            <widget name="material_issuance_widget" string="Material Issuance" groups="garment_authorization.group_sample_management"/>
+                            <field name="material_issuance_ids" string="">
+                                <tree editable="bottom" decoration-success="state == 'confirmed'" decoration-danger="state == 'cancelled'">
+                                    <field name="material_id"/>
+                                    <field name="serial_number"/>
+                                    <field name="type"/>
+                                    <field name="state"/>
+                                    <field name="used_quantity"/>
+                                    <field name="defective_quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="total_price"/>
+                                    <field name="publisher"/>
+                                    <field name="publish_date"/>
+                                    <field name="remark"/>
+                                </tree>
+                            </field>
                         </page>
                         <page string="Sample Quotation">
+                            <group string="Currency">
+                                <field name="currency_id" readonly="1"/>
+                            </group>
                             <widget name="sample_cost_summary_table" string="Sample Cost Summary"/>
                             <group string="Process Cost">
                                 <field name="process_table" widget="process_table" string="" readonly="1" hide_fields="['multiplier']"/>
@@ -105,14 +120,14 @@
                         <page string="Sample Progress">
                             <field name="progress_detail" widget="progress_template" string=""/>
                         </page>
-                        <page string="Sample Warehousing">
+                        <!-- <page string="Sample Warehousing">
                         </page>
                         <page string="Related Orders">
                         </page>
                         <page string="Related Purchases">
                         </page>
                         <page string="Related Productions">
-                        </page>
+                        </page> -->
                     </notebook>
                 </sheet>
             </form>
@@ -132,15 +147,13 @@
                     <group string="Basic Info" colspan="4">
                         <group>
                             <field name="name" required="1"/>
-                            <field name="number"/>
                             <field name="department_id"/>
-                            <field name="phone_number"/>
+                            <field name="brand"/>
                         </group>
                         <group>
                             <field name="client"/>
-                            <field name="brand"/>
+                            <field name="phone_number"/>
                             <field name="published_by"/>
-                            <field name="development_date"/>
                         </group>
                     </group>
 
@@ -148,14 +161,17 @@
                         <group>
                             <field name="shape"/>
                             <field name="color"/>
-                            <field name="quotation"/>
+                            <field name="quotation" invisible="context.get('form_view_ref') == 'garment_sample.view_garment_sample_form_edit'"/>
+                            <field name="actual_quotation" invisible="not context.get('form_view_ref') == 'garment_sample.view_garment_sample_form_edit'"/>
                             <field name="quantity"/>
+                            <field name="currency_id"/>
                         </group>
                         <group>
                             <field name="designer"/>
                             <field name="pattern_maker"/>
                             <field name="pattern_drafter"/>
                             <field name="pattern_size"/>
+                            <field name="development_date"/>
                         </group>
                     </group>
                     <notebook>
@@ -196,23 +212,17 @@
         </field>
     </record>
 
-    <!-- Action for opening edit form in dialog -->
-    <record id="action_garment_sample_edit" model="ir.actions.act_window">
-        <field name="name">Edit Garment Sample</field>
-        <field name="res_model">garment.sample</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_garment_sample_form_edit"/>
-        <field name="target">new</field>
-    </record>
 
     <record id="action_garment_sample" model="ir.actions.act_window">
         <field name="name">Garment Samples</field>
         <field name="res_model">garment.sample</field>
         <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_sample.view_garment_sample_tree"/>
         <field name="domain">[('is_stored', '=', False)]</field>
         <field name="context">{
             'form_view_ref': 'garment_sample.view_garment_sample_form_view',
-            'create_view_ref': 'garment_sample.view_garment_sample_form_edit'
+            'create_view_ref': 'garment_sample.view_garment_sample_form_edit',
+            'tree_view_ref': 'garment_sample.view_garment_sample_tree'
         }</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

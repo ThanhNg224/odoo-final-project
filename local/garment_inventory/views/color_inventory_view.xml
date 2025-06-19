@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_color_inventory_tree" model="ir.ui.view">
+        <field name="name">garment.inventory.color.tree</field>
+        <field name="model">garment.inventory.color</field>
+        <field name="arch" type="xml">
+            <tree string="Color Inventory">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_color_inventory_tree_restricted" model="ir.ui.view">
+        <field name="name">garment.inventory.color.tree.restricted</field>
+        <field name="model">garment.inventory.color</field>
+        <field name="arch" type="xml">
+            <tree string="Color Inventory" create="false" delete="false" duplicate="false">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_color_inventory_form" model="ir.ui.view">
+        <field name="name">garment.inventory.color.form</field>
+        <field name="model">garment.inventory.color</field>
+        <field name="arch" type="xml">
+            <form string="Color Inventory" create="false">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Restricted Form View -->
+    <record id="view_color_inventory_form_restricted" model="ir.ui.view">
+        <field name="name">garment.inventory.color.form.restricted</field>
+        <field name="model">garment.inventory.color</field>
+        <field name="arch" type="xml">
+            <form string="Color Inventory" create="false" delete="false" duplicate="false">
+                <sheet>
+                    <group>
+                        <field name="code" readonly="1"/>
+                        <field name="name" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action with full permissions -->
+    <record id="action_color_inventory" model="ir.actions.act_window">
+        <field name="name">Color Inventory</field>
+        <field name="res_model">garment.inventory.color</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_color_inventory_tree"/>
+        <field name="groups_id" eval="[(6,0,[ref('garment_authorization.group_inventory_management')])]"/>
+        <field name="context">{
+            'form_view_ref': 'garment_inventory.view_color_inventory_form',
+            'tree_view_ref': 'garment_inventory.view_color_inventory_tree'
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first color
+            </p>
+        </field>
+    </record>
+
+    <!-- Action with restricted permissions -->
+    <record id="action_color_inventory_restricted" model="ir.actions.act_window">
+        <field name="name">Color Inventory</field>
+        <field name="res_model">garment.inventory.color</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_color_inventory_tree_restricted"/>
+        <field name="groups_id" eval="[(6,0,[ref('garment_authorization.group_inventory_viewer'), ref('garment_authorization.group_inventory_purchaser'), ref('garment_authorization.group_inventory_approval')])]"/>
+        <field name="context">{
+            'form_view_ref': 'garment_inventory.view_color_inventory_form_restricted',
+            'tree_view_ref': 'garment_inventory.view_color_inventory_tree_restricted'
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No colors available
+            </p>
+        </field>
+    </record>
+
+</odoo>

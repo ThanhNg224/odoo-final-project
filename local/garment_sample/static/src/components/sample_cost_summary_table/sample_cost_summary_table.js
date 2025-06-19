@@ -47,7 +47,7 @@ class SampleCostSummaryTable extends Component {
                     this.state.otherCostBudget = data.other_cost;
                     this.state.otherCostActual = 0;
                     this.state.quoteBudget = data.quotation;
-                    this.state.quoteActual = 0;
+                    this.state.quoteActual = data.actual_quotation;
 
                     // Calculate totals
                     this.state.totalCostBudget = this.state.materialCostBudget + this.state.processCostBudget + this.state.otherCostBudget;

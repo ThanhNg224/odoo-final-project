@@ -1,0 +1,411 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* garment_sample
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e-20231119\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-16 17:16+0000\n"
+"PO-Revision-Date: 2025-06-16 17:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Actual"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid ""
+"Are you sure you want to delete this record? This action cannot be undone."
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+msgid "Attachments"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Basic Info"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Budget"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.actions.act_window,help:garment_sample.action_garment_sample
+msgid "Create a new Garment Sample"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.actions.act_window,help:garment_sample.action_finished_product_size
+msgid "Create your first finished product size"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.actions.act_window,help:garment_sample.action_material_detail
+msgid "Create your first material detail"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.actions.act_window,help:garment_sample.action_other_cost
+msgid "Create your first other cost"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.actions.act_window,help:garment_sample.action_process_table
+msgid "Create your first process table"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Currency"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.js:0
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+#, python-format
+msgid "Delete"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_tree
+msgid "Department"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Details"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
+#, python-format
+msgid "Discard"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
+#, python-format
+msgid "Discard Changes"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.js:0
+#, python-format
+msgid "Duplicate"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Edit"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+msgid "Edit Garment Sample"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-python
+#: code:addons/garment_sample/controllers/main.py:0
+#, python-format
+msgid "Eliminated in %(date_filter)s"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.js:0
+#, python-format
+msgid "Error loading sample progress"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.js:0
+#, python-format
+msgid "Export"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Export PDF"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_finished_product_size_form
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Finished Product Size"
+msgstr ""
+
+#. module: garment_sample
+#: model:ir.actions.act_window,name:garment_sample.action_finished_product_size
+msgid "Finished Product Sizes"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Garment Sample"
+msgstr ""
+
+#. module: garment_sample
+#: model:ir.actions.act_window,name:garment_sample.action_garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_tree
+msgid "Garment Samples"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Image Details"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Item"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Mark as Discontinued"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Mark as Ready for Production"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Material Cost (1)"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_material_detail_form
+msgid "Material Detail"
+msgstr ""
+
+#. module: garment_sample
+#: model:ir.actions.act_window,name:garment_sample.action_material_detail
+msgid "Material Details"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Material Issuance"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.xml:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-python
+#: code:addons/garment_sample/controllers/main.py:0
+#, python-format
+msgid "New development in %(date_filter)s"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_other_cost_form
+msgid "Other Cost"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Other Cost (3)"
+msgstr ""
+
+#. module: garment_sample
+#: model:ir.actions.act_window,name:garment_sample.action_other_cost
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+msgid "Other Costs"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Process Cost"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Process Cost (2)"
+msgstr ""
+
+#. module: garment_sample
+#: model:ir.actions.act_window,name:garment_sample.action_process_table
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_process_table_form
+msgid "Process Table"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+msgid "Process table"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-python
+#: code:addons/garment_sample/controllers/main.py:0
+#, python-format
+msgid "Production available in %(date_filter)s"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Profit (4-1-2-3)"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+msgid "Progress Selection"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Quotation (4)"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Related Documents"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Remarks"
+msgstr ""
+
+#. module: garment_sample
+#: model:ir.ui.menu,name:garment_sample.menu_garment_sample_root
+msgid "Sample"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_tree
+msgid "Sample Code"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+#, python-format
+msgid "Sample Cost Summary"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Sample Detail"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+msgid "Sample Details"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_tree
+msgid "Sample Name"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Sample Progress"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Sample Quotation"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
+#, python-format
+msgid "Save Record"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
+#, python-format
+msgid "Save manually"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Single Piece"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Stock In"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
+msgid "Technical Requirements"
+msgstr ""
+
+#. module: garment_sample
+#: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
+msgid "Technical Requirements and Remarks"
+msgstr ""
+
+#. module: garment_sample
+#. odoo-javascript
+#: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
+#, python-format
+msgid "Total Cost (1+2+3)"
+msgstr ""

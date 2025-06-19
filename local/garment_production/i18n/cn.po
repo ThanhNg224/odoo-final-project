@@ -1,0 +1,989 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* garment_production
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e-20231119\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-16 17:17+0000\n"
+"PO-Revision-Date: 2025-06-16 17:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "<i class=\"fa fa-calendar\" title=\"Calendar\"/>"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "<i class=\"fa fa-ellipsis-v\" title=\"More options\"/>"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "<i class=\"fa fa-tag\" title=\"Tag\"/>"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid ""
+"<strong>Bundle Management:</strong> Check the \"Completed\" box when each "
+"bundle is finished. This will automatically update the progress."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "<strong>Client:</strong><br/>"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid ""
+"<strong>Cost Summary:</strong> This shows the automatically calculated cost "
+"totals from different sections."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid ""
+"<strong>Information:</strong> These costs are imported from the sample. They"
+" represent additional costs related to production."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid ""
+"<strong>Instructions:</strong> Bundle management allows you to organize "
+"production quantities. Mark bundles as completed to track progress."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid ""
+"<strong>Instructions:</strong> Order lines show the quantities for each "
+"size. Progress is automatically calculated based on completed bundles."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "<strong>Progress: </strong>"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "<strong>Quantity:</strong><br/>"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid ""
+"<strong>Step 2:</strong> Now select a sample from the available options "
+"below."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
+msgid ""
+"<strong>Update Finance Status</strong> - Quick way to update payment status "
+"for this production order."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid ""
+"<strong>✓ Ready:</strong> Order and sample selected. You can now proceed "
+"with production setup."
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/quantity_list_table.xml:0
+#, python-format
+msgid "Add Size"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_form
+msgid "Add notes here..."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
+msgid "Add payment reference, date, method, etc..."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "All Bundles"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "Approval Info"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_approval_request_form
+msgid "Approval Request"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_approval_request
+#: model_terms:ir.ui.view,arch_db:garment_production.view_approval_request_tree
+msgid "Approval Requests"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Bundle #"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Bundle Details"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Bundle ID:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Bundle Ticket"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.ui.menu,name:garment_production.menu_production_bundle
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Bundles"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Clean Up Empty Entries"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Client"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Client:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Color"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Completed"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Completed On"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
+msgid "Completed Quantity"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.ui.menu,name:garment_production.menu_garment_production_config
+msgid "Configuration"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Cost Breakdown"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Cost Name"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_cost
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Costs"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Create Bundles"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.actions.act_window,help:garment_production.action_production_orders
+msgid "Create a new production order"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Created On:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
+msgid "Current Status"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
+msgid "Date"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "Delete"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_distribution
+msgid "Distributions"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "Done"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Done Qty"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Done Qty:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
+msgid "Download QR Ticket"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "Draft"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "Edit"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "Enter payment details, reference numbers, etc..."
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Enter process requirements here..."
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Error"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Failed to apply template: %s"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Failed to load templates: %s"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Failed to save template: %s"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_approval_form
+msgid "Finance Approval"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_finance_approval
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_approval_tree
+msgid "Finance Approvals"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "Finance Info"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Generate Bundles"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Generate Size Lines from Sample"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Generate from Sample"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Generated:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "Group By"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "In Progress"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Lines"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Manually refresh quantity calculations"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Mark as Done"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "Mark as Fully Paid"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Material Cost"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Material Details"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_form
+msgid "Material Name"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_material
+msgid "Materials"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.actions.act_window,help:garment_production.action_production_order_line
+msgid "No order lines found"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "No templates found"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
+msgid "Note"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
+msgid "Notes"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_operation_price_form
+msgid "Operation Price"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_operation_price
+#: model_terms:ir.ui.view,arch_db:garment_production.view_operation_price_tree
+msgid "Operation Prices"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Order #"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Order Date:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Order Information"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Order Line"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_order_line
+#: model:ir.ui.menu,name:garment_production.menu_production_order_line
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
+msgid "Order Lines"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Order Ref:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.actions.act_window,help:garment_production.action_production_order_line
+msgid ""
+"Order lines are automatically created when you generate them from a sample "
+"in a production order."
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Order lines generated from quantity list"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Order quantity updated to %s"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Other Costs"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "Payment Notes"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "Payment Status"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Planned"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Planned Qty"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Planned Qty:"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.report,name:garment_production.action_bundle_qr_report
+msgid "Print Bundle Ticket"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Process Cost"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_tree
+msgid "Process Price List"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Process Requirements"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_process
+msgid "Processes"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_product_lot_form
+msgid "Product Lot"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_product_lot
+#: model_terms:ir.ui.view,arch_db:garment_production.view_product_lot_tree
+msgid "Product Lots"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_form
+msgid "Product Style"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_product_style
+#: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_tree
+msgid "Product Styles"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.ui.menu,name:garment_production.menu_garment_production_root
+msgid "Production"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_approval_form
+msgid "Production Approval"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_approval
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_approval_tree
+msgid "Production Approvals"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
+msgid "Production Bundle"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_bundle
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
+msgid "Production Bundles"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_form
+msgid "Production Cost"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_tree
+msgid "Production Costs"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Production Details"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_distribution_form
+msgid "Production Distribution"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_distribution_tree
+msgid "Production Distributions"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_form
+msgid "Production Material"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_tree
+msgid "Production Materials"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
+msgid "Production Order"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_orders
+#: model:ir.ui.menu,name:garment_production.menu_production_orders
+#: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Production Orders"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_form
+msgid "Production Process"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_progress
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
+msgid "Production Progress"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_form
+msgid "Production Progress Entry"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
+msgid "Production Step"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Progress"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
+msgid "Progress %"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Progress Entries"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "QR Code"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Quantities"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/quantity_list_table.xml:0
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+#, python-format
+msgid "Quantity"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Quantity List"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Quantity:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Refresh Quantities"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_salary_adjust_form
+msgid "Salary Adjustment"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_salary_adjust
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_salary_adjust_tree
+msgid "Salary Adjustments"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Sample"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Sample Information"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "Sample Name"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Sample:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+msgid "Scan for complete bundle details"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "Search Production Orders"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Select an existing order first"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Select order first to see available samples"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/quantity_list_table.xml:0
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#, python-format
+msgid "Size"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_size_chart_tree
+msgid "Size Chart"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_size_chart_form
+msgid "Size Chart Entry"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_size_chart
+msgid "Size Charts"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Size:"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Start Production"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "Status"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_stock_production_inout_form
+msgid "Stock Movement"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_stock_production_inout
+#: model_terms:ir.ui.view,arch_db:garment_production.view_stock_production_inout_tree
+msgid "Stock Movements"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
+msgid "Style"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Success"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Template '%s' applied successfully!"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Template '%s' saved successfully!"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
+msgid "Ticket Printed"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.xml:0
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_tree
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_tree
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Total Cost"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+msgid "Total Other Cost"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
+msgid "Total Quantity"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Unknown error occurred"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "Update Finance Status"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
+msgid "Update To"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.report,name:garment_production.action_bundle_qr_report_html
+msgid "View Bundle Ticket"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
+msgid "View QR Ticket"
+msgstr ""
+
+#. module: garment_production
+#. odoo-javascript
+#: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
+#, python-format
+msgid "Warning"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.act_window,name:garment_production.action_production_worker_entry
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_worker_entry_tree
+msgid "Worker Entries"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_worker_entry_form
+msgid "Worker Entry"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
+msgid "pcs"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "✅ Mark Paid"
+msgstr ""
+
+#. module: garment_production
+#: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
+msgid "💰 Update Finance"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.server,name:garment_production.action_bulk_download_qr
+msgid "📥 Download QR Tickets"
+msgstr ""
+
+#. module: garment_production
+#: model:ir.actions.server,name:garment_production.action_bulk_view_qr
+msgid "📱 View QR Tickets"
+msgstr ""

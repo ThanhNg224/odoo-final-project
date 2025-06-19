@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_production_finance_wizard_form" model="ir.ui.view">
+        <field name="name">production.finance.wizard.form</field>
+        <field name="model">production.finance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Update Finance Status">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <strong>Update Finance Status</strong> - Quick way to update payment status for this production order.
+                    </div>
+                    
+                    <group>
+                        <group string="Current Status">
+                            <field name="order_id" readonly="1"/>
+                            <field name="current_finance_state" readonly="1"/>
+                            <field name="current_payment" widget="monetary" readonly="1"/>
+                            <field name="order_total" widget="monetary" readonly="1"/>
+                        </group>
+                        
+                        <group string="Update To">
+                            <field name="finance_state" widget="radio" options="{'horizontal': true}"/>
+                            <field name="payment_amount" widget="monetary"/>
+                        </group>
+                    </group>
+                    
+                    <group string="Notes">
+                        <field name="payment_notes" nolabel="1" placeholder="Add payment reference, date, method, etc..."/>
+                    </group>
+                </sheet>
+                
+                <footer>
+                    <button name="action_update_finance" string="Update Finance Status" 
+                            type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,37 @@
+<odoo>
+    <!-- Root menu - all inventory groups can access -->
+    <menuitem id="menu_garment_inventory_root" name="Inventory" sequence="10" groups="garment_authorization.group_inventory_viewer,garment_authorization.group_inventory_approval,garment_authorization.group_inventory_management,garment_authorization.group_inventory_purchaser" web_icon="garment_inventory,static/description/icon.png"/>
+    
+    <!-- Main inventory menu - all groups can access -->
+    <menuitem id="menu_garment_inventory_main" name="All Inventories" parent="garment_inventory.menu_garment_inventory_root" sequence="20" groups="garment_authorization.group_inventory_viewer,garment_authorization.group_inventory_approval,garment_authorization.group_inventory_management,garment_authorization.group_inventory_purchaser"/>
+    
+    <!-- Material inventory - all groups can access -->
+    <menuitem id="menu_material_inventory" name="Material" action="action_material_inventory" parent="garment_inventory.menu_garment_inventory_main" sequence="21" groups="garment_authorization.group_inventory_viewer,garment_authorization.group_inventory_approval,garment_authorization.group_inventory_management,garment_authorization.group_inventory_purchaser"/>
+    
+    <!-- Color inventory - management only has full access -->
+    <menuitem id="menu_color_inventory" name="Color" action="action_color_inventory" parent="garment_inventory.menu_garment_inventory_main" sequence="22" groups="garment_authorization.group_inventory_management"/>
+
+    <!-- Color inventory restricted - viewer, purchaser, and approval have limited access -->
+    <menuitem id="menu_color_inventory_restricted" name="Color" action="action_color_inventory_restricted" parent="garment_inventory.menu_garment_inventory_main" sequence="23" groups="garment_authorization.group_inventory_viewer,garment_authorization.group_inventory_purchaser,garment_authorization.group_inventory_approval"/>
+    
+    <!-- Samples - only management and approval can access -->
+    <menuitem id="menu_stored_sample" name="Samples" action="action_stored_sample" parent="garment_inventory.menu_garment_inventory_main" sequence="24" groups="garment_authorization.group_inventory_management,garment_authorization.group_inventory_approval"/>
+    
+    <!-- Orders - only management and approval can access -->
+    <menuitem id="menu_stored_order" name="Orders" action="action_stored_order" parent="garment_inventory.menu_garment_inventory_main" sequence="25" groups="garment_authorization.group_inventory_management,garment_authorization.group_inventory_approval"/>
+    
+    <!-- Productions - only management and approval can access -->
+    <!-- <menuitem id="menu_stored_production" name="Productions" action="action_stored_production" parent="garment_inventory.menu_garment_inventory_main" sequence="26" groups="garment_authorization.group_inventory_management,garment_authorization.group_inventory_approval"/> -->
+    
+    <!-- Waiting approval for management and approval groups -->
+    <menuitem id="menu_garment_receipt_line_waiting" name="Waiting approval" action="action_garment_receipt_line_waiting" parent="garment_inventory.menu_garment_inventory_root" sequence="30" groups="garment_authorization.group_inventory_management,garment_authorization.group_inventory_approval"/>
+    
+    <!-- Waiting approval for purchaser group -->
+    <menuitem id="menu_garment_receipt_line_waiting_purchasing" name="Purchase Requests" action="action_garment_receipt_line_waiting_purchasing" parent="garment_inventory.menu_garment_inventory_root" sequence="31" groups="garment_authorization.group_inventory_purchaser"/>
+    
+    <!-- History with full access for management -->
+    <menuitem id="menu_garment_receipt_line_approved" name="History" action="action_garment_receipt_line_approved" parent="garment_inventory.menu_garment_inventory_root" sequence="40" groups="garment_authorization.group_inventory_management"/>
+    
+    <!-- History with limited access for approval group -->
+    <menuitem id="menu_garment_receipt_line_approved_nodelete" name="History" action="action_garment_receipt_line_nodelete" parent="garment_inventory.menu_garment_inventory_root" sequence="41" groups="garment_authorization.group_inventory_approval"/>
+</odoo>

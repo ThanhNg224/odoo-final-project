@@ -5,7 +5,7 @@
         <field name="arch" type="xml">
             <tree string="Garment Orders" create="false" js_class="order_create_button">
                 <field name="name"/>
-                <field name="order_number"/>
+                <field name="code"/>
                 <field name="shape"/>
                 <field name="quantity"/>
                 <field name="state"/>
@@ -26,21 +26,15 @@
         <field name="arch" type="xml">
             <form string="Garment Order" create="false" delete="false" edit="false">
                 <header>
-                    <!-- <field name="state" widget="statusbar" statusbar_visible="new,in_progress,eliminated"/> -->
-                    <button name="action_open_edit_form" type="object" string="Edit" class="oe_highlight"/>
-                    <!-- <div class="o_dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-download"/>
-                            Export
-                        </button>
-                        <div class="dropdown-menu" role="menu">
-                            <button name="action_export_pdf" type="object" class="dropdown-item" string="Export PDF" data-hotkey="p"/>
-                            <button name="action_export_xlsx" type="object" class="dropdown-item" string="Export Excel" data-hotkey="e"/>
-                        </div>
-                    </div>
-                    <button name="action_mark_ready_for_production" type="object" string="Mark as Ready for Production" class="btn-primary"/>
-                    <button name="action_mark_discontinued" type="object" string="Mark as Discontinued" class="btn-primary"/> -->
-                    <button name="action_delete_record" type="object" string="Delete" class="btn-danger" confirm="Are you sure you want to delete this record? This action cannot be undone."/>
+                    <button name="action_export_pdf" type="object" class="btn-primary" string="Export PDF" data-hotkey="p" groups="garment_authorization.group_order_approval" invisible="state == 'eliminated'"/>
+                    <button name="action_stock_in" type="object" string="Stock In" class="btn-primary" groups="garment_authorization.group_order_approval"  invisible="is_waiting_for_approval or state == 'eliminated'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,in_progress,eliminated"/>
+                    <field name="is_waiting_for_approval" invisible="1"/>
+                    <field name="is_stored" invisible="1"/>
+                    <button name="action_open_edit_form" type="object" string="Edit" class="oe_highlight" groups="garment_authorization.group_order_management" invisible="state == 'eliminated'"/>
+                    <button name="action_mark_ready_for_production" type="object" string="Mark as Ready for Production" class="btn-primary" groups="garment_authorization.group_order_approval" invisible="state == 'in_progress'"/>
+                    <button name="action_mark_discontinued" type="object" string="Mark as Discontinued" class="btn-primary" groups="garment_authorization.group_order_approval" invisible="state == 'eliminated'"/>
+                    <button name="action_delete_record" type="object" string="Delete" class="btn-danger" confirm="Are you sure you want to delete this record? This action cannot be undone."  groups="garment_authorization.group_order_management" invisible="state != 'eliminated'"/>
                 </header>
                 <sheet>
                     <group string="Basic Info" col="3">
@@ -54,7 +48,7 @@
                             <field name="receiving_company"/>
                         </group>
                         <group>
-                            <field name="order_number" required="1"/>
+                            <field name="code"/>
                             <field name="shape"/>
                             <field name="issuing_company_phone"/>
                             <field name="receiving_company_phone"/>
@@ -87,10 +81,26 @@
                                 <field name="related_document" filename="related_document_filename" readonly="1" string=""/>
                             </group>
                         </page>
-                        <page string="Material Issuance">
-
-                        </page>
-                        <page string="Cost Accounting">
+                        <!-- <page string="Material Issuance">
+                            <widget name="material_issuance_widget" string="Material Issuance"/>
+                            <field name="material_issuance_ids" string="">
+                                <tree editable="bottom">
+                                    <field name="material_id"/>
+                                    <field name="serial_number"/>
+                                    <field name="type"/>
+                                    <field name="state"/>
+                                    <field name="used_quantity"/>
+                                    <field name="defective_quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="total_price"/>
+                                    <field name="receiving_company"/>
+                                    <field name="publisher"/>
+                                    <field name="publish_date"/>
+                                    <field name="remark"/>
+                                </tree>
+                            </field>
+                        </page> -->
+                        <!-- <page string="Cost Accounting">
 
                         </page>
                         <page string="Order Progress">
@@ -99,7 +109,7 @@
                         <page string="Related Samples">
                         </page>
                         <page string="Related Productions">
-                        </page>
+                        </page> -->
 
                     </notebook>
                 </sheet>
@@ -131,7 +141,7 @@
 
                         </group>
                         <group>
-                            <field name="order_number" required="1"/>
+                            <field name="code"/>
                             <field name="shape"/>
                             <field name="issuing_company_phone"/>
                             <field name="receiving_company_phone"/>
@@ -188,9 +198,12 @@
         <field name="name">Garment Orders</field>
         <field name="res_model">garment.order</field>
         <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="garment_order.view_garment_order_tree"/>
+        <field name="domain">[('is_stored', '=', False)]</field>
         <field name="context">{
             'form_view_ref': 'garment_order.view_garment_order_form_view',
-            'create_view_ref': 'garment_order.view_garment_order_form_edit'
+            'create_view_ref': 'garment_order.view_garment_order_form_edit',
+            'tree_view_ref': 'garment_order.view_garment_order_tree'
         }</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

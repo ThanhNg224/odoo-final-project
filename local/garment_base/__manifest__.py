@@ -1,6 +1,6 @@
 # __manifest__.py
 {
-    "name": "Garment Base Modules",
+    "name": "Garment Base Module",
     "author": "Phung Minh Chien",
     "license": "LGPL-3",
     "depends": ["web", "base"],
@@ -10,6 +10,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/qr_templates.xml",
+        "data/garment_sequences.xml",
     ],
     "assets": {
         "web.assets_backend": [
@@ -52,6 +53,13 @@
             "/garment_base/static/src/components/custom_m2m_image/m2m_image.xml",
             "/garment_base/static/src/components/custom_m2m_image/m2m_image.scss",
             "/garment_base/static/src/components/custom_m2m_image/m2m_image.js",
+
+            # Material Issuance Table Components
+            "/garment_base/static/src/components/material_issuance_table/header.xml",
+            "/garment_base/static/src/components/material_issuance_table/header.js",
+            "/garment_base/static/src/components/material_issuance_table/dialog.xml",
+            "/garment_base/static/src/components/material_issuance_table/dialog.js",
+            "/garment_base/static/src/components/material_issuance_table/style.scss",
         ],
     },
     "demo": [
@@ -59,7 +67,6 @@
         "data/demo_garment_order.xml",
         "data/demo_orders.xml",
         "data/demo_progress.xml",
-        "data/production_sequence.xml",
     ],
     "installable": True,
     "application": True,

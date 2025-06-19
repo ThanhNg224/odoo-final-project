@@ -1,7 +1,3 @@
 <odoo>
-    <menuitem id="menu_garment_order_root" name="Order" sequence="10" web_icon="garment_order,static/description/icon.png" action="action_garment_order"/>
-    <!-- <menuitem id="menu_finished_product_size" name="Finished Product Sizes" parent="menu_garment_order_root" sequence="30" action="action_finished_product_size"/>
-    <menuitem id="menu_material_detail" name="Material Details" parent="menu_garment_order_root" sequence="40" action="action_material_detail"/>
-    <menuitem id="menu_other_cost" name="Other Costs" parent="menu_garment_order_root" sequence="50" action="action_other_cost"/>
-    <menuitem id="menu_process_table" name="Process Table" parent="menu_garment_order_root" sequence="60" action="action_process_table"/> -->
+    <menuitem id="menu_garment_order_root" name="Order" sequence="10" web_icon="garment_order,static/description/icon.png" action="action_garment_order" groups="garment_authorization.group_order_viewer,garment_authorization.group_order_management,garment_authorization.group_order_approval"/>
 </odoo>

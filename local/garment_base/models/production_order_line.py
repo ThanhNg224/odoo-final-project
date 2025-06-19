@@ -5,7 +5,7 @@ class ProductionOrderLine(models.Model):
     _description = 'Production Order Line'
 
     size = fields.Char('Size', required=True)
-    planned_qty = fields.Integer('Planned Quantity', required=True)
+    planned_qty = fields.Integer('Planned Quantity', required=True, default=0)
     done_qty = fields.Integer('Done Quantity', compute='_compute_done_qty', store=True)
     progress = fields.Float('Progress %', compute='_compute_progress', store=True)
     completion_status = fields.Char('Status', compute='_compute_completion_status')
@@ -34,6 +34,31 @@ class ProductionOrderLine(models.Model):
                 line.progress = (line.done_qty / line.planned_qty) * 100
             else:
                 line.progress = 0
+
+    @api.model
+    def create(self, vals):
+        line = super(ProductionOrderLine, self).create(vals)
+        # Trigger parent order quantity recomputation
+        if line.order_id:
+            line.order_id._compute_total_quantity()
+        return line
+    
+    def write(self, vals):
+        result = super(ProductionOrderLine, self).write(vals)
+        # Trigger parent order quantity recomputation if planned_qty changed
+        if 'planned_qty' in vals:
+            for line in self:
+                if line.order_id:
+                    line.order_id._compute_total_quantity()
+        return result
+    
+    def unlink(self):
+        orders = self.mapped('order_id')
+        result = super(ProductionOrderLine, self).unlink()
+        # Trigger parent order quantity recomputation
+        for order in orders:
+            order._compute_total_quantity()
+        return result
     
     @api.depends('progress')
     def _compute_completion_status(self):

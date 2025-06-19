@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="garment.material_issuance_table_header">
+        <div class="d-flex justify-content-between align-items-center p-2">
+            <div class="material-issuance-stats">
+                <span class="text-muted">Total Items: <t t-esc="state.totalItems || 0"/></span>
+            </div>
+            <button class="btn btn-primary" t-on-click="onOpenDialog" t-if="props.record.data.state == 'new'">
+                <i class="fa fa-plus"/> Add Material Issuance
+            </button>
+        </div>
+    </t>
+</templates>

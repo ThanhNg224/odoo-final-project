@@ -4,7 +4,7 @@ from odoo.http import request
 class GarmentOrderController(http.Controller):
     @http.route('/garment/order/get_order_cost_summary', type='json', auth='user')
     def get_order_cost_summary(self, order_id):
-        order = request.env['garment.order'].browse(int(order_id))
+        order = request.env['garment.order'].sudo().browse(int(order_id))
         if order.exists():
             # Calculate material cost
             material_cost = 0
@@ -24,10 +24,10 @@ class GarmentOrderController(http.Controller):
 
     @http.route('/garment/order/get_materials', type='json', auth='user')
     def get_materials(self, **kwargs):
-        materials = request.env['garment.inventory.material'].search_read([], ['name', 'code'])
+        materials = request.env['garment.inventory.material'].sudo().search_read([], ['name', 'code'])
         return materials
 
     @http.route('/garment/order/get_colors', type='json', auth='user')
     def get_colors(self, **kwargs):
-        colors = request.env['garment.inventory.color'].search_read([], ['name', 'code'])
+        colors = request.env['garment.inventory.color'].sudo().search_read([], ['name', 'code'])
         return colors 

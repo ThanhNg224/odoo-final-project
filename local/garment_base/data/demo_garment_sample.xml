@@ -28,7 +28,7 @@
 
         <!-- FINISHED PRODUCT SIZE DATA -->
         <record id="finished_product_size_men_shirt" model="garment.finished_product_size">
-            <field name="name">Demo: Men's Shirt Sizes</field>
+            <field name="name">Men's Shirt Sizes</field>
             <field name="template">
                 <![CDATA[
                     [
@@ -42,7 +42,7 @@
         </record>
 
         <record id="finished_product_size_women_dress" model="garment.finished_product_size">
-            <field name="name">Demo: Women's Dress Sizes</field>
+            <field name="name">Women's Dress Sizes</field>
             <field name="template">
                 <![CDATA[
                     [
@@ -57,7 +57,7 @@
 
         <!-- MATERIAL DETAIL DATA -->
         <record id="material_detail_tshirt_basic" model="garment.material_detail">
-            <field name="name">Demo: T-Shirt Basic Material</field>
+            <field name="name">T-Shirt Basic Material</field>
             <field name="template">
                 <![CDATA[
                     [
@@ -72,7 +72,7 @@
         </record>
 
         <record id="material_detail_jeans_premium" model="garment.material_detail">
-            <field name="name">Demo: Premium Jeans Material</field>
+            <field name="name">Premium Jeans Material</field>
             <field name="template">
                 <![CDATA[
                     [
@@ -87,7 +87,7 @@
         </record>
 
         <record id="material_detail_sample_c" model="garment.material_detail">
-            <field name="name">Demo: Sample C Material</field>
+            <field name="name">Sample C Material</field>
             <field name="template">
                 <![CDATA[
                     [
@@ -280,7 +280,7 @@
         <!-- SAMPLE DATA -->
         <record id="sample_demo_1" model="garment.sample">
             <field name="name">Sample A</field>
-            <field name="number">SA-001</field>
+            <field name="code">SA-001</field>
             <field name="shape">T-Shirt</field>
             <field name="color">Red</field>
             <field name="client">ABC Fashion</field>
@@ -378,7 +378,7 @@
 
         <record id="sample_demo_2" model="garment.sample">
             <field name="name">Sample B</field>
-            <field name="number">SA-002</field>
+            <field name="code">SA-002</field>
             <field name="shape">Jeans</field>
             <field name="color">Blue</field>
             <field name="client">Denim Co.</field>
@@ -484,7 +484,7 @@
 
         <record id="sample_demo_3" model="garment.sample">
             <field name="name">Sample C</field>
-            <field name="number">SA-003</field>
+            <field name="code">SA-003</field>
             <field name="shape">Dress</field>
             <field name="color">White</field>
             <field name="client">Elegance Ltd.</field>
@@ -571,34 +571,74 @@
             <field name="state">new</field>
             <field name="department_id" ref="department_sewing"/>
         </record>
+        <!-- First create garment sample records -->
+        <record id="demo_sample_1" model="garment.sample">
+            <field name="name">T-Shirt Sample</field>
+            <field name="code">DS-001</field>
+            <field name="shape">T-Shirt</field>
+            <field name="client">ABC Fashion</field>
+            <field name="brand">StylePro</field>
+            <field name="designer">John Doe</field>
+            <field name="pattern_maker">Jane Smith</field>
+            <field name="development_date">2025-04-01</field>
+            <field name="state">in_progress</field>
+            <field name="finished_product_size">
+            <![CDATA[
+                [
+                ["Size", "Chest (cm)", "Length (cm)"],
+                ["M", "100", "70"],
+                ["L", "105", "72"],
+                ["XL", "110", "74"]
+                ]
+            ]]>
+            </field>
+            <field name="material_detail">
+            <![CDATA[
+                [
+                ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Position", "Quantity per Item", "Loss per Item", "Total Quantity"],
+                ["Cotton", "CT001", "White", "WH001", "100% Cotton", "m", "Body", "1.5", "0.1", "1.6"]
+                ]
+            ]]>
+            </field>
+            <field name="process_table">
+            <![CDATA[
+                [
+                {
+                    "name": "Cutting",
+                    "unit_price": 5000,
+                    "multiplier": 1,
+                    "note": "Cut fabric"
+                },
+                {
+                    "name": "Sewing",
+                    "unit_price": 8000,
+                    "multiplier": 1,
+                    "note": "Sew pieces together"
+                }
+                ]
+            ]]>
+            </field>
+        </record>
 
-        <record id="inventory_material_1" model="garment.inventory.material">
-            <field name="name">Cotton Fabric</field>
-            <field name="code">CTN-001</field>
-        </record>
-        <record id="inventory_material_2" model="garment.inventory.material">
-            <field name="name">Thread</field>
-            <field name="code">THR-001</field>
-        </record>
-        <record id="inventory_material_3" model="garment.inventory.material">
-            <field name="name">Label</field>
-            <field name="code">LBL-001</field>
-        </record>
-        <record id="inventory_material_4" model="garment.inventory.material">
-            <field name="name">Packaging Bag</field>
-            <field name="code">PKG-001</field>
-        </record>
-        <record id="inventory_material_5" model="garment.inventory.material">
-            <field name="name">Denim Fabric</field>
-            <field name="code">DNM-001</field>
-        </record>
-        <record id="inventory_material_6" model="garment.inventory.material">
-            <field name="name">Zipper</field>
-            <field name="code">ZIP-001</field>
-        </record>
-        <record id="inventory_material_7" model="garment.inventory.material">
-            <field name="name">Button</field>
-            <field name="code">BTN-001</field>
+        <record id="demo_sample_2" model="garment.sample">
+            <field name="name">Jeans Sample</field>
+            <field name="code">DS-002</field>
+            <field name="shape">Jeans</field>
+            <field name="client">ABC Fashion</field>
+            <field name="brand">Demo Brand</field>
+            <field name="designer">Demo Designer</field>
+            <field name="pattern_maker">Demo Pattern Maker</field>
+            <field name="development_date">2025-04-02</field>
+            <field name="state">in_progress</field>
+            <field name="finished_product_size">
+            <![CDATA[
+                [
+                ["Size", "Waist (cm)", "Length (cm)"],
+                ["32", "81", "105"],
+                ["34", "86", "106"]
+                ]
+            ]]>
+            </field>
         </record>
 
         <record id="inventory_color_1" model="garment.inventory.color">
@@ -620,6 +660,100 @@
         <record id="inventory_color_5" model="garment.inventory.color">
             <field name="name">Clear</field>
             <field name="code">CL-001</field>
+        </record>
+
+
+        <record id="inventory_material_1" model="garment.inventory.material">
+            <field name="name">White Cotton Fabric</field>
+            <field name="code">CTN-001</field>
+            <field name="unit">m</field>
+            <field name="supplier">Supplier A</field>
+            <field name="unit_price">10000</field>
+            <field name="remarks">Good quality fabric</field>
+            <field name="color_quantity_ids">
+                <record id="inventory_material_color_1" model="garment.inventory.material.color.quantity">
+                    <field name="material_id" ref="inventory_material_1"/>
+                    <field name="color_id" ref="inventory_color_1" />
+                    <field name="quantity_on_hand">100</field>
+                    <field name="quantity_reserved">50</field>
+                    <field name="quantity_available">50</field>
+                </record>
+                <record id="inventory_material_color_2" model="garment.inventory.material.color.quantity">
+                    <field name="material_id" ref="inventory_material_1"/>
+                    <field name="color_id" ref="inventory_color_2" />
+                    <field name="quantity_on_hand">100</field>
+                    <field name="quantity_reserved">0</field>
+                    <field name="quantity_available">100</field>
+                </record>
+            </field>
+        </record>
+        <record id="inventory_material_2" model="garment.inventory.material">
+            <field name="name">Thread</field>
+            <field name="code">THR-001</field>
+            <field name="unit">spools</field>
+            <field name="supplier">Supplier B</field>
+            <field name="unit_price">1000</field>
+            <field name="remarks">Good quality thread</field>
+        </record>
+        <record id="inventory_material_3" model="garment.inventory.material">
+            <field name="name">Clear Label</field>
+            <field name="code">LBL-001</field>
+            <field name="unit">pieces</field>
+            <field name="supplier">Supplier C</field>
+            <field name="unit_price">100</field>
+            <field name="remarks">Good quality label</field>
+        </record>
+        <record id="inventory_material_4" model="garment.inventory.material">
+            <field name="name">Packaging Bag</field>
+            <field name="code">PKG-001</field>
+            <field name="unit">pieces</field>
+            <field name="supplier">Supplier D</field>
+            <field name="unit_price">100</field>
+            <field name="remarks">Good quality packaging bag</field>
+            <field name="inventory_location">Warehouse A</field>
+        </record>
+        <record id="inventory_material_5" model="garment.inventory.material">
+            <field name="name">Denim Fabric</field>
+            <field name="code">DNM-001</field>
+            <field name="unit">m</field>
+            <field name="supplier">Supplier E</field>
+            <field name="unit_price">10000</field>
+            <field name="remarks">Good quality denim fabric</field>
+            <field name="inventory_location">Warehouse B</field>
+        </record>
+        <record id="inventory_material_6" model="garment.inventory.material">
+            <field name="name">Zipper</field>
+            <field name="code">ZIP-001</field>
+            <field name="unit">pieces</field>
+            <field name="supplier">Supplier F</field>
+            <field name="unit_price">1000</field>
+            <field name="remarks">Good quality zipper</field>
+            <field name="inventory_location">Warehouse C</field>
+        </record>
+        <record id="inventory_material_7" model="garment.inventory.material">
+            <field name="name">Brass Button</field>
+            <field name="code">BTN-001</field>
+            <field name="unit">pieces</field>
+            <field name="supplier">Supplier G</field>
+            <field name="unit_price">1000</field>
+            <field name="remarks">Good quality button</field>
+            <field name="inventory_location">Warehouse A</field>
+            <field name="color_quantity_ids">
+                <record id="inventory_material_color_7" model="garment.inventory.material.color.quantity">
+                    <field name="material_id" ref="inventory_material_7"/>
+                    <field name="color_id" ref="inventory_color_4" />
+                    <field name="quantity_on_hand">100</field>
+                    <field name="quantity_reserved">0</field>
+                    <field name="quantity_available">100</field>
+                </record>
+                <record id="inventory_material_color_8" model="garment.inventory.material.color.quantity">
+                    <field name="material_id" ref="inventory_material_7"/>
+                    <field name="color_id" ref="inventory_color_5" />
+                    <field name="quantity_on_hand">100</field>
+                    <field name="quantity_reserved">0</field>
+                    <field name="quantity_available">100</field>
+                </record>
+            </field>
         </record>
     </data>
 </odoo>

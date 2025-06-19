@@ -38,7 +38,7 @@ class GarmentController(http.Controller):
     @http.route('/garment/get_materials', type='json', auth='user')
     def get_materials(self):
         materials = request.env['garment.inventory.material'].sudo().search_read(
-            [], ['name', 'code']
+            [], ['id', 'name', 'code']
         )
         return materials
 
@@ -67,4 +67,13 @@ class GarmentController(http.Controller):
             'user_id': user.id,
             'user_name': user.name
         }
+        
+    @http.route('/garment/sample/search_read', type='json', auth='user')
+    def search_samples(self, fields=None, domain=None):
+        if fields is None:
+            fields = ['id', 'name']
+        if domain is None:
+            domain = []
+        sample = request.env['garment.sample'].sudo().search_read(domain, fields)
+        return sample
     

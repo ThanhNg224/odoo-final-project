@@ -55,18 +55,8 @@
     font-size: 12px;
 }
 
-/* Improve readability of the form view */
-.o_form_view .o_group {
-    margin: 0 0 16px 0;
-}
-
-.o_form_view .o_group > .o_group_col_6 {
-    padding: 0 16px;
-}
-
 .o_form_view .oe_title h1 {
     font-size: 1.5em;
-    margin-bottom: 16px;
 }
 
 .o_form_label {
@@ -127,7 +117,6 @@
 /* Improve overall form appearance */
 .o_form_view .o_form_sheet_bg {
     background-color: #f8f9fa !important;
-    padding: 16px;
 }
 
 .o_form_view .o_form_sheet {
