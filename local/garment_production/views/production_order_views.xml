@@ -4,13 +4,14 @@
     <record id="view_production_order_tree_enhanced" model="ir.ui.view">
         <field name="name">production.order.tree.enhanced</field>
         <field name="model">production.order</field>
+        <field name="groups_id" eval="[(4, ref('garment_authorization.group_production_viewer')), (4, ref('garment_authorization.group_production_approval')), (4, ref('garment_authorization.group_production_management'))]"/>
         <field name="arch" type="xml">
             <tree string="Production Orders" 
                   decoration-info="state == 'draft'" 
                   decoration-warning="state == 'in_progress'" 
                   decoration-success="state == 'done'"
                   decoration-bf="progress_percentage &gt;= 100"
-                  class="o_production_tree">
+                  class="o_production_tree" create="false">
                 <field name="name" string="Order"/>
                 <field name="sample_name" string="Sample"/>
                 <field name="client" string="Client"/>
@@ -37,17 +38,22 @@
         <field name="arch" type="xml">
             <form string="Production Order" create="false" delete="false" edit="false">
                 <header>
-                    <button name="action_open_edit_form" type="object" string="Edit" class="oe_highlight" groups="base.group_user"/>
-                    <button name="action_export_pdf" type="object" class="btn-primary" string="Export PDF" data-hotkey="p"/>
+                    <button name="action_open_edit_form" type="object" string="Edit" class="oe_highlight" groups="garment_authorization.group_production_management"/>
+                    <button name="set_in_progress" string="Start Production" type="object" 
+                            class="oe_highlight" invisible="state != 'draft'" groups="garment_authorization.group_production_approval"/>
+                    <button name="action_mark_fully_paid" string="Mark Paid" 
+                            type="object" class="btn-success"
+                            invisible="finance_state == 'paid'" groups="garment_authorization.group_production_approval"/>
+                    <button name="action_export_pdf" type="object" class="btn-primary" string="Export PDF" data-hotkey="p" groups="garment_authorization.group_production_viewer"/>
                     <button name="action_refresh_quantity" string="Refresh Quantities" 
                             type="object" class="btn-warning" 
-                            title="Manually refresh quantity calculations"/>
+                            title="Manually refresh quantity calculations" groups="garment_authorization.group_production_viewer,garment_authorization.group_production_approval,garment_authorization.group_production_management"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
                 </header>
                 <sheet>
                     <!-- Main Information -->
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_lines" type="object" class="oe_stat_button" icon="fa-list">
+                        <button name="action_view_lines" type="object" class="oe_stat_button" icon="fa-list" groups="garment_authorization.group_production_approval">
                             <field name="line_count" widget="statinfo" string="Lines"/>
                         </button>
                     </div>
@@ -99,12 +105,12 @@
                     
                     <!-- Tabs for different sections -->
                     <notebook>
+                        <!-- Order Lines tab - visible to all users but read-only for viewers -->
                         <page string="Order Lines" name="order_lines">
                             <div class="alert alert-info mb-3" role="alert">
                                 <p><strong>Instructions:</strong> Order lines show the quantities for each size. Progress is automatically calculated based on completed bundles.</p>
                             </div>
                             
-                            <!-- Remove the generate button from view-only -->
                             <field name="line_ids" readonly="1">
                                 <tree decoration-info="progress == 0" decoration-warning="progress &gt; 0 and progress &lt; 100" decoration-success="progress &gt;= 100">
                                     <field name="size" string="Size"/>
@@ -117,6 +123,7 @@
                             </field>
                         </page>
 
+                        <!-- Bundles tab - visible to all users but read-only for viewers -->
                         <page string="Bundles">
                             <div class="alert alert-info mb-3" role="alert">
                                 <p><strong>Instructions:</strong> Bundles are managed per size. Completed bundles affect progress tracking.</p>
@@ -131,7 +138,7 @@
                                         <tree decoration-muted="not is_completed" decoration-success="is_completed">
                                             <field name="bundle_no" string="Bundle"/>
                                             <field name="qty" string="Quantity"/>
-                                            <field name="is_completed" widget="boolean_toggle"/>
+                                            <field name="is_completed" widget="boolean_toggle" readonly="1"/>
                                         </tree>
                                     </field>
                                 </tree>
@@ -150,7 +157,8 @@
                                             string="Clean Up Empty Material Entries" 
                                             type="object" 
                                             class="btn btn-warning"
-                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                            style="padding: 8px 16px; font-size: 14px;"
+                                            groups="garment_authorization.group_production_approval"/>
                                 </div>
                             </div>
                             
@@ -179,7 +187,8 @@
                                             string="Clean Up Empty Process Entries" 
                                             type="object" 
                                             class="btn btn-warning"
-                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                            style="padding: 8px 16px; font-size: 14px;"
+                                            groups="garment_authorization.group_production_approval"/>
                                 </div>
                             </div>
                             
@@ -211,7 +220,8 @@
                                             string="Clean Up Empty Other Cost Entries" 
                                             type="object" 
                                             class="btn btn-warning"
-                                            style="padding: 8px 16px; font-size: 14px;"/>
+                                            style="padding: 8px 16px; font-size: 14px;"
+                                            groups="garment_authorization.group_production_approval"/>
                                 </div>
                             </div>
                             
@@ -255,16 +265,12 @@
     <record id="view_production_order_form_edit" model="ir.ui.view">
         <field name="name">production.order.form.edit</field>
         <field name="model">production.order</field>
+        <field name="groups_id" eval="[(4, ref('garment_authorization.group_production_management'))]"/>
         <field name="arch" type="xml">
             <form string="Edit Production Order" create="false">
                 <header>
                     <button name="action_save_and_back" string="Save &amp; Back" type="object" 
                             class="oe_highlight"/>
-                    <button name="set_in_progress" string="Start Production" type="object" 
-                            class="oe_highlight" invisible="state != 'draft'"/>
-                    <button name="action_mark_fully_paid" string="Mark Paid" 
-                            type="object" class="btn-success"
-                            invisible="finance_state == 'paid'"/>
                     <button name="action_refresh_quantity" string="Refresh Quantities" 
                             type="object" class="btn-warning" 
                             title="Manually refresh quantity calculations"/>
@@ -696,7 +702,11 @@
         <field name="res_model">production.order</field>
         <field name="view_mode">tree,kanban,form,pivot,graph</field>
         <field name="view_id" ref="view_production_order_tree_enhanced"/>
-        <field name="context">{}</field>
+        <field name="context">{
+            'form_view_ref': 'garment_production.view_production_order_form',
+            'create_view_ref': 'garment_production.view_production_order_form_edit',
+            'tree_view_ref': 'garment_production.view_production_order_tree_enhanced'
+        }</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create a new production order
