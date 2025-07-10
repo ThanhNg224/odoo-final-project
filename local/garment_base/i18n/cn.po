@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0+e-20231119\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-16 17:19+0000\n"
-"PO-Revision-Date: 2025-06-16 17:19+0000\n"
+"POT-Creation-Date: 2025-06-16 17:13+0000\n"
+"PO-Revision-Date: 2025-06-16 17:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,19 +21,19 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "Actions"
-msgstr ""
+msgstr "操作"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Actual"
-msgstr ""
+msgstr "实际"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__actual_quotation
 msgid "Actual Quotation"
-msgstr ""
+msgstr "实际报价"
 
 #. module: garment_base
 #. odoo-javascript
@@ -41,35 +41,35 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
 #, python-format
 msgid "Add Column"
-msgstr ""
+msgstr "添加列"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.xml:0
 #, python-format
 msgid "Add Material Issuance"
-msgstr ""
+msgstr "添加物料发放"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
 #, python-format
 msgid "Add New Cost"
-msgstr ""
+msgstr "添加新成本"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "Add Process"
-msgstr ""
+msgstr "添加工序"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Add Progress"
-msgstr ""
+msgstr "添加进度"
 
 #. module: garment_base
 #. odoo-javascript
@@ -78,17 +78,17 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Add Row"
-msgstr ""
+msgstr "添加行"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__all_samples
 msgid "All Samples"
-msgstr ""
+msgstr "所有样品"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_distribution__allocate_qty
 msgid "Allocated Quantity"
-msgstr ""
+msgstr "分配数量"
 
 #. module: garment_base
 #. odoo-javascript
@@ -97,132 +97,132 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_approval__amount
 #, python-format
 msgid "Amount"
-msgstr ""
+msgstr "金额"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_finance_wizard__current_payment
 #: model:ir.model.fields,help:garment_base.field_production_order__payment_amount
 msgid "Amount received from customer"
-msgstr ""
+msgstr "从客户收到的金额"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__approval_date
 #: model:ir.model.fields,field_description:garment_base.field_production_approval__approval_date
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_approval__date
 msgid "Approval Date"
-msgstr ""
+msgstr "批准日期"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_approval_request
 msgid "Approval Request"
-msgstr ""
+msgstr "审批请求"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Approve"
-msgstr ""
+msgstr "批准"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__approved
 #: model:ir.model.fields,field_description:garment_base.field_production_approval__approved
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_approval__approved
 msgid "Approved"
-msgstr ""
+msgstr "已批准"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__approver
 msgid "Approver"
-msgstr ""
+msgstr "审批人"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_distribution__method__auto
 msgid "Automatic"
-msgstr ""
+msgstr "自动"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__available_color_ids
 msgid "Available Colors"
-msgstr ""
+msgstr "可用颜色"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__available_sample_ids
 msgid "Available Samples"
-msgstr ""
+msgstr "可用样品"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__bed_number
 msgid "Bed Number"
-msgstr ""
+msgstr "床号"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__bonded
 msgid "Bonded"
-msgstr ""
+msgstr "保税"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__brand
 #: model:ir.model.fields,field_description:garment_base.field_production_order__brand
 msgid "Brand"
-msgstr ""
+msgstr "品牌"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__quotation
 msgid "Budget Quotation"
-msgstr ""
+msgstr "预算报价"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__bundle_id
 msgid "Bundle"
-msgstr ""
+msgstr "捆包"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__bundle_no
 msgid "Bundle Number"
-msgstr ""
+msgstr "捆包编号"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__bundle_ids
 msgid "Bundles"
-msgstr ""
+msgstr "捆包"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__in_progress
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__in_progress
 msgid "Can be produced"
-msgstr ""
+msgstr "可生产"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__state__cancelled
 msgid "Cancelled"
-msgstr ""
+msgstr "已取消"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Cannot delete protected columns"
-msgstr ""
+msgstr "无法删除受保护的列"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Category"
-msgstr ""
+msgstr "类别"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_bundle__is_completed
 msgid "Check this when the bundle is completed"
-msgstr ""
+msgstr "当捆包完成时勾选此项"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__client
@@ -230,12 +230,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order__client
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__client
 msgid "Client"
-msgstr ""
+msgstr "客户"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_style__code
 msgid "Code"
-msgstr ""
+msgstr "编码"
 
 #. module: garment_base
 #. odoo-python
@@ -249,95 +249,95 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__color
 #, python-format
 msgid "Color"
-msgstr ""
+msgstr "颜色"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Color *"
-msgstr ""
+msgstr "颜色*"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__code
 msgid "Color Code"
-msgstr ""
+msgstr "颜色代码"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__color_quantity_ids
 msgid "Color Quantities"
-msgstr ""
+msgstr "颜色数量"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Color is required for material receipt"
-msgstr ""
+msgstr "物料收据需要颜色"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__column
 msgid "Column"
-msgstr ""
+msgstr "列"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__is_completed
 #: model:ir.model.fields,field_description:garment_base.field_production_order__completed_quantity
 msgid "Completed"
-msgstr ""
+msgstr "已完成"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__completed_qty
 msgid "Completed Quantity"
-msgstr ""
+msgstr "完成数量"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Completed:"
-msgstr ""
+msgstr "已完成:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__completion_date
 msgid "Completion Date"
-msgstr ""
+msgstr "完成日期"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Confirm"
-msgstr ""
+msgstr "确认"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__state__confirmed
 msgid "Confirmed"
-msgstr ""
+msgstr "已确认"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Contact Person:"
-msgstr ""
+msgstr "联系人:"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
 #, python-format
 msgid "Cost Name"
-msgstr ""
+msgstr "成本名称"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_cost__cost_type
 msgid "Cost Type"
-msgstr ""
+msgstr "成本类型"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__cost_ids
 msgid "Costs"
-msgstr ""
+msgstr "成本"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__create_uid
@@ -374,7 +374,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__create_uid
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "创建人"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__create_date
@@ -411,7 +411,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__create_date
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__create_date
 msgid "Created on"
-msgstr ""
+msgstr "创建时间"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__currency_id
@@ -419,43 +419,43 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__currency_id
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__currency_id
 msgid "Currency"
-msgstr ""
+msgstr "货币"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__current_payment
 msgid "Current Payment"
-msgstr ""
+msgstr "当前付款"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__current_finance_state
 msgid "Current Status"
-msgstr ""
+msgstr "当前状态"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Customer:"
-msgstr ""
+msgstr "客户："
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__cutting_date
 msgid "Cutting Date"
-msgstr ""
+msgstr "裁剪日期"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__date
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__date
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__date
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Defect:"
-msgstr ""
+msgstr "瑕疵："
 
 #. module: garment_base
 #. odoo-javascript
@@ -463,7 +463,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__defective_quantity
 #, python-format
 msgid "Defective Quantity"
-msgstr ""
+msgstr "次品数量"
 
 #. module: garment_base
 #. odoo-javascript
@@ -475,19 +475,19 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Delivery Address:"
-msgstr ""
+msgstr "送货地址："
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__delivery_date
 msgid "Delivery Date"
-msgstr ""
+msgstr "交付日期"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_department
@@ -495,19 +495,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__department_id
 #: model:ir.model.fields,field_description:garment_base.field_production_order__department
 msgid "Department"
-msgstr ""
+msgstr "部门"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_department__name
 msgid "Department Name"
-msgstr ""
+msgstr "部门名称"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Department:"
-msgstr ""
+msgstr "部门："
 
 #. module: garment_base
 #. odoo-python
@@ -516,24 +516,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_product_style__description
 #, python-format
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__designer
 #: model:ir.model.fields,field_description:garment_base.field_production_order__designer
 msgid "Designer"
-msgstr ""
+msgstr "设计师"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__development_date
 #: model:ir.model.fields,field_description:garment_base.field_production_order__development_date
 msgid "Development Date"
-msgstr ""
+msgstr "开发日期"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__direction
 msgid "Direction"
-msgstr ""
+msgstr "方向"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__display_name
@@ -570,33 +570,33 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__display_name
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "显示名称"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_distribution__method
 msgid "Distribution Method"
-msgstr ""
+msgstr "分配方式"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__distribution_ids
 msgid "Distributions"
-msgstr ""
+msgstr "分配"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__state__done
 msgid "Done"
-msgstr ""
+msgstr "完成"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__done_qty
 msgid "Done Quantity"
-msgstr ""
+msgstr "完成数量"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__state__draft
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "草稿"
 
 #. module: garment_base
 #. odoo-javascript
@@ -605,14 +605,14 @@ msgstr ""
 msgid ""
 "Drag & Drop\n"
 "or click to upload"
-msgstr ""
+msgstr "拖放\n或点击上传"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #. module: garment_base
 #. odoo-python
@@ -621,12 +621,12 @@ msgstr ""
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__eliminated
 #, python-format
 msgid "Eliminated"
-msgstr ""
+msgstr "已淘汰"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__employee_id
 msgid "Employee"
-msgstr ""
+msgstr "员工"
 
 #. module: garment_base
 #. odoo-javascript
@@ -634,21 +634,21 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "End Date:"
-msgstr ""
+msgstr "结束日期："
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Enter receiving company"
-msgstr ""
+msgstr "输入接收公司"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Enter remark"
-msgstr ""
+msgstr "输入备注"
 
 #. module: garment_base
 #. odoo-javascript
@@ -675,54 +675,54 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_error_template
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.js:0
 #, python-format
 msgid "Error loading sample progress"
-msgstr ""
+msgstr "加载样品进度错误"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Error loading template"
-msgstr ""
+msgstr "加载模板错误"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Error loading templates"
-msgstr ""
+msgstr "加载模板错误"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Error processing material inventory: %s"
-msgstr ""
+msgstr "处理物料库存错误: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Error saving template"
-msgstr ""
+msgstr "保存模板错误"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Expected Delivery Date:"
-msgstr ""
+msgstr "预计交付日期:"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__export_tax
 msgid "Export Tax"
-msgstr ""
+msgstr "出口税"
 
 #. module: garment_base
 #. odoo-javascript
@@ -733,49 +733,49 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Failed to apply template: %s"
-msgstr ""
+msgstr "应用模板失败: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Failed to create material issuance record. Please try again."
-msgstr ""
+msgstr "创建物料发放记录失败，请重试"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.js:0
 #, python-format
 msgid "Failed to create material issuance record: %s"
-msgstr ""
+msgstr "创建物料发放记录失败: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to fetch material details"
-msgstr ""
+msgstr "获取物料详情失败"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to load colors"
-msgstr ""
+msgstr "加载颜色失败"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to load materials"
-msgstr ""
+msgstr "加载物料失败"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Failed to load materials. Please try again."
-msgstr ""
+msgstr "加载物料失败，请重试"
 
 #. module: garment_base
 #. odoo-javascript
@@ -786,14 +786,14 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Failed to load templates: %s"
-msgstr ""
+msgstr "加载模板失败: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Failed to save template"
-msgstr ""
+msgstr "保存模板失败"
 
 #. module: garment_base
 #. odoo-javascript
@@ -804,78 +804,78 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Failed to save template: %s"
-msgstr ""
+msgstr "保存模板失败: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to update color"
-msgstr ""
+msgstr "更新颜色失败"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Fall"
-msgstr ""
+msgstr "秋季"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__finance_approval_date
 msgid "Finance Approval Date"
-msgstr ""
+msgstr "财务审批日期"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__finance_approved_by
 msgid "Finance Approved By"
-msgstr ""
+msgstr "财务审批人"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__finance_state
 #: model:ir.model.fields,field_description:garment_base.field_production_order__finance_state
 msgid "Finance Status"
-msgstr ""
+msgstr "财务状态"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_finished_product_size
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__finished_product_size
 msgid "Finished Product Size"
-msgstr ""
+msgstr "成品尺寸"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__from_type
 msgid "From Type"
-msgstr ""
+msgstr "来源类型"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_finance_wizard__finance_state__paid
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__finance_state__paid
 msgid "Fully Paid"
-msgstr ""
+msgstr "已全额支付"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_order
 msgid "Garment Order"
-msgstr ""
+msgstr "服装订单"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Garment Orders"
-msgstr ""
+msgstr "服装订单"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_sample
 msgid "Garment Sample"
-msgstr ""
+msgstr "服装样品"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Garment Samples"
-msgstr ""
+msgstr "服装样品"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__id
@@ -912,48 +912,48 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__id
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_garment_receipt_line__item_id
 msgid "ID of the related item (e.g., sample ID, order ID, production ID)"
-msgstr ""
+msgstr "相关项目的ID(例如样品ID、订单ID、生产ID)"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample_image__image
 msgid "Image"
-msgstr ""
+msgstr "图片"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__image_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__image_details
 msgid "Image Details"
-msgstr ""
+msgstr "图片详情"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__type__in
 #: model:ir.model.fields.selection,name:garment_base.selection__stock_production_inout__direction__in
 msgid "In"
-msgstr ""
+msgstr "入库"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "In Charge:"
-msgstr ""
+msgstr "负责人:"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__state__in_progress
 msgid "In Progress"
-msgstr ""
+msgstr "进行中"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Insufficient material quantity. Available: %s, Required: %s"
-msgstr ""
+msgstr "物料数量不足。可用: %s, 需要: %s"
 
 #. module: garment_base
 #. odoo-javascript
@@ -962,89 +962,89 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Invalid file type"
-msgstr ""
+msgstr "无效的文件类型"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Invalid template data format"
-msgstr ""
+msgstr "无效的模板数据格式"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_inventory_color
 msgid "Inventory Color"
-msgstr ""
+msgstr "库存颜色"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__inventory_location
 msgid "Inventory Location"
-msgstr ""
+msgstr "库存位置"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_inventory_material
 msgid "Inventory Material"
-msgstr ""
+msgstr "库存物料"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_inventory_material_color_quantity
 msgid "Inventory Material Color Quantity"
-msgstr ""
+msgstr "库存物料颜色数量"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_receipt_line
 msgid "Inventory Receipt Line"
-msgstr ""
+msgstr "库存收据行"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__is_stored
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__is_stored
 #: model:ir.model.fields,field_description:garment_base.field_production_order__is_stored
 msgid "Is Stored"
-msgstr ""
+msgstr "已存储"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__is_waiting_for_approval
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__is_waiting_for_approval
 msgid "Is Waiting for Approval"
-msgstr ""
+msgstr "等待审批中"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_company
 msgid "Issuing Company"
-msgstr ""
+msgstr "发单公司"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_company_phone
 msgid "Issuing Company Phone"
-msgstr ""
+msgstr "发单公司电话"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_date
 msgid "Issuing Date"
-msgstr ""
+msgstr "发单日期"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Item Code"
-msgstr ""
+msgstr "物品编码"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__item_id
 msgid "Item ID"
-msgstr ""
+msgstr "物品ID"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__item_number
 msgid "Item Number"
-msgstr ""
+msgstr "物品编号"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__item_type
 msgid "Item Type"
-msgstr ""
+msgstr "物品类型"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__write_uid
@@ -1081,7 +1081,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__write_uid
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最后更新人"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__write_date
@@ -1118,32 +1118,32 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__write_date
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最后更新时间"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__line_count
 msgid "Line Count"
-msgstr ""
+msgstr "行数"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__location
 msgid "Location"
-msgstr ""
+msgstr "位置"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_lot__lot_code
 msgid "Lot Code"
-msgstr ""
+msgstr "批次代码"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__management
 msgid "Management"
-msgstr ""
+msgstr "管理"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_distribution__method__manual
 msgid "Manual"
-msgstr ""
+msgstr "手动"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__material_id
@@ -1152,43 +1152,43 @@ msgstr ""
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__material
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__material
 msgid "Material"
-msgstr ""
+msgstr "材料"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Material *"
-msgstr ""
+msgstr "材料*"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__code
 msgid "Material Code"
-msgstr ""
+msgstr "材料代码"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__material_cost
 msgid "Material Cost (Invalid)"
-msgstr ""
+msgstr "材料成本(无效)"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_material_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__material_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__material_detail
 msgid "Material Detail"
-msgstr ""
+msgstr "材料详情"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Material Detail Table"
-msgstr ""
+msgstr "材料详情表"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__image
 msgid "Material Image"
-msgstr ""
+msgstr "材料图片"
 
 #. module: garment_base
 #. odoo-python
@@ -1198,55 +1198,55 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_material__name
 #, python-format
 msgid "Material Name"
-msgstr ""
+msgstr "材料名称"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Material and color must exist for material outgoing"
-msgstr ""
+msgstr "出库材料必须存在材料和颜色"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Material is required for material receipt"
-msgstr ""
+msgstr "材料入库需要提供材料"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.js:0
 #, python-format
 msgid "Material issuance record created successfully"
-msgstr ""
+msgstr "材料发放记录创建成功"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Material with specified color does not exist in inventory"
-msgstr ""
+msgstr "库存中不存在指定颜色的材料"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__material_ids
 msgid "Materials"
-msgstr ""
+msgstr "材料"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__method
 msgid "Method"
-msgstr ""
+msgstr "方法"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__misc_fees
 msgid "Misc Fees"
-msgstr ""
+msgstr "杂费"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__month
 msgid "Month"
-msgstr ""
+msgstr "月份"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1254,7 +1254,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_process__multiplier
 #, python-format
 msgid "Multiplier"
-msgstr ""
+msgstr "乘数"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1268,67 +1268,67 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_product_style__name
 #, python-format
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__new_amount
 msgid "New Amount"
-msgstr ""
+msgstr "新金额"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "New Development"
-msgstr ""
+msgstr "新开发"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__new
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__new
 msgid "New development"
-msgstr ""
+msgstr "新开发，待审批"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
 #, python-format
 msgid "No cost data available."
-msgstr ""
+msgstr "无可用成本数据"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "No process data available. Let's start creating a process."
-msgstr ""
+msgstr "无可用工序数据，开始创建工序"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "No progress data available"
-msgstr ""
+msgstr "无可用进度数据"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "No progress data to save"
-msgstr ""
+msgstr "无进度数据可保存"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.js:0
 #, python-format
 msgid "No progress detail found in the selected sample"
-msgstr ""
+msgstr "所选样品中未找到进度详情"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "No templates available"
-msgstr ""
+msgstr "无可用模板"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1339,7 +1339,7 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "No templates found"
-msgstr ""
+msgstr "未找到模板"
 
 #. module: garment_base
 #. odoo-python
@@ -1347,7 +1347,7 @@ msgstr ""
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "No."
-msgstr ""
+msgstr "编号"
 
 #. module: garment_base
 #. odoo-python
@@ -1361,343 +1361,343 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__note
 #, python-format
 msgid "Note"
-msgstr ""
+msgstr "备注"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Note:"
-msgstr ""
+msgstr "注意:"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "Notes"
-msgstr ""
+msgstr "备注"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_finance_wizard__payment_notes
 msgid "Notes about payments"
-msgstr ""
+msgstr "付款备注"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_order__payment_notes
 msgid "Notes about payments received"
-msgstr ""
+msgstr "收款备注"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__process_count
 msgid "Number of Processes"
-msgstr ""
+msgstr "工序数量"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__old_amount
 msgid "Old Amount"
-msgstr ""
+msgstr "旧金额"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Only image files (JPEG, JPG, PNG, GIF, WEBP) are allowed."
-msgstr ""
+msgstr "仅允许图像文件(JPEG, JPG, PNG, GIF, WEBP)"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Only image files are allowed."
-msgstr ""
+msgstr "仅允许图像文件"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__operation_id
 msgid "Operation"
-msgstr ""
+msgstr "操作"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_operation_price__operation_name
 msgid "Operation Name"
-msgstr ""
+msgstr "操作名称"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_operation_price
 msgid "Operation Price"
-msgstr ""
+msgstr "操作价格"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__order
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__order
 msgid "Order"
-msgstr ""
+msgstr "订单"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__code
 msgid "Order Code"
-msgstr ""
+msgstr "订单编号"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order Code:"
-msgstr ""
+msgstr "订单编号："
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order Date:"
-msgstr ""
+msgstr "订单日期："
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__order_line_id
 msgid "Order Line"
-msgstr ""
+msgstr "订单行"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__line_ids
 msgid "Order Lines"
-msgstr ""
+msgstr "订单明细"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__name
 #: model:ir.model.fields,field_description:garment_base.field_production_order__order_name
 msgid "Order Name"
-msgstr ""
+msgstr "订单名称"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__order_number
 msgid "Order Number"
-msgstr ""
+msgstr "订单号"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__name
 msgid "Order Reference"
-msgstr ""
+msgstr "订单参考"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__order_total
 msgid "Order Total"
-msgstr ""
+msgstr "订单总额"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order is already in stock."
-msgstr ""
+msgstr "订单已入库。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order is not in stock."
-msgstr ""
+msgstr "订单未入库。"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__other
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__other
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__other
 msgid "Other"
-msgstr ""
+msgstr "其他"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_other_cost
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__other_cost
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__other_cost
 msgid "Other Costs"
-msgstr ""
+msgstr "其他成本"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__type__out
 #: model:ir.model.fields.selection,name:garment_base.selection__stock_production_inout__direction__out
 msgid "Out"
-msgstr ""
+msgstr "出库"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__output_qty
 msgid "Output Quantity"
-msgstr ""
+msgstr "产出数量"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_finance_wizard__finance_state__partial
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__finance_state__partial
 msgid "Partial Payment"
-msgstr ""
+msgstr "部分付款"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_drafter
 msgid "Pattern Drafter"
-msgstr ""
+msgstr "纸样师"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_maker
 msgid "Pattern Maker"
-msgstr ""
+msgstr "打版师"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_size
 msgid "Pattern Size"
-msgstr ""
+msgstr "纸样尺寸"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__payment_notes
 #: model:ir.model.fields,field_description:garment_base.field_production_order__payment_notes
 msgid "Payment Notes"
-msgstr ""
+msgstr "付款备注"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__payment_amount
 #: model:ir.model.fields,field_description:garment_base.field_production_order__payment_amount
 msgid "Payment Received"
-msgstr ""
+msgstr "已收款项"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__phone_number
 msgid "Phone Number"
-msgstr ""
+msgstr "电话号码"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Phone Number:"
-msgstr ""
+msgstr "电话号码："
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Plan"
-msgstr ""
+msgstr "计划"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__planned_date
 msgid "Planned Date"
-msgstr ""
+msgstr "计划日期"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__planned_qty
 msgid "Planned Quantity"
-msgstr ""
+msgstr "计划数量"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_error_template
 msgid "Please scan a valid QR code or contact the administrator."
-msgstr ""
+msgstr "请扫描有效的二维码或联系管理员。"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Please select a color"
-msgstr ""
+msgstr "请选择颜色"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Please select a material"
-msgstr ""
+msgstr "请选择物料"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__price_policy_id
 msgid "Price Policy"
-msgstr ""
+msgstr "价格政策"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__process_cost
 msgid "Process Cost (Invalid)"
-msgstr ""
+msgstr "加工成本（无效）"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_process__name
 msgid "Process Name"
-msgstr ""
+msgstr "工序名称"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__process_requirements
 msgid "Process Requirements"
-msgstr ""
+msgstr "工艺要求"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_process_table
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__process_table
 msgid "Process Table"
-msgstr ""
+msgstr "工序表"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__process_ids
 msgid "Processes"
-msgstr ""
+msgstr "工序"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__image
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_info_template
 msgid "Product Image"
-msgstr ""
+msgstr "产品图片"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Product List:"
-msgstr ""
+msgstr "产品列表："
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_product_lot
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__lot_id
 msgid "Product Lot"
-msgstr ""
+msgstr "产品批次"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_product_style
 #: model:ir.model.fields,field_description:garment_base.field_production_order__style_id
 msgid "Product Style"
-msgstr ""
+msgstr "产品款式"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__production
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__production
 msgid "Production"
-msgstr ""
+msgstr "生产"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_approval
 msgid "Production Approval"
-msgstr ""
+msgstr "生产审批"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_bundle
 msgid "Production Bundle"
-msgstr ""
+msgstr "生产批次"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__code
 msgid "Production Code"
-msgstr ""
+msgstr "生产编号"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_cost
 msgid "Production Cost"
-msgstr ""
+msgstr "生产成本"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_distribution
 msgid "Production Distribution"
-msgstr ""
+msgstr "生产分配"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_finance_approval
 msgid "Production Finance Approval"
-msgstr ""
+msgstr "生产财务审批"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_material
 msgid "Production Material"
-msgstr ""
+msgstr "生产物料"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_order
@@ -1715,105 +1715,105 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__order_id
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__order_id
 msgid "Production Order"
-msgstr ""
+msgstr "生产订单"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_order_line
 msgid "Production Order Line"
-msgstr ""
+msgstr "生产订单行"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_operation_price__order_ids
 #: model:ir.model.fields,field_description:garment_base.field_product_style__order_ids
 msgid "Production Orders"
-msgstr ""
+msgstr "生产订单"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_process
 msgid "Production Process"
-msgstr ""
+msgstr "生产流程"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_progress
 msgid "Production Progress"
-msgstr ""
+msgstr "生产进度"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_salary_adjust
 msgid "Production Salary Adjustment"
-msgstr ""
+msgstr "生产工资调整"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_size_chart
 msgid "Production Size Chart"
-msgstr ""
+msgstr "生产尺码表"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_worker_entry
 msgid "Production Worker Entry"
-msgstr ""
+msgstr "生产工人记录"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__progress_percentage
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__progress
 msgid "Progress %"
-msgstr ""
+msgstr "进度%"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__progress_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__progress_detail
 msgid "Progress Detail"
-msgstr ""
+msgstr "进度详情"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__progress_ids
 msgid "Progress Entries"
-msgstr ""
+msgstr "进度记录"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_progress_template
 msgid "Progress Template"
-msgstr ""
+msgstr "进度模板"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Progress deleted successfully"
-msgstr ""
+msgstr "进度删除成功"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Progress updated successfully"
-msgstr ""
+msgstr "进度更新成功"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__publish_date
 msgid "Publish Date"
-msgstr ""
+msgstr "发布日期"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__published_by
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__published_by
 msgid "Published By"
-msgstr ""
+msgstr "发布人"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__publisher
 msgid "Publisher"
-msgstr ""
+msgstr "发布方"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "QR Code"
-msgstr ""
+msgstr "二维码"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "QR URL:"
-msgstr ""
+msgstr "二维码链接："
 
 #. module: garment_base
 #. odoo-python
@@ -1827,55 +1827,55 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__qty
 #, python-format
 msgid "Quantity"
-msgstr ""
+msgstr "数量"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__quantity_available
 msgid "Quantity Available"
-msgstr ""
+msgstr "可用数量"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__quantity_reserved
 msgid "Quantity Reserved"
-msgstr ""
+msgstr "预留数量"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__quantity_on_hand
 msgid "Quantity on Hand"
-msgstr ""
+msgstr "现有数量"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Quantity:"
-msgstr ""
+msgstr "数量："
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Ready for Production"
-msgstr ""
+msgstr "准备生产"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__reason
 msgid "Reason"
-msgstr ""
+msgstr "原因"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Receipt line \"%s\" has been successfully cancelled."
-msgstr ""
+msgstr "收货单行\"%s\"已成功取消。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Receipt line \"%s\" has been successfully confirmed."
-msgstr ""
+msgstr "收货单行\"%s\"已成功确认。"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1884,46 +1884,46 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__receiving_company
 #, python-format
 msgid "Receiving Company"
-msgstr ""
+msgstr "接收公司"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__receiving_company_phone
 msgid "Receiving Company Phone"
-msgstr ""
+msgstr "接收公司电话"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__receiving_date
 msgid "Receiving Date"
-msgstr ""
+msgstr "接收日期"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Reject"
-msgstr ""
+msgstr "拒绝"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__related_document
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__related_document
 msgid "Related Documents"
-msgstr ""
+msgstr "相关文档"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__material_issuance_ids
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__material_issuance_ids
 msgid "Related Material Issuances"
-msgstr ""
+msgstr "相关物料发放"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__order_ids
 msgid "Related Orders"
-msgstr ""
+msgstr "相关订单"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__production_ids
 msgid "Related Productions"
-msgstr ""
+msgstr "相关生产"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1932,38 +1932,38 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__remark
 #, python-format
 msgid "Remark"
-msgstr ""
+msgstr "备注"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__remarks
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__remark
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__remark
 msgid "Remarks"
-msgstr ""
+msgstr "备注"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Reserved quantity cannot be greater than quantity on hand."
-msgstr ""
+msgstr "预留数量不能大于现有数量。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Responsible Staff:"
-msgstr ""
+msgstr "负责人员："
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__row_number
 msgid "Row Number"
-msgstr ""
+msgstr "行号"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__salary_month
 msgid "Salary Month"
-msgstr ""
+msgstr "工资月份"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample_image__sample_id
@@ -1972,7 +1972,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__sample
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__sample
 msgid "Sample"
-msgstr ""
+msgstr "样品"
 
 #. module: garment_base
 #. odoo-python
@@ -1981,12 +1981,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order__sample_code
 #, python-format
 msgid "Sample Code"
-msgstr ""
+msgstr "样品编码"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_sample_image
 msgid "Sample Image"
-msgstr ""
+msgstr "样品图片"
 
 #. module: garment_base
 #. odoo-python
@@ -1996,33 +1996,33 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__sample_name
 #, python-format
 msgid "Sample Name"
-msgstr ""
+msgstr "样品名称"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Sample is already in stock."
-msgstr ""
+msgstr "样品已入库。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Sample is not in stock."
-msgstr ""
+msgstr "样品未入库。"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__sample_ids
 msgid "Samples"
-msgstr ""
+msgstr "样品"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Save Progress"
-msgstr ""
+msgstr "保存进度"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2033,29 +2033,29 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Save Template"
-msgstr ""
+msgstr "保存模板"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "Scan this QR code to view details"
-msgstr ""
+msgstr "扫描此二维码查看详情"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_info_template
 msgid "Scanned from QR Code"
-msgstr ""
+msgstr "从二维码扫描"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_style__season
 msgid "Season"
-msgstr ""
+msgstr "季节"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.xml:0
 #, python-format
 msgid "Select Approved Sample:"
-msgstr ""
+msgstr "选择已批准样品："
 
 #. module: garment_base
 #. odoo-javascript
@@ -2063,7 +2063,7 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Select Color"
-msgstr ""
+msgstr "选择颜色"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2071,19 +2071,19 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Select Material"
-msgstr ""
+msgstr "选择物料"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.xml:0
 #, python-format
 msgid "Select a sample..."
-msgstr ""
+msgstr "选择样品..."
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_process__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "序列"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2091,29 +2091,29 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__serial_number
 #, python-format
 msgid "Serial Number"
-msgstr ""
+msgstr "序列号"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__shape
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__shape
 #: model:ir.model.fields,field_description:garment_base.field_product_style__shape
 msgid "Shape"
-msgstr ""
+msgstr "形状"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__shipping
 msgid "Shipping"
-msgstr ""
+msgstr "运输"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__shipping_date
 msgid "Shipping Date"
-msgstr ""
+msgstr "发货日期"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__single_piece_qty
 msgid "Single Piece Quantity"
-msgstr ""
+msgstr "单件数量"
 
 #. module: garment_base
 #. odoo-python
@@ -2122,12 +2122,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__size
 #, python-format
 msgid "Size"
-msgstr ""
+msgstr "尺寸"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__image
 msgid "Size Chart Image"
-msgstr ""
+msgstr "尺寸表图片"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2136,7 +2136,7 @@ msgstr ""
 msgid ""
 "Some files were skipped. Only image files (JPEG, JPG, PNG, GIF, WEBP) are "
 "allowed."
-msgstr ""
+msgstr "已跳过某些文件。仅允许图像文件(JPEG、JPG、PNG、GIF、WEBP)。"
 
 #. module: garment_base
 #. odoo-python
@@ -2145,27 +2145,27 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_material__specification
 #, python-format
 msgid "Specification"
-msgstr ""
+msgstr "规格"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_specification_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__specification_detail
 msgid "Specification Detail"
-msgstr ""
+msgstr "规格详情"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Specification Detail Table"
-msgstr ""
+msgstr "规格详情表"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Spring"
-msgstr ""
+msgstr "春季"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2173,7 +2173,7 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Start Date:"
-msgstr ""
+msgstr "开始日期："
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__state
@@ -2182,76 +2182,76 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order__state
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__completion_status
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Status:"
-msgstr ""
+msgstr "状态:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__step_name
 msgid "Step Name"
-msgstr ""
+msgstr "步骤名称"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_lot__inout_ids
 msgid "Stock Movements"
-msgstr ""
+msgstr "库存移动"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_stock_production_inout
 msgid "Stock Production In/Out"
-msgstr ""
+msgstr "生产库存进出"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Stock in order \"%s\" request has been successfully sent."
-msgstr ""
+msgstr "订单\"%s\"的入库请求已成功发送。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Stock in sample \"%s\" request has been successfully sent."
-msgstr ""
+msgstr "样品\"%s\"的入库请求已成功发送。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Stock out order \"%s\" request has been successfully sent."
-msgstr ""
+msgstr "订单\"%s\"的出库请求已成功发送。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Stock out sample \"%s\" request has been successfully sent."
-msgstr ""
+msgstr "样品\"%s\"的出库请求已成功发送。"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Stored Orders"
-msgstr ""
+msgstr "已存储订单"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Stored Samples"
-msgstr ""
+msgstr "已存储样品"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_style__image
 msgid "Style Image"
-msgstr ""
+msgstr "款式图片"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2274,36 +2274,36 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Sum"
-msgstr ""
+msgstr "合计"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Summer"
-msgstr ""
+msgstr "夏季"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_department__supervisor
 msgid "Supervisor"
-msgstr ""
+msgstr "主管"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__supplier
 msgid "Supplier/Source"
-msgstr ""
+msgstr "供应商/来源"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__supplier
 msgid "Suppliers"
-msgstr ""
+msgstr "供应商"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2311,26 +2311,26 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
 #, python-format
 msgid "Table"
-msgstr ""
+msgstr "表格"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.js:0
 #, python-format
 msgid "TableProcess"
-msgstr ""
+msgstr "工序表格"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Task name is required"
-msgstr ""
+msgstr "任务名称必填"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__technical_requirements
 msgid "Technical Requirements"
-msgstr ""
+msgstr "技术要求"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__template
@@ -2340,7 +2340,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__template
 #: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__template
 msgid "Template"
-msgstr ""
+msgstr "模板"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2351,7 +2351,7 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Template '%s' applied successfully!"
-msgstr ""
+msgstr "模板'%s'应用成功!"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2362,58 +2362,58 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Template '%s' saved successfully!"
-msgstr ""
+msgstr "模板'%s'保存成功!"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__name
 msgid "Template Name"
-msgstr ""
+msgstr "模板名称"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Template loaded successfully"
-msgstr ""
+msgstr "模板加载成功"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Template saved successfully"
-msgstr ""
+msgstr "模板保存成功"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__ticket_printed
 msgid "Ticket Printed"
-msgstr ""
+msgstr "票据已打印"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__cost_total
 msgid "Total Cost"
-msgstr ""
+msgstr "总成本"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.xml:0
 #, python-format
 msgid "Total Items:"
-msgstr ""
+msgstr "总项目数:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__total_material_cost
 msgid "Total Material Cost"
-msgstr ""
+msgstr "材料总成本"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__total_other_cost
 msgid "Total Other Cost (Invalid)"
-msgstr ""
+msgstr "其他总成本(无效)"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__total_other_cost
 msgid "Total Other Costs"
-msgstr ""
+msgstr "其他总成本"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2423,19 +2423,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_process__total_price
 #, python-format
 msgid "Total Price"
-msgstr ""
+msgstr "总价"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__total_process_cost
 msgid "Total Process Cost"
-msgstr ""
+msgstr "工序总成本"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Total Qty:"
-msgstr ""
+msgstr "总数量:"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2443,38 +2443,38 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order__quantity
 #, python-format
 msgid "Total Quantity"
-msgstr ""
+msgstr "总数量"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__total_usage
 msgid "Total Usage"
-msgstr ""
+msgstr "总用量"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_finance_wizard__payment_amount
 msgid "Total amount received from customer"
-msgstr ""
+msgstr "从客户收到的总金额"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__transport
 msgid "Transport"
-msgstr ""
+msgstr "运输"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__type
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__unit
 #: model:ir.model.fields,field_description:garment_base.field_production_material__unit
 msgid "Unit"
-msgstr ""
+msgstr "单位"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__unit_loss
 msgid "Unit Loss"
-msgstr ""
+msgstr "单位损耗"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2488,26 +2488,26 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_process__unit_price
 #, python-format
 msgid "Unit Price"
-msgstr ""
+msgstr "单价"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Unit Price()"
-msgstr ""
+msgstr "单价()"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Unit Price:"
-msgstr ""
+msgstr "单价:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__quantity
 msgid "Unit Quantity"
-msgstr ""
+msgstr "单位数量"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2518,31 +2518,31 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Unknown error occurred"
-msgstr ""
+msgstr "发生未知错误"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__update_date
 msgid "Update At"
-msgstr ""
+msgstr "更新时间"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_finance_wizard
 msgid "Update Finance Status"
-msgstr ""
+msgstr "更新财务状态"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Uploading error"
-msgstr ""
+msgstr "上传错误"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Use Progress"
-msgstr ""
+msgstr "使用进度"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2553,47 +2553,47 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Use Template"
-msgstr ""
+msgstr "使用模板"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Used Quantity *"
-msgstr ""
+msgstr "已用数量 *"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Used quantity must be greater than 0"
-msgstr ""
+msgstr "已用数量必须大于0"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__utilities
 msgid "Utilities"
-msgstr ""
+msgstr "公用事业"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__vat
 msgid "VAT"
-msgstr ""
+msgstr "增值税"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__value
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "View Info Page"
-msgstr ""
+msgstr "查看信息页"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_finance_wizard__finance_state__waiting
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__finance_state__waiting
 msgid "Waiting Payment"
-msgstr ""
+msgstr "等待付款"
 
 #. module: garment_base
 #. odoo-python
@@ -2601,7 +2601,7 @@ msgstr ""
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Waiting Receipts"
-msgstr ""
+msgstr "等待收货"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2613,31 +2613,31 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__water
 msgid "Water"
-msgstr ""
+msgstr "水费"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Winter"
-msgstr ""
+msgstr "冬季"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__employee_id
 msgid "Worker"
-msgstr ""
+msgstr "工人"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_operation_price__worker_entry_ids
 msgid "Worker Entries"
-msgstr ""
+msgstr "工人记录"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__garment_order_id
-msgid "Đơn hàng"
-msgstr ""
+msgid "Order"
+msgstr "订单"

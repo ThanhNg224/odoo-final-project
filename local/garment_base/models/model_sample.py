@@ -40,6 +40,7 @@ class Sample(models.Model):
         ["Material Name", "Material Code", "Color", "Color Code", "Specification", "Unit", "Part", "Quantity per Unit", "Loss per Unit", "Unit Quantity", "Total Quantity Used", "Unit Price", "Supplier"],
         ["", "", "", "", "", "", "", 0, 0, 0, 0, 0, ""]
     ])
+    material_detail_initial_cost = fields.Float(string='Material Detail Initial Cost')
     process_table = fields.Json(string='Process Table', default=lambda self: [])
     other_cost = fields.Json(string='Other Costs', default=lambda self: [])
 
@@ -123,6 +124,8 @@ class Sample(models.Model):
         for vals in vals_list:
             if not vals.get('code'):
                 vals['code'] = self._generate_sample_code()
+                vals['actual_quotation'] = vals['quotation']
+            
         return super().create(vals_list)
 
     def write(self, vals):

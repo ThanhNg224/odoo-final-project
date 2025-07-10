@@ -10,25 +10,26 @@ msgstr ""
 "PO-Revision-Date: 2025-06-16 17:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "<i class=\"fa fa-calendar\" title=\"Calendar\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-calendar\" title=\"日历\"/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "<i class=\"fa fa-ellipsis-v\" title=\"More options\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-ellipsis-v\" title=\"更多选项\"/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "<i class=\"fa fa-tag\" title=\"Tag\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-tag\" title=\"标签\"/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
@@ -36,11 +37,12 @@ msgid ""
 "<strong>Bundle Management:</strong> Check the \"Completed\" box when each "
 "bundle is finished. This will automatically update the progress."
 msgstr ""
+"<strong>捆包管理：</strong>当每个捆包完成时，勾选"已完成"复选框。这将自动更新进度。"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "<strong>Client:</strong><br/>"
-msgstr ""
+msgstr "<strong>客户：</strong><br/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -48,6 +50,7 @@ msgid ""
 "<strong>Cost Summary:</strong> This shows the automatically calculated cost "
 "totals from different sections."
 msgstr ""
+"<strong>成本汇总：</strong>这显示了来自不同部分的自动计算成本总额。"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -55,6 +58,7 @@ msgid ""
 "<strong>Information:</strong> These costs are imported from the sample. They"
 " represent additional costs related to production."
 msgstr ""
+"<strong>信息：</strong>这些成本从样品中导入。它们代表与生产相关的额外成本。"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -62,6 +66,7 @@ msgid ""
 "<strong>Instructions:</strong> Bundle management allows you to organize "
 "production quantities. Mark bundles as completed to track progress."
 msgstr ""
+"<strong>说明：</strong>捆包管理允许您组织生产数量。将捆包标记为已完成以跟踪进度。"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -69,16 +74,17 @@ msgid ""
 "<strong>Instructions:</strong> Order lines show the quantities for each "
 "size. Progress is automatically calculated based on completed bundles."
 msgstr ""
+"<strong>说明：</strong>订单行显示每个尺寸的数量。进度根据已完成的捆包自动计算。"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "<strong>Progress: </strong>"
-msgstr ""
+msgstr "<strong>进度：</strong>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "<strong>Quantity:</strong><br/>"
-msgstr ""
+msgstr "<strong>数量：</strong><br/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -86,6 +92,7 @@ msgid ""
 "<strong>Step 2:</strong> Now select a sample from the available options "
 "below."
 msgstr ""
+"<strong>步骤2：</strong>现在从下面的可用选项中选择一个样品。"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
@@ -93,6 +100,7 @@ msgid ""
 "<strong>Update Finance Status</strong> - Quick way to update payment status "
 "for this production order."
 msgstr ""
+"<strong>更新财务状态</strong> - 快速更新此生产订单的付款状态。"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -100,99 +108,100 @@ msgid ""
 "<strong>✓ Ready:</strong> Order and sample selected. You can now proceed "
 "with production setup."
 msgstr ""
+"<strong>✓ 就绪：</strong>已选择订单和样品。现在可以继续进行生产设置。"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/quantity_list_table.xml:0
 #, python-format
 msgid "Add Size"
-msgstr ""
+msgstr "添加尺寸"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_form
 msgid "Add notes here..."
-msgstr ""
+msgstr "在此添加备注..."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Add payment reference, date, method, etc..."
-msgstr ""
+msgstr "添加付款参考、日期、方式等..."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "All Bundles"
-msgstr ""
+msgstr "所有捆包"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Approval Info"
-msgstr ""
+msgstr "审批信息"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_approval_request_form
 msgid "Approval Request"
-msgstr ""
+msgstr "审批请求"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_approval_request
 #: model_terms:ir.ui.view,arch_db:garment_production.view_approval_request_tree
 msgid "Approval Requests"
-msgstr ""
+msgstr "审批请求"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Bundle #"
-msgstr ""
+msgstr "捆包编号"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Bundle Details"
-msgstr ""
+msgstr "捆包详情"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Bundle ID:"
-msgstr ""
+msgstr "捆包ID："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Bundle Ticket"
-msgstr ""
+msgstr "捆包标签"
 
 #. module: garment_production
 #: model:ir.ui.menu,name:garment_production.menu_production_bundle
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Bundles"
-msgstr ""
+msgstr "捆包"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Clean Up Empty Entries"
-msgstr ""
+msgstr "清理空条目"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Client"
-msgstr ""
+msgstr "客户"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Client:"
-msgstr ""
+msgstr "客户："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Color"
-msgstr ""
+msgstr "颜色"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
@@ -200,7 +209,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Completed"
-msgstr ""
+msgstr "已完成"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
@@ -208,111 +217,111 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Completed On"
-msgstr ""
+msgstr "完成日期"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Completed Quantity"
-msgstr ""
+msgstr "完成数量"
 
 #. module: garment_production
 #: model:ir.ui.menu,name:garment_production.menu_garment_production_config
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Cost Breakdown"
-msgstr ""
+msgstr "成本明细"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Cost Name"
-msgstr ""
+msgstr "成本名称"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_cost
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Costs"
-msgstr ""
+msgstr "成本"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Create Bundles"
-msgstr ""
+msgstr "创建捆包"
 
 #. module: garment_production
 #: model_terms:ir.actions.act_window,help:garment_production.action_production_orders
 msgid "Create a new production order"
-msgstr ""
+msgstr "创建新的生产订单"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Created On:"
-msgstr ""
+msgstr "创建日期："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Current Status"
-msgstr ""
+msgstr "当前状态"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_distribution
 msgid "Distributions"
-msgstr ""
+msgstr "分配"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Done"
-msgstr ""
+msgstr "完成"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Done Qty"
-msgstr ""
+msgstr "完成数量"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Done Qty:"
-msgstr ""
+msgstr "完成数量："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
 msgid "Download QR Ticket"
-msgstr ""
+msgstr "下载二维码标签"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Draft"
-msgstr ""
+msgstr "草稿"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Enter payment details, reference numbers, etc..."
-msgstr ""
+msgstr "输入付款详情、参考号码等..."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Enter process requirements here..."
-msgstr ""
+msgstr "在此输入工艺要求..."
 
 #. module: garment_production
 #. odoo-javascript
@@ -321,169 +330,169 @@ msgstr ""
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Failed to apply template: %s"
-msgstr ""
+msgstr "应用模板失败：%s"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Failed to load templates: %s"
-msgstr ""
+msgstr "加载模板失败：%s"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Failed to save template: %s"
-msgstr ""
+msgstr "保存模板失败：%s"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_approval_form
 msgid "Finance Approval"
-msgstr ""
+msgstr "财务审批"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_finance_approval
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_approval_tree
 msgid "Finance Approvals"
-msgstr ""
+msgstr "财务审批"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Finance Info"
-msgstr ""
+msgstr "财务信息"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Generate Bundles"
-msgstr ""
+msgstr "生成捆包"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Generate Size Lines from Sample"
-msgstr ""
+msgstr "从样品生成尺寸行"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Generate from Sample"
-msgstr ""
+msgstr "从样品生成"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Generated:"
-msgstr ""
+msgstr "生成时间："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Group By"
-msgstr ""
+msgstr "分组依据"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "In Progress"
-msgstr ""
+msgstr "进行中"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Lines"
-msgstr ""
+msgstr "行"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Manually refresh quantity calculations"
-msgstr ""
+msgstr "手动刷新数量计算"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Mark as Done"
-msgstr ""
+msgstr "标记为完成"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Mark as Fully Paid"
-msgstr ""
+msgstr "标记为全额付款"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Material Cost"
-msgstr ""
+msgstr "材料成本"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Material Details"
-msgstr ""
+msgstr "材料详情"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_form
 msgid "Material Name"
-msgstr ""
+msgstr "材料名称"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_material
 msgid "Materials"
-msgstr ""
+msgstr "材料"
 
 #. module: garment_production
 #: model_terms:ir.actions.act_window,help:garment_production.action_production_order_line
 msgid "No order lines found"
-msgstr ""
+msgstr "未找到订单行"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "No templates found"
-msgstr ""
+msgstr "未找到模板"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Note"
-msgstr ""
+msgstr "备注"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Notes"
-msgstr ""
+msgstr "备注"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_operation_price_form
 msgid "Operation Price"
-msgstr ""
+msgstr "操作价格"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_operation_price
 #: model_terms:ir.ui.view,arch_db:garment_production.view_operation_price_tree
 msgid "Operation Prices"
-msgstr ""
+msgstr "操作价格"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Order #"
-msgstr ""
+msgstr "订单号"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Order Date:"
-msgstr ""
+msgstr "订单日期："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Order Information"
-msgstr ""
+msgstr "订单信息"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Order Line"
-msgstr ""
+msgstr "订单行"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_order_line
@@ -491,12 +500,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 msgid "Order Lines"
-msgstr ""
+msgstr "订单行"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Order Ref:"
-msgstr ""
+msgstr "订单参考："
 
 #. module: garment_production
 #: model_terms:ir.actions.act_window,help:garment_production.action_production_order_line
@@ -504,169 +513,170 @@ msgid ""
 "Order lines are automatically created when you generate them from a sample "
 "in a production order."
 msgstr ""
+"当您在生产订单中从样品生成订单行时，订单行将自动创建。"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Order lines generated from quantity list"
-msgstr ""
+msgstr "从数量清单生成的订单行"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Order quantity updated to %s"
-msgstr ""
+msgstr "订单数量已更新为 %s"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Other Costs"
-msgstr ""
+msgstr "其他费用"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Payment Notes"
-msgstr ""
+msgstr "付款备注"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Payment Status"
-msgstr ""
+msgstr "付款状态"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Planned"
-msgstr ""
+msgstr "计划"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Planned Qty"
-msgstr ""
+msgstr "计划数量"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Planned Qty:"
-msgstr ""
+msgstr "计划数量："
 
 #. module: garment_production
 #: model:ir.actions.report,name:garment_production.action_bundle_qr_report
 msgid "Print Bundle Ticket"
-msgstr ""
+msgstr "打印捆包标签"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Process Cost"
-msgstr ""
+msgstr "工序成本"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_tree
 msgid "Process Price List"
-msgstr ""
+msgstr "工序价格表"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Process Requirements"
-msgstr ""
+msgstr "工序要求"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_process
 msgid "Processes"
-msgstr ""
+msgstr "工序"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_lot_form
 msgid "Product Lot"
-msgstr ""
+msgstr "产品批次"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_product_lot
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_lot_tree
 msgid "Product Lots"
-msgstr ""
+msgstr "产品批次"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_form
 msgid "Product Style"
-msgstr ""
+msgstr "产品款式"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_product_style
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_tree
 msgid "Product Styles"
-msgstr ""
+msgstr "产品款式"
 
 #. module: garment_production
 #: model:ir.ui.menu,name:garment_production.menu_garment_production_root
 msgid "Production"
-msgstr ""
+msgstr "生产"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_approval_form
 msgid "Production Approval"
-msgstr ""
+msgstr "生产审批"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_approval
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_approval_tree
 msgid "Production Approvals"
-msgstr ""
+msgstr "生产审批"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
 msgid "Production Bundle"
-msgstr ""
+msgstr "生产捆包"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_bundle
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
 msgid "Production Bundles"
-msgstr ""
+msgstr "生产捆包"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_form
 msgid "Production Cost"
-msgstr ""
+msgstr "生产成本"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_tree
 msgid "Production Costs"
-msgstr ""
+msgstr "生产成本"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Production Details"
-msgstr ""
+msgstr "生产详情"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_distribution_form
 msgid "Production Distribution"
-msgstr ""
+msgstr "生产分配"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_distribution_tree
 msgid "Production Distributions"
-msgstr ""
+msgstr "生产分配"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_form
 msgid "Production Material"
-msgstr ""
+msgstr "生产材料"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_tree
 msgid "Production Materials"
-msgstr ""
+msgstr "生产材料"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Production Order"
-msgstr ""
+msgstr "生产订单"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_orders
@@ -674,55 +684,55 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Production Orders"
-msgstr ""
+msgstr "生产订单"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_form
 msgid "Production Process"
-msgstr ""
+msgstr "生产工序"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_progress
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Production Progress"
-msgstr ""
+msgstr "生产进度"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_form
 msgid "Production Progress Entry"
-msgstr ""
+msgstr "生产进度录入"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Production Step"
-msgstr ""
+msgstr "生产步骤"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Progress"
-msgstr ""
+msgstr "进度"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 msgid "Progress %"
-msgstr ""
+msgstr "进度 %"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Progress Entries"
-msgstr ""
+msgstr "进度记录"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "QR Code"
-msgstr ""
+msgstr "二维码"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Quantities"
-msgstr ""
+msgstr "数量"
 
 #. module: garment_production
 #. odoo-javascript
@@ -731,76 +741,76 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 #, python-format
 msgid "Quantity"
-msgstr ""
+msgstr "数量"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Quantity List"
-msgstr ""
+msgstr "数量清单"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Quantity:"
-msgstr ""
+msgstr "数量："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Refresh Quantities"
-msgstr ""
+msgstr "刷新数量"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_salary_adjust_form
 msgid "Salary Adjustment"
-msgstr ""
+msgstr "薪资调整"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_salary_adjust
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_salary_adjust_tree
 msgid "Salary Adjustments"
-msgstr ""
+msgstr "薪资调整"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Sample"
-msgstr ""
+msgstr "样品"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Sample Information"
-msgstr ""
+msgstr "样品信息"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Sample Name"
-msgstr ""
+msgstr "样品名称"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Sample:"
-msgstr ""
+msgstr "样品："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Scan for complete bundle details"
-msgstr ""
+msgstr "扫描查看完整捆包详情"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Search Production Orders"
-msgstr ""
+msgstr "搜索生产订单"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Select an existing order first"
-msgstr ""
+msgstr "请先选择现有订单"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Select order first to see available samples"
-msgstr ""
+msgstr "请先选择订单以查看可用样品"
 
 #. module: garment_production
 #. odoo-javascript
@@ -808,56 +818,56 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #, python-format
 msgid "Size"
-msgstr ""
+msgstr "尺码"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_size_chart_tree
 msgid "Size Chart"
-msgstr ""
+msgstr "尺码表"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_size_chart_form
 msgid "Size Chart Entry"
-msgstr ""
+msgstr "尺码表录入"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_size_chart
 msgid "Size Charts"
-msgstr ""
+msgstr "尺码表"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Size:"
-msgstr ""
+msgstr "尺码："
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Start Production"
-msgstr ""
+msgstr "开始生产"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_stock_production_inout_form
 msgid "Stock Movement"
-msgstr ""
+msgstr "库存移动"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_stock_production_inout
 #: model_terms:ir.ui.view,arch_db:garment_production.view_stock_production_inout_tree
 msgid "Stock Movements"
-msgstr ""
+msgstr "库存移动"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Style"
-msgstr ""
+msgstr "款式"
 
 #. module: garment_production
 #. odoo-javascript
@@ -867,27 +877,27 @@ msgstr ""
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Template '%s' applied successfully!"
-msgstr ""
+msgstr "模板 '%s' 应用成功！"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Template '%s' saved successfully!"
-msgstr ""
+msgstr "模板 '%s' 保存成功！"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Ticket Printed"
-msgstr ""
+msgstr "标签已打印"
 
 #. module: garment_production
 #. odoo-javascript
@@ -897,93 +907,93 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_tree
 #, python-format
 msgid "Total"
-msgstr ""
+msgstr "总计"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Total Cost"
-msgstr ""
+msgstr "总成本"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Total Other Cost"
-msgstr ""
+msgstr "其他费用合计"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Total Quantity"
-msgstr ""
+msgstr "总数量"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Unknown error occurred"
-msgstr ""
+msgstr "发生未知错误"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Update Finance Status"
-msgstr ""
+msgstr "更新财务状态"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Update To"
-msgstr ""
+msgstr "更新为"
 
 #. module: garment_production
 #: model:ir.actions.report,name:garment_production.action_bundle_qr_report_html
 msgid "View Bundle Ticket"
-msgstr ""
+msgstr "查看捆包标签"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
 msgid "View QR Ticket"
-msgstr ""
+msgstr "查看二维码标签"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_worker_entry
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_worker_entry_tree
 msgid "Worker Entries"
-msgstr ""
+msgstr "员工录入"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_worker_entry_form
 msgid "Worker Entry"
-msgstr ""
+msgstr "员工录入"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "pcs"
-msgstr ""
+msgstr "件"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "✅ Mark Paid"
-msgstr ""
+msgstr "✅ 标记已付款"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "💰 Update Finance"
-msgstr ""
+msgstr "💰 更新财务"
 
 #. module: garment_production
 #: model:ir.actions.server,name:garment_production.action_bulk_download_qr
 msgid "📥 Download QR Tickets"
-msgstr ""
+msgstr "📥 下载二维码标签"
 
 #. module: garment_production
 #: model:ir.actions.server,name:garment_production.action_bulk_view_qr
 msgid "📱 View QR Tickets"
-msgstr ""
+msgstr "📱 查看二维码标签"

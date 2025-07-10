@@ -11,7 +11,7 @@
                   decoration-warning="state == 'in_progress'" 
                   decoration-success="state == 'done'"
                   decoration-bf="progress_percentage &gt;= 100"
-                  class="o_production_tree" create="false">
+                  class="o_production_tree">
                 <field name="name" string="Order"/>
                 <field name="sample_name" string="Sample"/>
                 <field name="client" string="Client"/>
@@ -164,13 +164,19 @@
                             
                             <field name="material_ids" readonly="1">
                                 <tree class="o_list_view_material">
-                                    <field name="name" string="Material Name" width="25%"/>
-                                    <field name="item_number" string="Item No." width="15%"/>
-                                    <field name="specification" string="Specification" width="20%"/>
-                                    <field name="unit" string="Unit" width="10%"/>
-                                    <field name="quantity" string="Qty" width="10%"/>
-                                    <field name="total_usage" string="Usage" width="10%"/>
-                                    <field name="unit_price" string="Price" width="10%"/>
+                                    <field name="name" string="Material Name" width="15%"/>
+                                    <field name="item_number" string="Material Code" width="10%"/>
+                                    <field name="color" string="Color" width="8%"/>
+                                    <field name="color_code" string="Color Code" width="8%"/>
+                                    <field name="specification" string="Specification" width="12%"/>
+                                    <field name="unit" string="Unit" width="6%"/>
+                                    <field name="part" string="Part" width="8%"/>
+                                    <field name="single_piece_qty" string="Qty per Unit" width="8%"/>
+                                    <field name="unit_loss" string="Loss per Unit" width="8%"/>
+                                    <field name="quantity" string="Unit Quantity" width="8%"/>
+                                    <field name="total_usage" string="Total Qty Used" width="9%"/>
+                                    <field name="unit_price" string="Unit Price" width="8%"/>
+                                    <field name="supplier" string="Supplier" width="10%"/>
                                 </tree>
                             </field>
                         </page>
@@ -265,9 +271,9 @@
     <record id="view_production_order_form_edit" model="ir.ui.view">
         <field name="name">production.order.form.edit</field>
         <field name="model">production.order</field>
-        <field name="groups_id" eval="[(4, ref('garment_authorization.group_production_management'))]"/>
+        <field name="groups_id" eval="[(4, ref('garment_authorization.group_production_management')), (4, ref('garment_authorization.group_production_approval'))]"/>
         <field name="arch" type="xml">
-            <form string="Edit Production Order" create="false">
+            <form string="Production Order">
                 <header>
                     <button name="action_save_and_back" string="Save &amp; Back" type="object" 
                             class="oe_highlight"/>
@@ -424,9 +430,15 @@
                                 <p><strong>Instructions:</strong> Material details are automatically filled from the sample. Adjust quantities as needed.</p>
                             </div>
                             
-                            <!-- Clean up button for view-only form -->
+                            <!-- Action buttons -->
                             <div class="row mb-3">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
+                                    <button name="action_refresh_quantity" 
+                                            string="Refresh Material Quantities" 
+                                            type="object" 
+                                            class="btn btn-primary"
+                                            style="padding: 8px 16px; font-size: 14px; margin-right: 10px;"
+                                            title="Update all material unit quantities to match production total"/>
                                     <button name="action_clean_material_entries" 
                                             string="Clean Up Empty Material Entries" 
                                             type="object" 
@@ -437,13 +449,19 @@
                             
                             <field name="material_ids">
                                 <tree editable="bottom" class="o_list_view_material">
-                                    <field name="name" string="Material Name" width="25%"/>
-                                    <field name="item_number" string="Item No." width="15%"/>
-                                    <field name="specification" string="Specification" width="20%"/>
-                                    <field name="unit" string="Unit" width="10%"/>
-                                    <field name="quantity" string="Quantity" width="10%"/>
-                                    <field name="total_usage" string="Usage" width="10%"/>
-                                    <field name="unit_price" string="Price" width="10%"/>
+                                    <field name="name" string="Material Name" width="15%"/>
+                                    <field name="item_number" string="Material Code" width="10%"/>
+                                    <field name="color" string="Color" width="8%"/>
+                                    <field name="color_code" string="Color Code" width="8%"/>
+                                    <field name="specification" string="Specification" width="12%"/>
+                                    <field name="unit" string="Unit" width="6%"/>
+                                    <field name="part" string="Part" width="8%"/>
+                                    <field name="single_piece_qty" string="Qty per Unit" width="8%"/>
+                                    <field name="unit_loss" string="Loss per Unit" width="8%"/>
+                                    <field name="quantity" string="Unit Quantity" width="8%"/>
+                                    <field name="total_usage" string="Total Qty Used" width="9%" readonly="1"/>
+                                    <field name="unit_price" string="Unit Price" width="8%"/>
+                                    <field name="supplier" string="Supplier" width="10%"/>
                                 </tree>
                             </field>
                         </page>
@@ -453,9 +471,15 @@
                                 <p><strong>Instructions:</strong> Process prices are used for cost calculation. Adjust as necessary based on the production requirements.</p>
                             </div>
                             
-                            <!-- Clean up button for view-only form -->
+                            <!-- Action buttons -->
                             <div class="row mb-3">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
+                                    <button name="action_refresh_quantity" 
+                                            string="Refresh Process Quantities" 
+                                            type="object" 
+                                            class="btn btn-primary"
+                                            style="padding: 8px 16px; font-size: 14px; margin-right: 10px;"
+                                            title="Update all process quantities to match production total"/>
                                     <button name="action_clean_process_entries" 
                                             string="Clean Up Empty Process Entries" 
                                             type="object" 
@@ -700,13 +724,9 @@
     <record id="action_production_orders" model="ir.actions.act_window">
         <field name="name">Production Orders</field>
         <field name="res_model">production.order</field>
-        <field name="view_mode">tree,kanban,form,pivot,graph</field>
-        <field name="view_id" ref="view_production_order_tree_enhanced"/>
-        <field name="context">{
-            'form_view_ref': 'garment_production.view_production_order_form',
-            'create_view_ref': 'garment_production.view_production_order_form_edit',
-            'tree_view_ref': 'garment_production.view_production_order_tree_enhanced'
-        }</field>
+        <field name="view_mode">kanban,tree,form,pivot,graph</field>
+        <field name="view_id" ref="view_production_order_kanban_enhanced"/>
+        <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create a new production order
@@ -715,26 +735,26 @@
     </record>
 
     <!-- Explicitly define which view to use for form mode -->
-    <record id="action_production_orders_view_tree" model="ir.actions.act_window.view">
+    <record id="action_production_orders_view_kanban" model="ir.actions.act_window.view">
         <field name="sequence" eval="1"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_production_order_kanban_enhanced"/>
+        <field name="act_window_id" ref="action_production_orders"/>
+    </record>
+    
+    <record id="action_production_orders_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
         <field name="view_mode">tree</field>
         <field name="view_id" ref="view_production_order_tree_enhanced"/>
         <field name="act_window_id" ref="action_production_orders"/>
     </record>
     
-    <record id="action_production_orders_view_form" model="ir.actions.act_window.view">
-        <field name="sequence" eval="2"/>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_production_order_form"/>
-        <field name="act_window_id" ref="action_production_orders"/>
-    </record>
-    
-    <record id="action_production_orders_view_kanban" model="ir.actions.act_window.view">
-        <field name="sequence" eval="3"/>
-        <field name="view_mode">kanban</field>
-        <field name="view_id" ref="view_production_order_kanban_enhanced"/>
-        <field name="act_window_id" ref="action_production_orders"/>
-    </record>
+<record id="action_production_orders_view_form" model="ir.actions.act_window.view">
+    <field name="sequence" eval="3"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_production_order_form"/>  <!-- Đổi thành view-only form -->
+    <field name="act_window_id" ref="action_production_orders"/>
+</record>
 
     <!-- Root Menu -->
     <menuitem id="menu_garment_production_root" 
@@ -755,5 +775,3 @@
               action="action_production_orders"
               sequence="10"/>
 </odoo>
-
-

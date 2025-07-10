@@ -17,30 +17,33 @@ msgstr ""
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
-msgid "<i class=\"fa fa-calendar\" title=\"Calendar\"/>"
-msgstr ""
+msgid "<i class="fa fa-calendar" title="Calendar"/>"
+msgstr "<i class="fa fa-calendar" title="Lịch"/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
-msgid "<i class=\"fa fa-ellipsis-v\" title=\"More options\"/>"
-msgstr ""
+msgid "<i class="fa fa-ellipsis-v" title="More options"/>"
+msgstr "<i class="fa fa-ellipsis-v" title="Thêm tùy chọn"/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
-msgid "<i class=\"fa fa-tag\" title=\"Tag\"/>"
-msgstr ""
+msgid "<i class="fa fa-tag" title="Tag"/>"
+msgstr "<i class="fa fa-tag" title="Nhãn"/>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid ""
-"<strong>Bundle Management:</strong> Check the \"Completed\" box when each "
+"<strong>Bundle Management:</strong> Check the "Completed" box when each "
 "bundle is finished. This will automatically update the progress."
 msgstr ""
+"<strong>Quản lý Gói:</strong> Đánh dấu vào ô "Hoàn thành" khi mỗi gói được hoàn tất. Tiến trình sẽ tự động cập nhật."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
-msgid "<strong>Client:</strong><br/>"
-msgstr ""
+msgid "<strong>Client:</strong>
+"
+msgstr "<strong>Khách hàng:</strong>
+"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -48,6 +51,7 @@ msgid ""
 "<strong>Cost Summary:</strong> This shows the automatically calculated cost "
 "totals from different sections."
 msgstr ""
+"<strong>Tổng chi phí:</strong> Hiển thị tổng chi phí tự động tính toán từ các phần khác nhau."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -55,6 +59,7 @@ msgid ""
 "<strong>Information:</strong> These costs are imported from the sample. They"
 " represent additional costs related to production."
 msgstr ""
+"<strong>Thông tin:</strong> Các chi phí này được nhập từ mẫu. Chúng đại diện cho các chi phí phát sinh liên quan đến sản xuất."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -62,6 +67,7 @@ msgid ""
 "<strong>Instructions:</strong> Bundle management allows you to organize "
 "production quantities. Mark bundles as completed to track progress."
 msgstr ""
+"<strong>Hướng dẫn:</strong> Quản lý gói giúp bạn tổ chức số lượng sản xuất. Đánh dấu gói hoàn thành để theo dõi tiến độ."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -69,16 +75,19 @@ msgid ""
 "<strong>Instructions:</strong> Order lines show the quantities for each "
 "size. Progress is automatically calculated based on completed bundles."
 msgstr ""
+"<strong>Hướng dẫn:</strong> Dòng đơn hàng hiển thị số lượng cho từng kích cỡ. Tiến độ được tự động tính toán dựa trên các gói hoàn thành."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "<strong>Progress: </strong>"
-msgstr ""
+msgstr "<strong>Tiến độ: </strong>"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
-msgid "<strong>Quantity:</strong><br/>"
-msgstr ""
+msgid "<strong>Quantity:</strong>
+"
+msgstr "<strong>Số lượng:</strong>
+"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -86,6 +95,7 @@ msgid ""
 "<strong>Step 2:</strong> Now select a sample from the available options "
 "below."
 msgstr ""
+"<strong>Bước 2:</strong> Chọn một mẫu từ các tùy chọn có sẵn bên dưới."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
@@ -93,6 +103,7 @@ msgid ""
 "<strong>Update Finance Status</strong> - Quick way to update payment status "
 "for this production order."
 msgstr ""
+"<strong>Cập nhật Trạng thái Tài chính</strong> - Cách nhanh chóng để cập nhật trạng thái thanh toán cho đơn sản xuất này."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
@@ -100,99 +111,100 @@ msgid ""
 "<strong>✓ Ready:</strong> Order and sample selected. You can now proceed "
 "with production setup."
 msgstr ""
+"<strong>✓ Sẵn sàng:</strong> Đơn hàng và mẫu đã được chọn. Bạn có thể tiến hành thiết lập sản xuất."
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/quantity_list_table.xml:0
 #, python-format
 msgid "Add Size"
-msgstr ""
+msgstr "Thêm Kích cỡ"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_form
 msgid "Add notes here..."
-msgstr ""
+msgstr "Thêm ghi chú tại đây..."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Add payment reference, date, method, etc..."
-msgstr ""
+msgstr "Thêm tham chiếu thanh toán, ngày, phương thức, v.v..."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "All Bundles"
-msgstr ""
+msgstr "Tất cả Gói"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Approval Info"
-msgstr ""
+msgstr "Thông tin Phê duyệt"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_approval_request_form
 msgid "Approval Request"
-msgstr ""
+msgstr "Yêu cầu Phê duyệt"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_approval_request
 #: model_terms:ir.ui.view,arch_db:garment_production.view_approval_request_tree
 msgid "Approval Requests"
-msgstr ""
+msgstr "Yêu cầu Phê duyệt"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Bundle #"
-msgstr ""
+msgstr "Gói #"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Bundle Details"
-msgstr ""
+msgstr "Chi tiết Gói"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Bundle ID:"
-msgstr ""
+msgstr "ID Gói:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Bundle Ticket"
-msgstr ""
+msgstr "Phiếu Gói"
 
 #. module: garment_production
 #: model:ir.ui.menu,name:garment_production.menu_production_bundle
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Bundles"
-msgstr ""
+msgstr "Gói"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Clean Up Empty Entries"
-msgstr ""
+msgstr "Dọn dẹp Mục trống"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Client"
-msgstr ""
+msgstr "Khách hàng"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Client:"
-msgstr ""
+msgstr "Khách hàng:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Color"
-msgstr ""
+msgstr "Màu sắc"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
@@ -200,7 +212,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Completed"
-msgstr ""
+msgstr "Hoàn thành"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
@@ -208,111 +220,111 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Completed On"
-msgstr ""
+msgstr "Hoàn thành vào"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Completed Quantity"
-msgstr ""
+msgstr "Số lượng Hoàn thành"
 
 #. module: garment_production
 #: model:ir.ui.menu,name:garment_production.menu_garment_production_config
 msgid "Configuration"
-msgstr ""
+msgstr "Cấu hình"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Cost Breakdown"
-msgstr ""
+msgstr "Chi tiết Chi phí"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Cost Name"
-msgstr ""
+msgstr "Tên Chi phí"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_cost
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Costs"
-msgstr ""
+msgstr "Chi phí"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Create Bundles"
-msgstr ""
+msgstr "Tạo Gói"
 
 #. module: garment_production
 #: model_terms:ir.actions.act_window,help:garment_production.action_production_orders
 msgid "Create a new production order"
-msgstr ""
+msgstr "Tạo đơn sản xuất mới"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Created On:"
-msgstr ""
+msgstr "Tạo vào:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Current Status"
-msgstr ""
+msgstr "Trạng thái Hiện tại"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Date"
-msgstr ""
+msgstr "Ngày"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_distribution
 msgid "Distributions"
-msgstr ""
+msgstr "Phân phối"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Done"
-msgstr ""
+msgstr "Hoàn thành"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Done Qty"
-msgstr ""
+msgstr "Số lượng Hoàn thành"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Done Qty:"
-msgstr ""
+msgstr "Số lượng Hoàn thành:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
 msgid "Download QR Ticket"
-msgstr ""
+msgstr "Tải xuống Phiếu QR"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Draft"
-msgstr ""
+msgstr "Nháp"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "Edit"
-msgstr ""
+msgstr "Chỉnh sửa"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Enter payment details, reference numbers, etc..."
-msgstr ""
+msgstr "Nhập chi tiết thanh toán, số tham chiếu, v.v..."
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Enter process requirements here..."
-msgstr ""
+msgstr "Nhập yêu cầu quy trình tại đây..."
 
 #. module: garment_production
 #. odoo-javascript
@@ -321,169 +333,169 @@ msgstr ""
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Lỗi"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Failed to apply template: %s"
-msgstr ""
+msgstr "Áp dụng mẫu thất bại: %s"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Failed to load templates: %s"
-msgstr ""
+msgstr "Tải mẫu thất bại: %s"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Failed to save template: %s"
-msgstr ""
+msgstr "Lưu mẫu thất bại: %s"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_approval_form
 msgid "Finance Approval"
-msgstr ""
+msgstr "Phê duyệt Tài chính"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_finance_approval
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_approval_tree
 msgid "Finance Approvals"
-msgstr ""
+msgstr "Phê duyệt Tài chính"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Finance Info"
-msgstr ""
+msgstr "Thông tin Tài chính"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Generate Bundles"
-msgstr ""
+msgstr "Tạo Gói"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Generate Size Lines from Sample"
-msgstr ""
+msgstr "Tạo Dòng Kích cỡ từ Mẫu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Generate from Sample"
-msgstr ""
+msgstr "Tạo từ Mẫu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Generated:"
-msgstr ""
+msgstr "Đã tạo:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Group By"
-msgstr ""
+msgstr "Nhóm theo"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "In Progress"
-msgstr ""
+msgstr "Đang tiến hành"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Lines"
-msgstr ""
+msgstr "Dòng"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Manually refresh quantity calculations"
-msgstr ""
+msgstr "Làm mới tính toán số lượng thủ công"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Mark as Done"
-msgstr ""
+msgstr "Đánh dấu Hoàn thành"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Mark as Fully Paid"
-msgstr ""
+msgstr "Đánh dấu Đã thanh toán"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Material Cost"
-msgstr ""
+msgstr "Chi phí Nguyên liệu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Material Details"
-msgstr ""
+msgstr "Chi tiết Nguyên liệu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_form
 msgid "Material Name"
-msgstr ""
+msgstr "Tên Nguyên liệu"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_material
 msgid "Materials"
-msgstr ""
+msgstr "Nguyên liệu"
 
 #. module: garment_production
 #: model_terms:ir.actions.act_window,help:garment_production.action_production_order_line
 msgid "No order lines found"
-msgstr ""
+msgstr "Không tìm thấy dòng đơn hàng"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "No templates found"
-msgstr ""
+msgstr "Không tìm thấy mẫu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Note"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Notes"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_operation_price_form
 msgid "Operation Price"
-msgstr ""
+msgstr "Giá Thao tác"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_operation_price
 #: model_terms:ir.ui.view,arch_db:garment_production.view_operation_price_tree
 msgid "Operation Prices"
-msgstr ""
+msgstr "Giá Thao tác"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Order #"
-msgstr ""
+msgstr "Đơn hàng #"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Order Date:"
-msgstr ""
+msgstr "Ngày Đơn hàng:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Order Information"
-msgstr ""
+msgstr "Thông tin Đơn hàng"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Order Line"
-msgstr ""
+msgstr "Dòng Đơn hàng"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_order_line
@@ -491,12 +503,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 msgid "Order Lines"
-msgstr ""
+msgstr "Dòng Đơn hàng"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Order Ref:"
-msgstr ""
+msgstr "Tham chiếu Đơn hàng:"
 
 #. module: garment_production
 #: model_terms:ir.actions.act_window,help:garment_production.action_production_order_line
@@ -504,169 +516,170 @@ msgid ""
 "Order lines are automatically created when you generate them from a sample "
 "in a production order."
 msgstr ""
+"Dòng đơn hàng được tự động tạo khi bạn tạo chúng từ mẫu trong đơn sản xuất."
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Order lines generated from quantity list"
-msgstr ""
+msgstr "Dòng đơn hàng được tạo từ danh sách số lượng"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Order quantity updated to %s"
-msgstr ""
+msgstr "Số lượng đơn hàng đã cập nhật thành %s"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Other Costs"
-msgstr ""
+msgstr "Chi phí Khác"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Payment Notes"
-msgstr ""
+msgstr "Ghi chú Thanh toán"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Payment Status"
-msgstr ""
+msgstr "Trạng thái Thanh toán"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Planned"
-msgstr ""
+msgstr "Kế hoạch"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Planned Qty"
-msgstr ""
+msgstr "Số lượng Kế hoạch"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Planned Qty:"
-msgstr ""
+msgstr "Số lượng Kế hoạch:"
 
 #. module: garment_production
 #: model:ir.actions.report,name:garment_production.action_bundle_qr_report
 msgid "Print Bundle Ticket"
-msgstr ""
+msgstr "In Phiếu Gói"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Process Cost"
-msgstr ""
+msgstr "Chi phí Quy trình"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_tree
 msgid "Process Price List"
-msgstr ""
+msgstr "Bảng giá Quy trình"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Process Requirements"
-msgstr ""
+msgstr "Yêu cầu Quy trình"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_process
 msgid "Processes"
-msgstr ""
+msgstr "Quy trình"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_lot_form
 msgid "Product Lot"
-msgstr ""
+msgstr "Lô Sản phẩm"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_product_lot
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_lot_tree
 msgid "Product Lots"
-msgstr ""
+msgstr "Lô Sản phẩm"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_form
 msgid "Product Style"
-msgstr ""
+msgstr "Kiểu Sản phẩm"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_product_style
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_tree
 msgid "Product Styles"
-msgstr ""
+msgstr "Kiểu Sản phẩm"
 
 #. module: garment_production
 #: model:ir.ui.menu,name:garment_production.menu_garment_production_root
 msgid "Production"
-msgstr ""
+msgstr "Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_approval_form
 msgid "Production Approval"
-msgstr ""
+msgstr "Phê duyệt Sản xuất"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_approval
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_approval_tree
 msgid "Production Approvals"
-msgstr ""
+msgstr "Phê duyệt Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
 msgid "Production Bundle"
-msgstr ""
+msgstr "Gói Sản xuất"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_bundle
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
 msgid "Production Bundles"
-msgstr ""
+msgstr "Gói Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_form
 msgid "Production Cost"
-msgstr ""
+msgstr "Chi phí Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_cost_tree
 msgid "Production Costs"
-msgstr ""
+msgstr "Chi phí Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Production Details"
-msgstr ""
+msgstr "Chi tiết Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_distribution_form
 msgid "Production Distribution"
-msgstr ""
+msgstr "Phân phối Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_distribution_tree
 msgid "Production Distributions"
-msgstr ""
+msgstr "Phân phối Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_form
 msgid "Production Material"
-msgstr ""
+msgstr "Nguyên liệu Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_material_tree
 msgid "Production Materials"
-msgstr ""
+msgstr "Nguyên liệu Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Production Order"
-msgstr ""
+msgstr "Đơn Sản xuất"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_orders
@@ -674,55 +687,55 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_product_style_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Production Orders"
-msgstr ""
+msgstr "Đơn Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_form
 msgid "Production Process"
-msgstr ""
+msgstr "Quy trình Sản xuất"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_progress
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Production Progress"
-msgstr ""
+msgstr "Tiến độ Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_form
 msgid "Production Progress Entry"
-msgstr ""
+msgstr "Nhập Tiến độ Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_progress_tree
 msgid "Production Step"
-msgstr ""
+msgstr "Bước Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Progress"
-msgstr ""
+msgstr "Tiến độ"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 msgid "Progress %"
-msgstr ""
+msgstr "Tiến độ %"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Progress Entries"
-msgstr ""
+msgstr "Nhập Tiến độ"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "QR Code"
-msgstr ""
+msgstr "Mã QR"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Quantities"
-msgstr ""
+msgstr "Số lượng"
 
 #. module: garment_production
 #. odoo-javascript
@@ -731,76 +744,76 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 #, python-format
 msgid "Quantity"
-msgstr ""
+msgstr "Số lượng"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Quantity List"
-msgstr ""
+msgstr "Danh sách Số lượng"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Quantity:"
-msgstr ""
+msgstr "Số lượng:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Refresh Quantities"
-msgstr ""
+msgstr "Làm mới Số lượng"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_salary_adjust_form
 msgid "Salary Adjustment"
-msgstr ""
+msgstr "Điều chỉnh Lương"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_salary_adjust
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_salary_adjust_tree
 msgid "Salary Adjustments"
-msgstr ""
+msgstr "Điều chỉnh Lương"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Sample"
-msgstr ""
+msgstr "Mẫu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Sample Information"
-msgstr ""
+msgstr "Thông tin Mẫu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Sample Name"
-msgstr ""
+msgstr "Tên Mẫu"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Sample:"
-msgstr ""
+msgstr "Mẫu:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 msgid "Scan for complete bundle details"
-msgstr ""
+msgstr "Quét để xem chi tiết gói"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Search Production Orders"
-msgstr ""
+msgstr "Tìm kiếm Đơn Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Select an existing order first"
-msgstr ""
+msgstr "Chọn đơn hàng hiện có trước"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Select order first to see available samples"
-msgstr ""
+msgstr "Chọn đơn hàng trước để xem mẫu có sẵn"
 
 #. module: garment_production
 #. odoo-javascript
@@ -808,56 +821,56 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #, python-format
 msgid "Size"
-msgstr ""
+msgstr "Kích cỡ"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_size_chart_tree
 msgid "Size Chart"
-msgstr ""
+msgstr "Biểu đồ Kích cỡ"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_size_chart_form
 msgid "Size Chart Entry"
-msgstr ""
+msgstr "Nhập Biểu đồ Kích cỡ"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_size_chart
 msgid "Size Charts"
-msgstr ""
+msgstr "Biểu đồ Kích cỡ"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.report_bundle_qr
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Size:"
-msgstr ""
+msgstr "Kích cỡ:"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Start Production"
-msgstr ""
+msgstr "Bắt đầu Sản xuất"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_tree
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Status"
-msgstr ""
+msgstr "Trạng thái"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_stock_production_inout_form
 msgid "Stock Movement"
-msgstr ""
+msgstr "Di chuyển Kho"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_stock_production_inout
 #: model_terms:ir.ui.view,arch_db:garment_production.view_stock_production_inout_tree
 msgid "Stock Movements"
-msgstr ""
+msgstr "Di chuyển Kho"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_search
 msgid "Style"
-msgstr ""
+msgstr "Kiểu"
 
 #. module: garment_production
 #. odoo-javascript
@@ -867,27 +880,27 @@ msgstr ""
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Success"
-msgstr ""
+msgstr "Thành công"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Template '%s' applied successfully!"
-msgstr ""
+msgstr "Áp dụng mẫu '%s' thành công!"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Template '%s' saved successfully!"
-msgstr ""
+msgstr "Lưu mẫu '%s' thành công!"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_line_form
 msgid "Ticket Printed"
-msgstr ""
+msgstr "Phiếu đã In"
 
 #. module: garment_production
 #. odoo-javascript
@@ -897,93 +910,93 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_process_tree
 #, python-format
 msgid "Total"
-msgstr ""
+msgstr "Tổng"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Total Cost"
-msgstr ""
+msgstr "Tổng Chi phí"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 msgid "Total Other Cost"
-msgstr ""
+msgstr "Tổng Chi phí Khác"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_tree_enhanced
 msgid "Total Quantity"
-msgstr ""
+msgstr "Tổng Số lượng"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Unknown error occurred"
-msgstr ""
+msgstr "Đã xảy ra lỗi không xác định"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "Update Finance Status"
-msgstr ""
+msgstr "Cập nhật Trạng thái Tài chính"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_finance_wizard_form
 msgid "Update To"
-msgstr ""
+msgstr "Cập nhật đến"
 
 #. module: garment_production
 #: model:ir.actions.report,name:garment_production.action_bundle_qr_report_html
 msgid "View Bundle Ticket"
-msgstr ""
+msgstr "Xem Phiếu Gói"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_form
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_bundle_tree
 msgid "View QR Ticket"
-msgstr ""
+msgstr "Xem Phiếu QR"
 
 #. module: garment_production
 #. odoo-javascript
 #: code:addons/garment_production/static/src/components/quantity_list_table/table.js:0
 #, python-format
 msgid "Warning"
-msgstr ""
+msgstr "Cảnh báo"
 
 #. module: garment_production
 #: model:ir.actions.act_window,name:garment_production.action_production_worker_entry
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_worker_entry_tree
 msgid "Worker Entries"
-msgstr ""
+msgstr "Nhập Công nhân"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_worker_entry_form
 msgid "Worker Entry"
-msgstr ""
+msgstr "Nhập Công nhân"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_kanban_enhanced
 msgid "pcs"
-msgstr ""
+msgstr "cái"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "✅ Mark Paid"
-msgstr ""
+msgstr "✅ Đánh dấu Đã thanh toán"
 
 #. module: garment_production
 #: model_terms:ir.ui.view,arch_db:garment_production.view_production_order_form_simple_finance
 msgid "💰 Update Finance"
-msgstr ""
+msgstr "💰 Cập nhật Tài chính"
 
 #. module: garment_production
 #: model:ir.actions.server,name:garment_production.action_bulk_download_qr
 msgid "📥 Download QR Tickets"
-msgstr ""
+msgstr "📥 Tải xuống Phiếu QR"
 
 #. module: garment_production
 #: model:ir.actions.server,name:garment_production.action_bulk_view_qr
 msgid "📱 View QR Tickets"
-msgstr ""
+msgstr "📱 Xem Phiếu QR"

@@ -39,19 +39,18 @@ class SampleCostSummaryTable extends Component {
                     sample_id: sampleId
                 });
                 if (data) {
+                    console.log(data);
                     // Update state with the fetched data
                     this.state.materialCostBudget = data.material_cost;
-                    this.state.materialCostActual = 0;
+                    this.state.materialCostActual = data.actual_material_cost;
                     this.state.processCostBudget = data.process_cost;
-                    this.state.processCostActual = 0;
                     this.state.otherCostBudget = data.other_cost;
-                    this.state.otherCostActual = 0;
                     this.state.quoteBudget = data.quotation;
                     this.state.quoteActual = data.actual_quotation;
 
                     // Calculate totals
                     this.state.totalCostBudget = this.state.materialCostBudget + this.state.processCostBudget + this.state.otherCostBudget;
-                    this.state.totalCostActual = this.state.materialCostActual + this.state.processCostActual + this.state.otherCostActual;
+                    this.state.totalCostActual = this.state.materialCostActual + this.state.processCostBudget + this.state.otherCostBudget;
 
                     // Calculate profits
                     this.state.profitBudget = this.state.quoteBudget - this.state.totalCostBudget;

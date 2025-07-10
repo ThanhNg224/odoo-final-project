@@ -39,7 +39,7 @@ export class ProgressDropDown extends Component {
         });
 
         onMounted(() => {
-            console.log("ProgressDropDown component mounted");
+            // console.log("ProgressDropDown component mounted");
             this.initializeData();
             this.loadApprovedSamples();
         });
@@ -65,7 +65,7 @@ export class ProgressDropDown extends Component {
     }
 
     handleSampleSelection() {
-        console.log("Sample selection changed:", this.state.selectedSampleId);
+        // console.log("Sample selection changed:", this.state.selectedSampleId);
         if (this.state.selectedSampleId) {
             this.loadSampleProgress(this.state.selectedSampleId);
         }

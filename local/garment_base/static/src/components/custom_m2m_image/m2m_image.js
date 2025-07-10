@@ -49,7 +49,6 @@ export class Many2ManyImage extends Component {
         const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
         // For uploaded files, check file.type, for existing records check mimetype
         const fileType = file.type || file.mimetype;
-        console.log('File type:', fileType, 'File:', file);
         
         // Additional check for file extension
         if (file.name) {

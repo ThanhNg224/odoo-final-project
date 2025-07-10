@@ -63,6 +63,7 @@
         ],
     },
     "demo": [
+        "data/demo_garment_inventory.xml",
         "data/demo_garment_sample.xml",
         "data/demo_garment_order.xml",
         "data/demo_orders.xml",

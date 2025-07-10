@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0+e-20231119\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-16 17:13+0000\n"
-"PO-Revision-Date: 2025-06-16 17:13+0000\n"
+"POT-Creation-Date: 2025-06-16 17:19+0000\n"
+"PO-Revision-Date: 2025-06-16 17:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,19 +21,19 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "Actions"
-msgstr ""
+msgstr "Thao tác"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Actual"
-msgstr ""
+msgstr "Thực tế"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__actual_quotation
 msgid "Actual Quotation"
-msgstr ""
+msgstr "Báo giá thực tế"
 
 #. module: garment_base
 #. odoo-javascript
@@ -41,35 +41,35 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/material_detail_table/table.xml:0
 #, python-format
 msgid "Add Column"
-msgstr ""
+msgstr "Thêm cột"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.xml:0
 #, python-format
 msgid "Add Material Issuance"
-msgstr ""
+msgstr "Thêm xuất vật tư"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
 #, python-format
 msgid "Add New Cost"
-msgstr ""
+msgstr "Thêm chi phí mới"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "Add Process"
-msgstr ""
+msgstr "Thêm quy trình"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Add Progress"
-msgstr ""
+msgstr "Thêm tiến độ"
 
 #. module: garment_base
 #. odoo-javascript
@@ -78,17 +78,17 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Add Row"
-msgstr ""
+msgstr "Thêm dòng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__all_samples
 msgid "All Samples"
-msgstr "Tất cả Mẫu"
+msgstr "Tất cả mẫu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_distribution__allocate_qty
 msgid "Allocated Quantity"
-msgstr ""
+msgstr "Số lượng phân bổ"
 
 #. module: garment_base
 #. odoo-javascript
@@ -97,69 +97,69 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_approval__amount
 #, python-format
 msgid "Amount"
-msgstr ""
+msgstr "Số tiền"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_finance_wizard__current_payment
 #: model:ir.model.fields,help:garment_base.field_production_order__payment_amount
 msgid "Amount received from customer"
-msgstr ""
+msgstr "Số tiền nhận từ khách hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__approval_date
 #: model:ir.model.fields,field_description:garment_base.field_production_approval__approval_date
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_approval__date
 msgid "Approval Date"
-msgstr ""
+msgstr "Ngày phê duyệt"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_approval_request
 msgid "Approval Request"
-msgstr ""
+msgstr "Yêu cầu phê duyệt"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Approve"
-msgstr ""
+msgstr "Phê duyệt"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__approved
 #: model:ir.model.fields,field_description:garment_base.field_production_approval__approved
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_approval__approved
 msgid "Approved"
-msgstr ""
+msgstr "Đã phê duyệt"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__approver
 msgid "Approver"
-msgstr ""
+msgstr "Người phê duyệt"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_distribution__method__auto
 msgid "Automatic"
-msgstr ""
+msgstr "Tự động"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__available_color_ids
 msgid "Available Colors"
-msgstr ""
+msgstr "Màu sắc có sẵn"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__available_sample_ids
 msgid "Available Samples"
-msgstr ""
+msgstr "Mẫu có sẵn"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__bed_number
 msgid "Bed Number"
-msgstr ""
+msgstr "Số giường"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__bonded
 msgid "Bonded"
-msgstr ""
+msgstr "Gia công"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__brand
@@ -170,22 +170,22 @@ msgstr "Thương hiệu"
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__quotation
 msgid "Budget Quotation"
-msgstr "Báo Giá"
+msgstr "Báo giá dự toán"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__bundle_id
 msgid "Bundle"
-msgstr ""
+msgstr "Kiện hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__bundle_no
 msgid "Bundle Number"
-msgstr ""
+msgstr "Số kiện hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__bundle_ids
 msgid "Bundles"
-msgstr ""
+msgstr "Các kiện hàng"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__in_progress
@@ -198,31 +198,31 @@ msgstr "Có thể sản xuất"
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__state__cancelled
 msgid "Cancelled"
-msgstr ""
+msgstr "Đã hủy"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Cannot delete protected columns"
-msgstr ""
+msgstr "Không thể xóa các cột được bảo vệ"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Category"
-msgstr ""
+msgstr "Danh mục"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_bundle__is_completed
 msgid "Check this when the bundle is completed"
-msgstr ""
+msgstr "Đánh dấu khi kiện hàng hoàn thành"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__client
@@ -235,7 +235,7 @@ msgstr "Khách hàng"
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_style__code
 msgid "Code"
-msgstr ""
+msgstr "Mã"
 
 #. module: garment_base
 #. odoo-python
@@ -249,95 +249,95 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__color
 #, python-format
 msgid "Color"
-msgstr "Màu"
+msgstr "Màu sắc"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Color *"
-msgstr ""
+msgstr "Màu sắc *"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__code
 msgid "Color Code"
-msgstr "Mã Màu"
+msgstr "Mã màu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__color_quantity_ids
 msgid "Color Quantities"
-msgstr ""
+msgstr "Số lượng theo màu"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Color is required for material receipt"
-msgstr ""
+msgstr "Màu sắc là bắt buộc cho phiếu nhập vật tư"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__column
 msgid "Column"
-msgstr ""
+msgstr "Cột"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__is_completed
 #: model:ir.model.fields,field_description:garment_base.field_production_order__completed_quantity
 msgid "Completed"
-msgstr ""
+msgstr "Hoàn thành"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__completed_qty
 msgid "Completed Quantity"
-msgstr ""
+msgstr "Số lượng hoàn thành"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Completed:"
-msgstr ""
+msgstr "Đã hoàn thành:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__completion_date
 msgid "Completion Date"
-msgstr ""
+msgstr "Ngày hoàn thành"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Confirm"
-msgstr ""
+msgstr "Xác nhận"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__state__confirmed
 msgid "Confirmed"
-msgstr ""
+msgstr "Đã xác nhận"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Contact Person:"
-msgstr ""
+msgstr "Người liên hệ:"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
 #, python-format
 msgid "Cost Name"
-msgstr ""
+msgstr "Tên chi phí"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_cost__cost_type
 msgid "Cost Type"
-msgstr ""
+msgstr "Loại chi phí"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__cost_ids
 msgid "Costs"
-msgstr ""
+msgstr "Chi phí"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__create_uid
@@ -374,7 +374,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__create_uid
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__create_uid
 msgid "Created by"
-msgstr "Tạo bởi"
+msgstr "Được tạo bởi"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__create_date
@@ -411,7 +411,7 @@ msgstr "Tạo bởi"
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__create_date
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__create_date
 msgid "Created on"
-msgstr "Ngày Tạo"
+msgstr "Được tạo vào"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__currency_id
@@ -419,43 +419,43 @@ msgstr "Ngày Tạo"
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__currency_id
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__currency_id
 msgid "Currency"
-msgstr ""
+msgstr "Tiền tệ"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__current_payment
 msgid "Current Payment"
-msgstr ""
+msgstr "Thanh toán hiện tại"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__current_finance_state
 msgid "Current Status"
-msgstr ""
+msgstr "Trạng thái hiện tại"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Customer:"
-msgstr ""
+msgstr "Khách hàng:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__cutting_date
 msgid "Cutting Date"
-msgstr "Ngày Cắt Vải"
+msgstr "Ngày cắt"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__date
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__date
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__date
 msgid "Date"
-msgstr ""
+msgstr "Ngày"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Defect:"
-msgstr ""
+msgstr "Lỗi:"
 
 #. module: garment_base
 #. odoo-javascript
@@ -463,7 +463,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__defective_quantity
 #, python-format
 msgid "Defective Quantity"
-msgstr ""
+msgstr "Số lượng lỗi"
 
 #. module: garment_base
 #. odoo-javascript
@@ -475,19 +475,19 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Delivery Address:"
-msgstr ""
+msgstr "Địa chỉ giao hàng:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__delivery_date
 msgid "Delivery Date"
-msgstr ""
+msgstr "Ngày giao hàng"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_department
@@ -495,19 +495,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__department_id
 #: model:ir.model.fields,field_description:garment_base.field_production_order__department
 msgid "Department"
-msgstr "Bộ Phận"
+msgstr "Phòng ban"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_department__name
 msgid "Department Name"
-msgstr "Tên Bộ Phận"
+msgstr "Tên phòng ban"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Department:"
-msgstr ""
+msgstr "Phòng ban:"
 
 #. module: garment_base
 #. odoo-python
@@ -516,24 +516,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_product_style__description
 #, python-format
 msgid "Description"
-msgstr ""
+msgstr "Mô tả"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__designer
 #: model:ir.model.fields,field_description:garment_base.field_production_order__designer
 msgid "Designer"
-msgstr "Người thiết kế"
+msgstr "Nhà thiết kế"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__development_date
 #: model:ir.model.fields,field_description:garment_base.field_production_order__development_date
 msgid "Development Date"
-msgstr "Ngày Phát Triển"
+msgstr "Ngày phát triển"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__direction
 msgid "Direction"
-msgstr ""
+msgstr "Hướng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__display_name
@@ -570,33 +570,33 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__display_name
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__display_name
 msgid "Display Name"
-msgstr "Tên Hiển Thị"
+msgstr "Tên hiển thị"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_distribution__method
 msgid "Distribution Method"
-msgstr ""
+msgstr "Phương thức phân phối"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__distribution_ids
 msgid "Distributions"
-msgstr ""
+msgstr "Phân phối"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__state__done
 msgid "Done"
-msgstr ""
+msgstr "Hoàn thành"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__done_qty
 msgid "Done Quantity"
-msgstr ""
+msgstr "Số lượng hoàn thành"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__state__draft
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Nháp"
 
 #. module: garment_base
 #. odoo-javascript
@@ -606,13 +606,15 @@ msgid ""
 "Drag & Drop\n"
 "or click to upload"
 msgstr ""
+"Kéo & Thả\n"
+"hoặc click để tải lên"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Edit"
-msgstr ""
+msgstr "Chỉnh sửa"
 
 #. module: garment_base
 #. odoo-python
@@ -621,12 +623,12 @@ msgstr ""
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__eliminated
 #, python-format
 msgid "Eliminated"
-msgstr "Đã Loại Bỏ"
+msgstr "Đã loại bỏ"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__employee_id
 msgid "Employee"
-msgstr ""
+msgstr "Nhân viên"
 
 #. module: garment_base
 #. odoo-javascript
@@ -634,27 +636,28 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "End Date:"
-msgstr ""
+msgstr "Ngày kết thúc:"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Enter receiving company"
-msgstr ""
+msgstr "Nhập công ty nhận hàng"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Enter remark"
-msgstr ""
+msgstr "Nhập ghi chú"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
 #: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
 #: code:addons/garment_base/static/src/components/finished_product_size_table/table.js:0
+#: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
@@ -675,54 +678,54 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_error_template
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Lỗi"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.js:0
 #, python-format
 msgid "Error loading sample progress"
-msgstr ""
+msgstr "Lỗi khi tải tiến độ mẫu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Error loading template"
-msgstr ""
+msgstr "Lỗi khi tải mẫu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Error loading templates"
-msgstr ""
+msgstr "Lỗi khi tải các mẫu"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Error processing material inventory: %s"
-msgstr ""
+msgstr "Lỗi khi xử lý kho vật tư: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Error saving template"
-msgstr ""
+msgstr "Lỗi khi lưu mẫu"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Expected Delivery Date:"
-msgstr ""
+msgstr "Ngày giao hàng dự kiến:"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__export_tax
 msgid "Export Tax"
-msgstr ""
+msgstr "Thuế xuất khẩu"
 
 #. module: garment_base
 #. odoo-javascript
@@ -733,49 +736,49 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Failed to apply template: %s"
-msgstr ""
+msgstr "Áp dụng mẫu không thành công: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Failed to create material issuance record. Please try again."
-msgstr ""
+msgstr "Tạo bản ghi xuất vật tư không thành công. Vui lòng thử lại."
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.js:0
 #, python-format
 msgid "Failed to create material issuance record: %s"
-msgstr ""
+msgstr "Tạo bản ghi xuất vật tư không thành công: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to fetch material details"
-msgstr ""
+msgstr "Lấy thông tin chi tiết vật tư không thành công"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to load colors"
-msgstr ""
+msgstr "Tải màu sắc không thành công"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to load materials"
-msgstr ""
+msgstr "Tải vật tư không thành công"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Failed to load materials. Please try again."
-msgstr ""
+msgstr "Tải vật tư không thành công. Vui lòng thử lại."
 
 #. module: garment_base
 #. odoo-javascript
@@ -786,14 +789,14 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Failed to load templates: %s"
-msgstr ""
+msgstr "Tải mẫu không thành công: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Failed to save template"
-msgstr ""
+msgstr "Lưu mẫu không thành công"
 
 #. module: garment_base
 #. odoo-javascript
@@ -804,78 +807,78 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Failed to save template: %s"
-msgstr ""
+msgstr "Lưu mẫu không thành công: %s"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Failed to update color"
-msgstr ""
+msgstr "Cập nhật màu sắc không thành công"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Fall"
-msgstr ""
+msgstr "Mùa thu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__finance_approval_date
 msgid "Finance Approval Date"
-msgstr ""
+msgstr "Ngày phê duyệt tài chính"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__finance_approved_by
 msgid "Finance Approved By"
-msgstr ""
+msgstr "Được phê duyệt bởi (Tài chính)"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__finance_state
 #: model:ir.model.fields,field_description:garment_base.field_production_order__finance_state
 msgid "Finance Status"
-msgstr ""
+msgstr "Trạng thái tài chính"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_finished_product_size
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__finished_product_size
 msgid "Finished Product Size"
-msgstr "Kích Thước Thành Phẩm"
+msgstr "Kích thước sản phẩm hoàn thiện"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__from_type
 msgid "From Type"
-msgstr ""
+msgstr "Từ loại"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_finance_wizard__finance_state__paid
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__finance_state__paid
 msgid "Fully Paid"
-msgstr ""
+msgstr "Đã thanh toán đầy đủ"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_order
 msgid "Garment Order"
-msgstr "Đơn Hàng May Mặc"
+msgstr "Đơn hàng may mặc"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Garment Orders"
-msgstr ""
+msgstr "Các đơn hàng may mặc"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_sample
 msgid "Garment Sample"
-msgstr "Mẫu May Mặc"
+msgstr "Mẫu may mặc"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Garment Samples"
-msgstr ""
+msgstr "Các mẫu may mặc"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__id
@@ -912,48 +915,48 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__id
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_garment_receipt_line__item_id
 msgid "ID of the related item (e.g., sample ID, order ID, production ID)"
-msgstr ""
+msgstr "ID của mục liên quan (ví dụ: ID mẫu, ID đơn hàng, ID sản xuất)"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample_image__image
 msgid "Image"
-msgstr ""
+msgstr "Hình ảnh"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__image_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__image_details
 msgid "Image Details"
-msgstr "Chi Tiết Hình Ảnh"
+msgstr "Chi tiết hình ảnh"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__type__in
 #: model:ir.model.fields.selection,name:garment_base.selection__stock_production_inout__direction__in
 msgid "In"
-msgstr ""
+msgstr "Nhập"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "In Charge:"
-msgstr ""
+msgstr "Phụ trách:"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__state__in_progress
 msgid "In Progress"
-msgstr ""
+msgstr "Đang tiến hành"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Insufficient material quantity. Available: %s, Required: %s"
-msgstr ""
+msgstr "Không đủ số lượng nguyên liệu. Có sẵn: %s, Yêu cầu: %s"
 
 #. module: garment_base
 #. odoo-javascript
@@ -962,89 +965,89 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Invalid file type"
-msgstr ""
+msgstr "Loại tệp không hợp lệ"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Invalid template data format"
-msgstr ""
+msgstr "Định dạng dữ liệu mẫu không hợp lệ"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_inventory_color
 msgid "Inventory Color"
-msgstr "Dữ liệu Màu"
+msgstr "Màu sắc tồn kho"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__inventory_location
 msgid "Inventory Location"
-msgstr ""
+msgstr "Vị trí tồn kho"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_inventory_material
 msgid "Inventory Material"
-msgstr "Dữ liệu Vật liệu"
+msgstr "Nguyên liệu tồn kho"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_inventory_material_color_quantity
 msgid "Inventory Material Color Quantity"
-msgstr ""
+msgstr "Số lượng màu nguyên liệu tồn kho"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_receipt_line
 msgid "Inventory Receipt Line"
-msgstr ""
+msgstr "Dòng nhập kho"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__is_stored
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__is_stored
 #: model:ir.model.fields,field_description:garment_base.field_production_order__is_stored
 msgid "Is Stored"
-msgstr ""
+msgstr "Đã lưu trữ"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__is_waiting_for_approval
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__is_waiting_for_approval
 msgid "Is Waiting for Approval"
-msgstr ""
+msgstr "Đang chờ phê duyệt"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_company
 msgid "Issuing Company"
-msgstr "Công Ty Phát Hành"
+msgstr "Công ty phát hành"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_company_phone
 msgid "Issuing Company Phone"
-msgstr "Số Điện Thoại"
+msgstr "Điện thoại công ty phát hành"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__issuing_date
 msgid "Issuing Date"
-msgstr "Ngày Phát Hành"
+msgstr "Ngày phát hành"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Item Code"
-msgstr ""
+msgstr "Mã sản phẩm"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__item_id
 msgid "Item ID"
-msgstr ""
+msgstr "ID sản phẩm"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__item_number
 msgid "Item Number"
-msgstr ""
+msgstr "Số sản phẩm"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__item_type
 msgid "Item Type"
-msgstr ""
+msgstr "Loại sản phẩm"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__write_uid
@@ -1081,7 +1084,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__write_uid
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__write_uid
 msgid "Last Updated by"
-msgstr "Cập Nhật Gần Nhất Bởi"
+msgstr "Cập nhật lần cuối bởi"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_approval_request__write_date
@@ -1118,32 +1121,69 @@ msgstr "Cập Nhật Gần Nhất Bởi"
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__write_date
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__write_date
 msgid "Last Updated on"
-msgstr "Cập Nhật Gần Nhất Vào"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: garment_base
+#: model:ir.model.fields,field_description:garment_base.field_approval_request__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_department__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_color__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_order__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_other_cost__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_process_table__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_progress_template__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_sample_image__write_date
+#: model:ir.model.fields,field_description:garment_base.field_garment_specification_detail__write_date
+#: model:ir.model.fields,field_description:garment_base.field_operation_price__write_date
+#: model:ir.model.fields,field_description:garment_base.field_product_lot__write_date
+#: model:ir.model.fields,field_description:garment_base.field_product_style__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_approval__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_bundle__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_cost__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_distribution__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_finance_approval__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_material__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_order__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_order_line__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_process__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_progress__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_size_chart__write_date
+#: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__write_date
+#: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__line_count
 msgid "Line Count"
-msgstr ""
+msgstr "Số lượng dòng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__location
 msgid "Location"
-msgstr ""
+msgstr "Vị trí"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_lot__lot_code
 msgid "Lot Code"
-msgstr ""
+msgstr "Mã lô"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__management
 msgid "Management"
-msgstr ""
+msgstr "Quản lý"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_distribution__method__manual
 msgid "Manual"
-msgstr ""
+msgstr "Thủ công"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__material_id
@@ -1152,43 +1192,43 @@ msgstr ""
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__material
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__material
 msgid "Material"
-msgstr ""
+msgstr "Nguyên liệu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Material *"
-msgstr ""
+msgstr "Nguyên liệu *"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__code
 msgid "Material Code"
-msgstr "Mã Vật Liệu"
+msgstr "Mã nguyên liệu"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__material_cost
 msgid "Material Cost (Invalid)"
-msgstr ""
+msgstr "Chi phí nguyên liệu (Không hợp lệ)"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_material_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__material_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__material_detail
 msgid "Material Detail"
-msgstr "Chi Tiết Vật Liệu"
+msgstr "Chi tiết nguyên liệu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_detail_table/table.js:0
 #, python-format
 msgid "Material Detail Table"
-msgstr ""
+msgstr "Bảng chi tiết nguyên liệu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__image
 msgid "Material Image"
-msgstr ""
+msgstr "Hình ảnh nguyên liệu"
 
 #. module: garment_base
 #. odoo-python
@@ -1198,55 +1238,55 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_material__name
 #, python-format
 msgid "Material Name"
-msgstr "Tên Vật Liệu"
+msgstr "Tên nguyên liệu"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Material and color must exist for material outgoing"
-msgstr ""
+msgstr "Nguyên liệu và màu sắc phải tồn tại để xuất nguyên liệu"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Material is required for material receipt"
-msgstr ""
+msgstr "Nguyên liệu là bắt buộc để nhập nguyên liệu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.js:0
 #, python-format
 msgid "Material issuance record created successfully"
-msgstr ""
+msgstr "Đã tạo bản ghi xuất nguyên liệu thành công"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Material with specified color does not exist in inventory"
-msgstr ""
+msgstr "Nguyên liệu với màu sắc chỉ định không tồn tại trong kho"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__material_ids
 msgid "Materials"
-msgstr ""
+msgstr "Nguyên vật liệu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__method
 msgid "Method"
-msgstr ""
+msgstr "Phương pháp"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__misc_fees
 msgid "Misc Fees"
-msgstr ""
+msgstr "Phí khác"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__month
 msgid "Month"
-msgstr ""
+msgstr "Tháng"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1254,7 +1294,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_process__multiplier
 #, python-format
 msgid "Multiplier"
-msgstr ""
+msgstr "Hệ số nhân"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1273,62 +1313,62 @@ msgstr "Tên"
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__new_amount
 msgid "New Amount"
-msgstr ""
+msgstr "Số tiền mới"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "New Development"
-msgstr ""
+msgstr "Phát triển mới"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_order__state__new
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_sample__state__new
 msgid "New development"
-msgstr "Phát triển mới, chờ phê duyệt"
+msgstr "Phát triển mới"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/other_cost_table/table.xml:0
 #, python-format
 msgid "No cost data available."
-msgstr ""
+msgstr "Không có dữ liệu chi phí."
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "No process data available. Let's start creating a process."
-msgstr ""
+msgstr "Không có dữ liệu quy trình. Hãy bắt đầu tạo một quy trình."
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "No progress data available"
-msgstr ""
+msgstr "Không có dữ liệu tiến độ"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "No progress data to save"
-msgstr ""
+msgstr "Không có dữ liệu tiến độ để lưu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.js:0
 #, python-format
 msgid "No progress detail found in the selected sample"
-msgstr ""
+msgstr "Không tìm thấy chi tiết tiến độ trong mẫu đã chọn"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "No templates available"
-msgstr ""
+msgstr "Không có mẫu nào"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1339,7 +1379,7 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "No templates found"
-msgstr ""
+msgstr "Không tìm thấy mẫu"
 
 #. module: garment_base
 #. odoo-python
@@ -1347,7 +1387,7 @@ msgstr ""
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "No."
-msgstr ""
+msgstr "Số"
 
 #. module: garment_base
 #. odoo-python
@@ -1361,343 +1401,343 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__note
 #, python-format
 msgid "Note"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Note:"
-msgstr ""
+msgstr "Ghi chú:"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.xml:0
 #, python-format
 msgid "Notes"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_finance_wizard__payment_notes
 msgid "Notes about payments"
-msgstr ""
+msgstr "Ghi chú về thanh toán"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_order__payment_notes
 msgid "Notes about payments received"
-msgstr ""
+msgstr "Ghi chú về các khoản thanh toán đã nhận"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__process_count
 msgid "Number of Processes"
-msgstr ""
+msgstr "Số lượng quy trình"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__old_amount
 msgid "Old Amount"
-msgstr ""
+msgstr "Số tiền cũ"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Only image files (JPEG, JPG, PNG, GIF, WEBP) are allowed."
-msgstr ""
+msgstr "Chỉ chấp nhận file ảnh (JPEG, JPG, PNG, GIF, WEBP)."
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Only image files are allowed."
-msgstr ""
+msgstr "Chỉ chấp nhận file ảnh."
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__operation_id
 msgid "Operation"
-msgstr ""
+msgstr "Thao tác"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_operation_price__operation_name
 msgid "Operation Name"
-msgstr ""
+msgstr "Tên thao tác"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_operation_price
 msgid "Operation Price"
-msgstr ""
+msgstr "Giá thao tác"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__order
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__order
 msgid "Order"
-msgstr ""
+msgstr "Đơn hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__code
 msgid "Order Code"
-msgstr ""
+msgstr "Mã đơn hàng"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order Code:"
-msgstr ""
+msgstr "Mã đơn hàng:"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order Date:"
-msgstr ""
+msgstr "Ngày đặt hàng:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__order_line_id
 msgid "Order Line"
-msgstr ""
+msgstr "Dòng đơn hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__line_ids
 msgid "Order Lines"
-msgstr ""
+msgstr "Các dòng đơn hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__name
 #: model:ir.model.fields,field_description:garment_base.field_production_order__order_name
 msgid "Order Name"
-msgstr "Tên Đơn Hàng"
+msgstr "Tên đơn hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__order_number
 msgid "Order Number"
-msgstr ""
+msgstr "Số đơn hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__name
 msgid "Order Reference"
-msgstr ""
+msgstr "Tham chiếu đơn hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__order_total
 msgid "Order Total"
-msgstr ""
+msgstr "Tổng đơn hàng"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order is already in stock."
-msgstr ""
+msgstr "Đơn hàng đã có sẵn trong kho."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Order is not in stock."
-msgstr ""
+msgstr "Đơn hàng không có sẵn trong kho."
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__other
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__other
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__other
 msgid "Other"
-msgstr ""
+msgstr "Khác"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_other_cost
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__other_cost
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__other_cost
 msgid "Other Costs"
-msgstr "Chi Phí Khác"
+msgstr "Chi phí khác"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__type__out
 #: model:ir.model.fields.selection,name:garment_base.selection__stock_production_inout__direction__out
 msgid "Out"
-msgstr ""
+msgstr "Xuất"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__output_qty
 msgid "Output Quantity"
-msgstr ""
+msgstr "Số lượng đầu ra"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_finance_wizard__finance_state__partial
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__finance_state__partial
 msgid "Partial Payment"
-msgstr ""
+msgstr "Thanh toán một phần"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_drafter
 msgid "Pattern Drafter"
-msgstr "Người Thiết Kế Rập"
+msgstr "Người phác thảo mẫu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_maker
 msgid "Pattern Maker"
-msgstr "Người Làm Rập"
+msgstr "Người tạo mẫu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__pattern_size
 msgid "Pattern Size"
-msgstr "Kích Thước Rập"
+msgstr "Kích thước mẫu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__payment_notes
 #: model:ir.model.fields,field_description:garment_base.field_production_order__payment_notes
 msgid "Payment Notes"
-msgstr ""
+msgstr "Ghi chú thanh toán"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_finance_wizard__payment_amount
 #: model:ir.model.fields,field_description:garment_base.field_production_order__payment_amount
 msgid "Payment Received"
-msgstr ""
+msgstr "Số tiền đã nhận"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__phone_number
 msgid "Phone Number"
-msgstr "Số Điện Thoại"
+msgstr "Số điện thoại"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Phone Number:"
-msgstr ""
+msgstr "Số điện thoại:"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Plan"
-msgstr ""
+msgstr "Kế hoạch"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__planned_date
 msgid "Planned Date"
-msgstr ""
+msgstr "Ngày dự kiến"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__planned_qty
 msgid "Planned Quantity"
-msgstr ""
+msgstr "Số lượng dự kiến"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_error_template
 msgid "Please scan a valid QR code or contact the administrator."
-msgstr ""
+msgstr "Vui lòng quét mã QR hợp lệ hoặc liên hệ quản trị viên."
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Please select a color"
-msgstr ""
+msgstr "Vui lòng chọn màu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Please select a material"
-msgstr ""
+msgstr "Vui lòng chọn vật liệu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__price_policy_id
 msgid "Price Policy"
-msgstr ""
+msgstr "Chính sách giá"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__process_cost
 msgid "Process Cost (Invalid)"
-msgstr ""
+msgstr "Chi phí quy trình (Không hợp lệ)"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_process__name
 msgid "Process Name"
-msgstr ""
+msgstr "Tên quy trình"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__process_requirements
 msgid "Process Requirements"
-msgstr ""
+msgstr "Yêu cầu quy trình"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_process_table
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__process_table
 msgid "Process Table"
-msgstr "Bảng Quy Trình"
+msgstr "Bảng quy trình"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__process_ids
 msgid "Processes"
-msgstr ""
+msgstr "Các quy trình"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__image
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_info_template
 msgid "Product Image"
-msgstr ""
+msgstr "Hình ảnh sản phẩm"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Product List:"
-msgstr ""
+msgstr "Danh sách sản phẩm:"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_product_lot
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__lot_id
 msgid "Product Lot"
-msgstr ""
+msgstr "Lô sản phẩm"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_product_style
 #: model:ir.model.fields,field_description:garment_base.field_production_order__style_id
 msgid "Product Style"
-msgstr ""
+msgstr "Kiểu sản phẩm"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__production
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__production
 msgid "Production"
-msgstr ""
+msgstr "Sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_approval
 msgid "Production Approval"
-msgstr ""
+msgstr "Phê duyệt sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_bundle
 msgid "Production Bundle"
-msgstr ""
+msgstr "Gói sản xuất"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__code
 msgid "Production Code"
-msgstr ""
+msgstr "Mã sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_cost
 msgid "Production Cost"
-msgstr ""
+msgstr "Chi phí sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_distribution
 msgid "Production Distribution"
-msgstr ""
+msgstr "Phân phối sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_finance_approval
 msgid "Production Finance Approval"
-msgstr ""
+msgstr "Phê duyệt tài chính sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_material
 msgid "Production Material"
-msgstr ""
+msgstr "Vật liệu sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_order
@@ -1715,105 +1755,105 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__order_id
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__order_id
 msgid "Production Order"
-msgstr ""
+msgstr "Đơn đặt hàng sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_order_line
 msgid "Production Order Line"
-msgstr ""
+msgstr "Dòng đơn đặt hàng sản xuất"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_operation_price__order_ids
 #: model:ir.model.fields,field_description:garment_base.field_product_style__order_ids
 msgid "Production Orders"
-msgstr ""
+msgstr "Các đơn đặt hàng sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_process
 msgid "Production Process"
-msgstr ""
+msgstr "Quy trình sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_progress
 msgid "Production Progress"
-msgstr ""
+msgstr "Tiến độ sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_salary_adjust
 msgid "Production Salary Adjustment"
-msgstr ""
+msgstr "Điều chỉnh lương sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_size_chart
 msgid "Production Size Chart"
-msgstr ""
+msgstr "Biểu đồ kích cỡ sản xuất"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_worker_entry
 msgid "Production Worker Entry"
-msgstr ""
+msgstr "Nhập liệu công nhân sản xuất"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__progress_percentage
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__progress
 msgid "Progress %"
-msgstr ""
+msgstr "Tiến độ %"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__progress_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__progress_detail
 msgid "Progress Detail"
-msgstr "Chi Tiết Tiến Độ"
+msgstr "Chi tiết tiến độ"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__progress_ids
 msgid "Progress Entries"
-msgstr ""
+msgstr "Các mục tiến độ"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_progress_template
 msgid "Progress Template"
-msgstr "Mẫu Tiến Độ"
+msgstr "Mẫu tiến độ"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Progress deleted successfully"
-msgstr ""
+msgstr "Xóa tiến độ thành công"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Progress updated successfully"
-msgstr ""
+msgstr "Cập nhật tiến độ thành công"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__publish_date
 msgid "Publish Date"
-msgstr ""
+msgstr "Ngày xuất bản"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__published_by
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__published_by
 msgid "Published By"
-msgstr "Người Đăng"
+msgstr "Được xuất bản bởi"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__publisher
 msgid "Publisher"
-msgstr ""
+msgstr "Nhà xuất bản"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "QR Code"
-msgstr ""
+msgstr "Mã QR"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "QR URL:"
-msgstr ""
+msgstr "URL mã QR:"
 
 #. module: garment_base
 #. odoo-python
@@ -1827,55 +1867,55 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_stock_production_inout__qty
 #, python-format
 msgid "Quantity"
-msgstr "Số Lượng"
+msgstr "Số lượng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__quantity_available
 msgid "Quantity Available"
-msgstr ""
+msgstr "Số lượng có sẵn"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__quantity_reserved
 msgid "Quantity Reserved"
-msgstr ""
+msgstr "Số lượng đã đặt trước"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material_color_quantity__quantity_on_hand
 msgid "Quantity on Hand"
-msgstr ""
+msgstr "Số lượng tồn kho"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Quantity:"
-msgstr ""
+msgstr "Số lượng:"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Ready for Production"
-msgstr ""
+msgstr "Sẵn sàng cho sản xuất"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_salary_adjust__reason
 msgid "Reason"
-msgstr ""
+msgstr "Lý do"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
-msgid "Receipt line \"%s\" has been successfully cancelled."
-msgstr ""
+msgid "Receipt line "%s" has been successfully cancelled."
+msgstr "Dòng nhập kho "%s" đã được hủy thành công."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
-msgid "Receipt line \"%s\" has been successfully confirmed."
-msgstr ""
+msgid "Receipt line "%s" has been successfully confirmed."
+msgstr "Dòng nhập kho "%s" đã được xác nhận thành công."
 
 #. module: garment_base
 #. odoo-javascript
@@ -1884,46 +1924,46 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__receiving_company
 #, python-format
 msgid "Receiving Company"
-msgstr "Công Ty Nhận"
+msgstr "Công ty nhận hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__receiving_company_phone
 msgid "Receiving Company Phone"
-msgstr "Số Điện Thoại"
+msgstr "Số điện thoại công ty nhận hàng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__receiving_date
 msgid "Receiving Date"
-msgstr "Ngày Nhận"
+msgstr "Ngày nhận hàng"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Reject"
-msgstr ""
+msgstr "Từ chối"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__related_document
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__related_document
 msgid "Related Documents"
-msgstr "Tài Liệu Liên Quan"
+msgstr "Tài liệu liên quan"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__material_issuance_ids
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__material_issuance_ids
 msgid "Related Material Issuances"
-msgstr ""
+msgstr "Các lần xuất vật tư liên quan"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__order_ids
 msgid "Related Orders"
-msgstr ""
+msgstr "Đơn hàng liên quan"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__production_ids
 msgid "Related Productions"
-msgstr ""
+msgstr "Sản xuất liên quan"
 
 #. module: garment_base
 #. odoo-javascript
@@ -1932,38 +1972,38 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__remark
 #, python-format
 msgid "Remark"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__remarks
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__remark
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__remark
 msgid "Remarks"
-msgstr "Ghi Chú"
+msgstr "Ghi chú"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Reserved quantity cannot be greater than quantity on hand."
-msgstr ""
+msgstr "Số lượng đặt trước không thể lớn hơn số lượng tồn kho."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Responsible Staff:"
-msgstr ""
+msgstr "Nhân viên phụ trách:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__row_number
 msgid "Row Number"
-msgstr ""
+msgstr "Số thứ tự dòng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__salary_month
 msgid "Salary Month"
-msgstr ""
+msgstr "Tháng tính lương"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample_image__sample_id
@@ -1972,7 +2012,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__from_type__sample
 #: model:ir.model.fields.selection,name:garment_base.selection__garment_receipt_line__item_type__sample
 msgid "Sample"
-msgstr ""
+msgstr "Mẫu"
 
 #. module: garment_base
 #. odoo-python
@@ -1981,12 +2021,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order__sample_code
 #, python-format
 msgid "Sample Code"
-msgstr ""
+msgstr "Mã mẫu"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_sample_image
 msgid "Sample Image"
-msgstr ""
+msgstr "Hình ảnh mẫu"
 
 #. module: garment_base
 #. odoo-python
@@ -1996,33 +2036,33 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__sample_name
 #, python-format
 msgid "Sample Name"
-msgstr ""
+msgstr "Tên mẫu"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Sample is already in stock."
-msgstr ""
+msgstr "Mẫu đã có sẵn trong kho."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Sample is not in stock."
-msgstr ""
+msgstr "Mẫu không có sẵn trong kho."
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__sample_ids
 msgid "Samples"
-msgstr ""
+msgstr "Các mẫu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Save Progress"
-msgstr ""
+msgstr "Lưu tiến độ"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2033,29 +2073,29 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Save Template"
-msgstr ""
+msgstr "Lưu mẫu"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "Scan this QR code to view details"
-msgstr ""
+msgstr "Quét mã QR này để xem chi tiết"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_info_template
 msgid "Scanned from QR Code"
-msgstr ""
+msgstr "Đã quét từ mã QR"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_style__season
 msgid "Season"
-msgstr ""
+msgstr "Mùa"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.xml:0
 #, python-format
 msgid "Select Approved Sample:"
-msgstr ""
+msgstr "Chọn mẫu đã được phê duyệt:"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2063,7 +2103,7 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Select Color"
-msgstr ""
+msgstr "Chọn màu"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2071,19 +2111,19 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Select Material"
-msgstr ""
+msgstr "Chọn vật liệu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_dropdown_from_model/table.xml:0
 #, python-format
 msgid "Select a sample..."
-msgstr ""
+msgstr "Chọn một mẫu..."
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_process__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Trình tự"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2091,29 +2131,29 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__serial_number
 #, python-format
 msgid "Serial Number"
-msgstr ""
+msgstr "Số seri"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__shape
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__shape
 #: model:ir.model.fields,field_description:garment_base.field_product_style__shape
 msgid "Shape"
-msgstr "Hình Dáng"
+msgstr "Hình dáng"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__shipping
 msgid "Shipping"
-msgstr ""
+msgstr "Vận chuyển"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__shipping_date
 msgid "Shipping Date"
-msgstr ""
+msgstr "Ngày vận chuyển"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__single_piece_qty
 msgid "Single Piece Quantity"
-msgstr ""
+msgstr "Số lượng từng chiếc"
 
 #. module: garment_base
 #. odoo-python
@@ -2122,12 +2162,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__size
 #, python-format
 msgid "Size"
-msgstr ""
+msgstr "Kích cỡ"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__image
 msgid "Size Chart Image"
-msgstr ""
+msgstr "Hình ảnh bảng kích cỡ"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2136,7 +2176,7 @@ msgstr ""
 msgid ""
 "Some files were skipped. Only image files (JPEG, JPG, PNG, GIF, WEBP) are "
 "allowed."
-msgstr ""
+msgstr "Một số tệp đã bị bỏ qua. Chỉ chấp nhận tệp hình ảnh (JPEG, JPG, PNG, GIF, WEBP)."
 
 #. module: garment_base
 #. odoo-python
@@ -2145,27 +2185,27 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_material__specification
 #, python-format
 msgid "Specification"
-msgstr ""
+msgstr "Thông số kỹ thuật"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_garment_specification_detail
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__specification_detail
 msgid "Specification Detail"
-msgstr "Chi Tiết Thông Số"
+msgstr "Chi tiết thông số"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Specification Detail Table"
-msgstr ""
+msgstr "Bảng chi tiết thông số"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Spring"
-msgstr ""
+msgstr "Mùa xuân"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2173,7 +2213,7 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Start Date:"
-msgstr ""
+msgstr "Ngày bắt đầu:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__state
@@ -2182,76 +2222,76 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order__state
 #: model:ir.model.fields,field_description:garment_base.field_production_order_line__completion_status
 msgid "Status"
-msgstr "Trạng Thái"
+msgstr "Trạng thái"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Status:"
-msgstr ""
+msgstr "Trạng thái:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_progress__step_name
 msgid "Step Name"
-msgstr ""
+msgstr "Tên bước"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_lot__inout_ids
 msgid "Stock Movements"
-msgstr ""
+msgstr "Di chuyển kho"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_stock_production_inout
 msgid "Stock Production In/Out"
-msgstr ""
+msgstr "Nhập/Xuất kho sản xuất"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
-msgid "Stock in order \"%s\" request has been successfully sent."
-msgstr ""
+msgid "Stock in order "%s" request has been successfully sent."
+msgstr "Yêu cầu nhập kho cho đơn hàng "%s" đã được gửi thành công."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
-msgid "Stock in sample \"%s\" request has been successfully sent."
-msgstr ""
+msgid "Stock in sample "%s" request has been successfully sent."
+msgstr "Yêu cầu nhập kho mẫu "%s" đã được gửi thành công."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
-msgid "Stock out order \"%s\" request has been successfully sent."
-msgstr ""
+msgid "Stock out order "%s" request has been successfully sent."
+msgstr "Yêu cầu xuất kho cho đơn hàng "%s" đã được gửi thành công."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
-msgid "Stock out sample \"%s\" request has been successfully sent."
-msgstr ""
+msgid "Stock out sample "%s" request has been successfully sent."
+msgstr "Yêu cầu xuất mẫu "%s" đã được gửi thành công."
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Stored Orders"
-msgstr ""
+msgstr "Đơn hàng đã lưu"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Stored Samples"
-msgstr ""
+msgstr "Mẫu đã lưu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_product_style__image
 msgid "Style Image"
-msgstr ""
+msgstr "Hình ảnh kiểu dáng"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2274,36 +2314,36 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Success"
-msgstr ""
+msgstr "Thành công"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Sum"
-msgstr ""
+msgstr "Tổng"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Summer"
-msgstr ""
+msgstr "Mùa hè"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_department__supervisor
 msgid "Supervisor"
-msgstr "Người Giám Sát"
+msgstr "Người giám sát"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__supplier
 msgid "Supplier/Source"
-msgstr ""
+msgstr "Nhà cung cấp/Nguồn"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__supplier
 msgid "Suppliers"
-msgstr ""
+msgstr "Nhà cung cấp"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2311,26 +2351,26 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/other_cost_table/table.js:0
 #, python-format
 msgid "Table"
-msgstr ""
+msgstr "Bảng"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/process_table/table.js:0
 #, python-format
 msgid "TableProcess"
-msgstr ""
+msgstr "Bảng quy trình"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Task name is required"
-msgstr ""
+msgstr "Tên công việc là bắt buộc"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__technical_requirements
 msgid "Technical Requirements"
-msgstr "Yêu Cầu Quy Trình"
+msgstr "Yêu cầu kỹ thuật"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_finished_product_size__template
@@ -2351,7 +2391,7 @@ msgstr "Mẫu"
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Template '%s' applied successfully!"
-msgstr ""
+msgstr "Áp dụng mẫu '%s' thành công!"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2362,58 +2402,58 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Template '%s' saved successfully!"
-msgstr ""
+msgstr "Lưu mẫu '%s' thành công!"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_material_detail__name
 msgid "Template Name"
-msgstr "Tên Mẫu"
+msgstr "Tên mẫu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Template loaded successfully"
-msgstr ""
+msgstr "Tải mẫu thành công"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.js:0
 #, python-format
 msgid "Template saved successfully"
-msgstr ""
+msgstr "Lưu mẫu thành công"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_bundle__ticket_printed
 msgid "Ticket Printed"
-msgstr ""
+msgstr "Đã in phiếu"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__cost_total
 msgid "Total Cost"
-msgstr ""
+msgstr "Tổng chi phí"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/header.xml:0
 #, python-format
 msgid "Total Items:"
-msgstr ""
+msgstr "Tổng số vật tư:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__total_material_cost
 msgid "Total Material Cost"
-msgstr ""
+msgstr "Tổng chi phí vật tư"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__total_other_cost
 msgid "Total Other Cost (Invalid)"
-msgstr ""
+msgstr "Tổng chi phí khác (Không hợp lệ)"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__total_other_cost
 msgid "Total Other Costs"
-msgstr ""
+msgstr "Tổng chi phí khác"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2423,19 +2463,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_process__total_price
 #, python-format
 msgid "Total Price"
-msgstr ""
+msgstr "Tổng giá"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__total_process_cost
 msgid "Total Process Cost"
-msgstr ""
+msgstr "Tổng chi phí quy trình"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Total Qty:"
-msgstr ""
+msgstr "Tổng số lượng:"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2443,38 +2483,38 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_order__quantity
 #, python-format
 msgid "Total Quantity"
-msgstr ""
+msgstr "Tổng số lượng"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__total_usage
 msgid "Total Usage"
-msgstr ""
+msgstr "Tổng sử dụng"
 
 #. module: garment_base
 #: model:ir.model.fields,help:garment_base.field_production_finance_wizard__payment_amount
 msgid "Total amount received from customer"
-msgstr ""
+msgstr "Tổng số tiền nhận từ khách hàng"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__transport
 msgid "Transport"
-msgstr ""
+msgstr "Vận chuyển"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_receipt_line__type
 msgid "Type"
-msgstr ""
+msgstr "Loại"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_inventory_material__unit
 #: model:ir.model.fields,field_description:garment_base.field_production_material__unit
 msgid "Unit"
-msgstr ""
+msgstr "Đơn vị"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_material__unit_loss
 msgid "Unit Loss"
-msgstr ""
+msgstr "Hao hụt đơn vị"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2488,26 +2528,26 @@ msgstr ""
 #: model:ir.model.fields,field_description:garment_base.field_production_process__unit_price
 #, python-format
 msgid "Unit Price"
-msgstr "Đơn Giá"
+msgstr "Đơn giá"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_order.py:0
 #, python-format
 msgid "Unit Price()"
-msgstr ""
+msgstr "Đơn giá()"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Unit Price:"
-msgstr ""
+msgstr "Đơn giá:"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_order__quantity
 msgid "Unit Quantity"
-msgstr "Đơn Vị Số Lượng"
+msgstr "Số lượng đơn vị"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2518,31 +2558,31 @@ msgstr "Đơn Vị Số Lượng"
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Unknown error occurred"
-msgstr ""
+msgstr "Đã xảy ra lỗi không xác định"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_garment_sample__update_date
 msgid "Update At"
-msgstr "Cập Nhật Lúc"
+msgstr "Cập nhật lúc"
 
 #. module: garment_base
 #: model:ir.model,name:garment_base.model_production_finance_wizard
 msgid "Update Finance Status"
-msgstr ""
+msgstr "Cập nhật trạng thái tài chính"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/custom_m2m_image/m2m_image.js:0
 #, python-format
 msgid "Uploading error"
-msgstr ""
+msgstr "Lỗi tải lên"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/progress_table/table.xml:0
 #, python-format
 msgid "Use Progress"
-msgstr ""
+msgstr "Sử dụng tiến độ"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2553,47 +2593,47 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.xml:0
 #, python-format
 msgid "Use Template"
-msgstr ""
+msgstr "Sử dụng mẫu"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.xml:0
 #, python-format
 msgid "Used Quantity *"
-msgstr ""
+msgstr "Số lượng đã dùng *"
 
 #. module: garment_base
 #. odoo-javascript
 #: code:addons/garment_base/static/src/components/material_issuance_table/dialog.js:0
 #, python-format
 msgid "Used quantity must be greater than 0"
-msgstr ""
+msgstr "Số lượng đã dùng phải lớn hơn 0"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__utilities
 msgid "Utilities"
-msgstr ""
+msgstr "Tiện ích"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__vat
 msgid "VAT"
-msgstr ""
+msgstr "Thuế VAT"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_size_chart__value
 msgid "Value"
-msgstr ""
+msgstr "Giá trị"
 
 #. module: garment_base
 #: model_terms:ir.ui.view,arch_db:garment_base.qr_generate_template
 msgid "View Info Page"
-msgstr ""
+msgstr "Xem trang thông tin"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_finance_wizard__finance_state__waiting
 #: model:ir.model.fields.selection,name:garment_base.selection__production_order__finance_state__waiting
 msgid "Waiting Payment"
-msgstr ""
+msgstr "Chờ thanh toán"
 
 #. module: garment_base
 #. odoo-python
@@ -2601,7 +2641,7 @@ msgstr ""
 #: code:addons/garment_base/models/model_inventory.py:0
 #, python-format
 msgid "Waiting Receipts"
-msgstr ""
+msgstr "Chờ nhập kho"
 
 #. module: garment_base
 #. odoo-javascript
@@ -2613,31 +2653,31 @@ msgstr ""
 #: code:addons/garment_base/static/src/components/specification_detail_table/table.js:0
 #, python-format
 msgid "Warning"
-msgstr ""
+msgstr "Cảnh báo"
 
 #. module: garment_base
 #: model:ir.model.fields.selection,name:garment_base.selection__production_cost__cost_type__water
 msgid "Water"
-msgstr ""
+msgstr "Nước"
 
 #. module: garment_base
 #. odoo-python
 #: code:addons/garment_base/models/model_sample.py:0
 #, python-format
 msgid "Winter"
-msgstr ""
+msgstr "Mùa đông"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_worker_entry__employee_id
 msgid "Worker"
-msgstr ""
+msgstr "Công nhân"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_operation_price__worker_entry_ids
 msgid "Worker Entries"
-msgstr ""
+msgstr "Danh sách công nhân"
 
 #. module: garment_base
 #: model:ir.model.fields,field_description:garment_base.field_production_order__garment_order_id
-msgid "Đơn hàng"
-msgstr ""
+msgid "Order"
+msgstr "Đơn hàng"

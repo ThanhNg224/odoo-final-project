@@ -10,6 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2025-06-16 17:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: vi_VN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,121 +20,121 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid ""
 "Are you sure you want to delete this record? This action cannot be undone."
-msgstr ""
+msgstr "Bạn có chắc chắn muốn xóa bản ghi này không? Hành động này không thể hoàn tác."
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_edit
 msgid "Attachments"
-msgstr ""
+msgstr "Tệp đính kèm"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_edit
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Basic Info"
-msgstr ""
+msgstr "Thông tin cơ bản"
 
 #. module: garment_order
 #: model_terms:ir.actions.act_window,help:garment_order.action_garment_order
 msgid "Create a new Garment Order"
-msgstr ""
+msgstr "Tạo đơn hàng may mặc mới"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Edit"
-msgstr ""
+msgstr "Chỉnh sửa"
 
 #. module: garment_order
 #: model:ir.actions.act_window,name:garment_order.action_garment_order_edit
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_edit
 msgid "Edit Garment Order"
-msgstr ""
+msgstr "Chỉnh sửa đơn hàng may mặc"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Export PDF"
-msgstr ""
+msgstr "Xuất PDF"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Garment Order"
-msgstr ""
+msgstr "Đơn hàng may mặc"
 
 #. module: garment_order
 #: model:ir.actions.act_window,name:garment_order.action_garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_tree
 msgid "Garment Orders"
-msgstr ""
+msgstr "Đơn hàng may mặc"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Image Details"
-msgstr ""
+msgstr "Chi tiết hình ảnh"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Mark as Discontinued"
-msgstr ""
+msgstr "Đánh dấu là ngừng sản xuất"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Mark as Ready for Production"
-msgstr ""
+msgstr "Đánh dấu sẵn sàng sản xuất"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_edit
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Material Detail"
-msgstr ""
+msgstr "Chi tiết vật liệu"
 
 #. module: garment_order
 #. odoo-javascript
 #: code:addons/garment_order/static/src/components/header_button/create_button.xml:0
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "Mới"
 
 #. module: garment_order
 #: model:ir.ui.menu,name:garment_order.menu_garment_order_root
 msgid "Order"
-msgstr ""
+msgstr "Đơn hàng"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Order Detail"
-msgstr ""
+msgstr "Chi tiết đơn hàng"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_edit
 msgid "Other Costs"
-msgstr ""
+msgstr "Chi phí khác"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_edit
 msgid "Progress Detail"
-msgstr ""
+msgstr "Chi tiết tiến độ"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Related Documents"
-msgstr ""
+msgstr "Tài liệu liên quan"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Remarks"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_edit
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Specification Detail"
-msgstr ""
+msgstr "Chi tiết thông số kỹ thuật"
 
 #. module: garment_order
 #: model_terms:ir.ui.view,arch_db:garment_order.view_garment_order_form_view
 msgid "Stock In"
-msgstr ""
+msgstr "Nhập kho"

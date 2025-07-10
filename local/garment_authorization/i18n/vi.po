@@ -18,189 +18,189 @@ msgstr ""
 #. module: garment_authorization
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_root
 msgid "Authorization"
-msgstr ""
+msgstr "Phân quyền"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__create_uid
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Tạo bởi"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__create_date
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Tạo lúc"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__display_name
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Tên hiển thị"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_authorization_manager
 msgid "Garment Authorization Manager"
-msgstr ""
+msgstr "Quản lý phân quyền may mặc"
 
 #. module: garment_authorization
 #: model:ir.model,name:garment_authorization.model_garment_group
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_res_users_form_edit_auth
 msgid "Garment Group"
-msgstr ""
+msgstr "Nhóm may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_approval
 msgid "Garment Inventory Approval"
-msgstr ""
+msgstr "Phê duyệt kho may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_management
 msgid "Garment Inventory Management"
-msgstr ""
+msgstr "Quản lý kho may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_purchaser
 msgid "Garment Inventory Purchaser"
-msgstr ""
+msgstr "Mua hàng kho may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_viewer
 msgid "Garment Inventory Viewer"
-msgstr ""
+msgstr "Xem kho may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_order_approval
 msgid "Garment Order Approval"
-msgstr ""
+msgstr "Phê duyệt đơn hàng may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_order_management
 msgid "Garment Order Management"
-msgstr ""
+msgstr "Quản lý đơn hàng may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_order_viewer
 msgid "Garment Order Viewer"
-msgstr ""
+msgstr "Xem đơn hàng may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_approval
 msgid "Garment Production Approval"
-msgstr ""
+msgstr "Phê duyệt sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_material_consumption
 msgid "Garment Production Finalize Material Consumption"
-msgstr ""
+msgstr "Hoàn thiện tiêu thụ nguyên liệu sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_management
 msgid "Garment Production Management"
-msgstr ""
+msgstr "Quản lý sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_order
 msgid "Garment Production Order"
-msgstr ""
+msgstr "Lệnh sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_progress
 msgid "Garment Production Progress"
-msgstr ""
+msgstr "Tiến độ sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_support_staff_count
 msgid "Garment Production Support Staff Count"
-msgstr ""
+msgstr "Đếm nhân viên hỗ trợ sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_unit_price_process
 msgid "Garment Production Unit Price Process"
-msgstr ""
+msgstr "Quy trình đơn giá sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_viewer
 msgid "Garment Production Viewer"
-msgstr ""
+msgstr "Xem sản xuất may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_sample_approval
 msgid "Garment Sample Approval"
-msgstr ""
+msgstr "Phê duyệt mẫu may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_sample_management
 msgid "Garment Sample Management"
-msgstr ""
+msgstr "Quản lý mẫu may mặc"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_sample_viewer
 msgid "Garment Sample Viewer"
-msgstr ""
+msgstr "Xem mẫu may mặc"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_res_users__garment_group_id
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_group_form
 msgid "Group"
-msgstr ""
+msgstr "Nhóm"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__name
 msgid "Group Name"
-msgstr ""
+msgstr "Tên nhóm"
 
 #. module: garment_authorization
 #: model:ir.actions.act_window,name:garment_authorization.action_groups
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__group_ids
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_group
 msgid "Groups"
-msgstr ""
+msgstr "Nhóm"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__id
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__write_uid
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Cập nhật cuối bởi"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__write_date
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Cập nhật cuối lúc"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__name
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 #. module: garment_authorization
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_permission_form
 msgid "Permission"
-msgstr ""
+msgstr "Quyền"
 
 #. module: garment_authorization
 #: model:ir.model,name:garment_authorization.model_garment_permission
 msgid "Permission for Garment Actions"
-msgstr ""
+msgstr "Quyền cho các hành động may mặc"
 
 #. module: garment_authorization
 #: model:ir.actions.act_window,name:garment_authorization.action_permissions
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__permission_ids
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_permission
 msgid "Permissions"
-msgstr ""
+msgstr "Quyền"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__group_id
 msgid "Related Group"
-msgstr ""
+msgstr "Nhóm liên quan"
 
 #. module: garment_authorization
 #: model:ir.model,name:garment_authorization.model_res_users
@@ -210,10 +210,10 @@ msgstr "Người dùng"
 #. module: garment_authorization
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_res_users_form_edit_auth
 msgid "User Information"
-msgstr ""
+msgstr "Thông tin người dùng"
 
 #. module: garment_authorization
 #: model:ir.actions.act_window,name:garment_authorization.action_garment_user
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_user
 msgid "Users"
-msgstr ""
+msgstr "Người dùng"

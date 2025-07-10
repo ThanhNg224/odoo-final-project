@@ -22,7 +22,7 @@ export class MaterialIssuanceTableHeader extends Component {
 
     setup() {
         super.setup();
-        console.log("Fields", this.props.record);
+        // console.log("Fields", this.props.record);
         this.dialog = useService("dialog");
         this.rpc = useService("rpc");
         this.notification = useService("notification");
@@ -73,7 +73,7 @@ export class MaterialIssuanceTableHeader extends Component {
 
 
             // Create MaterialReceiptLine record
-            console.log("Data to create material issuance record: ", data);
+            // console.log("Data to create material issuance record: ", data);
             const createData = {
                 material_id: data.material_id,
                 color_id: data.color_id,
@@ -91,7 +91,7 @@ export class MaterialIssuanceTableHeader extends Component {
                 total_price: data.total_price,
             };
 
-            console.log("Sending to backend:", createData);
+            // console.log("Sending to backend:", createData);
 
             const materialReceiptLine = await this.rpc("/web/dataset/call_kw", {
                 model: "garment.receipt.line",
@@ -100,7 +100,7 @@ export class MaterialIssuanceTableHeader extends Component {
                 kwargs: {},
             });
 
-            console.log("Created material receipt line:", materialReceiptLine);
+            // console.log("Created material receipt line:", materialReceiptLine);
 
             // Refresh the field to show the new record
             await this.props.record.load();

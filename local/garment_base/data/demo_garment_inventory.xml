@@ -1,0 +1,702 @@
+<data>
+    <record id="inventory_color_1" model="garment.inventory.color">
+        <field name="name">White</field>
+        <field name="code">WH-001</field>
+    </record>
+    <record id="inventory_color_2" model="garment.inventory.color">
+        <field name="name">Blue</field>
+        <field name="code">BL-001</field>
+    </record>
+    <record id="inventory_color_3" model="garment.inventory.color">
+        <field name="name">Golden</field>
+        <field name="code">GD-001</field>
+    </record>
+    <record id="inventory_color_4" model="garment.inventory.color">
+        <field name="name">Brass</field>
+        <field name="code">BR-001</field>
+    </record>
+    <record id="inventory_color_5" model="garment.inventory.color">
+        <field name="name">Clear</field>
+        <field name="code">CL-001</field>
+    </record>
+    <record id="inventory_color_6" model="garment.inventory.color">
+        <field name="name">Navy</field>
+        <field name="code">NV-101</field>
+    </record>
+    <record id="inventory_color_7" model="garment.inventory.color">
+        <field name="name">Navy</field>
+        <field name="code">NV-102</field>
+    </record>
+    <record id="inventory_color_8" model="garment.inventory.color">
+        <field name="name">Stone Blue</field>
+        <field name="code">SB-210</field>
+    </record>
+    <record id="inventory_color_9" model="garment.inventory.color">
+        <field name="name">Black</field>
+        <field name="code">BK-001</field>
+    </record>
+    <record id="inventory_color_10" model="garment.inventory.color">
+        <field name="name">Pink</field>
+        <field name="code">PK-001</field>
+    </record>
+    <record id="inventory_color_11" model="garment.inventory.color">
+        <field name="name">Grey</field>
+        <field name="code">GY-001</field>
+    </record>
+    <record id="inventory_color_12" model="garment.inventory.color">
+        <field name="name">Grey</field>
+        <field name="code">GY-002</field>
+    </record>
+    <record id="inventory_color_13" model="garment.inventory.color">
+        <field name="name">Brown</field>
+        <field name="code">BR-002</field>
+    </record>
+    <record id="inventory_color_14" model="garment.inventory.color">
+        <field name="name">Yellow</field>
+        <field name="code">YL-001</field>
+    </record>
+    <record id="inventory_color_15" model="garment.inventory.color">
+        <field name="name">White</field>
+        <field name="code">WH-002</field>
+    </record>
+    <record id="inventory_color_16" model="garment.inventory.color">
+        <field name="name">Olive</field>
+        <field name="code">OL-001</field>
+    </record>
+
+
+    <record id="inventory_material_1" model="garment.inventory.material">
+        <field name="name">White Cotton Fabric</field>
+        <field name="code">CTN-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">Supplier A</field>
+        <field name="unit_price">10000</field>
+        <field name="remarks">Good quality fabric</field>
+        <field name="color_quantity_ids">
+            <record id="inventory_material_color_1" model="garment.inventory.material.color.quantity">
+                <field name="material_id" ref="inventory_material_1"/>
+                <field name="color_id" ref="inventory_color_1" />
+                <field name="quantity_on_hand">100</field>
+                <field name="quantity_reserved">50</field>
+                <field name="quantity_available">50</field>
+            </record>
+            <record id="inventory_material_color_2" model="garment.inventory.material.color.quantity">
+                <field name="material_id" ref="inventory_material_1"/>
+                <field name="color_id" ref="inventory_color_2" />
+                <field name="quantity_on_hand">100</field>
+                <field name="quantity_reserved">0</field>
+                <field name="quantity_available">100</field>
+            </record>
+        </field>
+    </record>
+    <record id="inventory_material_2" model="garment.inventory.material">
+        <field name="name">Thread</field>
+        <field name="code">THR-001</field>
+        <field name="unit">spools</field>
+        <field name="supplier">Supplier B</field>
+        <field name="unit_price">1000</field>
+        <field name="remarks">Good quality thread</field>
+    </record>
+    <record id="inventory_material_3" model="garment.inventory.material">
+        <field name="name">Clear Label</field>
+        <field name="code">LBL-001</field>
+        <field name="unit">pieces</field>
+        <field name="supplier">Supplier C</field>
+        <field name="unit_price">100</field>
+        <field name="remarks">Good quality label</field>
+    </record>
+    <record id="inventory_material_4" model="garment.inventory.material">
+        <field name="name">Packaging Bag</field>
+        <field name="code">PKG-001</field>
+        <field name="unit">pieces</field>
+        <field name="supplier">Supplier D</field>
+        <field name="unit_price">100</field>
+        <field name="remarks">Good quality packaging bag</field>
+        <field name="inventory_location">Warehouse A</field>
+    </record>
+    <record id="inventory_material_5" model="garment.inventory.material">
+        <field name="name">Denim Fabric</field>
+        <field name="code">DNM-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">Supplier E</field>
+        <field name="unit_price">10000</field>
+        <field name="remarks">Good quality denim fabric</field>
+        <field name="inventory_location">Warehouse B</field>
+    </record>
+    <record id="inventory_material_6" model="garment.inventory.material">
+        <field name="name">Zipper</field>
+        <field name="code">ZIP-001</field>
+        <field name="unit">pieces</field>
+        <field name="supplier">Supplier F</field>
+        <field name="unit_price">1000</field>
+        <field name="remarks">Good quality zipper</field>
+        <field name="inventory_location">Warehouse C</field>
+    </record>
+    <record id="inventory_material_7" model="garment.inventory.material">
+        <field name="name">Brass Button</field>
+        <field name="code">BTN-001</field>
+        <field name="unit">pieces</field>
+        <field name="supplier">Supplier G</field>
+        <field name="unit_price">1000</field>
+        <field name="remarks">Good quality button</field>
+        <field name="inventory_location">Warehouse A</field>
+    </record>
+    <record id="inventory_material_8" model="garment.inventory.material">
+        <field name="name">Pique Cotton</field>
+        <field name="code">PC-203</field>
+        <field name="unit">m</field>
+        <field name="supplier">Tan Phu Textile</field>
+        <field name="unit_price">22000</field>
+        <field name="remarks">High quality pique cotton</field>
+    </record>
+    <record id="inventory_material_9" model="garment.inventory.material">
+        <field name="name">Rib Collar</field>
+        <field name="code">RC-010</field>
+        <field name="unit">m</field>
+        <field name="supplier">Minh Long Garment</field>
+        <field name="unit_price">12000</field>
+        <field name="remarks">Knitted rib for collar and sleeve</field>
+    </record>
+    <record id="inventory_material_10" model="garment.inventory.material">
+        <field name="name">Thread White</field>
+        <field name="code">TH-White</field>
+        <field name="unit">spools</field>
+        <field name="supplier">VietThread</field>
+        <field name="unit_price">500</field>
+        <field name="remarks">Polyester 60/2</field>
+    </record>
+    <record id="inventory_material_11" model="garment.inventory.material">
+        <field name="name">Denim Fabric</field>
+        <field name="code">DN-501</field>
+        <field name="unit">m</field>
+        <field name="supplier">Thai Son Textile</field>
+        <field name="unit_price">31000</field>
+        <field name="remarks">Stone blue stretch denim</field>
+    </record>
+    <record id="inventory_material_12" model="garment.inventory.material">
+        <field name="name">Thread Navy</field>
+        <field name="code">TH-Navy</field>
+        <field name="unit">spools</field>
+        <field name="supplier">MaxThread</field>
+        <field name="unit_price">450</field>
+        <field name="remarks">Poly Core Spun 40/2</field>
+    </record>
+    <record id="inventory_material_13" model="garment.inventory.material">
+        <field name="name">Zipper YKK 6-inch</field>
+        <field name="code">ZP-001</field>
+        <field name="unit">pieces</field>
+        <field name="supplier">YKK Vietnam</field>
+        <field name="unit_price">1200</field>
+        <field name="remarks">YKK 6-inch zipper</field>
+    </record>
+    <record id="inventory_material_14" model="garment.inventory.material">
+        <field name="name">Nylon Shell</field>
+        <field name="code">NYL-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">NylonWorks</field>
+        <field name="unit_price">18000</field>
+        <field name="remarks">Waterproof nylon shell</field>
+    </record>
+    <record id="inventory_material_15" model="garment.inventory.material">
+        <field name="name">Poly Lining</field>
+        <field name="code">PLY-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">PolyFab</field>
+        <field name="unit_price">9000</field>
+        <field name="remarks">100% polyester lining</field>
+    </record>
+    <record id="inventory_material_16" model="garment.inventory.material">
+        <field name="name">Wool Blend</field>
+        <field name="code">WBL-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">WoolPro</field>
+        <field name="unit_price">40000</field>
+        <field name="remarks">Wool/polyester blend</field>
+    </record>
+    <record id="inventory_material_17" model="garment.inventory.material">
+        <field name="name">Lining</field>
+        <field name="code">LIN-002</field>
+        <field name="unit">m</field>
+        <field name="supplier">PolyFab</field>
+        <field name="unit_price">8000</field>
+        <field name="remarks">Polyester lining</field>
+    </record>
+    <record id="inventory_material_18" model="garment.inventory.material">
+        <field name="name">Cotton Jersey</field>
+        <field name="code">CTJ-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">CottonWorld</field>
+        <field name="unit_price">10000</field>
+        <field name="remarks">100% cotton jersey</field>
+    </record>
+    <record id="inventory_material_19" model="garment.inventory.material">
+        <field name="name">Rib Neck</field>
+        <field name="code">RIB-002</field>
+        <field name="unit">m</field>
+        <field name="supplier">RibTech</field>
+        <field name="unit_price">1200</field>
+        <field name="remarks">Cotton/Spandex rib for neck</field>
+    </record>
+    <record id="inventory_material_20" model="garment.inventory.material">
+        <field name="name">Polyester Twill</field>
+        <field name="code">PLT-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">PolyFab</field>
+        <field name="unit_price">9000</field>
+        <field name="remarks">100% polyester twill</field>
+    </record>
+    <record id="inventory_material_21" model="garment.inventory.material">
+        <field name="name">Button 12mm</field>
+        <field name="code">BTN-002</field>
+        <field name="unit">pcs</field>
+        <field name="supplier">ButtonPro</field>
+        <field name="unit_price">200</field>
+        <field name="remarks">Plastic button 12mm</field>
+    </record>
+    <record id="inventory_material_22" model="garment.inventory.material">
+        <field name="name">Button 15mm</field>
+        <field name="code">BTN-003</field>
+        <field name="unit">pcs</field>
+        <field name="supplier">ButtonPro</field>
+        <field name="unit_price">250</field>
+        <field name="remarks">Plastic button 15mm</field>
+    </record>
+    <record id="inventory_material_23" model="garment.inventory.material">
+        <field name="name">Button 10mm</field>
+        <field name="code">BTN-004</field>
+        <field name="unit">pcs</field>
+        <field name="supplier">ButtonPro</field>
+        <field name="unit_price">180</field>
+        <field name="remarks">Plastic button 10mm</field>
+    </record>
+    <record id="inventory_material_24" model="garment.inventory.material">
+        <field name="name">Button 18mm</field>
+        <field name="code">BTN-005</field>
+        <field name="unit">pcs</field>
+        <field name="supplier">ButtonPro</field>
+        <field name="unit_price">300</field>
+        <field name="remarks">Plastic button 18mm</field>
+    </record>
+    <record id="inventory_material_25" model="garment.inventory.material">
+        <field name="name">Rayon</field>
+        <field name="code">RYN-001</field>
+        <field name="unit">m</field>
+        <field name="supplier">RayonWorks</field>
+        <field name="unit_price">9500</field>
+        <field name="remarks">100% rayon</field>
+    </record>
+
+    <!-- Quantities for new materials -->
+    <record id="inventory_material_color_7" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_7"/>
+        <field name="color_id" ref="inventory_color_4" />
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <record id="inventory_material_color_8" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_7"/>
+        <field name="color_id" ref="inventory_color_5" />
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <record id="inventory_material_color_PC203" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_8"/>
+        <field name="color_id" ref="inventory_color_6"/>
+        <field name="quantity_on_hand">200</field>
+        <field name="quantity_reserved">50</field>
+        <field name="quantity_available">150</field>
+    </record>
+    <record id="inventory_material_color_RC010" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_9"/>
+        <field name="color_id" ref="inventory_color_7"/>
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">80</field>
+    </record>
+    <record id="inventory_material_color_THWhite" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_10"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">500</field>
+        <field name="quantity_reserved">100</field>
+        <field name="quantity_available">400</field>
+    </record>
+    <record id="inventory_material_color_DN501" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_11"/>
+        <field name="color_id" ref="inventory_color_8"/>
+        <field name="quantity_on_hand">300</field>
+        <field name="quantity_reserved">60</field>
+        <field name="quantity_available">240</field>
+    </record>
+    <record id="inventory_material_color_THNavy" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_12"/>
+        <field name="color_id" ref="inventory_color_6"/>
+        <field name="quantity_on_hand">400</field>
+        <field name="quantity_reserved">80</field>
+        <field name="quantity_available">320</field>
+    </record>
+    <record id="inventory_material_color_ZP001" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_13"/>
+        <field name="color_id" ref="inventory_color_9"/>
+        <field name="quantity_on_hand">150</field>
+        <field name="quantity_reserved">30</field>
+        <field name="quantity_available">120</field>
+    </record>
+    <record id="inventory_material_color_NYL001" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_14"/>
+        <field name="color_id" ref="inventory_color_16"/>
+        <field name="quantity_on_hand">180</field>
+        <field name="quantity_reserved">40</field>
+        <field name="quantity_available">140</field>
+    </record>
+    <record id="inventory_material_color_PLY001" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_15"/>
+        <field name="color_id" ref="inventory_color_11"/>
+        <field name="quantity_on_hand">220</field>
+        <field name="quantity_reserved">30</field>
+        <field name="quantity_available">190</field>
+    </record>
+    <record id="inventory_material_color_WBL001" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_16"/>
+        <field name="color_id" ref="inventory_color_12"/>
+        <field name="quantity_on_hand">90</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">80</field>
+    </record>
+    <record id="inventory_material_color_LIN002" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_17"/>
+        <field name="color_id" ref="inventory_color_12"/>
+        <field name="quantity_on_hand">120</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <record id="inventory_material_color_CTJ001" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_18"/>
+        <field name="color_id" ref="inventory_color_14"/>
+        <field name="quantity_on_hand">250</field>
+        <field name="quantity_reserved">50</field>
+        <field name="quantity_available">200</field>
+    </record>
+    <record id="inventory_material_color_RIB002" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_19"/>
+        <field name="color_id" ref="inventory_color_14"/>
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">90</field>
+    </record>
+    <record id="inventory_material_color_PLT001" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_20"/>
+        <field name="color_id" ref="inventory_color_10"/>
+        <field name="quantity_on_hand">180</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">160</field>
+    </record>
+    <record id="inventory_material_color_BTN002" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_21"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">1000</field>
+        <field name="quantity_reserved">200</field>
+        <field name="quantity_available">800</field>
+    </record>
+    <record id="inventory_material_color_BTN003" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_22"/>
+        <field name="color_id" ref="inventory_color_13"/>
+        <field name="quantity_on_hand">800</field>
+        <field name="quantity_reserved">100</field>
+        <field name="quantity_available">700</field>
+    </record>
+    <record id="inventory_material_color_BTN004" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_23"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">900</field>
+        <field name="quantity_reserved">100</field>
+        <field name="quantity_available">800</field>
+    </record>
+    <record id="inventory_material_color_BTN005" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_24"/>
+        <field name="color_id" ref="inventory_color_9"/>
+        <field name="quantity_on_hand">600</field>
+        <field name="quantity_reserved">50</field>
+        <field name="quantity_available">550</field>
+    </record>
+    <record id="inventory_material_color_RYN001" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_25"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">150</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">130</field>
+    </record>
+
+    <!-- For PC-203 (Pique Cotton) -->
+    <record id="inventory_material_color_PC203_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_8"/>
+        <field name="color_id" ref="inventory_color_7"/>
+        <field name="quantity_on_hand">120</field>
+        <field name="quantity_reserved">30</field>
+        <field name="quantity_available">90</field>
+    </record>
+    <record id="inventory_material_color_PC203_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_8"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">80</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">70</field>
+    </record>
+    <!-- For RC-010 (Rib Collar) -->
+    <record id="inventory_material_color_RC010_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_9"/>
+        <field name="color_id" ref="inventory_color_14"/>
+        <field name="quantity_on_hand">60</field>
+        <field name="quantity_reserved">5</field>
+        <field name="quantity_available">55</field>
+    </record>
+    <record id="inventory_material_color_RC010_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_9"/>
+        <field name="color_id" ref="inventory_color_10"/>
+        <field name="quantity_on_hand">40</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">40</field>
+    </record>
+    <!-- For TH-White (Thread White) -->
+    <record id="inventory_material_color_THWhite_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_10"/>
+        <field name="color_id" ref="inventory_color_15"/>
+        <field name="quantity_on_hand">200</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">180</field>
+    </record>
+    <record id="inventory_material_color_THWhite_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_10"/>
+        <field name="color_id" ref="inventory_color_9"/>
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">90</field>
+    </record>
+    <!-- For DN-501 (Denim Fabric) -->
+    <record id="inventory_material_color_DN501_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_11"/>
+        <field name="color_id" ref="inventory_color_2"/>
+        <field name="quantity_on_hand">120</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <record id="inventory_material_color_DN501_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_11"/>
+        <field name="color_id" ref="inventory_color_13"/>
+        <field name="quantity_on_hand">60</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">60</field>
+    </record>
+    <!-- For TH-Navy (Thread Navy) -->
+    <record id="inventory_material_color_THNavy_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_12"/>
+        <field name="color_id" ref="inventory_color_2"/>
+        <field name="quantity_on_hand">150</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">130</field>
+    </record>
+    <record id="inventory_material_color_THNavy_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_12"/>
+        <field name="color_id" ref="inventory_color_8"/>
+        <field name="quantity_on_hand">90</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">80</field>
+    </record>
+    <!-- For ZP-001 (Zipper YKK 6-inch) -->
+    <record id="inventory_material_color_ZP001_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_13"/>
+        <field name="color_id" ref="inventory_color_10"/>
+        <field name="quantity_on_hand">60</field>
+        <field name="quantity_reserved">5</field>
+        <field name="quantity_available">55</field>
+    </record>
+    <record id="inventory_material_color_ZP001_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_13"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">40</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">40</field>
+    </record>
+    <!-- For NYL-001 (Nylon Shell) -->
+    <record id="inventory_material_color_NYL001_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_14"/>
+        <field name="color_id" ref="inventory_color_9"/>
+        <field name="quantity_on_hand">60</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">50</field>
+    </record>
+    <record id="inventory_material_color_NYL001_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_14"/>
+        <field name="color_id" ref="inventory_color_11"/>
+        <field name="quantity_on_hand">40</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">40</field>
+    </record>
+    <!-- For PLY-001 (Poly Lining) -->
+    <record id="inventory_material_color_PLY001_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_15"/>
+        <field name="color_id" ref="inventory_color_12"/>
+        <field name="quantity_on_hand">60</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">50</field>
+    </record>
+    <record id="inventory_material_color_PLY001_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_15"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">30</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">30</field>
+    </record>
+    <!-- For WBL-001 (Wool Blend) -->
+    <record id="inventory_material_color_WBL001_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_16"/>
+        <field name="color_id" ref="inventory_color_11"/>
+        <field name="quantity_on_hand">30</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">30</field>
+    </record>
+    <record id="inventory_material_color_WBL001_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_16"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">20</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">20</field>
+    </record>
+    <!-- For LIN-002 (Lining) -->
+    <record id="inventory_material_color_LIN002_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_17"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">30</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">30</field>
+    </record>
+    <record id="inventory_material_color_LIN002_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_17"/>
+        <field name="color_id" ref="inventory_color_11"/>
+        <field name="quantity_on_hand">20</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">20</field>
+    </record>
+    <!-- For CTJ-001 (Cotton Jersey) -->
+    <record id="inventory_material_color_CTJ001_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_18"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">60</field>
+        <field name="quantity_reserved">10</field>
+        <field name="quantity_available">50</field>
+    </record>
+    <record id="inventory_material_color_CTJ001_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_18"/>
+        <field name="color_id" ref="inventory_color_14"/>
+        <field name="quantity_on_hand">40</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">40</field>
+    </record>
+    <!-- For RIB-002 (Rib Neck) -->
+    <record id="inventory_material_color_RIB002_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_19"/>
+        <field name="color_id" ref="inventory_color_6"/>
+        <field name="quantity_on_hand">30</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">30</field>
+    </record>
+    <record id="inventory_material_color_RIB002_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_19"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">20</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">20</field>
+    </record>
+    <!-- For PLT-001 (Polyester Twill) -->
+    <record id="inventory_material_color_PLT001_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_20"/>
+        <field name="color_id" ref="inventory_color_11"/>
+        <field name="quantity_on_hand">30</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">30</field>
+    </record>
+    <record id="inventory_material_color_PLT001_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_20"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">20</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">20</field>
+    </record>
+    <!-- For BTN-002 (Button 12mm) -->
+    <record id="inventory_material_color_BTN002_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_21"/>
+        <field name="color_id" ref="inventory_color_9"/>
+        <field name="quantity_on_hand">200</field>
+        <field name="quantity_reserved">20</field>
+        <field name="quantity_available">180</field>
+    </record>
+    <record id="inventory_material_color_BTN002_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_21"/>
+        <field name="color_id" ref="inventory_color_13"/>
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <!-- For BTN-003 (Button 15mm) -->
+    <record id="inventory_material_color_BTN003_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_22"/>
+        <field name="color_id" ref="inventory_color_9"/>
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <record id="inventory_material_color_BTN003_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_22"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">50</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">50</field>
+    </record>
+    <!-- For BTN-004 (Button 10mm) -->
+    <record id="inventory_material_color_BTN004_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_23"/>
+        <field name="color_id" ref="inventory_color_9"/>
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <record id="inventory_material_color_BTN004_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_23"/>
+        <field name="color_id" ref="inventory_color_13"/>
+        <field name="quantity_on_hand">50</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">50</field>
+    </record>
+    <!-- For BTN-005 (Button 18mm) -->
+    <record id="inventory_material_color_BTN005_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_24"/>
+        <field name="color_id" ref="inventory_color_1"/>
+        <field name="quantity_on_hand">100</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">100</field>
+    </record>
+    <record id="inventory_material_color_BTN005_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_24"/>
+        <field name="color_id" ref="inventory_color_13"/>
+        <field name="quantity_on_hand">50</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">50</field>
+    </record>
+    <!-- For RYN-001 (Rayon) -->
+    <record id="inventory_material_color_RYN001_2" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_25"/>
+        <field name="color_id" ref="inventory_color_11"/>
+        <field name="quantity_on_hand">30</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">30</field>
+    </record>
+    <record id="inventory_material_color_RYN001_3" model="garment.inventory.material.color.quantity">
+        <field name="material_id" ref="inventory_material_25"/>
+        <field name="color_id" ref="inventory_color_12"/>
+        <field name="quantity_on_hand">20</field>
+        <field name="quantity_reserved">0</field>
+        <field name="quantity_available">20</field>
+    </record>
+
+</data>

@@ -184,7 +184,7 @@ export class FinishedProductSizeTable extends Component {
     }
 
     deleteRow = (idx) => {
-        // console.log("delete row ", idx);
+        // // console.log("delete row ", idx);
         this.state.rows.splice(idx, 1);
         this.props.record.update({ [this.props.name]: this.state.rows });
     }
@@ -195,7 +195,7 @@ export class FinishedProductSizeTable extends Component {
     }
 
     deleteColumn = (colIndex) => {
-        // console.log("delete col ", colIndex);
+        // // console.log("delete col ", colIndex);
         this.state.rows.forEach(row => row.splice(colIndex, 1));
         this.props.record.update({ [this.props.name]: this.state.rows });
     }

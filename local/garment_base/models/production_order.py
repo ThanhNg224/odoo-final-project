@@ -269,6 +269,10 @@ class ProductionOrder(models.Model):
     
     def action_mark_fully_paid(self):
         """Mark as fully paid"""
+        # Check if user has approval permission
+        if not self.env.user.has_group('garment_authorization.group_production_approval'):
+            raise UserError("You don't have permission to mark orders as paid.")
+            
         self.finance_state = 'paid'
         self.finance_approved_by = self.env.user
         self.finance_approval_date = fields.Datetime.now()
@@ -287,6 +291,10 @@ class ProductionOrder(models.Model):
     
     # Action methods
     def set_in_progress(self):
+        # Check if user has approval permission
+        if not self.env.user.has_group('garment_authorization.group_production_approval'):
+            raise UserError("You don't have permission to start production.")
+            
         for record in self:
             if record.finance_state == 'waiting' and record.payment_amount <= 0:
                 raise UserError("Cannot start production without any payment or finance approval!")
@@ -302,6 +310,10 @@ class ProductionOrder(models.Model):
     #     return True
 
     def action_view_lines(self):
+        # Check if user has approval permission to view lines
+        if not self.env.user.has_group('garment_authorization.group_production_approval'):
+            raise UserError("You don't have permission to view order lines.")
+            
         self.ensure_one()
         return {
             'name': 'Order Lines',
@@ -324,8 +336,11 @@ class ProductionOrder(models.Model):
         }
 
     def generate_order_lines_from_sample(self):
-        """Extract size data directly from sample and create order lines."""
+        """Extract size data from sample and quantities from order to create order lines."""
         if not self.sample_id or not self.sample_id.finished_product_size:
+            return
+            
+        if not self.garment_order_id:
             return
             
         # Clear existing order lines
@@ -335,7 +350,7 @@ class ProductionOrder(models.Model):
         size_data = self.sample_id.finished_product_size
         _logger.info(f"Sample size data for order lines: {size_data}")
         
-        # Handle string data
+        # Handle string data for sample
         if isinstance(size_data, str):
             try:
                 size_data = json.loads(size_data)
@@ -347,22 +362,70 @@ class ProductionOrder(models.Model):
                 except Exception:
                     size_data = []
         
-        # Extract sizes from the first column and create order lines
+        # Get quantity data from order's specification_detail
+        order_spec_data = self.garment_order_id.specification_detail
+        _logger.info(f"Order specification data: {order_spec_data}")
+        
+        # Handle string data for order specification
+        if isinstance(order_spec_data, str):
+            try:
+                order_spec_data = json.loads(order_spec_data)
+            except Exception as e:
+                _logger.error(f"Error parsing order specification data: {e}")
+                try:
+                    import ast
+                    order_spec_data = ast.literal_eval(order_spec_data)
+                except Exception:
+                    order_spec_data = []
+        
+        # Build a mapping of size to quantity from order specification
+        size_quantity_map = {}
+        if isinstance(order_spec_data, list) and len(order_spec_data) > 1:
+            # First row is header with size names
+            header_row = order_spec_data[0]
+            if isinstance(header_row, list) and len(header_row) > 1:
+                # Find the row with actual quantities (skip color column)
+                for i in range(1, len(order_spec_data)):
+                    qty_row = order_spec_data[i]
+                    if isinstance(qty_row, list) and len(qty_row) > 1:
+                        # Map each size to its quantity
+                        for j in range(1, min(len(header_row), len(qty_row))):
+                            size_name = str(header_row[j]).strip()
+                            quantity = qty_row[j]
+                            if size_name and quantity:
+                                try:
+                                    qty_value = int(quantity) if quantity else 0
+                                    if qty_value > 0:
+                                        size_quantity_map[size_name] = qty_value
+                                        _logger.info(f"Mapped size {size_name} to quantity {qty_value}")
+                                except (ValueError, TypeError):
+                                    pass
+        
+        # Extract sizes from sample and create order lines with quantities from order
         if isinstance(size_data, list) and len(size_data) > 1:
             for i in range(1, len(size_data)):  # Skip header row
                 row = size_data[i]
                 if isinstance(row, list) and len(row) > 0:
-                    size_value = row[0]
+                    size_value = str(row[0]).strip()
                     if size_value:
+                        # Get quantity from order specification, default to 0 if not found
+                        planned_qty = size_quantity_map.get(size_value, 0)
+                        
                         self.env['production.order.line'].create({
                             'order_id': self.id,
                             'size': size_value,
-                            'planned_qty': 0,  # Default to 0, user will input quantities
+                            'planned_qty': planned_qty,
                             'color': self.sample_id.color or '',  # Set color from sample
                         })
-                        _logger.info(f"Created order line for size: {size_value}")
+                        _logger.info(f"Created order line for size: {size_value} with quantity: {planned_qty}")
+        
         # Recompute total quantity after creating order lines
         self._compute_total_quantity()
+        
+        # Update material and process quantities to reflect the new total
+        self._update_material_quantities()
+        self._update_process_quantities()
+        
         # Make sure to remove any "Other cost" entries that might have been created
         self.action_remove_other_cost_entries()
         
@@ -408,7 +471,37 @@ class ProductionOrder(models.Model):
     def action_refresh_quantity(self):
         """Manually refresh the total quantity calculation"""
         self._compute_total_quantity()
+        self._update_material_quantities()
+        self._update_process_quantities()
         return True
+    
+    def _update_material_quantities(self):
+        """Update all material quantities to match the production order total quantity"""
+        if not self.material_ids:
+            return
+            
+        # Get the total production quantity
+        total_quantity = sum(line.planned_qty for line in self.line_ids) if self.line_ids else (self.quantity or 0)
+        
+        # Update all materials with the correct unit quantity
+        for material in self.material_ids:
+            material.quantity = total_quantity
+            
+        _logger.info(f"Updated {len(self.material_ids)} materials with unit quantity: {total_quantity}")
+    
+    def _update_process_quantities(self):
+        """Update all process quantities to match the production order total quantity"""
+        if not self.process_ids:
+            return
+            
+        # Get the total production quantity
+        total_quantity = sum(line.planned_qty for line in self.line_ids) if self.line_ids else (self.quantity or 0)
+        
+        # Update all processes with the correct quantity
+        for process in self.process_ids:
+            process.quantity = total_quantity
+            
+        _logger.info(f"Updated {len(self.process_ids)} processes with quantity: {total_quantity}")
 
     def copy_sample_data(self):
         """Copy material and process data from the sample to this production order."""
@@ -429,25 +522,48 @@ class ProductionOrder(models.Model):
                     pass
                     
             if isinstance(material_data, list) and len(material_data) > 1:
+                # Sample material detail structure:
+                # ['Material Name', 'Material Code', 'Color', 'Color Code', 'Specification', 'Unit', 'Part', 'Quantity per Unit', 'Loss per Unit', 'Unit Quantity', 'Total Quantity Used', 'Unit Price', 'Supplier']
+                
                 # Skip header row (material_data[0])
                 for i in range(1, len(material_data)):
                     row = material_data[i]
                     if row and len(row) >= 8:  # Make sure there's enough data in the row
+                        # Get unit quantity from production order total quantity
+                        # Calculate total from order lines if available, otherwise use the stored quantity
+                        unit_quantity = sum(line.planned_qty for line in self.line_ids) if self.line_ids else (self.quantity or 0)
+                        
+                        # Safe float conversion
+                        def safe_float(value):
+                            try:
+                                return float(value) if value and str(value).replace('.','',1).replace('-','',1).isdigit() else 0.0
+                            except (ValueError, TypeError):
+                                return 0.0
+                        
                         self.env['production.material'].create({
                             'order_id': self.id,
-                            'name': row[0] if row[0] else '',  # Material Name
-                            'item_number': row[1] if row[1] else '',  # Material Code
-                            'specification': row[4] if row[4] else '',  # Specification
-                            'unit': row[5] if row[5] else '',  # Unit
-                            'location': row[6] if row[6] else '',  # Position
-                            'single_piece_qty': float(row[7]) if row[7] and str(row[7]).replace('.','',1).isdigit() else 0.0,  # Quantity per Item
-                            'unit_loss': float(row[8]) if len(row) > 8 and row[8] and str(row[8]).replace('.','',1).isdigit() else 0.0,  # Loss per Item
+                            'name': str(row[0]) if row[0] else '',  # Material Name
+                            'item_number': str(row[1]) if len(row) > 1 and row[1] else '',  # Material Code
+                            'color': str(row[2]) if len(row) > 2 and row[2] else '',  # Color
+                            'color_code': str(row[3]) if len(row) > 3 and row[3] else '',  # Color Code
+                            'specification': str(row[4]) if len(row) > 4 and row[4] else '',  # Specification
+                            'unit': str(row[5]) if len(row) > 5 and row[5] else '',  # Unit
+                            'part': str(row[6]) if len(row) > 6 and row[6] else '',  # Part
+                            'single_piece_qty': safe_float(row[7]) if len(row) > 7 else 0.0,  # Quantity per Unit
+                            'unit_loss': safe_float(row[8]) if len(row) > 8 else 0.0,  # Loss per Unit
+                            'quantity': unit_quantity,  # Unit Quantity (from production order)
+                            'unit_price': safe_float(row[11]) if len(row) > 11 else 0.0,  # Unit Price
+                            'supplier': str(row[12]) if len(row) > 12 and row[12] else '',  # Supplier
                         })
+                        _logger.info(f"Created material: {row[0]} with qty_per_unit: {safe_float(row[7]) if len(row) > 7 else 0.0}, loss: {safe_float(row[8]) if len(row) > 8 else 0.0}, unit_qty: {unit_quantity}")
         
         # Copy process table
         if self.sample_id.process_table:
             # Remove existing processes
             self.process_ids.unlink()
+            
+            # Get the total production quantity for processes
+            total_quantity = sum(line.planned_qty for line in self.line_ids) if self.line_ids else (self.quantity or 0)
             
             process_data = self.sample_id.process_table
             # Handle different input formats
@@ -465,8 +581,10 @@ class ProductionOrder(models.Model):
                             'name': item.get('name', ''),
                             'unit_price': float(item.get('unit_price', 0)),
                             'multiplier': float(item.get('multiplier', 1)),
+                            'quantity': total_quantity,  # Set quantity to production total
                             'note': item.get('notes', '') or item.get('note', '')
                         })
+                        _logger.info(f"Created process: {item.get('name', '')} with quantity: {total_quantity}")
         
         # Copy other costs
         if self.sample_id.other_cost:
@@ -645,6 +763,10 @@ class ProductionOrder(models.Model):
 
     def action_open_edit_form(self):
         """Open the edit form for the current record"""
+        # Check if user has management permission
+        if not self.env.user.has_group('garment_authorization.group_production_management'):
+            raise UserError("You don't have permission to edit production orders.")
+            
         try:
             # Try to find the edit form view
             edit_view = self.env.ref('garment_production.view_production_order_form_edit', raise_if_not_found=False)

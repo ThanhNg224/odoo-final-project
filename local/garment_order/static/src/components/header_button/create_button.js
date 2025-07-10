@@ -19,7 +19,7 @@ export class OrderListController extends ListController {
             views: [[false, 'form']],
             target: 'current',
             context: {
-                default_state: 'draft',
+                default_state: 'new',
                 create: true
             }
         });

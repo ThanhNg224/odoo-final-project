@@ -25,7 +25,7 @@ msgstr ""
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Actual"
-msgstr ""
+msgstr "Thực Tế"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
@@ -55,7 +55,7 @@ msgstr "Thông Tin Cơ Bản"
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Budget"
-msgstr ""
+msgstr "Ngân Sách"
 
 #. module: garment_sample
 #: model_terms:ir.actions.act_window,help:garment_sample.action_garment_sample
@@ -85,7 +85,7 @@ msgstr "Tạo bảng quy trình đầu tiên của bạn"
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
 msgid "Currency"
-msgstr ""
+msgstr "Tiền Tệ"
 
 #. module: garment_sample
 #. odoo-javascript
@@ -105,28 +105,28 @@ msgstr "Bộ Phận"
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Details"
-msgstr ""
+msgstr "Chi Tiết"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
 #, python-format
 msgid "Discard"
-msgstr ""
+msgstr "Hủy Bỏ"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
 #, python-format
 msgid "Discard Changes"
-msgstr ""
+msgstr "Hủy Bỏ Thay Đổi"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.js:0
 #, python-format
 msgid "Duplicate"
-msgstr ""
+msgstr "Sao Chép"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
@@ -143,21 +143,21 @@ msgstr "Chỉnh Sửa Mẫu May Mặc"
 #: code:addons/garment_sample/controllers/main.py:0
 #, python-format
 msgid "Eliminated in %(date_filter)s"
-msgstr ""
+msgstr "Loại bỏ trong %(date_filter)s"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.js:0
 #, python-format
 msgid "Error loading sample progress"
-msgstr ""
+msgstr "Lỗi tải tiến độ mẫu"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.js:0
 #, python-format
 msgid "Export"
-msgstr ""
+msgstr "Xuất"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
@@ -197,7 +197,7 @@ msgstr "Chi Tiết Hình Ảnh"
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Item"
-msgstr ""
+msgstr "Mục"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
@@ -214,7 +214,7 @@ msgstr "Đánh Dấu Sẵn Sàng Sản Xuất"
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Material Cost (1)"
-msgstr ""
+msgstr "Chi Phí Nguyên Liệu (1)"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
@@ -238,14 +238,14 @@ msgstr "Xuất Kho Nguyên Liệu"
 #: code:addons/garment_sample/static/src/components/tree_view/sample_tree_view.xml:0
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "Mới"
 
 #. module: garment_sample
 #. odoo-python
 #: code:addons/garment_sample/controllers/main.py:0
 #, python-format
 msgid "New development in %(date_filter)s"
-msgstr ""
+msgstr "Phát triển mới trong %(date_filter)s"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
@@ -258,7 +258,7 @@ msgstr "Chi Phí Khác"
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Other Cost (3)"
-msgstr ""
+msgstr "Chi Phí Khác (3)"
 
 #. module: garment_sample
 #: model:ir.actions.act_window,name:garment_sample.action_other_cost
@@ -276,7 +276,7 @@ msgstr "Chi Phí Quy Trình"
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Process Cost (2)"
-msgstr ""
+msgstr "Chi Phí Quy Trình (2)"
 
 #. module: garment_sample
 #: model:ir.actions.act_window,name:garment_sample.action_process_table
@@ -294,26 +294,26 @@ msgstr "Bảng quy trình"
 #: code:addons/garment_sample/controllers/main.py:0
 #, python-format
 msgid "Production available in %(date_filter)s"
-msgstr ""
+msgstr "Sản xuất có sẵn trong %(date_filter)s"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Profit (4-1-2-3)"
-msgstr ""
+msgstr "Lợi Nhuận (4-1-2-3)"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
 msgid "Progress Selection"
-msgstr ""
+msgstr "Lựa Chọn Tiến Độ"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Quotation (4)"
-msgstr ""
+msgstr "Báo Giá (4)"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
@@ -333,7 +333,7 @@ msgstr "Mẫu"
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_tree
 msgid "Sample Code"
-msgstr ""
+msgstr "Mã Mẫu"
 
 #. module: garment_sample
 #. odoo-javascript
@@ -373,40 +373,40 @@ msgstr "Báo Giá Mẫu"
 #: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
 #, python-format
 msgid "Save Record"
-msgstr ""
+msgstr "Lưu Bản Ghi"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/create_control_panel/create_form_status_indicator.xml:0
 #, python-format
 msgid "Save manually"
-msgstr ""
+msgstr "Lưu thủ công"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Single Piece"
-msgstr ""
+msgstr "Từng Chiếc"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
 msgid "Stock In"
-msgstr ""
+msgstr "Nhập Kho"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_view
 msgid "Technical Requirements"
-msgstr ""
+msgstr "Yêu Cầu Kỹ Thuật"
 
 #. module: garment_sample
 #: model_terms:ir.ui.view,arch_db:garment_sample.view_garment_sample_form_edit
 msgid "Technical Requirements and Remarks"
-msgstr ""
+msgstr "Yêu Cầu Kỹ Thuật và Ghi Chú"
 
 #. module: garment_sample
 #. odoo-javascript
 #: code:addons/garment_sample/static/src/components/sample_cost_summary_table/sample_cost_summary_table.xml:0
 #, python-format
 msgid "Total Cost (1+2+3)"
-msgstr ""
+msgstr "Tổng Chi Phí (1+2+3)"

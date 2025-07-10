@@ -3,18 +3,20 @@
         <field name="name">production.material.tree</field>
         <field name="model">production.material</field>
         <field name="arch" type="xml">
-            <tree string="Production Materials" class="material-table">
-                <field name="name"/>
-                <field name="item_number"/>
-                <field name="specification"/>
-                <field name="unit"/>
-                <field name="location"/>
-                <field name="single_piece_qty"/>
-                <field name="unit_loss"/>
-                <field name="quantity"/>
-                <field name="total_usage"/>
-                <field name="unit_price"/>
-                <field name="supplier"/>
+            <tree string="Production Materials" class="material-table" editable="bottom">
+                <field name="name" string="Material Name"/>
+                <field name="item_number" string="Material Code"/>
+                <field name="color" string="Color"/>
+                <field name="color_code" string="Color Code"/>
+                <field name="specification" string="Specification"/>
+                <field name="unit" string="Unit"/>
+                <field name="part" string="Part"/>
+                <field name="single_piece_qty" string="Qty per Unit"/>
+                <field name="unit_loss" string="Loss per Unit"/>
+                <field name="quantity" string="Unit Quantity"/>
+                <field name="total_usage" string="Total Qty Used" readonly="1"/>
+                <field name="unit_price" string="Unit Price"/>
+                <field name="supplier" string="Supplier"/>
             </tree>
         </field>
     </record>
@@ -32,17 +34,20 @@
                         </h1>
                     </div>
                     <group>
-                        <group>
+                        <group name="basic_info" string="Basic Information">
                             <field name="item_number"/>
+                            <field name="color"/>
+                            <field name="color_code"/>
                             <field name="specification"/>
                             <field name="unit"/>
+                            <field name="part"/>
                             <field name="location"/>
                         </group>
-                        <group>
+                        <group name="quantities" string="Quantities &amp; Calculation">
                             <field name="single_piece_qty"/>
                             <field name="unit_loss"/>
                             <field name="quantity"/>
-                            <field name="total_usage"/>
+                            <field name="total_usage" readonly="1"/>
                             <field name="unit_price"/>
                             <field name="supplier"/>
                         </group>

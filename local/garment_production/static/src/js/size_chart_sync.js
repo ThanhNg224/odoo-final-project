@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const button = document.querySelector('button[name="generate_order_lines_from_size_chart"]');
     if (!button) return;
 
-    console.log("🔥 JS collectSizeChartData loaded");
+    // console.log("🔥 JS collectSizeChartData loaded");
 
     button.addEventListener('click', function () {
         const table = document.querySelector('.pmc-table');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const field = document.querySelector('[name="size_chart_data"]');
         if (field) {
             field.value = JSON.stringify(data);
-            console.log("✅ size_chart_data updated:", field.value);
+            // console.log("✅ size_chart_data updated:", field.value);
         }
     });
 });

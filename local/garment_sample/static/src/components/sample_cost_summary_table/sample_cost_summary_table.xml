@@ -8,8 +8,8 @@
                     <tr>
                         <th>Item</th>
                         <th colspan="2">Material Cost (1)</th>
-                        <th colspan="2">Process Cost (2)</th>
-                        <th colspan="2">Other Cost (3)</th>
+                        <th colspan="1">Process Cost (2)</th>
+                        <th colspan="1">Other Cost (3)</th>
                         <th colspan="2">Total Cost (1+2+3)</th>
                         <th colspan="2">Quotation (4)</th>
                         <th colspan="2">Profit (4-1-2-3)</th>
@@ -21,9 +21,7 @@
                         <td>Budget</td>
                         <td>Actual</td>
                         <td>Budget</td>
-                        <td>Actual</td>
                         <td>Budget</td>
-                        <td>Actual</td>
                         <td>Budget</td>
                         <td>Actual</td>
                         <td>Budget</td>
@@ -36,9 +34,7 @@
                         <td><span t-esc="state.materialCostBudget"/></td>
                         <td><span t-esc="state.materialCostActual"/></td>
                         <td><span t-esc="state.processCostBudget"/></td>
-                        <td><span t-esc="state.processCostActual"/></td>
                         <td><span t-esc="state.otherCostBudget"/></td>
-                        <td><span t-esc="state.otherCostActual"/></td>
                         <td><span t-esc="state.totalCostBudget"/></td>
                         <td><span t-esc="state.totalCostActual"/></td>
                         <td><span t-esc="state.quoteBudget"/></td>

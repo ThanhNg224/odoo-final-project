@@ -1,5 +1,6 @@
 from datetime import datetime
 import calendar
+import json
 from odoo import http
 from odoo.http import request, route
 from odoo.tools.translate import _
@@ -65,20 +66,47 @@ class GarmentSampleController(http.Controller):
         sample = request.env['garment.sample'].sudo().browse(int(sample_id))
         if sample.exists():
             # Calculate material cost
-            material_cost = 0
-            if sample.material_detail and len(sample.material_detail) > 1:
-                for row in sample.material_detail[1:]:  # Skip header row
+            budget_material_cost = 0
+            current_material_detail = sample.material_detail
+            if isinstance(current_material_detail, str):
+                current_material_detail = json.loads(current_material_detail) or []
+            if current_material_detail and len(current_material_detail) > 1:
+                for row in current_material_detail[1:]:  # Skip header row
                     if len(row) >= 12:  # Ensure row has enough columns
                         total_quantity_used = float(row[10] or 0)  # Total Quantity Used
                         unit_price = float(row[11] or 0)  # Unit Price
-                        material_cost += total_quantity_used * unit_price
+                        budget_material_cost += total_quantity_used * unit_price
+
+            # Calculate process cost
+            actual_process_cost = 0
+            current_process_table = sample.process_table
+            if isinstance(current_process_table, str):
+                current_process_table = json.loads(current_process_table) or []
+            if current_process_table and len(current_process_table) > 1:
+                for row in current_process_table[1:]:  # Skip header row
+                    actual_process_cost += float(row.get('unit_price', 0) * row.get('multiplier', 1))
+
+            # Calculate other cost
+            actual_other_cost = 0
+            current_other_cost = sample.other_cost
+            if isinstance(current_other_cost, str):
+                current_other_cost = json.loads(current_other_cost) or []
+            if current_other_cost and len(current_other_cost) > 1:
+                for row in current_other_cost[1:]:  # Skip header row
+                    actual_other_cost += float(row.get('amount', 0))
+
+            actual_material_cost = 0
+            for issuance in sample.material_issuance_ids:
+                actual_material_cost += issuance.total_price
+
             return {
-                'material_cost': material_cost,
-                'process_cost': sum(item.get('unit_price', 0) * item.get('multiplier', 1) for item in sample.process_table[1:] if isinstance(item, dict)),
-                'other_cost': sum(item.get('amount', 0) for item in sample.other_cost if isinstance(item, dict)),
+                'material_cost': budget_material_cost,
+                'actual_material_cost': actual_material_cost,
+                'process_cost': actual_process_cost,
+                'other_cost': actual_other_cost,
                 'quotation': sample.quotation or 0,
                 'actual_quotation': sample.actual_quotation or 0,
-                'total_cost': sample.total_price or 0,
+                # 'actual_total_cost': actual_total_cost,
             }
         return False 
 

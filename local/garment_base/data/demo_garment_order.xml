@@ -43,6 +43,7 @@
             <field name="issuing_date">2025-04-11</field>
             <field name="receiving_date">2025-04-18</field>
             <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_9')])]"/>
         </record>
         <record id="garment_order_demo_2" model="garment.order">
             <field name="name">Winter Jacket Collection</field>
@@ -55,7 +56,176 @@
             <field name="issuing_date">2025-04-11</field>
             <field name="receiving_date">2025-04-18</field>
             <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_7')])]"/>
         </record>
-
+        <record id="garment_order_demo_3" model="garment.order">
+            <field name="name">Spring Dress Collection</field>
+            <field name="code">ORD-2024-003</field>
+            <field name="shape">Dress</field>
+            <field name="color">Pink</field>
+            <field name="quantity">200</field>
+            <field name="unit_price">38.50</field>
+            <field name="cutting_date">2025-03-15</field>
+            <field name="issuing_date">2025-02-20</field>
+            <field name="receiving_date">2025-02-27</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_2')])]"/>
+        </record>
+        <record id="garment_order_demo_4" model="garment.order">
+            <field name="name">Summer Shorts Collection</field>
+            <field name="code">ORD-2024-004</field>
+            <field name="shape">Shorts</field>
+            <field name="color">Yellow</field>
+            <field name="quantity">250</field>
+            <field name="unit_price">29.99</field>
+            <field name="cutting_date">2025-06-10</field>
+            <field name="issuing_date">2025-05-15</field>
+            <field name="receiving_date">2025-05-22</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_8')])]"/>
+        </record>
+        <record id="garment_order_demo_5" model="garment.order">
+            <field name="name">Autumn Coat Collection</field>
+            <field name="code">ORD-2024-005</field>
+            <field name="shape">Coat</field>
+            <field name="color">Brown</field>
+            <field name="quantity">180</field>
+            <field name="unit_price">55.75</field>
+            <field name="cutting_date">2025-10-05</field>
+            <field name="issuing_date">2025-09-10</field>
+            <field name="receiving_date">2025-09-17</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_7')])]"/>
+        </record>
+        <record id="garment_order_demo_6" model="garment.order">
+            <field name="name">Classic Polo Collection</field>
+            <field name="code">ORD-2024-006</field>
+            <field name="shape">Polo</field>
+            <field name="color">Green</field>
+            <field name="quantity">220</field>
+            <field name="unit_price">32.00</field>
+            <field name="cutting_date">2025-04-05</field>
+            <field name="issuing_date">2025-03-10</field>
+            <field name="receiving_date">2025-03-17</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_0'), ref('sample_demo_4')])]"/>
+        </record>
+        <record id="garment_order_demo_7" model="garment.order">
+            <field name="name">Kids T-shirt Pack</field>
+            <field name="code">ORD-2024-007</field>
+            <field name="shape">T-shirt</field>
+            <field name="color">Orange</field>
+            <field name="quantity">180</field>
+            <field name="unit_price">18.75</field>
+            <field name="cutting_date">2025-05-12</field>
+            <field name="issuing_date">2025-04-20</field>
+            <field name="receiving_date">2025-04-27</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_11')])]"/>
+        </record>
+        <record id="garment_order_demo_8" model="garment.order">
+            <field name="name">Sportswear Set</field>
+            <field name="code">ORD-2024-008</field>
+            <field name="shape">Tracksuit</field>
+            <field name="color">Navy</field>
+            <field name="quantity">260</field>
+            <field name="unit_price">42.50</field>
+            <field name="cutting_date">2025-07-18</field>
+            <field name="issuing_date">2025-06-25</field>
+            <field name="receiving_date">2025-07-02</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_5')])]"/>
+        </record>
+        <record id="garment_order_demo_9" model="garment.order">
+            <field name="name">Denim Jeans Series</field>
+            <field name="code">ORD-2024-009</field>
+            <field name="shape">Jeans</field>
+            <field name="color">Denim Blue</field>
+            <field name="quantity">300</field>
+            <field name="unit_price">49.99</field>
+            <field name="cutting_date">2025-08-10</field>
+            <field name="issuing_date">2025-07-15</field>
+            <field name="receiving_date">2025-07-22</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_3'), ref('sample_demo_1')])]"/>
+        </record>
+        <record id="garment_order_demo_10" model="garment.order">
+            <field name="name">Elegant Skirt Line</field>
+            <field name="code">ORD-2024-010</field>
+            <field name="shape">Skirt</field>
+            <field name="color">Purple</field>
+            <field name="quantity">150</field>
+            <field name="unit_price">36.80</field>
+            <field name="cutting_date">2025-09-01</field>
+            <field name="issuing_date">2025-08-10</field>
+            <field name="receiving_date">2025-08-17</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_6')])]"/>
+        </record>
+        <record id="garment_order_demo_11" model="garment.order">
+            <field name="name">Casual Hoodie Batch</field>
+            <field name="code">ORD-2024-011</field>
+            <field name="shape">Hoodie</field>
+            <field name="color">Gray</field>
+            <field name="quantity">210</field>
+            <field name="unit_price">40.00</field>
+            <field name="cutting_date">2025-10-12</field>
+            <field name="issuing_date">2025-09-20</field>
+            <field name="receiving_date">2025-09-27</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_5')])]"/>
+        </record>
+        <record id="garment_order_demo_12" model="garment.order">
+            <field name="name">Formal Suit Edition</field>
+            <field name="code">ORD-2024-012</field>
+            <field name="shape">Suit</field>
+            <field name="color">Black</field>
+            <field name="quantity">120</field>
+            <field name="unit_price">120.00</field>
+            <field name="cutting_date">2025-11-05</field>
+            <field name="issuing_date">2025-10-10</field>
+            <field name="receiving_date">2025-10-17</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_10')])]"/>
+        </record>
+        <record id="garment_order_demo_13" model="garment.order">
+            <field name="name">Beachwear Assortment</field>
+            <field name="code">ORD-2024-013</field>
+            <field name="shape">Swimwear</field>
+            <field name="color">Turquoise</field>
+            <field name="quantity">170</field>
+            <field name="unit_price">28.90</field>
+            <field name="cutting_date">2025-05-30</field>
+            <field name="issuing_date">2025-05-01</field>
+            <field name="receiving_date">2025-05-08</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [ref('sample_demo_8')])]"/>
+        </record>
+        <record id="garment_order_demo_14" model="garment.order">
+            <field name="name">Vintage Vest Group</field>
+            <field name="code">ORD-2024-014</field>
+            <field name="shape">Vest</field>
+            <field name="color">Beige</field>
+            <field name="quantity">140</field>
+            <field name="unit_price">27.50</field>
+            <field name="cutting_date">2025-03-22</field>
+            <field name="issuing_date">2025-02-28</field>
+            <field name="receiving_date">2025-03-07</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [])]"/>
+        </record>
+        <record id="garment_order_demo_15" model="garment.order">
+            <field name="name">Raincoat Special</field>
+            <field name="code">ORD-2024-015</field>
+            <field name="shape">Raincoat</field>
+            <field name="color">Yellow</field>
+            <field name="quantity">160</field>
+            <field name="unit_price">48.00</field>
+            <field name="cutting_date">2025-12-01</field>
+            <field name="issuing_date">2025-11-10</field>
+            <field name="receiving_date">2025-11-17</field>
+            <field name="state">new</field>
+            <field name="sample_ids" eval="[(6, 0, [])]"/>
+        </record>
     </data>
 </odoo>

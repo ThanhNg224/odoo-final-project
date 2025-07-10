@@ -27,7 +27,7 @@
     <field name="state">in_progress</field>
     <field name="finance_state">waiting</field>
     <field name="cost_total">2750.00</field>
-    <field name="sample_id" ref="demo_sample_1"/>
+    <field name="sample_id" ref="sample_demo_0"/>
   </record>
 
   <record id="demo_order_2" model="production.order">
@@ -38,7 +38,7 @@
     <field name="state">draft</field>
     <field name="finance_state">waiting</field>
     <field name="cost_total">1650.00</field>
-    <field name="sample_id" ref="demo_sample_2"/>
+    <field name="sample_id" ref="sample_demo_3"/>
   </record>
 
   <!-- Create order lines -->

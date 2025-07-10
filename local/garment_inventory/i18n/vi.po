@@ -18,18 +18,18 @@ msgstr ""
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_garment_inventory_main
 msgid "All Inventories"
-msgstr ""
+msgstr "Tất cả kho hàng"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Basic Info"
-msgstr ""
+msgstr "Thông tin cơ bản"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_color_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_color_inventory_restricted
 msgid "Color"
-msgstr ""
+msgstr "Màu sắc"
 
 #. module: garment_inventory
 #: model:ir.actions.act_window,name:garment_inventory.action_color_inventory
@@ -39,92 +39,92 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_color_inventory_tree
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_color_inventory_tree_restricted
 msgid "Color Inventory"
-msgstr ""
+msgstr "Kho màu sắc"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_material_inventory_color_quantity_form
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_material_inventory_form_create
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_material_inventory_form_view
 msgid "Color Quantities"
-msgstr ""
+msgstr "Số lượng theo màu"
 
 #. module: garment_inventory
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_color_inventory
 msgid "Create your first color"
-msgstr ""
+msgstr "Tạo màu sắc đầu tiên"
 
 #. module: garment_inventory
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_material_inventory
 msgid "Create your first material inventory"
-msgstr ""
+msgstr "Tạo kho nguyên liệu đầu tiên"
 
 #. module: garment_inventory
 #. odoo-javascript
 #: code:addons/garment_inventory/static/src/components/receipt_line_treeview/treeview.js:0
 #, python-format
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_order_tree
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_tree
 msgid "Department"
-msgstr ""
+msgstr "Phòng ban"
 
 #. module: garment_inventory
 #. odoo-javascript
 #: code:addons/garment_inventory/static/src/components/receipt_line_treeview/treeview.js:0
 #, python-format
 msgid "Duplicate"
-msgstr ""
+msgstr "Sao chép"
 
 #. module: garment_inventory
 #. odoo-javascript
 #: code:addons/garment_inventory/static/src/components/receipt_line_treeview/treeview.js:0
 #, python-format
 msgid "Export"
-msgstr ""
+msgstr "Xuất dữ liệu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Finished Product Size"
-msgstr ""
+msgstr "Kích thước sản phẩm hoàn thiện"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_garment_receipt_line_approved
 #: model:ir.ui.menu,name:garment_inventory.menu_garment_receipt_line_approved_nodelete
 msgid "History"
-msgstr ""
+msgstr "Lịch sử"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Image Details"
-msgstr ""
+msgstr "Chi tiết hình ảnh"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_garment_inventory_root
 msgid "Inventory"
-msgstr ""
+msgstr "Kho hàng"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_form_view
 msgid "Mark as Cancelled"
-msgstr ""
+msgstr "Đánh dấu đã hủy"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_form_view
 msgid "Mark as Confirmed"
-msgstr ""
+msgstr "Đánh dấu đã xác nhận"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_material_inventory
 msgid "Material"
-msgstr ""
+msgstr "Nguyên liệu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Material Detail"
-msgstr ""
+msgstr "Chi tiết nguyên liệu"
 
 #. module: garment_inventory
 #: model:ir.actions.act_window,name:garment_inventory.action_material_inventory
@@ -132,76 +132,76 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_material_inventory_form_view
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_material_inventory_tree
 msgid "Material Inventory"
-msgstr ""
+msgstr "Kho nguyên liệu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Material Issuance"
-msgstr ""
+msgstr "Xuất nguyên liệu"
 
 #. module: garment_inventory
 #. odoo-javascript
 #: code:addons/garment_inventory/static/src/components/receipt_line_treeview/treeview.xml:0
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "Mới"
 
 #. module: garment_inventory
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_color_inventory_restricted
 msgid "No colors available"
-msgstr ""
+msgstr "Không có màu sắc nào"
 
 #. module: garment_inventory
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_garment_receipt_line_approved
 msgid "No receipt lines found"
-msgstr ""
+msgstr "Không tìm thấy dòng phiếu nhận"
 
 #. module: garment_inventory
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_stored_order
 msgid "No stored orders found"
-msgstr ""
+msgstr "Không tìm thấy đơn hàng lưu trữ"
 
 #. module: garment_inventory
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_stored_sample
 msgid "No stored samples found"
-msgstr ""
+msgstr "Không tìm thấy mẫu lưu trữ"
 
 #. module: garment_inventory
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_garment_receipt_line_nodelete
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_garment_receipt_line_waiting
 #: model_terms:ir.actions.act_window,help:garment_inventory.action_garment_receipt_line_waiting_purchasing
 msgid "No waiting receipts found"
-msgstr ""
+msgstr "Không tìm thấy phiếu nhận chờ duyệt"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_order_tree
 msgid "Order Name"
-msgstr ""
+msgstr "Tên đơn hàng"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_order_tree
 msgid "Order Number"
-msgstr ""
+msgstr "Số đơn hàng"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_stored_order
 msgid "Orders"
-msgstr ""
+msgstr "Đơn hàng"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Other Cost"
-msgstr ""
+msgstr "Chi phí khác"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Process Cost"
-msgstr ""
+msgstr "Chi phí gia công"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_garment_receipt_line_waiting_purchasing
 msgid "Purchase Requests"
-msgstr ""
+msgstr "Yêu cầu mua hàng"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_form_edit
@@ -209,104 +209,104 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_tree_nodelete
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_tree_waiting
 msgid "Receipt Lines"
-msgstr ""
+msgstr "Dòng phiếu nhận"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_form_approved
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_form_nodelete
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_garment_receipt_line_form_view
 msgid "Receipts"
-msgstr ""
+msgstr "Phiếu nhận"
 
 #. module: garment_inventory
 #: model:ir.actions.act_window,name:garment_inventory.action_garment_receipt_line_approved
 #: model:ir.actions.act_window,name:garment_inventory.action_garment_receipt_line_nodelete
 msgid "Receipts History"
-msgstr ""
+msgstr "Lịch sử phiếu nhận"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Related Documents"
-msgstr ""
+msgstr "Tài liệu liên quan"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Remarks"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_tree
 msgid "Sample Code"
-msgstr ""
+msgstr "Mã mẫu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Sample Cost Summary"
-msgstr ""
+msgstr "Tóm tắt chi phí mẫu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Sample Detail"
-msgstr ""
+msgstr "Chi tiết mẫu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_tree
 msgid "Sample Name"
-msgstr ""
+msgstr "Tên mẫu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Sample Progress"
-msgstr ""
+msgstr "Tiến độ mẫu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Sample Quotation"
-msgstr ""
+msgstr "Báo giá mẫu"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_stored_sample
 msgid "Samples"
-msgstr ""
+msgstr "Mẫu"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Stock Out"
-msgstr ""
+msgstr "Xuất kho"
 
 #. module: garment_inventory
 #: model:ir.actions.act_window,name:garment_inventory.action_stored_order
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_order_tree
 msgid "Stored Orders"
-msgstr ""
+msgstr "Đơn hàng lưu trữ"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Stored Sample"
-msgstr ""
+msgstr "Mẫu lưu trữ"
 
 #. module: garment_inventory
 #: model:ir.actions.act_window,name:garment_inventory.action_stored_sample
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_tree
 msgid "Stored Samples"
-msgstr ""
+msgstr "Mẫu lưu trữ"
 
 #. module: garment_inventory
 #: model_terms:ir.ui.view,arch_db:garment_inventory.view_stored_sample_form_view
 msgid "Technical Requirements"
-msgstr ""
+msgstr "Yêu cầu kỹ thuật"
 
 #. module: garment_inventory
 #: model:ir.actions.act_window,name:garment_inventory.action_garment_receipt_line_waiting
 msgid "Waiting Receipts"
-msgstr ""
+msgstr "Phiếu nhận chờ duyệt"
 
 #. module: garment_inventory
 #: model:ir.actions.act_window,name:garment_inventory.action_garment_receipt_line_waiting_purchasing
 msgid "Waiting Receipts Purchasing"
-msgstr ""
+msgstr "Phiếu nhận chờ mua hàng"
 
 #. module: garment_inventory
 #: model:ir.ui.menu,name:garment_inventory.menu_garment_receipt_line_waiting
 msgid "Waiting approval"
-msgstr ""
+msgstr "Chờ phê duyệt"

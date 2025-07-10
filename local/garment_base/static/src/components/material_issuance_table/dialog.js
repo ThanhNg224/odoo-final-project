@@ -55,7 +55,7 @@ export class MaterialIssuanceDialog extends Component {
         try {
             // Get sample data including material_detail
             const recordId = parseInt(this.props.record.resId);
-            console.log("Record ID:", recordId, "Record:", this.props.record); // Debug log
+            // // console.log("Record ID:", recordId, "Record:", this.props.record); // Debug log
             
             const samples = await this.rpc("/garment/sample/search_read", {
                 fields: ['id', 'name', 'material_detail'],
@@ -64,9 +64,9 @@ export class MaterialIssuanceDialog extends Component {
             
             if (samples && samples.length > 0) {
                 let materialDetail = samples[0].material_detail;
-                console.log("Raw material detail:", materialDetail); // Debug log
-                console.log("Type of material detail:", typeof materialDetail); // Debug log
-                console.log("Is Array?", Array.isArray(materialDetail)); // Debug log
+                // // console.log("Raw material detail:", materialDetail); // Debug log
+                // // console.log("Type of material detail:", typeof materialDetail); // Debug log
+                // // console.log("Is Array?", Array.isArray(materialDetail)); // Debug log
 
                 // Handle case where materialDetail might be a string
                 if (typeof materialDetail === 'string') {
@@ -160,7 +160,7 @@ export class MaterialIssuanceDialog extends Component {
                 this.state.materials = this.state.materials.filter(m => m.material_id !== null);
             }
 
-            console.log("Final materials:", this.state.materials); // Debug log
+            // console.log("Final materials:", this.state.materials); // Debug log
         } catch (error) {
             console.error("Error loading materials:", error);
             this.notification.add(_t("Failed to load materials. Please try again."), {
@@ -232,24 +232,24 @@ export class MaterialIssuanceDialog extends Component {
                 );
 
                 if (matchingRow) {
-                    console.log('Found matching row:', matchingRow);
+                    // console.log('Found matching row:', matchingRow);
                     // Populate the form with values from the matching row
                     const quantityPerUnit = MaterialIssuanceDialog.roundToTwo(parseFloat(matchingRow[columnMap.quantityPerUnit]) || 0);
                     const unitQuantity = MaterialIssuanceDialog.roundToTwo(parseFloat(matchingRow[columnMap.unitQuantity]) || 0);
                     const lossPerUnit = MaterialIssuanceDialog.roundToTwo(parseFloat(matchingRow[columnMap.lossPerUnit]) || 0);
                     
-                    console.log('Calculated values:', {
-                        quantityPerUnit,
-                        unitQuantity,
-                        lossPerUnit,
-                        unitPrice: matchingRow[columnMap.unitPrice]
-                    });
+                    // console.log('Calculated values:', {
+                    //     quantityPerUnit,
+                    //     unitQuantity,
+                    //     lossPerUnit,
+                    //     unitPrice: matchingRow[columnMap.unitPrice]
+                    // });
 
                     this.state.formData.used_quantity = MaterialIssuanceDialog.roundToTwo(quantityPerUnit * unitQuantity); // Used Quantity
                     this.state.formData.defective_quantity = MaterialIssuanceDialog.roundToTwo(lossPerUnit * unitQuantity); // Defective Quantity
                     this.state.formData.unit_price = MaterialIssuanceDialog.roundToTwo(parseFloat(matchingRow[columnMap.unitPrice]) || 0); // Unit Price
                     
-                    console.log('Updated form data:', this.state.formData);
+                    // console.log('Updated form data:', this.state.formData);
                     this.calculateTotalPrice();
                 }
             }
@@ -264,14 +264,14 @@ export class MaterialIssuanceDialog extends Component {
         const usedQty = MaterialIssuanceDialog.roundToTwo(parseFloat(this.state.formData.used_quantity) || 0);
         const defectiveQty = MaterialIssuanceDialog.roundToTwo(parseFloat(this.state.formData.defective_quantity) || 0);
         const unitPrice = MaterialIssuanceDialog.roundToTwo(parseFloat(this.state.formData.unit_price) || 0);
-        console.log('Calculating total price with:', {
-            usedQty,
-            defectiveQty,
-            unitPrice,
-            formData: this.state.formData
-        });
+        // console.log('Calculating total price with:', {
+        //     usedQty,
+        //     defectiveQty,
+        //     unitPrice,
+        //     formData: this.state.formData
+        // });
         this.state.formData.total_price = MaterialIssuanceDialog.roundToTwo((usedQty + defectiveQty) * unitPrice);
-        console.log('Calculated total price:', this.state.formData.total_price);
+        // console.log('Calculated total price:', this.state.formData.total_price);
     }
 
     onConfirm() {
@@ -312,7 +312,7 @@ export class MaterialIssuanceDialog extends Component {
         };
 
         // Log the data being sent
-        console.log("Sending material issuance data:", formData);
+        // console.log("Sending material issuance data:", formData);
 
         try {
             this.props.confirm(formData);

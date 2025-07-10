@@ -329,9 +329,20 @@ export class ProgressTable extends Component {
         this.dialog = useService("dialog");
         this.notification = useService("notification");
         this.userService = useService('user');
+        let value = this.props.record.data[this.props.name];
+        if (typeof value === "string") {
+            try {
+                value = JSON.parse(value);
+            } catch (e) {
+                value = [];
+            }
+        }
+        if (!Array.isArray(value)) {
+            value = [];
+        }
 
         this.state = useState({
-            rows: Array.isArray(this.props.record.data[this.props.name]) ? this.props.record.data[this.props.name] : [],
+            rows: value,
             template_model: "garment.progress_template",
             protectedColumns: ['name', 'state', 'plan', 'actual', 'remark'],
             showTemplateDropdown: false,
@@ -357,6 +368,8 @@ export class ProgressTable extends Component {
     }
 
     async initializeData() {
+        console.log("initializeData", this.state.rows);
+        console.log("initializeData", this.state.rows.length);
         if (!this.state.rows.length) {
             this.state.rows = [];
             this.props.record.update({ [this.props.name]: this.state.rows });

@@ -18,189 +18,189 @@ msgstr ""
 #. module: garment_authorization
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_root
 msgid "Authorization"
-msgstr ""
+msgstr "权限管理"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__create_uid
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "创建者"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__create_date
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__create_date
 msgid "Created on"
-msgstr ""
+msgstr "创建时间"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__display_name
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "显示名称"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_authorization_manager
 msgid "Garment Authorization Manager"
-msgstr ""
+msgstr "服装权限管理员"
 
 #. module: garment_authorization
 #: model:ir.model,name:garment_authorization.model_garment_group
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_res_users_form_edit_auth
 msgid "Garment Group"
-msgstr ""
+msgstr "服装组"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_approval
 msgid "Garment Inventory Approval"
-msgstr ""
+msgstr "服装库存审批"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_management
 msgid "Garment Inventory Management"
-msgstr ""
+msgstr "服装库存管理"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_purchaser
 msgid "Garment Inventory Purchaser"
-msgstr ""
+msgstr "服装库存采购员"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_inventory_viewer
 msgid "Garment Inventory Viewer"
-msgstr ""
+msgstr "服装库存查看员"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_order_approval
 msgid "Garment Order Approval"
-msgstr ""
+msgstr "服装订单审批"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_order_management
 msgid "Garment Order Management"
-msgstr ""
+msgstr "服装订单管理"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_order_viewer
 msgid "Garment Order Viewer"
-msgstr ""
+msgstr "服装订单查看员"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_approval
 msgid "Garment Production Approval"
-msgstr ""
+msgstr "服装生产审批"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_material_consumption
 msgid "Garment Production Finalize Material Consumption"
-msgstr ""
+msgstr "服装生产完成物料消耗"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_management
 msgid "Garment Production Management"
-msgstr ""
+msgstr "服装生产管理"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_order
 msgid "Garment Production Order"
-msgstr ""
+msgstr "服装生产订单"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_progress
 msgid "Garment Production Progress"
-msgstr ""
+msgstr "服装生产进度"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_support_staff_count
 msgid "Garment Production Support Staff Count"
-msgstr ""
+msgstr "服装生产支持员工统计"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_unit_price_process
 msgid "Garment Production Unit Price Process"
-msgstr ""
+msgstr "服装生产单价流程"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_production_viewer
 msgid "Garment Production Viewer"
-msgstr ""
+msgstr "服装生产查看员"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_sample_approval
 msgid "Garment Sample Approval"
-msgstr ""
+msgstr "服装样品审批"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_sample_management
 msgid "Garment Sample Management"
-msgstr ""
+msgstr "服装样品管理"
 
 #. module: garment_authorization
 #: model:res.groups,name:garment_authorization.group_sample_viewer
 msgid "Garment Sample Viewer"
-msgstr ""
+msgstr "服装样品查看员"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_res_users__garment_group_id
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_group_form
 msgid "Group"
-msgstr ""
+msgstr "组"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__name
 msgid "Group Name"
-msgstr ""
+msgstr "组名称"
 
 #. module: garment_authorization
 #: model:ir.actions.act_window,name:garment_authorization.action_groups
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__group_ids
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_group
 msgid "Groups"
-msgstr ""
+msgstr "组"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__id
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__write_uid
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最后更新者"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__write_date
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最后更新时间"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__name
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #. module: garment_authorization
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_permission_form
 msgid "Permission"
-msgstr ""
+msgstr "权限"
 
 #. module: garment_authorization
 #: model:ir.model,name:garment_authorization.model_garment_permission
 msgid "Permission for Garment Actions"
-msgstr ""
+msgstr "服装操作权限"
 
 #. module: garment_authorization
 #: model:ir.actions.act_window,name:garment_authorization.action_permissions
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_group__permission_ids
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_permission
 msgid "Permissions"
-msgstr ""
+msgstr "权限"
 
 #. module: garment_authorization
 #: model:ir.model.fields,field_description:garment_authorization.field_garment_permission__group_id
 msgid "Related Group"
-msgstr ""
+msgstr "相关组"
 
 #. module: garment_authorization
 #: model:ir.model,name:garment_authorization.model_res_users
@@ -210,10 +210,10 @@ msgstr "用户"
 #. module: garment_authorization
 #: model_terms:ir.ui.view,arch_db:garment_authorization.view_res_users_form_edit_auth
 msgid "User Information"
-msgstr ""
+msgstr "用户信息"
 
 #. module: garment_authorization
 #: model:ir.actions.act_window,name:garment_authorization.action_garment_user
 #: model:ir.ui.menu,name:garment_authorization.menu_garment_authorization_user
 msgid "Users"
-msgstr ""
+msgstr "用户"
