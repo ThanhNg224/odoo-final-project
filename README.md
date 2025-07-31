@@ -1,2 +1,2 @@
 # odoo-final-project
-Odoo final project - HUST
+Odoo Bachelor Graduation final project - HUST
